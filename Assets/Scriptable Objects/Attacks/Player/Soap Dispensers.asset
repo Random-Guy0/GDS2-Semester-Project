@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 5
   <Target>k__BackingField: 0
-  <Duration>k__BackingField: 0.2
+  <Duration>k__BackingField: 0.1
   <HitSize>k__BackingField: {x: 0.75, y: 0.75}

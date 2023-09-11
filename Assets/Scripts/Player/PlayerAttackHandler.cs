@@ -6,10 +6,12 @@ using UnityEngine.InputSystem;
 public class PlayerAttackHandler : AttackHandler
 {
     private PlayerMovement playerMovement;
+    private AmmoController ammoController;
 
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        ammoController = GetComponent<AmmoController>();
     }
 
     public void DoMeleeAttack(InputAction.CallbackContext context)
@@ -22,8 +24,9 @@ public class PlayerAttackHandler : AttackHandler
 
     public void DoRangedAttack(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && ammoController.CanUseAmmo(RangedAttacks[0].AmmoCost))
         {
+            ammoController.UseAmmo(RangedAttacks[0].AmmoCost);
             DoRangedAttack();
         }
     }

@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1534754890003651889, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534754890003651889, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9886985
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534754890003651889, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2066678052054794070, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
       propertyPath: m_Name
       value: Bubble Blaster Projectile

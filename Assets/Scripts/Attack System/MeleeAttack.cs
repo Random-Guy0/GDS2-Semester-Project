@@ -7,7 +7,7 @@ public class MeleeAttack : Attack
 {
     [field: SerializeField] public Vector2 HitSize { get; private set; } = Vector2.one;
     
-    public override IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f, Vector2? attackerPosition = null)
+    public override IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f, Vector2? attackerPosition = null, GameObject attacker = null)
     {
         Vector2 position = attackerPosition ?? Vector2.zero;
         Vector2 origin = GetAttackOrigin(direction, attackerWidth, position);
@@ -31,7 +31,7 @@ public class MeleeAttack : Attack
                 {
                     if (!allHits.Contains(currentHealth))
                     {
-                        DoDamage(currentHealth);
+                        DoDamage(currentHealth, attacker);
                         allHits.Add(currentHealth);
                     }
                 }

@@ -8,12 +8,10 @@ public class RangedAttack : Attack
     [field: SerializeField] public AttackProjectile Projectile { get; private set; }
     [field: SerializeField] public float Range { get; private set; } = 5f;
     [field: SerializeField] public float Speed { get; private set; } = 7f;
+    [field: SerializeField] public int AmmoCost { get; private set; } = 1;
 
-    public override IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f, Vector2? attackerPosition = null)
+    public override IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f, Vector2? attackerPosition = null, GameObject attacker = null)
     {
-        Vector2 position = attackerPosition ?? Vector2.zero;
-        Vector2 origin = GetAttackOrigin(direction, attackerWidth, position);
-
         float currentTime = 0f;
         while (currentTime < Duration)
         {
@@ -21,7 +19,18 @@ public class RangedAttack : Attack
             yield return null;
         }
         
-        AttackProjectile newProjectile = Instantiate(Projectile, origin, Quaternion.identity);
-        newProjectile.FireProjectile(direction);
+        AttackProjectile newProjectile = Instantiate(Projectile, Vector3.zero, Quaternion.identity);
+        
+        Vector2 position = attackerPosition ?? Vector2.zero;
+        Vector2 origin = GetAttackOrigin(direction, attackerWidth, position);
+        
+        if (newProjectile.TryGetComponent<Collider2D>(out Collider2D projectileCollider))
+        {
+            origin.x += direction * projectileCollider.bounds.extents.x;
+        }
+
+        newProjectile.transform.position = origin;
+        
+        newProjectile.FireProjectile(direction, attacker);
     }
 }
