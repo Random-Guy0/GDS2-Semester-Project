@@ -9,6 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ccf24d36940c14f8316e3ff0b78e39, type: 3}
-  m_Name: new Melee Attack
+  m_Script: {fileID: 11500000, guid: ec832b6151a74d944b966cbbcb79e3f5, type: 3}
+  m_Name: Bubble Blaster
   m_EditorClassIdentifier: 
+  <Damage>k__BackingField: 5
+  <Cooldown>k__BackingField: 0.5
+  <Target>k__BackingField: 0
+  <Projectile>k__BackingField: {fileID: 0}
+  <Range>k__BackingField: 5
+  <Speed>k__BackingField: 7

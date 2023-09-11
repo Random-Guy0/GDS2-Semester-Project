@@ -9,8 +9,8 @@ public class RangedAttack : Attack
     [field: SerializeField] public float Range { get; private set; } = 5f;
     [field: SerializeField] public float Speed { get; private set; } = 7f;
 
-    public override void DoAttack()
+    public override IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f, Vector2? attackerPosition = null)
     {
-        
+        yield return null;
     }
 }
