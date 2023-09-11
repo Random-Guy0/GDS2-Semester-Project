@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class Attack : ScriptableObject
 {
     [field: SerializeField] public int Damage { get; private set; } = 5;
-    [field: SerializeField] public float Cooldown { get; private set; } = 0.5f;
     [field: SerializeField] public AttackTarget Target { get; private set; } = AttackTarget.All;
     [field: SerializeField] public float Duration { get; private set; } = 0.2f;
 
@@ -19,14 +18,19 @@ public abstract class Attack : ScriptableObject
         return origin;
     }
 
-    protected void DoDamage(Health health)
+    public void DoDamage(Health health)
     {
-        if ((Target == AttackTarget.Enemies && health is PlayerHealth) /*|| 
-        (Target == AttackTarget.Players && health is EnemyHealth)*/)
+        if (!CanAttack(health))
         {
             return;
         }
         
         health.TakeDamage(Damage);
+    }
+
+    public bool CanAttack(Health health)
+    {
+        return !((Target == AttackTarget.Enemies && health is PlayerHealth) /*||
+        (Target == AttackTarget.Players && health is EnemyHealth)*/);
     }
 }

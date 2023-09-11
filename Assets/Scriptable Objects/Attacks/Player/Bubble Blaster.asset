@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec832b6151a74d944b966cbbcb79e3f5, type: 3}
   m_Name: Bubble Blaster
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 5
-  <Cooldown>k__BackingField: 0.5
+  <Damage>k__BackingField: 100
   <Target>k__BackingField: 0
+  <Duration>k__BackingField: 0.2
   <Projectile>k__BackingField: {fileID: 0}
   <Range>k__BackingField: 5
   <Speed>k__BackingField: 7

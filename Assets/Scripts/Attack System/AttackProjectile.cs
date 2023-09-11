@@ -7,7 +7,7 @@ public class AttackProjectile : MonoBehaviour
 {
     [SerializeField] private RangedAttack attackStats;
 
-    private float direction = 0f;
+    private float direction = 1f;
     private float startingXPosition;
 
     private Vector2 velocity = Vector2.zero;
@@ -28,5 +28,14 @@ public class AttackProjectile : MonoBehaviour
         }
 
         transform.position += (Vector3)velocity * Time.deltaTime;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.TryGetComponent<Health>(out Health otherHealth) && attackStats.CanAttack(otherHealth))
+        {
+            attackStats.DoDamage(otherHealth);
+            Destroy(gameObject);
+        }
     }
 }

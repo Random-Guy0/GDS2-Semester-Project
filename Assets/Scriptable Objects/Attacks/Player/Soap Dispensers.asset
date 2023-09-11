@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Soap Dispensers
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 5
-  <Cooldown>k__BackingField: 0.5
   <Target>k__BackingField: 0
-  <HitSize>k__BackingField: {x: 1, y: 1}
+  <Duration>k__BackingField: 0.2
+  <HitSize>k__BackingField: {x: 0.75, y: 0.75}

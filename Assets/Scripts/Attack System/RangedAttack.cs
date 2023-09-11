@@ -11,6 +11,17 @@ public class RangedAttack : Attack
 
     public override IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f, Vector2? attackerPosition = null)
     {
-        yield return null;
+        Vector2 position = attackerPosition ?? Vector2.zero;
+        Vector2 origin = GetAttackOrigin(direction, attackerWidth, position);
+
+        float currentTime = 0f;
+        while (currentTime < Duration)
+        {
+            currentTime += Time.deltaTime;
+            yield return null;
+        }
+        
+        AttackProjectile newProjectile = Instantiate(Projectile, origin, Quaternion.identity);
+        newProjectile.FireProjectile(direction);
     }
 }
