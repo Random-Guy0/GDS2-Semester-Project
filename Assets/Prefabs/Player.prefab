@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8477166339254621072}
   - component: {fileID: 1440742671158942160}
   - component: {fileID: 6636351775345419368}
+  - component: {fileID: -2898517233979925625}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -242,6 +243,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 308ca8e3-f072-4571-8249-9122d8515c72
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -2898517233979925625}
+        m_TargetAssemblyTypeName: PlayerAttackHandler, Assembly-CSharp
+        m_MethodName: DoRangedAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f6323daa-74be-405b-a91d-f78285d80d05
+    m_ActionName: Player/Ranged Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -2898517233979925625}
+        m_TargetAssemblyTypeName: PlayerAttackHandler, Assembly-CSharp
+        m_MethodName: DoMeleeAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f737ded5-4508-4c72-9611-5773b889b24d
+    m_ActionName: Player/Melee Attack[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -273,3 +306,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+--- !u!114 &-2898517233979925625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163123339647618832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f648a1c488e67ea4686c31a7a1834bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableMeleeAttacks:
+  - {fileID: 11400000, guid: de1db4b2684080d4c98c005e2314617c, type: 2}
+  availableRangedAttacks:
+  - {fileID: 11400000, guid: 507b5bcd9d874a14494e8b7510ffe6ed, type: 2}
