@@ -12,11 +12,14 @@ public class AttackProjectile : MonoBehaviour
 
     private Vector2 velocity = Vector2.zero;
 
-    public void FireProjectile(float direction)
+    private GameObject attacker;
+
+    public void FireProjectile(float direction, GameObject attacker = null)
     {
         this.direction = direction;
         startingXPosition = transform.position.x;
         velocity.x = this.direction * attackStats.Speed;
+        this.attacker = attacker;
     }
 
     private void Update()
@@ -32,9 +35,10 @@ public class AttackProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.TryGetComponent<Health>(out Health otherHealth) && attackStats.CanAttack(otherHealth))
+        if (other.gameObject.TryGetComponent<Health>(out Health otherHealth) && attackStats.CanAttack(otherHealth, attacker))
         {
-            attackStats.DoDamage(otherHealth);
+            Debug.Log("target hit");
+            attackStats.DoDamage(otherHealth, attacker);
             Destroy(gameObject);
         }
     }

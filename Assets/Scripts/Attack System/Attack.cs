@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public abstract class Attack : ScriptableObject
     [field: SerializeField] public AttackTarget Target { get; private set; } = AttackTarget.All;
     [field: SerializeField] public float Duration { get; private set; } = 0.2f;
 
-    public abstract IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f, Vector2? attackerPosition = null);
+    public abstract IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f, Vector2? attackerPosition = null, GameObject attacker = null);
 
     protected virtual Vector2 GetAttackOrigin(float direction, float attackerWidth, Vector2 attackerPosition)
     {
@@ -18,19 +19,20 @@ public abstract class Attack : ScriptableObject
         return origin;
     }
 
-    public void DoDamage(Health health)
+    public void DoDamage(Health otherHealth, GameObject attacker = null)
     {
-        if (!CanAttack(health))
+        if (!CanAttack(otherHealth, attacker))
         {
             return;
         }
         
-        health.TakeDamage(Damage);
+        otherHealth.TakeDamage(Damage);
     }
 
-    public bool CanAttack(Health health)
+    public bool CanAttack(Health otherHealth, GameObject attacker = null)
     {
-        return !((Target == AttackTarget.Enemies && health is PlayerHealth) /*||
-        (Target == AttackTarget.Players && health is EnemyHealth)*/);
+        return !((Target == AttackTarget.Enemies && otherHealth is PlayerHealth) /*||
+            (Target == AttackTarget.Players && health is EnemyHealth)*/) &&
+               otherHealth.gameObject != attacker;
     }
 }

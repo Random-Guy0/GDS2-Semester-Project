@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1440742671158942160}
   - component: {fileID: 6636351775345419368}
   - component: {fileID: -2898517233979925625}
+  - component: {fileID: 5782404449363472846}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -318,7 +319,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f648a1c488e67ea4686c31a7a1834bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableMeleeAttacks:
+  <MeleeAttacks>k__BackingField:
   - {fileID: 11400000, guid: de1db4b2684080d4c98c005e2314617c, type: 2}
-  availableRangedAttacks:
+  <RangedAttacks>k__BackingField:
   - {fileID: 11400000, guid: 507b5bcd9d874a14494e8b7510ffe6ed, type: 2}
+--- !u!114 &5782404449363472846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163123339647618832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e581a98e9104ef14dbd693548a20be9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAmmo: 20

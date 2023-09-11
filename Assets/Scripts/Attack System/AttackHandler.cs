@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class AttackHandler : MonoBehaviour
 {
-    [SerializeField] private MeleeAttack[] availableMeleeAttacks;
-    [SerializeField] private RangedAttack[] availableRangedAttacks;
+    [field: SerializeField] protected MeleeAttack[] MeleeAttacks { get; private set; }
+    [field: SerializeField] protected RangedAttack[] RangedAttacks { get; private set; }
 
     private Collider2D coll;
 
@@ -13,12 +13,12 @@ public abstract class AttackHandler : MonoBehaviour
 
     public virtual void DoMeleeAttack(int index = 0)
     {
-        DoAttack(availableMeleeAttacks[index]);
+        DoAttack(MeleeAttacks[index]);
     }
 
     public virtual void DoRangedAttack(int index = 0)
     {
-        DoAttack(availableRangedAttacks[index]);
+        DoAttack(RangedAttacks[index]);
     }
 
     protected void DoAttack(Attack attack)
@@ -27,7 +27,7 @@ public abstract class AttackHandler : MonoBehaviour
         {
             float width = GetColliderSize();
             float direction = GetDirection();
-            StartCoroutine(attack.DoAttack(direction, width, transform.position));
+            StartCoroutine(attack.DoAttack(direction, width, transform.position, gameObject));
             StartCoroutine(WaitForAttack(attack.Duration));
         }
     }
