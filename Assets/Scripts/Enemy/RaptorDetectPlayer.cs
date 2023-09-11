@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectPlayer : MonoBehaviour
+public class RaptorDetectPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
     Rigidbody2D rb;
-    float movementSpeed = 1.0f;
+
+    float movementSpeed = 2.0f;
     Vector2 moveDirection;
     Transform target;
 
-
-    void Start(){
+    void Start()
+    {
          rb = GetComponent<Rigidbody2D>();
-         target = GameObject.Find("Player").transform;
-         enabled = false;
-
+        target = GameObject.Find("Player").transform;
+        enabled = false;
+        
     }
+
     void OnBecameInvisible(){
         enabled = false;
         rb.velocity = new Vector2(0, 0);
-
     }
 
     void OnBecameVisible(){
@@ -32,11 +32,13 @@ public class DetectPlayer : MonoBehaviour
     {
         Vector3 direction = (target.position - transform.position).normalized;
         moveDirection = direction;
-        Debug.Log(enabled);
         if(enabled){
-            rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * movementSpeed;
+            rb.velocity = new Vector2(moveDirection.x, 0) * movementSpeed;
         }
         
     }
+
     
 }
+
+
