@@ -33,14 +33,14 @@ public class PlayerAttackHandler : AttackHandler
 
     protected override IEnumerator WaitForAttack(float attackDuration)
     {
-        playerMovement.enabled = false;
+        playerMovement.CanMove = false;
         yield return base.WaitForAttack(attackDuration);
-        playerMovement.enabled = true;
+        playerMovement.CanMove = true;
     }
 
     protected override float GetDirection()
     {
-        float direction = playerMovement.LookDirection;
+        float direction = playerMovement.Direction.x;
         direction = Mathf.Round(direction);
         if (direction == 0f)
         {
