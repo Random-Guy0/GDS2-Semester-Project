@@ -5,6 +5,21 @@ using UnityEngine;
 
 public class PlayerHealth : Health
 {
+    public override int CurrentHealth
+    {
+        get => base.CurrentHealth;
+        protected set
+        {
+            base.CurrentHealth = value;
+            GameManager.Instance.GameplayUI.UpdateHealthUI(value);
+        }
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+    }
+
     public void Heal(int amount)
     {
         CurrentHealth += amount;
@@ -15,11 +30,15 @@ public class PlayerHealth : Health
         }
     }
 
+#if UNITY_EDITOR
+    
     private void OnGUI()
     {
         GUI.Label( new Rect(5f, 5f, 300f, 150f), "Health: " + CurrentHealth.ToString());
 
     }
+    
+#endif
 
     protected override void Die()
     {

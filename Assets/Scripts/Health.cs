@@ -6,9 +6,10 @@ using UnityEngine;
 public abstract class Health : MonoBehaviour
 {
     [SerializeField] protected int maxHealth = 100;
-    public int CurrentHealth { get; protected set; }
 
-    private void Start()
+    public virtual int CurrentHealth { get; protected set; }
+
+    protected virtual void Start()
     {
         CurrentHealth = maxHealth;
     }

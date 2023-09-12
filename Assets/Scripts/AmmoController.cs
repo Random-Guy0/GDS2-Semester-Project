@@ -6,7 +6,17 @@ using UnityEngine;
 public class AmmoController : MonoBehaviour
 {
     [SerializeField] private int maxAmmo = 20;
-    public int AmmoCount { get; private set; }
+    private int _ammoCount;
+
+    public int AmmoCount
+    {
+        get => _ammoCount;
+        private set
+        {
+            _ammoCount = value;
+            GameManager.Instance.GameplayUI.UpdateAmmoUI(value);
+        }
+    }
 
     private void Start()
     {
@@ -39,11 +49,15 @@ public class AmmoController : MonoBehaviour
     {
         return amount <= AmmoCount;
     }
+    
+#if UNITY_EDITOR
 
     private void OnGUI()
     {
         GUI.Label( new Rect(5f, 20f, 300f, 150f), "Ammo: " + AmmoCount.ToString());
     }
+    
+#endif
 
     private void OnTriggerEnter2D(Collider2D other)
     {
