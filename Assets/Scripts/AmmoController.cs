@@ -6,43 +6,43 @@ using UnityEngine;
 public class AmmoController : MonoBehaviour
 {
     [SerializeField] private int maxAmmo = 20;
-    private int ammo;
+    public int AmmoCount { get; private set; }
 
     private void Start()
     {
-        ammo = maxAmmo;
+        AmmoCount = maxAmmo;
     }
 
     private void PickupAmmo(int amount)
     {
-        ammo += amount;
-        if (ammo > maxAmmo)
+        AmmoCount += amount;
+        if (AmmoCount > maxAmmo)
         {
-            ammo = maxAmmo;
+            AmmoCount = maxAmmo;
         }
     }
 
     private bool CanPickupAmmo(int amount)
     {
-        return ammo + amount <= maxAmmo;
+        return AmmoCount + amount <= maxAmmo;
     }
 
     public void UseAmmo(int amount)
     {
         if (CanUseAmmo(amount))
         {
-            ammo -= amount;
+            AmmoCount -= amount;
         }
     }
 
     public bool CanUseAmmo(int amount)
     {
-        return amount <= ammo;
+        return amount <= AmmoCount;
     }
 
     private void OnGUI()
     {
-        GUI.Label( new Rect(5f, 20f, 300f, 150f), "Ammo: " + ammo.ToString());
+        GUI.Label( new Rect(5f, 20f, 300f, 150f), "Ammo: " + AmmoCount.ToString());
     }
 
     private void OnTriggerEnter2D(Collider2D other)
