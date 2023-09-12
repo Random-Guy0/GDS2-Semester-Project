@@ -42,7 +42,7 @@ public class AmmoController : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Label( new Rect(5f, 5f, 300f, 150f), ammo.ToString());
+        GUI.Label( new Rect(5f, 20f, 300f, 150f), "Ammo: " + ammo.ToString());
     }
 
     private void OnTriggerEnter2D(Collider2D other)
