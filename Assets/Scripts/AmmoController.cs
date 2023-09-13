@@ -6,6 +6,7 @@ using UnityEngine;
 public class AmmoController : MonoBehaviour
 {
     [SerializeField] private int maxAmmo = 20;
+    [SerializeField] private int startingAmmo = 5;
     private int _ammoCount;
 
     public int AmmoCount
@@ -20,7 +21,7 @@ public class AmmoController : MonoBehaviour
 
     private void Start()
     {
-        AmmoCount = maxAmmo;
+        AmmoCount = startingAmmo;
     }
 
     private void PickupAmmo(int amount)

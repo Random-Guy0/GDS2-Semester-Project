@@ -36,30 +36,36 @@ public class RaptorDetectPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Left){
+        if (Left)
+        {
             rb.velocity = new Vector2(-1, 0) * movementSpeed;
 
         }
-        else{
-            rb.velocity = new Vector2(1, 0) * movementSpeed;     
+        else
+        {
+            rb.velocity = new Vector2(1, 0) * movementSpeed;
         }
 
         //checks patrol range
-        if(this.transform.position.x > player.position.x + patrolDistance){
+        if (this.transform.position.x > player.position.x + patrolDistance)
+        {
             Left = true;
         }
-        else if(this.transform.position.x < player.position.x - patrolDistance){
+        else if (this.transform.position.x < player.position.x - patrolDistance)
+        {
             Left = false;
         }
-        
+
 
         //check in range
         float currentRange = this.transform.position.x - player.position.x;
-        if(Mathf.Abs(currentRange) < attackRange && Left){
+        if (Mathf.Abs(currentRange) < attackRange && Left)
+        {
             Dive();
         }
-        
-    
+    }
+
+
 
     void Dive()
     {
@@ -78,7 +84,9 @@ public class RaptorDetectPlayer : MonoBehaviour
         // Check if the Raptor has reached the dive destination Y
         
     }
-    
-}
+    public void StopMoving()
+    {
+        rb.velocity = Vector2.zero;
+    }
 }
 

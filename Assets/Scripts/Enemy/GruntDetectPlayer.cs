@@ -40,6 +40,10 @@ public class GruntDetectPlayer : MonoBehaviour
 
         }
     }
-    
+
+    public void StopMoving()
+    {
+        rb.velocity = Vector2.zero;
+    }
     
 }

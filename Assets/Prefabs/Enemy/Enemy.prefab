@@ -189,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   detectPlayerComponent: {fileID: 8831299249130729824}
+  enemyAttackHandler: {fileID: 7525131703454876912}
 --- !u!114 &-397111120770452424
 MonoBehaviour:
   m_ObjectHideFlags: 0
