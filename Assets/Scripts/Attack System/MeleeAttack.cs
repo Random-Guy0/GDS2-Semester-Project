@@ -6,18 +6,15 @@ using UnityEngine;
 public class MeleeAttack : Attack
 {
     [field: SerializeField] public Vector2 HitSize { get; private set; } = Vector2.one;
+    [SerializeField] private GameObject hitTestCubePrefab;
     
     public override IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f, Vector2? attackerPosition = null, GameObject attacker = null)
     {
         Vector2 position = attackerPosition ?? Vector2.zero;
         Vector2 origin = GetAttackOrigin(direction, attackerWidth, position);
         
-#if UNITY_EDITOR
-        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), Color.green, Duration);
-        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x + HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration);
-        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration);
-        Debug.DrawLine(new Vector3(origin.x - HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration);  
-#endif
+        GameObject hitTestCube = Instantiate(hitTestCubePrefab, origin, Quaternion.identity);
+        hitTestCube.transform.localScale = new Vector3(HitSize.x, HitSize.y, 1f);
         
         List<Health> allHits = new List<Health>();
         float currentTime = 0f;
@@ -40,6 +37,7 @@ public class MeleeAttack : Attack
             currentTime += Time.deltaTime;
             yield return null;
         }
+        Destroy(hitTestCube);
     }
 
     protected override Vector2 GetAttackOrigin(float direction, float attackerWidth, Vector2 attackerPosition)
