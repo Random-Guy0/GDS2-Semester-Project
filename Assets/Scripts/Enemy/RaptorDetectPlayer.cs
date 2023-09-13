@@ -11,7 +11,7 @@ public class RaptorDetectPlayer : MonoBehaviour
 
     float movementSpeed = 4.0f;
     Transform player;
-    bool isDiving = false;
+bool isDiving = false;
     Vector2 initialPosition;
     bool Left = true;
 
@@ -19,10 +19,10 @@ public class RaptorDetectPlayer : MonoBehaviour
     {
         initialY = this.transform.position.y;
         rb = GetComponent<Rigidbody2D>();
-        player = GameObject.Find("Player").transform;
+        player = GameManager.Instance.Player.transform;
         enabled = false;
         initialPosition = transform.position;
-        
+
     }
 
     void OnBecameInvisible(){
@@ -55,27 +55,16 @@ public class RaptorDetectPlayer : MonoBehaviour
         
 
         //check in range
-        Debug.Log(this.transform.position - player.position);
         float currentRange = this.transform.position.x - player.position.x;
         if(Mathf.Abs(currentRange) < attackRange && Left){
-            Debug.Log("In dive range");
             Dive();
         }
-        else{
-            isDiving = false;
-        }
-
-        if(!isDiving){
-        }
-    }
-
+        
     
 
     void Dive()
     {
-        isDiving = true;
-
-        // Calculate the dive destination
+       // Calculate the dive destination
         Vector2 diveDestination = new Vector2(player.position.x + 4.0f, player.position.y);
         
         // Move down to the dive destination Y
@@ -84,7 +73,7 @@ public class RaptorDetectPlayer : MonoBehaviour
 
         if(this.transform.position.x < player.position.x - 2.0f){
             Vector2 returnPosition = new Vector2(transform.position.x, initialY);
-            rb.velocity = new Vector2(rb.velocity.x, 1f * movementSpeed);
+            rb.velocity = new Vector2(rb.velocity.x, 0.7f* movementSpeed);
         }
 
         // Check if the Raptor has reached the dive destination Y
@@ -92,5 +81,5 @@ public class RaptorDetectPlayer : MonoBehaviour
     }
     
 }
-
+}
 

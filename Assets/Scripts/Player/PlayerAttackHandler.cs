@@ -41,7 +41,6 @@ public class PlayerAttackHandler : AttackHandler
     protected override float GetDirection()
     {
         float direction = playerMovement.Direction.x;
-        direction = Mathf.Round(direction);
         if (direction == 0f)
         {
             direction = 1f;

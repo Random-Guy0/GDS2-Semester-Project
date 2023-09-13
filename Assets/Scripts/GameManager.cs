@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     
     [field: SerializeField] public GameplayUI GameplayUI { get; private set; }
+    [field: SerializeField] public GameObject Player { get; private set; }
 
     private void Awake()
     {
