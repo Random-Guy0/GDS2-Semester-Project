@@ -9,7 +9,7 @@ public class EnemyHealth : Health
     protected override void Start(){
         base.Start();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-    }        
+    }
 
     //bubble function
     protected override void Die(){
