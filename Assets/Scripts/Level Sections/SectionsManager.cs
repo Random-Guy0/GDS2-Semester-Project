@@ -98,7 +98,7 @@ public class SectionsManager : MonoBehaviour
 
     public void SectionComplete()
     {
-        currentSection = currentSection + 1.0f;
+        currentSection++;
     }
 
     public void Section1()
