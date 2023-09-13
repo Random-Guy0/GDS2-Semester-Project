@@ -16,6 +16,12 @@ public class BubbledEnemy : MonoBehaviour
         
     }
 
+    private void OnEnable()
+    {
+        rb.mass = 0.5f;
+        rb.drag = 2f;
+    }
+
     private void FixedUpdate()
     {
         if (rb.velocity.magnitude > maxSpeed)
