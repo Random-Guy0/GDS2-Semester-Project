@@ -31,8 +31,8 @@ public abstract class Attack : ScriptableObject
 
     public bool CanAttack(Health otherHealth, GameObject attacker = null)
     {
-        return !((Target == AttackTarget.Enemies && otherHealth is PlayerHealth) /*||
-            (Target == AttackTarget.Players && health is EnemyHealth)*/) &&
+        return !((Target == AttackTarget.Enemies && otherHealth is PlayerHealth) ||
+            (Target == AttackTarget.Players && otherHealth is EnemyHealth)) &&
                otherHealth.gameObject != attacker;
     }
 }

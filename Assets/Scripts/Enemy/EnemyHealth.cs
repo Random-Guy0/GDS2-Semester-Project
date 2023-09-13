@@ -2,33 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : Health
 {
     private SpriteRenderer _spriteRenderer;
-    public float maxHealth = 100.0f;
-    public float currentHealth;
 
-    void Start(){
-        currentHealth = maxHealth;
+    protected override void Start(){
+        base.Start();
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }        
 
-    void Update(){
-    }
-
-    public void TakeDamage(float damage){
-        currentHealth -= damage;
-
-        //turn enemy into bubble
-        if(currentHealth <= 0){
-            Bubble();
-        }
-    }
-
     //bubble function
-    public void Bubble(){
+    protected override void Die(){
         _spriteRenderer.color = Color.blue;
-
     }
     
 
