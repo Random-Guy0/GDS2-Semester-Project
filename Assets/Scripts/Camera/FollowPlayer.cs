@@ -11,14 +11,18 @@ public class FollowPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        OnOffSwitch(true);
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        offSwitch = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (offSwitch == false)
+        if (player.transform.position.x <= 0.0f)
+        {
+            OnOffSwitch(true);
+        }
+        else if (offSwitch == false)
         {
             transform.position = new Vector3(player.position.x, 0, -10);
         }
@@ -27,5 +31,14 @@ public class FollowPlayer : MonoBehaviour
     public void OnOffSwitch(bool value)
     {
         offSwitch = value;
+    }
+
+    public void ResetCamPosition()
+    {
+        if (player.transform.position.x >= 0.0f)
+        {
+            transform.position = new Vector3(player.position.x, 0, -10);
+            offSwitch = false;
+        }
     }
 }

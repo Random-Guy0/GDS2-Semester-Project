@@ -15,10 +15,22 @@ public class SectionsManager : MonoBehaviour
     public GameObject section6;
     public FollowPlayer camFollow;
     public GameObject player;
+
+    private bool section1Complete;
+    private bool section2Complete;
+    private bool section3Complete;
+    private bool section4Complete;
+    private bool section5Complete;
+    private bool section6Complete;
     // Start is called before the first frame update
     void Start()
     {
-
+        section1Complete = false;
+        section2Complete = false;
+        section3Complete = false;
+        section4Complete = false;
+        section5Complete = false;
+        section6Complete = false;
 
         
     }
@@ -26,55 +38,67 @@ public class SectionsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Section0();
         if (currentSection == 1)
         {
             Section1();
         }
         else if (currentSection == 2)
         {
+            if (section1Complete == false)
+            {
+                camFollow.ResetCamPosition();
+                section1Complete = true;
+            }
             Section2();
             section1.SetActive(false);
-            mainCamera.transform.position = new Vector3(player.transform.position.x, mainCamera.transform.position.y, mainCamera.transform.position.z);
+            
         }
         else if (currentSection == 3)
         {
+            if (section2Complete == false)
+            {
+                camFollow.ResetCamPosition();
+                section2Complete = true;
+            }
             Section3();
             section2.SetActive(false);
-            mainCamera.transform.position = new Vector3(player.transform.position.x, mainCamera.transform.position.y, mainCamera.transform.position.z);
+
         }
         else if (currentSection == 4)
         {
+            if (section3Complete == false)
+            {
+                camFollow.ResetCamPosition();
+                section3Complete = true;
+            }
             Section4();
             section3.SetActive(false);
-            mainCamera.transform.position = new Vector3(player.transform.position.x, mainCamera.transform.position.y, mainCamera.transform.position.z);
         }
         else if (currentSection == 5)
         {
+            if (section4Complete == false)
+            {
+                camFollow.ResetCamPosition();
+                section4Complete = true;
+            }
             Section5();
             section4.SetActive(false);
-            mainCamera.transform.position = new Vector3(player.transform.position.x, mainCamera.transform.position.y, mainCamera.transform.position.z);
         }
         else if (currentSection == 6)
         {
+            if (section5Complete == false)
+            {
+                camFollow.ResetCamPosition();
+                section5Complete = true;
+            }
             Section6();
             section5.SetActive(false);
-            mainCamera.transform.position = new Vector3(player.transform.position.x, mainCamera.transform.position.y, mainCamera.transform.position.z);
         }
     }
 
-    public void Section0()
+    public void SectionComplete()
     {
-        Vector3 pos = mainCamera.WorldToViewportPoint(section0.transform.position);
-        if (pos.x <= 0.0f)
-        {
-            camFollow.OnOffSwitch(true);
-        }
-
-        if (player.transform.position.x >= 0.5f)
-        {
-            camFollow.OnOffSwitch(false);
-        }
+        currentSection = currentSection + 1.0f;
     }
 
     public void Section1()
@@ -84,8 +108,9 @@ public class SectionsManager : MonoBehaviour
         {
             camFollow.OnOffSwitch(true);
         }
-        
-        if (player.transform.position.x <= 0.5f)
+
+        Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
+        if (playerPos.x <= 0.5f)
         {
             camFollow.OnOffSwitch(false);
         }
@@ -98,7 +123,8 @@ public class SectionsManager : MonoBehaviour
             camFollow.OnOffSwitch(true);
         }
 
-        if (player.transform.position.x <= 0.5f)
+        Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
+        if (playerPos.x <= 0.5f)
         {
             camFollow.OnOffSwitch(false);
         }
@@ -112,7 +138,8 @@ public class SectionsManager : MonoBehaviour
             camFollow.OnOffSwitch(true);
         }
 
-        if (player.transform.position.x <= 0.5f)
+        Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
+        if (playerPos.x <= 0.5f)
         {
             camFollow.OnOffSwitch(false);
         }
@@ -126,7 +153,8 @@ public class SectionsManager : MonoBehaviour
             camFollow.OnOffSwitch(true);
         }
 
-        if (player.transform.position.x <= 0.5f)
+        Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
+        if (playerPos.x <= 0.5f)
         {
             camFollow.OnOffSwitch(false);
         }
@@ -140,7 +168,8 @@ public class SectionsManager : MonoBehaviour
             camFollow.OnOffSwitch(true);
         }
 
-        if (player.transform.position.x <= 0.5f)
+        Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
+        if (playerPos.x <= 0.5f)
         {
             camFollow.OnOffSwitch(false);
         }
@@ -154,7 +183,8 @@ public class SectionsManager : MonoBehaviour
             camFollow.OnOffSwitch(true);
         }
 
-        if (player.transform.position.x <= 0.5f)
+        Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
+        if (playerPos.x <= 0.5f)
         {
             camFollow.OnOffSwitch(false);
         }
