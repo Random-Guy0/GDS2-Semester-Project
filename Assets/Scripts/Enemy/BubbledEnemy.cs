@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class BubbledEnemy : MonoBehaviour
 {
-    [SerializeField] private int bumpDamage = 5;
-    [SerializeField] private float maxSpeed = 10f;
+    [SerializeField] private int bumpDamage = 10;
+    [SerializeField] private float maxSpeed = 15f;
     
     private Rigidbody2D rb;
     

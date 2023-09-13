@@ -7,7 +7,7 @@ public class BubblePusher : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    [SerializeField] private float pushMultiplier = 2.5f;
+    [SerializeField] private float pushMultiplier = 1.25f;
 
     private void Start()
     {
