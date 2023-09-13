@@ -30,8 +30,7 @@ public class GruntDetectPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = (target.position - transform.position).normalized;
-        moveDirection = direction;
+        moveDirection= (target.position - transform.position).normalized;
         if(enabled){
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * movementSpeed;
         }

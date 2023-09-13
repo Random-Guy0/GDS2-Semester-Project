@@ -6,16 +6,19 @@ public class RaptorDetectPlayer : MonoBehaviour
 {
     Rigidbody2D rb;
     float patrolDistance = 7.0f;
+    float attackRange = 7.0f;
+    float initialY;
 
     float movementSpeed = 4.0f;
     Transform player;
     bool isDiving = false;
-    Vector3 initialPosition;
+    Vector2 initialPosition;
     bool Left = true;
 
     void Start()
     {
-         rb = GetComponent<Rigidbody2D>();
+        initialY = this.transform.position.y;
+        rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player").transform;
         enabled = false;
         initialPosition = transform.position;
@@ -34,6 +37,13 @@ public class RaptorDetectPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Left){
+            rb.velocity = new Vector2(-1, 0) * movementSpeed;
+
+        }
+        else{
+            rb.velocity = new Vector2(1, 0) * movementSpeed;     
+        }
 
         //checks patrol range
         if(this.transform.position.x > player.position.x + patrolDistance){
@@ -46,35 +56,40 @@ public class RaptorDetectPlayer : MonoBehaviour
 
         //check in range
         Debug.Log(this.transform.position - player.position);
-
-        //dive down
-        //return to Y pos
-        //patrol
-
-
-
-
+        float currentRange = this.transform.position.x - player.position.x;
+        if(Mathf.Abs(currentRange) < attackRange && Left){
+            Debug.Log("In dive range");
+            Dive();
+        }
+        else{
+            isDiving = false;
+        }
 
         if(!isDiving){
-            Debug.Log(Left);
-            Patrol(Left);
         }
     }
 
     
 
-    void Patrol(bool movingLeft){
-        if(movingLeft){
-            rb.velocity = new Vector2(-1, 0) * movementSpeed;
+    void Dive()
+    {
+        isDiving = true;
 
-        }
-        else{
-            rb.velocity = new Vector2(1, 0) * movementSpeed;     
-        }
+        // Calculate the dive destination
+        Vector2 diveDestination = new Vector2(player.position.x + 4.0f, player.position.y);
         
+        // Move down to the dive destination Y
+        Vector2 moveDirection = (diveDestination - (Vector2)transform.position).normalized;
+        rb.velocity = new Vector2(rb.velocity.x, moveDirection.y * movementSpeed);
 
+        if(this.transform.position.x < player.position.x - 2.0f){
+            Vector2 returnPosition = new Vector2(transform.position.x, initialY);
+            rb.velocity = new Vector2(rb.velocity.x, 1f * movementSpeed);
+        }
+
+        // Check if the Raptor has reached the dive destination Y
+        
     }
-
     
 }
 

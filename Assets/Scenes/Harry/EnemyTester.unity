@@ -484,7 +484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081667699}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 4.41, y: 3.15, z: 0}
+  m_LocalPosition: {x: 9.28, y: 3.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -503,12 +503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6f6d88ba5cc8446b7a521c00d1ff03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialY: 3
-  diveRange: 5
-  diveSpeed: 5
-  returnSpeed: 2
-  diveDepth: 2
-  attackDuration: 2
 --- !u!50 &2081667704
 Rigidbody2D:
   serializedVersion: 4
