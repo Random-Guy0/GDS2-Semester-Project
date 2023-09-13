@@ -14,6 +14,11 @@ public class EnemyHealth : Health
     //bubble function
     protected override void Die(){
         _spriteRenderer.color = Color.blue;
+        if (TryGetComponent<BubbledEnemy>(out BubbledEnemy bubbledEnemy))
+        {
+            bubbledEnemy.enabled = true;
+        }
+        Destroy(this);
     }
     
 

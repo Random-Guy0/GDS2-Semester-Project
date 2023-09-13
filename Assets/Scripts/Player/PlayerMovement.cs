@@ -27,7 +27,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveInput.x != 0f)
         {
-            Direction = moveInput;
+            Direction = new Vector2(Mathf.Round(moveInput.x), Mathf.Round(moveInput.y));
+            Vector3 scale = transform.localScale;
+            scale.x = Direction.x;
+            transform.localScale = scale;
         }
     }
 
