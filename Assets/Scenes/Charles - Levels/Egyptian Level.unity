@@ -975,6 +975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <GameplayUI>k__BackingField: {fileID: 159452525}
+  <Player>k__BackingField: {fileID: 1551076910}
 --- !u!4 &953095033
 Transform:
   m_ObjectHideFlags: 0
