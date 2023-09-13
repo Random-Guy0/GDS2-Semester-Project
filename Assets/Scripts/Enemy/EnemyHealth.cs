@@ -14,7 +14,6 @@ public class EnemyHealth : MonoBehaviour
     }        
 
     void Update(){
-        TakeDamage(1);
     }
 
     public void TakeDamage(float damage){

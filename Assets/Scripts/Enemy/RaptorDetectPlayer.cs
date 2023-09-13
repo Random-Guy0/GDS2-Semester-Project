@@ -5,16 +5,20 @@ using UnityEngine;
 public class RaptorDetectPlayer : MonoBehaviour
 {
     Rigidbody2D rb;
+    float patrolDistance = 7.0f;
 
-    float movementSpeed = 2.0f;
-    Vector2 moveDirection;
-    Transform target;
+    float movementSpeed = 4.0f;
+    Transform player;
+    bool isDiving = false;
+    Vector3 initialPosition;
+    bool Left = true;
 
     void Start()
     {
          rb = GetComponent<Rigidbody2D>();
-        target = GameObject.Find("Player").transform;
+        player = GameObject.Find("Player").transform;
         enabled = false;
+        initialPosition = transform.position;
         
     }
 
@@ -30,12 +34,45 @@ public class RaptorDetectPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = (target.position - transform.position).normalized;
-        moveDirection = direction;
-        if(enabled){
-            rb.velocity = new Vector2(moveDirection.x, 0) * movementSpeed;
+
+        //checks patrol range
+        if(this.transform.position.x > player.position.x + patrolDistance){
+            Left = true;
+        }
+        else if(this.transform.position.x < player.position.x - patrolDistance){
+            Left = false;
         }
         
+
+        //check in range
+        Debug.Log(this.transform.position - player.position);
+
+        //dive down
+        //return to Y pos
+        //patrol
+
+
+
+
+
+        if(!isDiving){
+            Debug.Log(Left);
+            Patrol(Left);
+        }
+    }
+
+    
+
+    void Patrol(bool movingLeft){
+        if(movingLeft){
+            rb.velocity = new Vector2(-1, 0) * movementSpeed;
+
+        }
+        else{
+            rb.velocity = new Vector2(1, 0) * movementSpeed;     
+        }
+        
+
     }
 
     
