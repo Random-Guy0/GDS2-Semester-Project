@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  detectPlayerComponent: {fileID: 4005161209498471027}
 --- !u!60 &8267749076261375991
 PolygonCollider2D:
   m_ObjectHideFlags: 0
