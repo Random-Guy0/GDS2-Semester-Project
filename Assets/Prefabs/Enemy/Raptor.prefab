@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 4005161209498471027}
   - component: {fileID: 4641396632519100213}
   - component: {fileID: 8267749076261375991}
+  - component: {fileID: 2580171010296751319}
+  - component: {fileID: 6840455222560918574}
+  - component: {fileID: 741981524120769758}
   m_Layer: 0
   m_Name: Raptor
   m_TagString: Untagged
@@ -140,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  detectPlayerComponent: {fileID: 4005161209498471027}
 --- !u!60 &8267749076261375991
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -188,3 +192,45 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &2580171010296751319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613337139579968509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df609f3c20131048a697e18d1921f39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushMultiplier: 1.25
+--- !u!114 &6840455222560918574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613337139579968509}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74cb465be9c6964c801f6ff62492466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bumpDamage: 10
+  maxSpeed: 15
+--- !u!114 &741981524120769758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613337139579968509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a881c200effc624285aa82fb8791e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MeleeAttacks>k__BackingField:
+  - {fileID: 11400000, guid: dc6d95cb9f7c9a5429ce4e073c95a339, type: 2}
+  <RangedAttacks>k__BackingField: []

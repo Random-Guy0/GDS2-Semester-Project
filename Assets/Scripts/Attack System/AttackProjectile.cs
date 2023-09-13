@@ -32,12 +32,11 @@ public class AttackProjectile : MonoBehaviour
 
         transform.position += (Vector3)velocity * Time.deltaTime;
     }
-
-    private void OnCollisionEnter2D(Collision2D other)
+    
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.TryGetComponent<Health>(out Health otherHealth) && attackStats.CanAttack(otherHealth, attacker))
         {
-            Debug.Log("target hit");
             attackStats.DoDamage(otherHealth, attacker);
             Destroy(gameObject);
         }

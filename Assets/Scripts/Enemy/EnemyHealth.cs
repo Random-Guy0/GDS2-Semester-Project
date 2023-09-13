@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : Health
 {
     private SpriteRenderer _spriteRenderer;
+    [SerializeField] private MonoBehaviour detectPlayerComponent;
 
     protected override void Start(){
         base.Start();
@@ -18,6 +19,7 @@ public class EnemyHealth : Health
         {
             bubbledEnemy.enabled = true;
         }
+        Destroy(detectPlayerComponent);
         Destroy(this);
     }
     
