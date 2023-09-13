@@ -5,8 +5,6 @@ using UnityEngine;
 public class EnemyHealth : Health
 {
     private SpriteRenderer _spriteRenderer;
-    private GruntDetectPlayer detectPlayerComponent;
-    
 
     protected override void Start(){
         base.Start();
