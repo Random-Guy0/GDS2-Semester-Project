@@ -10,22 +10,29 @@ public class GruntAttackHandler : AttackHandler
 
     void Start(){
          rb = GetComponent<Rigidbody2D>();
-         target = GameObject.Find("Player").transform;
-         enabled = false;
+         target = GameManager.Instance.Player.transform;
+    }
+
+    void Update(){
+        Vector2 moveDirection = (target.position - transform.position).normalized;
+       
+        if(Mathf.Abs(target.position.x - transform.position.x) < 1.5){
+            DoMeleeAttack();
+        }
+        
+        
 
     }
     // Start is called before the first frame update
-    public void DoMeleeAttack(){
-       DoMeleeAttack();
-    }
+
     protected override float GetDirection()
     {
         float direction;
         if(this.transform.position.x - target.position.x < 0){
-            direction = -1.0f;
+            direction = 1.0f;
         }
         else{
-            direction = 1.0f;
+            direction = -1.0f;
         }
         return direction;
     }

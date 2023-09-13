@@ -13,7 +13,7 @@ public class GruntDetectPlayer : MonoBehaviour
 
     void Start(){
          rb = GetComponent<Rigidbody2D>();
-         target = GameObject.Find("Player").transform;
+         target = GameManager.Instance.Player.transform;
          enabled = false;
 
     }
@@ -39,10 +39,6 @@ public class GruntDetectPlayer : MonoBehaviour
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * movementSpeed;
 
         }
-        
-
-        
-        
     }
     
     

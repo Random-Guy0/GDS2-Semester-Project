@@ -198,5 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36daf47bc1fc0cf4b8b83e6214abf0be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MeleeAttacks>k__BackingField: []
+  <MeleeAttacks>k__BackingField:
+  - {fileID: 11400000, guid: c1a3c638dd1a0ce48b41a7362b7dde56, type: 2}
   <RangedAttacks>k__BackingField: []

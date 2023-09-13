@@ -19,7 +19,7 @@ bool isDiving = false;
     {
         initialY = this.transform.position.y;
         rb = GetComponent<Rigidbody2D>();
-        player = GameObject.Find("Player").transform;
+        player = GameManager.Instance.Player.transform;
         enabled = false;
         initialPosition = transform.position;
 
