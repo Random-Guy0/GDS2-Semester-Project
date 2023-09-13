@@ -11,7 +11,6 @@ public class RaptorDetectPlayer : MonoBehaviour
 
     float movementSpeed = 4.0f;
     Transform player;
-bool isDiving = false;
     Vector2 initialPosition;
     bool Left = true;
 

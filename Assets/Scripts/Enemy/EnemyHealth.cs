@@ -5,10 +5,18 @@ using UnityEngine;
 public class EnemyHealth : Health
 {
     private SpriteRenderer _spriteRenderer;
+    private GruntDetectPlayer detectPlayerComponent;
+    
 
     protected override void Start(){
         base.Start();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        try{
+            detectPlayerComponent = GetComponent<GruntDetectPlayer>();
+        }
+        catch{
+            Debug.Log("No component");
+        }
     }        
 
     //bubble function
@@ -18,6 +26,7 @@ public class EnemyHealth : Health
         {
             bubbledEnemy.enabled = true;
         }
+        Destroy(detectPlayerComponent);
         Destroy(this);
     }
     

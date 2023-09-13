@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 2980102513536050860}
   - component: {fileID: 9102721864597918552}
   - component: {fileID: 5715400789707310663}
-  - component: {fileID: -5317620711006242790}
+  - component: {fileID: -397111120770452424}
+  - component: {fileID: 3599308516847529483}
+  - component: {fileID: 7525131703454876912}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -186,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
---- !u!114 &-5317620711006242790
+--- !u!114 &-397111120770452424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,7 +197,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 205769703443517595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36daf47bc1fc0cf4b8b83e6214abf0be, type: 3}
+  m_Script: {fileID: 11500000, guid: 7df609f3c20131048a697e18d1921f39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushMultiplier: 1.25
+--- !u!114 &3599308516847529483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205769703443517595}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74cb465be9c6964c801f6ff62492466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bumpDamage: 10
+  maxSpeed: 15
+--- !u!114 &7525131703454876912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205769703443517595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a881c200effc624285aa82fb8791e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <MeleeAttacks>k__BackingField:

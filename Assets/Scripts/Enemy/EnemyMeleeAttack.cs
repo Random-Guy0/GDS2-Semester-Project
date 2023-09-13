@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class GruntAttackHandler : AttackHandler
+public class EnemyAttackHandler : AttackHandler
 {
     Rigidbody2D rb;
     Transform target;
@@ -16,12 +16,9 @@ public class GruntAttackHandler : AttackHandler
     void Update(){
         Vector2 moveDirection = (target.position - transform.position).normalized;
        
-        if(Mathf.Abs(target.position.x - transform.position.x) < 1.5){
+        if(Mathf.Abs((target.position.x - transform.position.x)) < 1.5 && Mathf.Abs((target.position.y - transform.position.y)) < 1.0f){
             DoMeleeAttack();
         }
-        
-        
-
     }
     // Start is called before the first frame update
 

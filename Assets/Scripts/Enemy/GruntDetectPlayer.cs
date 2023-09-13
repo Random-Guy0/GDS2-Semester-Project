@@ -32,7 +32,7 @@ public class GruntDetectPlayer : MonoBehaviour
     {
         moveDirection = (target.position - transform.position).normalized;
        
-        if(Mathf.Abs(target.position.x - transform.position.x) < 1.5){
+        if(Mathf.Abs(target.position.x - transform.position.x) < 1.0f){
             rb.velocity = new Vector2(0, 0);
         }
         else{
