@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2580171010296751319}
   - component: {fileID: 6840455222560918574}
   - component: {fileID: 741981524120769758}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Raptor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &4351284769765697336
 SpriteRenderer:
@@ -117,7 +117,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4005161209498471027
 MonoBehaviour:
   m_ObjectHideFlags: 0

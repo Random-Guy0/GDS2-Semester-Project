@@ -5,15 +5,11 @@ using UnityEngine;
 public class SectionEnemyManager : MonoBehaviour
 {
 
-    private List<GameObject> enemy;
-    private SectionsManager sectionManager;
+    public SectionsManager sectionManager;
     private float enemyCount;
     // Start is called before the first frame update
     void Start()
     {
-        enemy = new List<GameObject>();
-        sectionManager = GameObject.FindGameObjectWithTag("LevelSectionManager").GetComponent<SectionsManager>();
-        enemyCount = enemy.Count;
     }
 
     // Update is called once per frame
@@ -23,12 +19,13 @@ public class SectionEnemyManager : MonoBehaviour
         {
             Debug.Log("All Enemies Defeated");
             sectionManager.SectionComplete();
+            gameObject.SetActive(false);
         }
     }
 
-    public void SetNewEnemy(GameObject newEnemy)
+    public void SetNewEnemy()
     {
-        enemy.Add(newEnemy);
+        ++enemyCount;
         Debug.Log("Enemy Added to Section Manager of " + gameObject.name + " Total Enemies now: " + enemyCount);
     }
 

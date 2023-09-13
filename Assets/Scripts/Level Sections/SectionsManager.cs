@@ -22,6 +22,14 @@ public class SectionsManager : MonoBehaviour
     private bool section4Complete;
     private bool section5Complete;
     private bool section6Complete;
+
+    public GameObject section1Manager;
+    public GameObject section2Manager;
+    public GameObject section3Manager;
+    public GameObject section4Manager;
+    public GameObject section5Manager;
+    public GameObject section6Manager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +54,7 @@ public class SectionsManager : MonoBehaviour
         {
             if (section1Complete == false)
             {
+                section2Manager.SetActive(true);
                 camFollow.ResetCamPosition();
                 section1Complete = true;
             }
@@ -57,6 +66,7 @@ public class SectionsManager : MonoBehaviour
         {
             if (section2Complete == false)
             {
+                section3Manager.SetActive(true);
                 camFollow.ResetCamPosition();
                 section2Complete = true;
             }
@@ -68,6 +78,7 @@ public class SectionsManager : MonoBehaviour
         {
             if (section3Complete == false)
             {
+                section4Manager.SetActive(true);
                 camFollow.ResetCamPosition();
                 section3Complete = true;
             }
@@ -78,6 +89,7 @@ public class SectionsManager : MonoBehaviour
         {
             if (section4Complete == false)
             {
+                section5Manager.SetActive(true);
                 camFollow.ResetCamPosition();
                 section4Complete = true;
             }
@@ -88,6 +100,7 @@ public class SectionsManager : MonoBehaviour
         {
             if (section5Complete == false)
             {
+                section6Manager.SetActive(true);
                 camFollow.ResetCamPosition();
                 section5Complete = true;
             }
@@ -100,6 +113,8 @@ public class SectionsManager : MonoBehaviour
     {
         currentSection++;
     }
+
+
 
     public void Section1()
     {

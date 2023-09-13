@@ -12,7 +12,7 @@ public class EnemyHealth : Health
         base.Start();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         enemySectionManager = GetComponentInParent<SectionEnemyManager>();
-        enemySectionManager.SetNewEnemy(gameObject);
+        enemySectionManager.SetNewEnemy();
     }        
 
     //bubble function

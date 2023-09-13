@@ -26,6 +26,7 @@ public class FollowPlayer : MonoBehaviour
         {
             transform.position = new Vector3(player.position.x, 0, -10);
         }
+        OnOffSwitch(false);
     }
 
     public void OnOffSwitch(bool value)
