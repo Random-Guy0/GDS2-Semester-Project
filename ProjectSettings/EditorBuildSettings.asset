@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu/MainMenuStart.unity
+    guid: b41bf642afb9ebb468a84684b0176a0d
+  - enabled: 1
+    path: Assets/Scenes/MainMenu/MainMenuLevelSelect.unity
+    guid: a2ee501f12243ba43a4f7a89b6df3ca5
+  - enabled: 1
     path: Assets/Scenes/Charles - Levels/Egyptian Level.unity
     guid: 083598c1e8b252844906a255d32edf6d
   m_configObjects: {}
