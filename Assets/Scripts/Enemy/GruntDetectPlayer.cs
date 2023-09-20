@@ -6,20 +6,22 @@ public class GruntDetectPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody2D rb;
-    float movementSpeed = 1.0f;
-    Vector2 moveDirection;
-    Transform target;
+    private float speed = 2.0f;
+    private float chaseDistance = 15.0f;
+    private float stopDistance = 1.0f;
+    public GameObject target;
+    private float targetDistance;
 
 
     void Start(){
          rb = GetComponent<Rigidbody2D>();
-         target = GameManager.Instance.Player.transform;
+         target = GameManager.Instance.Player;
          enabled = false;
 
     }
     void OnBecameInvisible(){
         enabled = false;
-        rb.velocity = new Vector2(0, 0);
+        rb.velocity = Vector2.zero;
 
     }
 
@@ -30,15 +32,25 @@ public class GruntDetectPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveDirection = (target.position - transform.position).normalized;
-       
-        if(Mathf.Abs(target.position.x - transform.position.x) < 1.0f){
-            rb.velocity = new Vector2(0, 0);
+       targetDistance = Vector2.Distance(transform.position, target.transform.position);
+       if(targetDistance < chaseDistance && targetDistance > stopDistance){
+        ChasePlayer();
+       }
+       else{
+        StopMoving();
+       }
+    }
+
+    private void ChasePlayer(){
+        if(transform.position.x < target.transform.position.x){
+            GetComponent<SpriteRenderer>().flipX = true;
         }
         else{
-            rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * movementSpeed;
-
+            GetComponent<SpriteRenderer>().flipX = false;
         }
+
+    transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+
     }
 
     public void StopMoving()
