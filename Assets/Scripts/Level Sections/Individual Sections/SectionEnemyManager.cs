@@ -35,4 +35,6 @@ public class SectionEnemyManager : MonoBehaviour
         enemyCount--;
         Debug.Log("Enemy Count for Section " + gameObject.name + "is now: " + enemyCount);
     }
+
+
 }

@@ -8,6 +8,7 @@ public class FollowPlayer : MonoBehaviour
     private bool offSwitch;
 
     private Transform player;
+    public float cameraSpeed = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +39,15 @@ public class FollowPlayer : MonoBehaviour
     {
         if (player.transform.position.x >= 0.0f)
         {
-            transform.position = new Vector3(player.position.x, 0, -10);
+            StartCoroutine(CamReFollow());
             offSwitch = false;
         }
+    }
+
+    IEnumerator CamReFollow()
+    {
+        
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, 0, -10), cameraSpeed * Time.deltaTime);
+        yield return null;
     }
 }
