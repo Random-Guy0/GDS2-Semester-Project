@@ -24,7 +24,7 @@ public class AmmoController : MonoBehaviour
         AmmoCount = startingAmmo;
     }
 
-    private void PickupAmmo(int amount)
+    public void PickupAmmo(int amount)
     {
         AmmoCount += amount;
         if (AmmoCount > maxAmmo)
@@ -59,13 +59,4 @@ public class AmmoController : MonoBehaviour
     }
     
 #endif
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.TryGetComponent<AmmoPickup>(out AmmoPickup ammoPickup) && CanPickupAmmo(ammoPickup.AmmoAmount))
-        {
-            PickupAmmo(ammoPickup.AmmoAmount);
-            Destroy(ammoPickup.gameObject);
-        }
-    }
 }
