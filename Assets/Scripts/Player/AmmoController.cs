@@ -22,6 +22,7 @@ public class AmmoController : MonoBehaviour
     private void Start()
     {
         AmmoCount = startingAmmo;
+        GameManager.Instance.GameplayUI.SetInitialAmmoUI(AmmoCount, maxAmmo);
     }
 
     public void PickupAmmo(int amount)

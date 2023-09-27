@@ -18,6 +18,7 @@ public class PlayerHealth : Health
     protected override void Start()
     {
         base.Start();
+        GameManager.Instance.GameplayUI.SetInitialHealthUI(CurrentHealth, maxHealth);
     }
 
     public void Heal(int amount)
