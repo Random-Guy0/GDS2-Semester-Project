@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8873605877538084154}
   - component: {fileID: 4084306337204938366}
-  - component: {fileID: 3405207165265552416}
   - component: {fileID: 4323920200295763920}
   m_Layer: 0
-  m_Name: Ammo Pickup
+  m_Name: Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0.532876, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,19 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3405207165265552416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5852193360889357611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dc9f2edef3346948b0beb3f4af6c6c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <AmmoAmount>k__BackingField: 3
 --- !u!61 &4323920200295763920
 BoxCollider2D:
   m_ObjectHideFlags: 0
