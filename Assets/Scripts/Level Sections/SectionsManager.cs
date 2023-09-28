@@ -5,51 +5,54 @@ using UnityEngine;
 public class SectionsManager : MonoBehaviour
 {
     public Camera mainCamera;
-    public float currentSection = 1;
-    public GameObject section0;
-    public GameObject section1;
-    public GameObject section2;
-    public GameObject section3;
-    public GameObject section4;
-    public GameObject section5;
-    public GameObject section6;
+    public int currentSection = 0;
     public FollowPlayer camFollow;
     public GameObject player;
 
-    private bool section1Complete;
-    private bool section2Complete;
-    private bool section3Complete;
-    private bool section4Complete;
-    private bool section5Complete;
-    private bool section6Complete;
+    public List<GameObject> section = new List<GameObject>();
 
-    public GameObject section1Manager;
-    public GameObject section2Manager;
-    public GameObject section3Manager;
-    public GameObject section4Manager;
-    public GameObject section5Manager;
-    public GameObject section6Manager;
+    private List<bool> sectionComplete = new List<bool>();
+
+    public List<SectionEnemyManager> sectionsManagers = new List<SectionEnemyManager>();
 
     // Start is called before the first frame update
     void Start()
     {
-        section1Complete = false;
-        section2Complete = false;
-        section3Complete = false;
-        section4Complete = false;
-        section5Complete = false;
-        section6Complete = false;
+        for (int i = 0; i < sectionsManagers.Count; i++)
+        {
+            sectionComplete.Add(false);
+        }
 
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentSection == 1)
+        if (currentSection == 0)
         {
-            Section1();
+            SectionRunTime();
+            Debug.Log("currentSection = " + currentSection);
         }
+        else
+        {
+            Debug.Log("currentSection = " + currentSection);
+            int preSection = currentSection - 1;
+            if (sectionComplete[currentSection - 1] == false)
+            {
+                sectionsManagers[currentSection].gameObject.SetActive(true);
+                camFollow.ResetCamPosition();
+                sectionComplete[currentSection - 1] = true;
+            }
+            SectionRunTime();
+            section[currentSection - 1].gameObject.SetActive(false);
+        }
+
+        //New Code
+
+
+        /*
+        // Old Code
         else if (currentSection == 2)
         {
             if (section1Complete == false)
@@ -107,6 +110,7 @@ public class SectionsManager : MonoBehaviour
             Section6();
             section5.SetActive(false);
         }
+        */
     }
 
     public void SectionComplete()
@@ -116,6 +120,24 @@ public class SectionsManager : MonoBehaviour
 
 
 
+    //New Code
+    public void SectionRunTime()
+    {
+        Vector3 pos = mainCamera.WorldToViewportPoint(section[currentSection].transform.position);
+        if (pos.x <= 1.0f)
+        {
+            camFollow.OnOffSwitch(true);
+        }
+
+        Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
+        if (playerPos.x <= 0.5f)
+        {
+            camFollow.OnOffSwitch(false);
+        }
+    }
+
+    /*
+    //Old Code
     public void Section1()
     {
         Vector3 pos = mainCamera.WorldToViewportPoint(section1.transform.position);
@@ -204,4 +226,5 @@ public class SectionsManager : MonoBehaviour
             camFollow.OnOffSwitch(false);
         }
     }
+    */
 }
