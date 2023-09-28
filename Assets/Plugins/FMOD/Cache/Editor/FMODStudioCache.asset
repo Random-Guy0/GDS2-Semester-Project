@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FMODAssets/BubbleBlastersGDS2/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638312346446239922
+  lastModified: 638314969047271011
   FileSizes:
   - Name: 
     Value: 802
@@ -35,7 +35,7 @@ MonoBehaviour:
   Path: FMODAssets/BubbleBlastersGDS2/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638312346446229951
+  lastModified: 638314969047271011
   FileSizes: []
   Exists: 1
 --- !u!114 &-986253304778917112
@@ -133,7 +133,7 @@ MonoBehaviour:
   - {fileID: -1344366425917512781}
   StringsBanks:
   - {fileID: -4312923034855001512}
-  cacheTime: 638312346446239922
+  cacheTime: 638314969047271011
   cacheVersion: 131607
 --- !u!114 &5998669792068415455
 MonoBehaviour:

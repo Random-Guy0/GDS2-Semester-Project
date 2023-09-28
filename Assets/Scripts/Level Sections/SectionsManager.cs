@@ -18,28 +18,22 @@ public class SectionsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < sectionsManagers.Count; i++)
-        {
+        for (int i = 0; i < sectionsManagers.Count; i++) {
             sectionComplete.Add(false);
         }
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentSection == 0)
-        {
+        if (currentSection == 0) {
             SectionRunTime();
             Debug.Log("currentSection = " + currentSection);
         }
-        else
-        {
+        else {
             Debug.Log("currentSection = " + currentSection);
             int preSection = currentSection - 1;
-            if (sectionComplete[currentSection - 1] == false)
-            {
+            if (sectionComplete[currentSection - 1] == false) {
                 sectionsManagers[currentSection].gameObject.SetActive(true);
                 camFollow.ResetCamPosition();
                 sectionComplete[currentSection - 1] = true;
@@ -47,70 +41,6 @@ public class SectionsManager : MonoBehaviour
             SectionRunTime();
             section[currentSection - 1].gameObject.SetActive(false);
         }
-
-        //New Code
-
-
-        /*
-        // Old Code
-        else if (currentSection == 2)
-        {
-            if (section1Complete == false)
-            {
-                section2Manager.SetActive(true);
-                camFollow.ResetCamPosition();
-                section1Complete = true;
-            }
-            Section2();
-            section1.SetActive(false);
-            
-        }
-        else if (currentSection == 3)
-        {
-            if (section2Complete == false)
-            {
-                section3Manager.SetActive(true);
-                camFollow.ResetCamPosition();
-                section2Complete = true;
-            }
-            Section3();
-            section2.SetActive(false);
-
-        }
-        else if (currentSection == 4)
-        {
-            if (section3Complete == false)
-            {
-                section4Manager.SetActive(true);
-                camFollow.ResetCamPosition();
-                section3Complete = true;
-            }
-            Section4();
-            section3.SetActive(false);
-        }
-        else if (currentSection == 5)
-        {
-            if (section4Complete == false)
-            {
-                section5Manager.SetActive(true);
-                camFollow.ResetCamPosition();
-                section4Complete = true;
-            }
-            Section5();
-            section4.SetActive(false);
-        }
-        else if (currentSection == 6)
-        {
-            if (section5Complete == false)
-            {
-                section6Manager.SetActive(true);
-                camFollow.ResetCamPosition();
-                section5Complete = true;
-            }
-            Section6();
-            section5.SetActive(false);
-        }
-        */
     }
 
     public void SectionComplete()
@@ -118,23 +48,82 @@ public class SectionsManager : MonoBehaviour
         currentSection++;
     }
 
-
-
-    //New Code
     public void SectionRunTime()
     {
         Vector3 pos = mainCamera.WorldToViewportPoint(section[currentSection].transform.position);
-        if (pos.x <= 1.0f)
-        {
+        if (pos.x <= 1.0f) {
             camFollow.OnOffSwitch(true);
         }
-
         Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
-        if (playerPos.x <= 0.5f)
-        {
+        if (playerPos.x <= 0.5f) {
             camFollow.OnOffSwitch(false);
         }
     }
+
+
+    //New Code
+
+
+    /*
+    // Old Code
+    else if (currentSection == 2)
+    {
+        if (section1Complete == false)
+        {
+            section2Manager.SetActive(true);
+            camFollow.ResetCamPosition();
+            section1Complete = true;
+        }
+        Section2();
+        section1.SetActive(false);
+
+    }
+    else if (currentSection == 3)
+    {
+        if (section2Complete == false)
+        {
+            section3Manager.SetActive(true);
+            camFollow.ResetCamPosition();
+            section2Complete = true;
+        }
+        Section3();
+        section2.SetActive(false);
+
+    }
+    else if (currentSection == 4)
+    {
+        if (section3Complete == false)
+        {
+            section4Manager.SetActive(true);
+            camFollow.ResetCamPosition();
+            section3Complete = true;
+        }
+        Section4();
+        section3.SetActive(false);
+    }
+    else if (currentSection == 5)
+    {
+        if (section4Complete == false)
+        {
+            section5Manager.SetActive(true);
+            camFollow.ResetCamPosition();
+            section4Complete = true;
+        }
+        Section5();
+        section4.SetActive(false);
+    }
+    else if (currentSection == 6)
+    {
+        if (section5Complete == false)
+        {
+            section6Manager.SetActive(true);
+            camFollow.ResetCamPosition();
+            section5Complete = true;
+        }
+        Section6();
+        section5.SetActive(false);
+    }
+    */
 
     /*
     //Old Code
