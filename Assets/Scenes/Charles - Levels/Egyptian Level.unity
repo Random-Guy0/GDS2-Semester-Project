@@ -1639,22 +1639,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1369598279}
-  currentSection: 1
-  section0: {fileID: 277564561}
-  section1: {fileID: 633416291}
-  section2: {fileID: 1027674810}
-  section3: {fileID: 666984812}
-  section4: {fileID: 490156403}
-  section5: {fileID: 673585110}
-  section6: {fileID: 1026880963}
+  currentSection: 0
   camFollow: {fileID: 1369598281}
   player: {fileID: 1551076910}
-  section1Manager: {fileID: 1275992084}
-  section2Manager: {fileID: 90485959}
-  section3Manager: {fileID: 1833327712}
-  section4Manager: {fileID: 84980379}
-  section5Manager: {fileID: 156770144}
-  section6Manager: {fileID: 1370963888}
+  section:
+  - {fileID: 633416291}
+  - {fileID: 1027674810}
+  - {fileID: 666984812}
+  - {fileID: 490156403}
+  - {fileID: 673585110}
+  - {fileID: 1026880963}
+  - {fileID: 277564561}
+  sectionsManagers:
+  - {fileID: 1275992086}
+  - {fileID: 90485961}
+  - {fileID: 1833327714}
+  - {fileID: 84980381}
+  - {fileID: 156770146}
+  - {fileID: 1370963890}
 --- !u!1001 &950246138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2782,6 +2784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3e31a18c9cde74ab5da0e35a563fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraSpeed: 1
 --- !u!114 &1369598282
 MonoBehaviour:
   m_ObjectHideFlags: 0
