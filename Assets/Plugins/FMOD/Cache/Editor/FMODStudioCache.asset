@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: FMODAssets/BubbleBlastersGDS2/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638314969047271011
+  lastModified: 638315017669392369
   FileSizes:
   - Name: 
-    Value: 802
+    Value: 834
   Exists: 1
 --- !u!114 &-1344366425917512781
 MonoBehaviour:
@@ -35,7 +35,7 @@ MonoBehaviour:
   Path: FMODAssets/BubbleBlastersGDS2/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638314969047271011
+  lastModified: 638315017669382396
   FileSizes: []
   Exists: 1
 --- !u!114 &-986253304778917112
@@ -128,13 +128,41 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 5998669792068415455}
   - {fileID: -973930952925679699}
+  - {fileID: 2091676306145330828}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1344366425917512781}
   StringsBanks:
   - {fileID: -4312923034855001512}
-  cacheTime: 638314969047271011
+  cacheTime: 638315017669392369
   cacheVersion: 131607
+--- !u!114 &2091676306145330828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TestEvent3
+  m_EditorClassIdentifier: 
+  Path: event:/TestEvent3
+  Guid:
+    Data1: -161157144
+    Data2: 1333482971
+    Data3: 1370992827
+    Data4: 1243224566
+  Banks:
+  - {fileID: -1344366425917512781}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2808
 --- !u!114 &5998669792068415455
 MonoBehaviour:
   m_ObjectHideFlags: 0

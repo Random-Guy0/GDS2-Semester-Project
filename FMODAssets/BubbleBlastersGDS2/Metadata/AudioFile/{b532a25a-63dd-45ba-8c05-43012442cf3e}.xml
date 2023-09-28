@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b532a25a-63dd-45ba-8c05-43012442cf3e}">
+		<property name="assetPath">
+			<value>LOUD_BUZZER.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.8079999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d684575b-bb81-4f25-bc82-5953703e34cf}</destination>
+		</relationship>
+	</object>
+</objects>
