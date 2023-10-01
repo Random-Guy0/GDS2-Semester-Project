@@ -8,7 +8,7 @@ public class BubbledEnemy : MonoBehaviour
 {
     public int PopDamage { get; set; }
     [SerializeField] private float maxSpeed = 15f;
-    [SerializeField] private float popRadius = 1.5f;
+    [SerializeField] private float popRadius = 1.25f;
     [SerializeField] private float timeToDisappear = 2.5f;
 
     private Coroutine disappearCoroutine;
@@ -46,7 +46,7 @@ public class BubbledEnemy : MonoBehaviour
     {
         if (other.TryGetComponent<EnemyHealth>(out EnemyHealth enemyHealth) && enemyHealth.CurrentHealth > 0 && !popped)
         {
-            RaycastHit2D[] allHits = Physics2D.CircleCastAll(transform.position, popRadius, Vector2.zero);
+            RaycastHit2D[] allHits = Physics2D.CircleCastAll(transform.position, popRadius * transform.localScale.magnitude, Vector2.zero);
             foreach (RaycastHit2D hit in allHits)
             {
                 if (hit.transform.TryGetComponent<EnemyHealth>(out EnemyHealth otherHealth))

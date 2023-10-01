@@ -146,6 +146,7 @@ MonoBehaviour:
   enemyRigidbody: {fileID: 7232158696684844300}
   enemyCollider: {fileID: 8267749076261375991}
   bubblePrefab: {fileID: 1446682404955272071, guid: 2727dd07c18a6f64e92d3bb149721607, type: 3}
+  bubbleScale: 1.5
 --- !u!60 &8267749076261375991
 PolygonCollider2D:
   m_ObjectHideFlags: 0

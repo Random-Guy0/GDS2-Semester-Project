@@ -36,6 +36,7 @@ public class EnemyHealth : Health
         BubbledEnemy bubble = Instantiate(bubblePrefab, transform.position, Quaternion.identity);
         transform.parent = bubble.transform;
         bubble.transform.localScale = Vector2.one * bubbleScale;
+        transform.localScale = Vector2.one / bubbleScale;
         bubble.PopDamage = Mathf.CeilToInt(maxHealth * 0.25f);
         bubble.enemySprite = _spriteRenderer;
         Vector2 directionToPlayer = transform.position - GameManager.Instance.Player.transform.position;
