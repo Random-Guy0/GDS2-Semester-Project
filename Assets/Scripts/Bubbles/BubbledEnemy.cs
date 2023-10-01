@@ -64,7 +64,7 @@ public class BubbledEnemy : MonoBehaviour
         spriteRenderer.enabled = false;
         enemySprite.color = Color.red;
         rb.velocity = Vector2.zero;
-        rb.gravityScale = 1f;
+        rb.gravityScale = 2.5f;
         popped = true;
     }
 
