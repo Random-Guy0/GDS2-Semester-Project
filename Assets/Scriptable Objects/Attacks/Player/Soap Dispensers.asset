@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 5
   <Target>k__BackingField: 0
-  <Duration>k__BackingField: 0.1
+  <Duration>k__BackingField: 0.3
   <HitSize>k__BackingField: {x: 0.75, y: 0.75}
   hitTestCubePrefab: {fileID: 4575823049351085360, guid: 8b96204e0e13731469bf0b1224acdcb2, type: 3}
