@@ -8,6 +8,10 @@ public class EnemyHealth : Health
     private SectionEnemyManager enemySectionManager;
     [SerializeField] private MonoBehaviour detectPlayerComponent;
     [SerializeField] private EnemyAttackHandler enemyAttackHandler;
+    [SerializeField] private Rigidbody2D enemyRigidbody;
+    [SerializeField] private Collider2D enemyCollider;
+    [SerializeField] private BubbledEnemy bubblePrefab;
+    [SerializeField] private float bubbleScale = 1f;
 
     protected override void Start(){
         base.Start();
@@ -18,12 +22,7 @@ public class EnemyHealth : Health
 
     //bubble function
     protected override void Die(){
-        _spriteRenderer.color = Color.blue;
         enemySectionManager.EnemyKilled();
-        if (TryGetComponent<BubbledEnemy>(out BubbledEnemy bubbledEnemy))
-        {
-            bubbledEnemy.enabled = true;
-        }
 
         if (detectPlayerComponent is GruntDetectPlayer gruntDetectPlayer)
         {
@@ -33,7 +32,18 @@ public class EnemyHealth : Health
         {
             raptorDetectPlayer.StopMoving();
         }
+
+        BubbledEnemy bubble = Instantiate(bubblePrefab, transform.position, Quaternion.identity);
+        transform.parent = bubble.transform;
+        bubble.transform.localScale = Vector2.one * bubbleScale;
+        bubble.PopDamage = Mathf.CeilToInt(maxHealth * 0.25f);
+        bubble.enemySprite = _spriteRenderer;
+        Vector2 directionToPlayer = transform.position - GameManager.Instance.Player.transform.position;
+        directionToPlayer = directionToPlayer.normalized;
+        bubble.Bump(directionToPlayer);
         
+        Destroy(enemyCollider);
+        Destroy(enemyRigidbody);
         Destroy(enemyAttackHandler);
         Destroy(detectPlayerComponent);
         Destroy(this);
