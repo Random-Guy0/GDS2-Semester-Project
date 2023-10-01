@@ -2,28 +2,33 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class BubbledEnemy : MonoBehaviour
 {
-    [SerializeField] private int bumpDamage = 10;
+    public int PopDamage { get; set; }
     [SerializeField] private float maxSpeed = 15f;
+    [SerializeField] private float popRadius = 1.25f;
+    [SerializeField] private float timeToDisappear = 2.5f;
+
+    private Coroutine disappearCoroutine;
+    private bool popped = false;
     
     private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
+    private Collider2D col;
+    public SpriteRenderer enemySprite { private get; set; }
     
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void OnEnable()
-    {
-        rb.mass = 0.5f;
-        rb.drag = 2f;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        col = GetComponent<Collider2D>();
     }
 
     private void FixedUpdate()
     {
-        if (rb.velocity.magnitude > maxSpeed)
+        if (rb.velocity.magnitude > maxSpeed && !popped)
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;
         }
@@ -31,14 +36,62 @@ public class BubbledEnemy : MonoBehaviour
 
     public void Bump(Vector2 force)
     {
-        rb.AddForce(force, ForceMode2D.Impulse);
+        if (!popped)
+        {
+            rb.AddForce(force, ForceMode2D.Impulse);
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (enabled && other.gameObject.TryGetComponent<EnemyHealth>(out EnemyHealth otherHealth))
+        if (other.TryGetComponent<EnemyHealth>(out EnemyHealth enemyHealth) && enemyHealth.CurrentHealth > 0 && !popped)
         {
-            otherHealth.TakeDamage(bumpDamage);
+            RaycastHit2D[] allHits = Physics2D.CircleCastAll(transform.position, popRadius * transform.localScale.magnitude, Vector2.zero);
+            foreach (RaycastHit2D hit in allHits)
+            {
+                if (hit.transform.TryGetComponent<EnemyHealth>(out EnemyHealth otherHealth))
+                {
+                    otherHealth.TakeDamage(PopDamage);
+                }
+            }
+            Pop();
         }
+    }
+
+    private void Pop()
+    {
+        Destroy(col);
+        spriteRenderer.enabled = false;
+        enemySprite.color = Color.red;
+        rb.velocity = Vector2.zero;
+        rb.gravityScale = 2.5f;
+        popped = true;
+    }
+
+    private void OnBecameInvisible()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            disappearCoroutine = StartCoroutine(Disappear());
+        }
+    }
+
+    private void OnBecameVisible()
+    {
+        if (disappearCoroutine != null)
+        {
+            StopCoroutine(disappearCoroutine);
+        }
+    }
+
+    private IEnumerator Disappear()
+    {
+        yield return new WaitForSeconds(timeToDisappear);
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }

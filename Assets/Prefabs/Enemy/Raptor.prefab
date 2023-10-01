@@ -13,11 +13,9 @@ GameObject:
   - component: {fileID: 7232158696684844300}
   - component: {fileID: 4005161209498471027}
   - component: {fileID: 4641396632519100213}
-  - component: {fileID: 2580171010296751319}
-  - component: {fileID: 6840455222560918574}
   - component: {fileID: 741981524120769758}
-  - component: {fileID: -1578872964606538978}
-  - component: {fileID: 7591672374530400648}
+  - component: {fileID: -3218021593331696552}
+  - component: {fileID: -1875051802149849377}
   m_Layer: 3
   m_Name: Raptor
   m_TagString: Untagged
@@ -146,33 +144,10 @@ MonoBehaviour:
   maxHealth: 100
   detectPlayerComponent: {fileID: 4005161209498471027}
   enemyAttackHandler: {fileID: 741981524120769758}
---- !u!114 &2580171010296751319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613337139579968509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7df609f3c20131048a697e18d1921f39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pushMultiplier: 1.25
---- !u!114 &6840455222560918574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613337139579968509}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f74cb465be9c6964c801f6ff62492466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bumpDamage: 10
-  maxSpeed: 15
+  enemyRigidbody: {fileID: 7232158696684844300}
+  enemyCollider: {fileID: -1875051802149849377}
+  bubblePrefab: {fileID: 1446682404955272071, guid: 2727dd07c18a6f64e92d3bb149721607, type: 3}
+  bubbleScale: 2.2
 --- !u!114 &741981524120769758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +163,7 @@ MonoBehaviour:
   <MeleeAttacks>k__BackingField:
   - {fileID: 11400000, guid: dc6d95cb9f7c9a5429ce4e073c95a339, type: 2}
   <RangedAttacks>k__BackingField: []
---- !u!95 &-1578872964606538978
+--- !u!95 &-3218021593331696552
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -208,7 +183,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!70 &7591672374530400648
+--- !u!70 &-1875051802149849377
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,6 +215,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.08}
-  m_Size: {x: 2, y: 1.31}
+  m_Offset: {x: 0, y: -0.07}
+  m_Size: {x: 2, y: 1.23}
   m_Direction: 1

@@ -9,24 +9,56 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4084306337204938366, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1092675854, guid: 9f4e50004078db24d8070f16a47954a9, type: 3}
+    - target: {fileID: 4084306337204938366, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4084306337204938366, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
       propertyPath: m_Color.g
-      value: 0.6117803
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4084306337204938366, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4323920200295763920, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323920200295763920, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323920200295763920, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323920200295763920, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5852193360889357611, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
       propertyPath: m_Name
-      value: Ammo Pickup Variant
+      value: Ammo Pickup
       objectReference: {fileID: 0}
     - target: {fileID: 8873605877538084154, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8873605877538084154, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8873605877538084154, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8873605877538084154, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8873605877538084154, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
       propertyPath: m_LocalPosition.x
@@ -75,6 +107,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5852193360889357611, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3309580124271863527}
+    - targetCorrespondingSourceObject: {fileID: 5852193360889357611, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5058453269982079373}
   m_SourcePrefab: {fileID: 100100000, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
 --- !u!1 &4515157430051554823 stripped
 GameObject:
@@ -94,3 +129,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoAmount: 3
+--- !u!95 &5058453269982079373
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515157430051554823}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f8358dad73107f41b9a58dbc0c6a074, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

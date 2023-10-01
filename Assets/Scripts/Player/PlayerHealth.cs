@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerHealth : Health
 {
+    private PlayerAttackHandler attackHandler;
     public override int CurrentHealth
     {
         get => base.CurrentHealth;
@@ -19,6 +20,8 @@ public class PlayerHealth : Health
     {
         base.Start();
         GameManager.Instance.GameplayUI.SetInitialHealthUI(CurrentHealth, maxHealth);
+        attackHandler = GetComponent<PlayerAttackHandler>();
+        OnTakeDamage += attackHandler.InterruptAttack;
     }
 
     public void Heal(int amount)
@@ -30,16 +33,6 @@ public class PlayerHealth : Health
             CurrentHealth = maxHealth;
         }
     }
-
-#if UNITY_EDITOR
-    
-    private void OnGUI()
-    {
-        GUI.Label( new Rect(5f, 5f, 300f, 150f), "Health: " + CurrentHealth.ToString());
-
-    }
-    
-#endif
 
     protected override void Die()
     {

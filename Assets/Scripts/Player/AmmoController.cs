@@ -51,13 +51,4 @@ public class AmmoController : MonoBehaviour
     {
         return amount <= AmmoCount;
     }
-    
-#if UNITY_EDITOR
-
-    private void OnGUI()
-    {
-        GUI.Label( new Rect(5f, 20f, 300f, 150f), "Ammo: " + AmmoCount.ToString());
-    }
-    
-#endif
 }

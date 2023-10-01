@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class GameplayUI : MonoBehaviour
 {
     [SerializeField] private Image healthIcon;
+    [SerializeField] private Sprite heart;
+    [SerializeField] private Sprite emptyHeart;
     private List<Image> healthIcons = new List<Image>();
     
     [SerializeField] private TMP_Text ammoText;
@@ -23,7 +25,7 @@ public class GameplayUI : MonoBehaviour
             newHealthIcon.transform.localPosition = new Vector3((i - 1) * 125f, 0f);
             if (i > health)
             {
-                newHealthIcon.gameObject.SetActive(false);
+                newHealthIcon.sprite = emptyHeart;
             }
             healthIcons.Add(newHealthIcon);
         }
@@ -41,11 +43,11 @@ public class GameplayUI : MonoBehaviour
         {
             if (i < health)
             {
-                healthIcons[i].gameObject.SetActive(true);
+                healthIcons[i].sprite = heart;
             }
             else
             {
-                healthIcons[i].gameObject.SetActive(false);
+                healthIcons[i].sprite = emptyHeart;
             }
         }
     }

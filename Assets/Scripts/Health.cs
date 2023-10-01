@@ -9,6 +9,10 @@ public abstract class Health : MonoBehaviour
 
     public virtual int CurrentHealth { get; protected set; }
 
+    public delegate void TakeDamageHandler();
+
+    public event TakeDamageHandler OnTakeDamage;
+
     protected virtual void Start()
     {
         CurrentHealth = maxHealth;
@@ -23,6 +27,8 @@ public abstract class Health : MonoBehaviour
             CurrentHealth = 0;
             Die();
         }
+        
+        OnTakeDamage?.Invoke();
     }
 
     protected abstract void Die();

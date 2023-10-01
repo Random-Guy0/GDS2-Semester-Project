@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
     [SerializeField] private float speed = 1f;
     
     private Vector2 moveInput = Vector2.zero;
@@ -44,5 +45,6 @@ public class PlayerMovement : MonoBehaviour
         }
         
         rb.velocity = velocity;
+        animator.SetFloat("MoveSpeed", velocity.magnitude);
     }
 }
