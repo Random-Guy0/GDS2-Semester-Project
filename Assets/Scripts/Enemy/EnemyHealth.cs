@@ -13,6 +13,9 @@ public class EnemyHealth : Health
     [SerializeField] private BubbledEnemy bubblePrefab;
     [SerializeField] private float bubbleScale = 1f;
 
+    [SerializeField] private AmmoPickup pickup;
+    [SerializeReference] private int ammoDropAmount = 1;
+
     private Animator animator;
 
     protected override void Start(){
@@ -29,6 +32,12 @@ public class EnemyHealth : Health
         enemySectionManager.EnemyKilled();
         enemyAttackHandler.InterruptAttack();
 
+        if (ammoDropAmount > 0)
+        {
+            AmmoPickup newPickup = Instantiate(pickup, transform.position, Quaternion.identity);
+            newPickup.AmmoAmount = ammoDropAmount;
+        }
+
         if (detectPlayerComponent is GruntDetectPlayer gruntDetectPlayer)
         {
             gruntDetectPlayer.StopMoving();
@@ -37,16 +46,8 @@ public class EnemyHealth : Health
         {
             raptorDetectPlayer.StopMoving();
         }
-
-        BubbledEnemy bubble = Instantiate(bubblePrefab, transform.position, Quaternion.identity);
-        transform.parent = bubble.transform;
-        bubble.transform.localScale = Vector2.one * bubbleScale;
-        transform.localScale = Vector2.one / bubbleScale;
-        bubble.PopDamage = Mathf.CeilToInt(maxHealth * 0.25f);
-        bubble.enemySprite = _spriteRenderer;
-        Vector2 directionToPlayer = transform.position - GameManager.Instance.Player.transform.position;
-        directionToPlayer = directionToPlayer.normalized;
-        bubble.Bump(directionToPlayer);
+        
+        CreateBubble();
 
         if (animator != null)
         {
@@ -59,6 +60,17 @@ public class EnemyHealth : Health
         Destroy(detectPlayerComponent);
         Destroy(this);
     }
-    
 
+    private void CreateBubble()
+    {
+        BubbledEnemy bubble = Instantiate(bubblePrefab, transform.position, Quaternion.identity);
+        transform.parent = bubble.transform;
+        bubble.transform.localScale = Vector2.one * bubbleScale;
+        transform.localScale = Vector2.one / bubbleScale;
+        bubble.PopDamage = Mathf.CeilToInt(maxHealth * 0.25f);
+        bubble.enemySprite = _spriteRenderer;
+        Vector2 directionToPlayer = transform.position - GameManager.Instance.Player.transform.position;
+        directionToPlayer = directionToPlayer.normalized;
+        bubble.Bump(directionToPlayer);
+    }
 }
