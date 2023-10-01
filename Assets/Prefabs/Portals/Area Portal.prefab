@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Area Portal
       objectReference: {fileID: 0}
+    - target: {fileID: 4078307836585485084, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2003114555, guid: f0b458218b8607b4ea04ca3db47ad368, type: 3}
     - target: {fileID: 6939554981931739785, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -64,6 +68,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2088718589417333084, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
       insertIndex: -1
       addedObject: {fileID: -5167635935346954111}
+    - targetCorrespondingSourceObject: {fileID: 2088718589417333084, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 979165910322364617}
   m_SourcePrefab: {fileID: 100100000, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
 --- !u!1 &9055031128468546414 stripped
 GameObject:
@@ -83,3 +90,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportToPosition: {x: 0, y: 0}
+--- !u!95 &979165910322364617
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9055031128468546414}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1c4dbdd3ded419458f46379838e6566, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
