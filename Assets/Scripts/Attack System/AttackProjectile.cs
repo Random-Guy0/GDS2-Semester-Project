@@ -12,9 +12,9 @@ public class AttackProjectile : MonoBehaviour
 
     private Vector2 velocity = Vector2.zero;
 
-    private GameObject attacker;
+    private AttackHandler attacker;
 
-    public void FireProjectile(float direction, GameObject attacker = null)
+    public void FireProjectile(float direction, AttackHandler attacker = null)
     {
         this.direction = direction;
         startingXPosition = transform.position.x;

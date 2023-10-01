@@ -18,6 +18,24 @@ public class BubbledEnemy : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D col;
     public SpriteRenderer enemySprite { private get; set; }
+
+    private PlayerAttackHandler playerGrabbing;
+    private bool grabbed;
+
+    public Vector2 velocity
+    {
+        get
+        {
+            if (grabbed)
+            {
+                return playerGrabbing.GetComponent<Rigidbody2D>().velocity;
+            }
+            else
+            {
+                return rb.velocity;
+            }
+        }
+    }
     
     private void Awake()
     {
@@ -28,15 +46,19 @@ public class BubbledEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rb.velocity.magnitude > maxSpeed && !popped)
+        if (rb.velocity.magnitude > maxSpeed && !popped && !grabbed)
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
+        else if (grabbed)
+        {
+            rb.velocity = Vector2.zero;
         }
     }
 
     public void Bump(Vector2 force)
     {
-        if (!popped)
+        if (!popped && !grabbed)
         {
             rb.AddForce(force, ForceMode2D.Impulse);
         }
@@ -66,11 +88,34 @@ public class BubbledEnemy : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.gravityScale = 2.5f;
         popped = true;
+        if (playerGrabbing != null)
+        {
+            playerGrabbing.HeldBubblePopped();
+        }
+        Release(0f);
+    }
+
+    public void Grab(PlayerAttackHandler player)
+    {
+        playerGrabbing = player;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        transform.parent = player.transform;
+        transform.localPosition = Vector3.right * col.bounds.extents.x;
+        grabbed = true;
+    }
+
+    public void Release(float directionAndForce)
+    {
+        playerGrabbing = null;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        transform.parent = null;
+        grabbed = false;
+        Bump(Vector2.right * directionAndForce);
     }
 
     private void OnBecameInvisible()
     {
-        if (gameObject.activeInHierarchy)
+        if (gameObject.activeInHierarchy && !grabbed)
         {
             disappearCoroutine = StartCoroutine(Disappear());
         }

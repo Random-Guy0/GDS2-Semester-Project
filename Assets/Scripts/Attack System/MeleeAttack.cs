@@ -8,7 +8,8 @@ public class MeleeAttack : Attack
     [field: SerializeField] public Vector2 HitSize { get; private set; } = Vector2.one;
     [SerializeField] private DebugBox hitTestCubePrefab;
     
-    public override IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f, Vector2? attackerPosition = null, GameObject attacker = null)
+    public override IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f,
+        Vector2? attackerPosition = null, AttackHandler attacker = null)
     {
         Vector2 position = attackerPosition ?? Vector2.zero;
         Vector2 origin = GetAttackOrigin(direction, attackerWidth, position);
@@ -19,6 +20,8 @@ public class MeleeAttack : Attack
         
         List<Health> allHits = new List<Health>();
         float currentTime = 0f;
+
+        bool grabbedBubble = false;
 
         while (currentTime < Duration)
         {
@@ -31,6 +34,20 @@ public class MeleeAttack : Attack
                     {
                         DoDamage(currentHealth, attacker);
                         allHits.Add(currentHealth);
+                    }
+                }
+
+                if (attacker is PlayerAttackHandler playerAttackHandler && !grabbedBubble)
+                {
+                    if (hit.transform.TryGetComponent<BubbledEnemy>(out BubbledEnemy bubbledEnemy))
+                    {
+                        playerAttackHandler.GrabBubble(bubbledEnemy);
+                        grabbedBubble = true;
+                    }
+                    else if (playerAttackHandler.CarryingBubble)
+                    {
+                        playerAttackHandler.ReleaseBubble();
+                        grabbedBubble = true;
                     }
                 }
             }

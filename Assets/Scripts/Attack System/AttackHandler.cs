@@ -30,7 +30,7 @@ public abstract class AttackHandler : MonoBehaviour
             CurrentAttack = attack;
             float width = GetColliderSize();
             float direction = GetDirection();
-            attackCoroutine = StartCoroutine(attack.DoAttack(direction, width, transform.position, gameObject));
+            attackCoroutine = StartCoroutine(attack.DoAttack(direction, width, transform.position, this));
             StartCoroutine(WaitForAttack(attack.Duration));
         }
     }

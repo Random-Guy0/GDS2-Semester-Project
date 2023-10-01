@@ -10,7 +10,8 @@ public class RangedAttack : Attack
     [field: SerializeField] public float Speed { get; private set; } = 7f;
     [field: SerializeField] public int AmmoCost { get; private set; } = 1;
 
-    public override IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f, Vector2? attackerPosition = null, GameObject attacker = null)
+    public override IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f,
+        Vector2? attackerPosition = null, AttackHandler attacker = null)
     {
         float currentTime = 0f;
         while (currentTime < Duration)

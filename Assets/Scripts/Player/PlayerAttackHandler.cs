@@ -16,6 +16,10 @@ public class PlayerAttackHandler : AttackHandler
     private float meleeAttack1Speed;
     private float meleeAttack2Speed;
 
+    public bool CarryingBubble { get; private set; } = false;
+    private BubbledEnemy grabbedBubble;
+    [SerializeField] private float bubbleReleaseForce = 2f;
+
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -82,5 +86,32 @@ public class PlayerAttackHandler : AttackHandler
     {
         base.InterruptAttack();
         animator.SetTrigger("InterruptAttack");
+    }
+
+    public void GrabBubble(BubbledEnemy bubble)
+    {
+        if (!CarryingBubble)
+        {
+            CarryingBubble = true;
+            bubble.Grab(this);
+            grabbedBubble = bubble;
+        }
+        else
+        {
+            ReleaseBubble();
+        }
+    }
+
+    public void ReleaseBubble()
+    {
+        CarryingBubble = false;
+        grabbedBubble.Release(GetDirection() * bubbleReleaseForce);
+        grabbedBubble = null;
+    }
+
+    public void HeldBubblePopped()
+    {
+        CarryingBubble = false;
+        grabbedBubble = null;
     }
 }

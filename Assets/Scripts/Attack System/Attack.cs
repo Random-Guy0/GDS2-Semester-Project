@@ -12,7 +12,8 @@ public abstract class Attack : ScriptableObject
     [field: SerializeField] public DamageType[] DamageTypes { get; private set; }
     [field: SerializeField] public float DamageTypeAttackMultiplier { get; private set; } = 2f;
 
-    public abstract IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f, Vector2? attackerPosition = null, GameObject attacker = null);
+    public abstract IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f,
+        Vector2? attackerPosition = null, AttackHandler attacker = null);
 
     protected virtual Vector2 GetAttackOrigin(float direction, float attackerWidth, Vector2 attackerPosition)
     {
@@ -22,7 +23,7 @@ public abstract class Attack : ScriptableObject
         return origin;
     }
 
-    public void DoDamage(Health otherHealth, GameObject attacker = null)
+    public void DoDamage(Health otherHealth, AttackHandler attacker = null)
     {
         if (!CanAttack(otherHealth, attacker))
         {
@@ -42,10 +43,16 @@ public abstract class Attack : ScriptableObject
         otherHealth.TakeDamage(damageToDeal);
     }
 
-    public bool CanAttack(Health otherHealth, GameObject attacker = null)
+    public bool CanAttack(Health otherHealth, AttackHandler attacker = null)
     {
+        bool notAttackingSelf = false;
+        if (attacker != null)
+        {
+            notAttackingSelf = otherHealth.gameObject != attacker.gameObject;
+        }
+        
         return !((Target == AttackTarget.Enemies && otherHealth is PlayerHealth) ||
             (Target == AttackTarget.Players && otherHealth is EnemyHealth)) &&
-               otherHealth.gameObject != attacker;
+               notAttackingSelf;
     }
 }
