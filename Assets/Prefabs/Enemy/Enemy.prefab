@@ -185,7 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b52c483579cb2a45b1ee993cc47a705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 10
+  <Weaknesses>k__BackingField: 00000000
   detectPlayerComponent: {fileID: 8831299249130729824}
   enemyAttackHandler: {fileID: 7525131703454876912}
   enemyRigidbody: {fileID: 2980102513536050860}

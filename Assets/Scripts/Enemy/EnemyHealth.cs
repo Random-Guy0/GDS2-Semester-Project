@@ -25,12 +25,15 @@ public class EnemyHealth : Health
         enemySectionManager.SetNewEnemy();
         animator = GetComponent<Animator>();
         OnTakeDamage += enemyAttackHandler.InterruptAttack;
+        OnTakeDamage += TakeDamage;
     }        
 
     //bubble function
     protected override void Die(){
         enemySectionManager.EnemyKilled();
         enemyAttackHandler.InterruptAttack();
+        StopAllCoroutines();
+        _spriteRenderer.color = Color.white;
 
         if (ammoDropAmount > 0)
         {
@@ -72,5 +75,17 @@ public class EnemyHealth : Health
         Vector2 directionToPlayer = transform.position - GameManager.Instance.Player.transform.position;
         directionToPlayer = directionToPlayer.normalized;
         bubble.Bump(directionToPlayer);
+    }
+    
+    private void TakeDamage()
+    {
+        StartCoroutine(FlashRed());
+    }
+
+    private IEnumerator FlashRed()
+    {
+        _spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        _spriteRenderer.color = Color.white;
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class Health : MonoBehaviour
 {
     [SerializeField] protected int maxHealth = 100;
+    [field: SerializeField] public DamageType[] Weaknesses { get; private set; }
 
     public virtual int CurrentHealth { get; protected set; }
 
