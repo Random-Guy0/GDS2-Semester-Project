@@ -1510,11 +1510,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 423931251
-      Data2: 1232052370
-      Data3: 1676713908
-      Data4: -667768537
-    Path: event:/TestEvent2
+      Data1: -1071122708
+      Data2: 1205956193
+      Data3: -656100202
+      Data4: -71111047
+    Path: event:/EgyptLevel1
   Event: 
   PlayEvent: 1
   StopEvent: 2
