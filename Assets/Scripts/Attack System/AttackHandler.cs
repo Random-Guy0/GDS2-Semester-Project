@@ -9,7 +9,9 @@ public abstract class AttackHandler : MonoBehaviour
 
     private Collider2D coll;
 
+
     public bool CurrentlyAttacking { get; private set; } = false;
+   
 
     public virtual void DoMeleeAttack(int index = 0)
     {
@@ -37,6 +39,7 @@ public abstract class AttackHandler : MonoBehaviour
         CurrentlyAttacking = true;
         yield return new WaitForSeconds(attackDuration);
         CurrentlyAttacking = false;
+
     }
 
     protected virtual float GetColliderSize()
