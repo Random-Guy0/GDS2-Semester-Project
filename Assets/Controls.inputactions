@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Ranged Attack",
+                    "name": "Attack",
                     "type": "Button",
                     "id": "f6323daa-74be-405b-a91d-f78285d80d05",
                     "expectedControlType": "Button",
@@ -24,13 +24,49 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Melee Attack",
+                    "name": "SelectWeapon1",
                     "type": "Button",
-                    "id": "f737ded5-4508-4c72-9611-5773b889b24d",
+                    "id": "ddffda7f-3ea1-4280-86b7-32ae4c39ef27",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SelectWeapon2",
+                    "type": "Button",
+                    "id": "f3ad43d8-8271-424c-a114-ed4a6ba2d1ed",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectWeapon3",
+                    "type": "Button",
+                    "id": "fedbb7cc-c849-4e54-82df-bfd19563031d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectWeapon4",
+                    "type": "Button",
+                    "id": "83f4eba1-470c-4f64-bc04-2631dfa27f48",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CycleWeapons",
+                    "type": "Value",
+                    "id": "31ea5849-783f-4f6d-aef3-e43178efe8dc",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -104,21 +140,65 @@
                     "name": "",
                     "id": "0af1364f-1e73-4a03-8543-5e83ae5d7b27",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Ranged Attack",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "e9371997-a5a8-4142-953c-200e0f212e96",
-                    "path": "<Mouse>/rightButton",
+                    "id": "effb7317-2cd0-43c9-b5e9-ef36f7a83f44",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Melee Attack",
+                    "groups": "",
+                    "action": "SelectWeapon1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8a424264-20d1-4392-889a-5e11c1bb7603",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectWeapon2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2aa5b850-c5fa-4127-b1d8-76ffacec2fe2",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectWeapon3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "47e7fa37-535c-4927-b084-ecaeccf3436f",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectWeapon4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2168b18b-7f3b-40f9-9b95-64274227cac9",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CycleWeapons",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &376269746880207369
+--- !u!1001 &8618852937313118111
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,33 +8,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1316044329854058947, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+      propertyPath: m_Radius
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: -1316044329854058947, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1534754890003651889, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 75ffa5212405d5d4e9c3c039144ddca6, type: 3}
-    - target: {fileID: 1534754890003651889, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1534754890003651889, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1534754890003651889, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 7355ece976bb2e542a92a3ccc49a53c6, type: 3}
     - target: {fileID: 2066678052054794070, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
       propertyPath: m_Name
-      value: Bubble Blaster Projectile
+      value: Soap Grenade
       objectReference: {fileID: 0}
     - target: {fileID: 7899355083448377301, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
       propertyPath: attackStats
       value: 
-      objectReference: {fileID: 11400000, guid: 507b5bcd9d874a14494e8b7510ffe6ed, type: 2}
+      objectReference: {fileID: 11400000, guid: 7363ed20b973d1340ac592ba14d66426, type: 2}
     - target: {fileID: 8268237125840512431, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268237125840512431, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268237125840512431, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8268237125840512431, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -76,8 +80,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7899355083448377301, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2066678052054794070, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 7038892992658947043}
   m_SourcePrefab: {fileID: 100100000, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+--- !u!1 &7724238140117031113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2066678052054794070, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+  m_PrefabInstance: {fileID: 8618852937313118111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7038892992658947043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7724238140117031113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f332c563ad6e2c46b9283076b8b74ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackStats: {fileID: 11400000, guid: 7363ed20b973d1340ac592ba14d66426, type: 2}
+  explosionRadius: 3
+  dropDistance: 0.3
+  gravity: 1
+  bounceFactor: 10

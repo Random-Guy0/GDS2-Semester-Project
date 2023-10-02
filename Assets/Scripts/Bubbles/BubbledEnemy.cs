@@ -106,6 +106,11 @@ public class BubbledEnemy : MonoBehaviour
 
     public void Release(float directionAndForce)
     {
+        float velocityMultiplier = Mathf.Abs(velocity.x);
+        if (velocityMultiplier != 0f)
+        {
+            directionAndForce *= velocityMultiplier;
+        }
         playerGrabbing = null;
         rb.bodyType = RigidbodyType2D.Dynamic;
         transform.parent = null;
