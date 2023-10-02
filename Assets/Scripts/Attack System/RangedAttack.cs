@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Attacks/Ranged Attack", fileName = "new Ranged Attack")]
+[CreateAssetMenu(menuName = "Attacks/Ranged Attacks/Ranged Attack", fileName = "new Ranged Attack")]
 public class RangedAttack : Attack
 {
     [field: SerializeField] public AttackProjectile Projectile { get; private set; }
