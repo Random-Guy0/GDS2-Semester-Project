@@ -26,7 +26,18 @@ public class EnemyHealth : Health
         animator = GetComponent<Animator>();
         OnTakeDamage += enemyAttackHandler.InterruptAttack;
         OnTakeDamage += TakeDamage;
-    }        
+    }
+
+    public override void TakeDamage(int amount, Attack attack)
+    {
+        if (attack is MeleeAttack && CurrentHealth - amount <= 0 && ammoDropAmount > 0)
+        {
+            AmmoPickup newPickup = Instantiate(pickup, transform.position, Quaternion.identity);
+            newPickup.AmmoAmount = ammoDropAmount;
+        }
+        
+        base.TakeDamage(amount, attack);
+    }
 
     //bubble function
     protected override void Die(){
@@ -34,12 +45,6 @@ public class EnemyHealth : Health
         enemyAttackHandler.InterruptAttack();
         StopAllCoroutines();
         _spriteRenderer.color = Color.white;
-
-        if (ammoDropAmount > 0)
-        {
-            AmmoPickup newPickup = Instantiate(pickup, transform.position, Quaternion.identity);
-            newPickup.AmmoAmount = ammoDropAmount;
-        }
 
         if (detectPlayerComponent is GruntDetectPlayer gruntDetectPlayer)
         {

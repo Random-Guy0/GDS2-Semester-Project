@@ -40,7 +40,7 @@ public abstract class Attack : ScriptableObject
             }
         }
         
-        otherHealth.TakeDamage(damageToDeal);
+        otherHealth.TakeDamage(damageToDeal, this);
     }
 
     public bool CanAttack(Health otherHealth, AttackHandler attacker = null)

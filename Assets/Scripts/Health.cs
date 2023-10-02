@@ -19,6 +19,11 @@ public abstract class Health : MonoBehaviour
         CurrentHealth = maxHealth;
     }
 
+    public virtual void TakeDamage(int amount, Attack attack)
+    {
+        TakeDamage(amount);
+    }
+
     public void TakeDamage(int amount)
     {
         CurrentHealth -= amount;

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ccf24d36940c14f8316e3ff0b78e39, type: 3}
   m_Name: Soap Dispensers
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 5
+  <Damage>k__BackingField: 4
   <Target>k__BackingField: 0
   <Duration>k__BackingField: 0.3
+  <DamageTypes>k__BackingField: 00000000
+  <DamageTypeAttackMultiplier>k__BackingField: 2
   <HitSize>k__BackingField: {x: 0.75, y: 0.75}
   hitTestCubePrefab: {fileID: 4575823049351085360, guid: 8b96204e0e13731469bf0b1224acdcb2, type: 3}
