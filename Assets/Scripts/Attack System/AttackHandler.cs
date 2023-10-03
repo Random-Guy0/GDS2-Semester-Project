@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class AttackHandler : MonoBehaviour
 {
-    [field: SerializeField] protected MeleeAttack[] MeleeAttacks { get; private set; }
-    [field: SerializeField] protected RangedAttack[] RangedAttacks { get; private set; }
+    [field: SerializeField] public MeleeAttack[] MeleeAttacks { get; private set; }
+    [field: SerializeField] public RangedAttack[] RangedAttacks { get; private set; }
 
     private Collider2D coll;
 
@@ -25,12 +25,12 @@ public abstract class AttackHandler : MonoBehaviour
 
     private void DoAttack(Attack attack)
     {
-        if (!CurrentlyAttacking)
+        if (!CurrentlyAttacking && enabled)
         {
             CurrentAttack = attack;
             float width = GetColliderSize();
             float direction = GetDirection();
-            attackCoroutine = StartCoroutine(attack.DoAttack(direction, width, transform.position, gameObject));
+            attackCoroutine = StartCoroutine(attack.DoAttack(direction, width, transform.position, this));
             StartCoroutine(WaitForAttack(attack.Duration));
         }
     }
@@ -60,7 +60,8 @@ public abstract class AttackHandler : MonoBehaviour
     {
         if (attackCoroutine != null)
         {
-            StopCoroutine(attackCoroutine);
+            Debug.Log("Attack Interrupted");
+            //StopCoroutine(attackCoroutine);
         }
         CurrentAttack = null;
     }

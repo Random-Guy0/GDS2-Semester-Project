@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class AmmoPickup : Pickup<AmmoController>
 {
-    [SerializeField] private int ammoAmount = 3;
+    [field: SerializeField] public int AmmoAmount { get; set; } = 3;
     
     protected override void Collect(AmmoController collector)
     {
-        collector.PickupAmmo(ammoAmount);
+        collector.PickupAmmo(AmmoAmount);
     }
 }

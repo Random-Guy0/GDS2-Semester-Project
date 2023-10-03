@@ -185,13 +185,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b52c483579cb2a45b1ee993cc47a705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 10
+  <Weaknesses>k__BackingField: 00000000
   detectPlayerComponent: {fileID: 8831299249130729824}
   enemyAttackHandler: {fileID: 7525131703454876912}
   enemyRigidbody: {fileID: 2980102513536050860}
   enemyCollider: {fileID: 9102721864597918552}
   bubblePrefab: {fileID: 1446682404955272071, guid: 2727dd07c18a6f64e92d3bb149721607, type: 3}
   bubbleScale: 1.2
+  pickup: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
+  ammoDropAmount: 1
 --- !u!114 &7525131703454876912
 MonoBehaviour:
   m_ObjectHideFlags: 0
