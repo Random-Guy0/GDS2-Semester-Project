@@ -32,7 +32,7 @@ public class ContinuousRangedAttack : RangedAttack
 
                 AttackProjectile newProjectile = Instantiate(Projectile, Vector3.zero, Quaternion.identity);
 
-                Vector2 position = attacker.transform.position;
+                Vector2 position = attackerPosition ?? Vector2.zero;
                 Vector2 origin = GetAttackOrigin(direction, attackerWidth, position);
 
                 if (newProjectile.TryGetComponent<Collider2D>(out Collider2D projectileCollider))

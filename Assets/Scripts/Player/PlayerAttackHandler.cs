@@ -158,6 +158,11 @@ public class PlayerAttackHandler : AttackHandler
         grabbedBubble = null;
     }
 
+    protected override Vector2 GetAttackOrigin()
+    {
+        return SelectedWeapon.AttackOrigin.position;
+    }
+
     public bool UseAmmo(int amount)
     {
         if (ammoController.CanUseAmmo(amount))
@@ -245,6 +250,7 @@ public class PlayerWeapon
     [field: SerializeField] public Attack Attack { get; private set; }
     [field: SerializeField] public bool Unlocked { get; set; } = true;
     [field: SerializeField] public SpriteRenderer Sprite { get; private set; }
+    [field: SerializeField] public Transform AttackOrigin { get; private set; }
 
     public PlayerWeapon(Attack attack)
     {
