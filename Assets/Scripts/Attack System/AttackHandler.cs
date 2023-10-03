@@ -25,7 +25,7 @@ public abstract class AttackHandler : MonoBehaviour
 
     private void DoAttack(Attack attack)
     {
-        if (!CurrentlyAttacking)
+        if (!CurrentlyAttacking && enabled)
         {
             CurrentAttack = attack;
             float width = GetColliderSize();

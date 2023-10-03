@@ -39,7 +39,16 @@ public class PlayerHealth : Health
     protected override void Die()
     {
         //change this to death screen when implemented
-        Destroy(this.gameObject);
+        GetComponent<PlayerMovement>().enabled = false;
+        SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            sprite.enabled = false;
+        }
+
+        GetComponent<PlayerAttackHandler>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
     }
 
     private void TakeDamage()

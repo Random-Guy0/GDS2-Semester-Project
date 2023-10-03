@@ -47,4 +47,12 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = velocity;
         animator.SetFloat("MoveSpeed", velocity.magnitude);
     }
+
+    public void ResetGame(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            GameManager.Instance.ResetGame();
+        }
+    }
 }
