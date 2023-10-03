@@ -50,11 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8873605877538084154, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8873605877538084154, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8873605877538084154, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
       propertyPath: m_LocalScale.z
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc9f2edef3346948b0beb3f4af6c6c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 3
+  <AmmoAmount>k__BackingField: 3
 --- !u!95 &5058453269982079373
 Animator:
   serializedVersion: 5
