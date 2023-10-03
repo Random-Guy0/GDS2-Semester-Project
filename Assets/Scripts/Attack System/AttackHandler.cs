@@ -4,14 +4,14 @@ using UnityEngine;
 
 public abstract class AttackHandler : MonoBehaviour
 {
-    [field: SerializeField] protected MeleeAttack[] MeleeAttacks { get; private set; }
-    [field: SerializeField] protected RangedAttack[] RangedAttacks { get; private set; }
+    [field: SerializeField] public MeleeAttack[] MeleeAttacks { get; private set; }
+    [field: SerializeField] public RangedAttack[] RangedAttacks { get; private set; }
 
     private Collider2D coll;
 
-
-    public bool CurrentlyAttacking { get; private set; } = false;
-   
+    public bool CurrentlyAttacking { get; protected set; } = false;
+    protected Attack CurrentAttack { get; set; }
+    protected Coroutine attackCoroutine;
 
     public virtual void DoMeleeAttack(int index = 0)
     {
@@ -23,13 +23,14 @@ public abstract class AttackHandler : MonoBehaviour
         DoAttack(RangedAttacks[index]);
     }
 
-    protected void DoAttack(Attack attack)
+    private void DoAttack(Attack attack)
     {
-        if (!CurrentlyAttacking)
+        if (!CurrentlyAttacking && enabled)
         {
+            CurrentAttack = attack;
             float width = GetColliderSize();
             float direction = GetDirection();
-            StartCoroutine(attack.DoAttack(direction, width, transform.position, gameObject));
+            attackCoroutine = StartCoroutine(attack.DoAttack(direction, width, transform.position, this));
             StartCoroutine(WaitForAttack(attack.Duration));
         }
     }
@@ -55,4 +56,14 @@ public abstract class AttackHandler : MonoBehaviour
     }
 
     protected abstract float GetDirection();
+
+    public virtual void InterruptAttack()
+    {
+        if (attackCoroutine != null)
+        {
+            Debug.Log("Attack Interrupted");
+            //StopCoroutine(attackCoroutine);
+        }
+        CurrentAttack = null;
+    }
 }

@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class AttackProjectile : MonoBehaviour
 {
-    [SerializeField] private RangedAttack attackStats;
+    [SerializeField] protected RangedAttack attackStats;
 
-    private float direction = 1f;
-    private float startingXPosition;
+    protected float direction = 1f;
+    protected float startingXPosition;
 
-    private Vector2 velocity = Vector2.zero;
+    protected Vector2 velocity = Vector2.zero;
 
-    private GameObject attacker;
+    protected AttackHandler attacker;
 
-    public void FireProjectile(float direction, GameObject attacker = null)
+    public void FireProjectile(float direction, AttackHandler attacker = null)
     {
         this.direction = direction;
         startingXPosition = transform.position.x;
@@ -24,6 +24,11 @@ public class AttackProjectile : MonoBehaviour
 
     private void Update()
     {
+        Move();
+    }
+
+    protected virtual void Move()
+    {
         float distanceTravelled = Mathf.Abs(startingXPosition - transform.position.x);
         if (distanceTravelled >= attackStats.Range)
         {
@@ -32,13 +37,21 @@ public class AttackProjectile : MonoBehaviour
 
         transform.position += (Vector3)velocity * Time.deltaTime;
     }
-    
-    private void OnTriggerEnter2D(Collider2D other)
+
+    protected virtual void DoAttack(Health otherHealth)
     {
-        if (other.gameObject.TryGetComponent<Health>(out Health otherHealth) && attackStats.CanAttack(otherHealth, attacker))
+        if (attackStats.CanAttack(otherHealth, attacker))
         {
             attackStats.DoDamage(otherHealth, attacker);
             Destroy(gameObject);
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.TryGetComponent<Health>(out Health otherHealth))
+        {
+            DoAttack(otherHealth);
         }
     }
 }

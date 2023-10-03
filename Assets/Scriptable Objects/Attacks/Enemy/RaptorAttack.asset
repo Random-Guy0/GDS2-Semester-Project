@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ccf24d36940c14f8316e3ff0b78e39, type: 3}
   m_Name: RaptorAttack
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 5
+  <Damage>k__BackingField: 1
   <Target>k__BackingField: 1
   <Duration>k__BackingField: 1
   <HitSize>k__BackingField: {x: 1, y: 1}

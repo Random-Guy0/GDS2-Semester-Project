@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerHealth : Health
 {
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    private PlayerAttackHandler attackHandler;
     public override int CurrentHealth
     {
         get => base.CurrentHealth;
@@ -18,6 +20,10 @@ public class PlayerHealth : Health
     protected override void Start()
     {
         base.Start();
+        GameManager.Instance.GameplayUI.SetInitialHealthUI(CurrentHealth, maxHealth);
+        attackHandler = GetComponent<PlayerAttackHandler>();
+        OnTakeDamage += attackHandler.InterruptAttack;
+        OnTakeDamage += TakeDamage;
     }
 
     public void Heal(int amount)
@@ -30,19 +36,30 @@ public class PlayerHealth : Health
         }
     }
 
-#if UNITY_EDITOR
-    
-    private void OnGUI()
-    {
-        GUI.Label( new Rect(5f, 5f, 300f, 150f), "Health: " + CurrentHealth.ToString());
-
-    }
-    
-#endif
-
     protected override void Die()
     {
         //change this to death screen when implemented
-        Destroy(this.gameObject);
+        GetComponent<PlayerMovement>().enabled = false;
+        SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            sprite.enabled = false;
+        }
+
+        GetComponent<PlayerAttackHandler>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
+    }
+
+    private void TakeDamage()
+    {
+        StartCoroutine(FlashRed());
+    }
+    
+    private IEnumerator FlashRed()
+    {
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = Color.white;
     }
 }

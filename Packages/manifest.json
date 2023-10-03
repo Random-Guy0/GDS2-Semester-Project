@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.unity.2d.aseprite": "1.0.1",
     "com.unity.addressables": "1.21.15",
     "com.unity.collab-proxy": "2.0.0",
     "com.unity.feature.2d": "1.0.0",
