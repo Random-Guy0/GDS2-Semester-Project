@@ -13,6 +13,9 @@ public class RaptorDetectPlayer : MonoBehaviour
     Transform player;
     Vector2 initialPosition;
     bool Left = true;
+     bool isSwooping = false;
+    float swoopDelay = 4.0f; // Adjust this value as needed
+    float swoopTimer = 0.0f;
 
     void Start()
     {
@@ -36,37 +39,77 @@ public class RaptorDetectPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Left)
+
+        if (!isSwooping)
         {
-            rb.velocity = new Vector2(-1, 0) * movementSpeed;
+            if (Left)
+            {
+                rb.velocity = new Vector2(-1, 0) * movementSpeed;
+
+            }
+            else
+            {
+                rb.velocity = new Vector2(1, 0) * movementSpeed;
+            }
+
+            //checks patrol range
+            if (this.transform.position.x > player.position.x + patrolDistance)
+            {
+                Left = true;
+            }
+            else if (this.transform.position.x < player.position.x - patrolDistance)
+            {
+                Left = false;
+            }
+
+
+            //check in range
+            float currentRange = this.transform.position.x - player.position.x;
+            if (Mathf.Abs(currentRange) < attackRange && Left)
+            {
+                Dive();
+            }
 
         }
         else
         {
-            rb.velocity = new Vector2(1, 0) * movementSpeed;
+            Swoop();
         }
+        
+    }
+    void StartSwoop()
+    {
+        isSwooping = true;
+        swoopTimer = 0.0f;
+    }
+    void Swoop()
+    {
+        swoopTimer += Time.deltaTime;
 
-        //checks patrol range
-        if (this.transform.position.x > player.position.x + patrolDistance)
+        // Wait for the swoop delay
+        if (swoopTimer >= swoopDelay)
         {
-            Left = true;
-        }
-        else if (this.transform.position.x < player.position.x - patrolDistance)
-        {
-            Left = false;
-        }
+            // Calculate the dive destination and perform the swoop
+            Vector2 diveDestination = new Vector2(player.position.x + 4.0f, player.position.y);
+            Vector2 moveDirection = (diveDestination - (Vector2)transform.position).normalized;
+            rb.velocity = new Vector2(rb.velocity.x, moveDirection.y * movementSpeed);
 
+            if (this.transform.position.x < player.position.x - 2.0f)
+            {
+                Vector2 returnPosition = new Vector2(transform.position.x, initialY);
+                rb.velocity = new Vector2(rb.velocity.x, 0.7f * movementSpeed);
+            }
 
-        //check in range
-        float currentRange = this.transform.position.x - player.position.x;
-        if (Mathf.Abs(currentRange) < attackRange && Left)
-        {
-            Dive();
+            
+            // Once the swoop is complete, reset isSwooping to false
+            if (swoopTimer >= swoopDelay * 2) // Adjust this value as needed
+            {
+                isSwooping = false;
+            }
         }
     }
 
-
-
+   
     void Dive()
     {
        // Calculate the dive destination
@@ -79,10 +122,7 @@ public class RaptorDetectPlayer : MonoBehaviour
         if(this.transform.position.x < player.position.x - 2.0f){
             Vector2 returnPosition = new Vector2(transform.position.x, initialY);
             rb.velocity = new Vector2(rb.velocity.x, 0.7f* movementSpeed);
-        }
-
-        // Check if the Raptor has reached the dive destination Y
-        
+        }        
     }
     public void StopMoving()
     {
