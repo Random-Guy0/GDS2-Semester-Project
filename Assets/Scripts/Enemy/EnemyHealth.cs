@@ -66,6 +66,7 @@ public class EnemyHealth : Health
         Destroy(enemyRigidbody);
         Destroy(enemyAttackHandler);
         Destroy(detectPlayerComponent);
+        Destroy(GetComponent<EnemyMeleeAttack>());
         Destroy(this);
     }
 
@@ -73,8 +74,8 @@ public class EnemyHealth : Health
     {
         BubbledEnemy bubble = Instantiate(bubblePrefab, transform.position, Quaternion.identity);
         transform.parent = bubble.transform;
-        bubble.transform.localScale = Vector2.one * bubbleScale;
-        transform.localScale = Vector2.one / bubbleScale;
+        bubble.transform.localScale = (Vector3)(Mathf.Max(transform.localScale.x, transform.localScale.y) * bubbleScale * Vector2.one) + Vector3.forward;
+        transform.localScale = (Vector3)(Vector2.one / bubbleScale) + Vector3.forward;
         bubble.PopDamage = Mathf.CeilToInt(maxHealth * 0.25f);
         bubble.enemySprite = _spriteRenderer;
         Vector2 directionToPlayer = transform.position - GameManager.Instance.Player.transform.position;

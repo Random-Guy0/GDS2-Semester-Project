@@ -2,35 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class EnemyMeleeAttack : AttackHandler
+public class EnemyAttackHandler : AttackHandler
 {
-    Rigidbody2D rb;
     Transform target;
+    Rigidbody2D rb;
+    private float stopDistance = 2.0f;
+    private float yPositionTolerance = 0.5f; // Tolerance for Y position check
 
-    void Start(){
-         rb = GetComponent<Rigidbody2D>();
-         target = GameManager.Instance.Player.transform;
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        target = GameManager.Instance.Player.transform;
     }
 
-    void Update(){
-        Vector2 moveDirection = (target.position - transform.position).normalized;
-       
-        if(Mathf.Abs((target.position.x - transform.position.x)) < 1.5 && Mathf.Abs((target.position.y - transform.position.y)) < 1.0f){
-            DoMeleeAttack();
+    void Update()
+    {
+        float yPositionDifference = Mathf.Abs(target.position.y - transform.position.y);
+
+        // Check if the Grunt is in the same Y position as the player within the tolerance
+        if (yPositionDifference <= yPositionTolerance && Mathf.Abs(target.position.x - transform.position.x) < stopDistance)
+        {
+           // DoMeleeAttack();
+           // WaitForAttack(2);
         }
     }
-    // Start is called before the first frame update
 
-    protected override float GetDirection()
+    public override float GetDirection()
     {
         float direction;
-        if(this.transform.position.x - target.position.x < 0){
+        if (this.transform.position.x - target.position.x < 0)
+        {
             direction = 1.0f;
         }
-        else{
+        else
+        {
             direction = -1.0f;
         }
         return direction;
     }
+
 }

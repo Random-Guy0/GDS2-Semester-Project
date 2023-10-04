@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,7 +31,7 @@ public abstract class AttackHandler : MonoBehaviour
             CurrentAttack = attack;
             float width = GetColliderSize();
             float direction = GetDirection();
-            attackCoroutine = StartCoroutine(attack.DoAttack(direction, width, transform.position, this));
+            attackCoroutine = StartCoroutine(attack.DoAttack(direction, width, GetAttackOrigin(), this));
             StartCoroutine(WaitForAttack(attack.Duration));
         }
     }
@@ -40,6 +41,7 @@ public abstract class AttackHandler : MonoBehaviour
         CurrentlyAttacking = true;
         yield return new WaitForSeconds(attackDuration);
         CurrentlyAttacking = false;
+
     }
 
     protected virtual float GetColliderSize()
@@ -54,15 +56,20 @@ public abstract class AttackHandler : MonoBehaviour
         return width;
     }
 
-    protected abstract float GetDirection();
+    public abstract float GetDirection();
 
     public virtual void InterruptAttack()
     {
         if (attackCoroutine != null)
         {
             Debug.Log("Attack Interrupted");
-            //StopCoroutine(attackCoroutine);
+            StopCoroutine(attackCoroutine);
         }
         CurrentAttack = null;
+    }
+
+    protected virtual Vector2 GetAttackOrigin()
+    {
+        return transform.position;
     }
 }

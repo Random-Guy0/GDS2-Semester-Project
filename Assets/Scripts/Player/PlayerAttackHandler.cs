@@ -99,7 +99,11 @@ public class PlayerAttackHandler : AttackHandler
 
     protected override IEnumerator WaitForAttack(float attackDuration)
     {
-        playerMovement.CanMove = false;
+        if (SelectedWeapon.Attack is not ContinuousRangedAttack)
+        {
+            playerMovement.CanMove = false;
+        }
+
         yield return base.WaitForAttack(attackDuration);
         playerMovement.CanMove = true;
         if (bufferAttack)
@@ -118,7 +122,7 @@ public class PlayerAttackHandler : AttackHandler
         
     }
 
-    protected override float GetDirection()
+    public override float GetDirection()
     {
         float direction = playerMovement.Direction.x;
         if (direction == 0f)
@@ -131,7 +135,10 @@ public class PlayerAttackHandler : AttackHandler
     public override void InterruptAttack()
     {
         base.InterruptAttack();
-        animator.SetTrigger("InterruptAttack");
+        if (SelectedWeapon.Attack is MeleeAttack)
+        {
+            animator.SetTrigger("InterruptAttack");
+        }
     }
 
     public void GrabBubble(BubbledEnemy bubble)
@@ -161,6 +168,11 @@ public class PlayerAttackHandler : AttackHandler
         grabbedBubble = null;
     }
 
+    protected override Vector2 GetAttackOrigin()
+    {
+        return SelectedWeapon.AttackOrigin.position;
+    }
+
     public bool UseAmmo(int amount)
     {
         if (ammoController.CanUseAmmo(amount))
@@ -174,6 +186,11 @@ public class PlayerAttackHandler : AttackHandler
 
     private void SelectWeapon(int index)
     {
+        if (AttackButtonDown && SelectedWeapon.Attack is ContinuousRangedAttack)
+        {
+            return;
+        }
+        
         SelectedWeapon = Weapons[index];
         weaponsUIanimator.SetTrigger("Weapon" + index);
     }
@@ -249,6 +266,7 @@ public class PlayerWeapon
     [field: SerializeField] public Attack Attack { get; private set; }
     [field: SerializeField] public bool Unlocked { get; set; } = true;
     [field: SerializeField] public SpriteRenderer Sprite { get; private set; }
+    [field: SerializeField] public Transform AttackOrigin { get; private set; }
 
     public PlayerWeapon(Attack attack)
     {

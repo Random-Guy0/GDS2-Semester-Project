@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9102721864597918552}
   - component: {fileID: 5715400789707310663}
   - component: {fileID: 7525131703454876912}
+  - component: {fileID: -4211632076796973821}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -101,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689bfc6412b08c044b648d30826f98fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!50 &2980102513536050860
 Rigidbody2D:
   serializedVersion: 4
@@ -192,7 +194,7 @@ MonoBehaviour:
   enemyRigidbody: {fileID: 2980102513536050860}
   enemyCollider: {fileID: 9102721864597918552}
   bubblePrefab: {fileID: 1446682404955272071, guid: 2727dd07c18a6f64e92d3bb149721607, type: 3}
-  bubbleScale: 1.5
+  bubbleScale: 1.2
   pickup: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
   ammoDropAmount: 1
 --- !u!114 &7525131703454876912
@@ -205,6 +207,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a881c200effc624285aa82fb8791e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MeleeAttacks>k__BackingField:
+  - {fileID: 11400000, guid: c1a3c638dd1a0ce48b41a7362b7dde56, type: 2}
+  <RangedAttacks>k__BackingField: []
+--- !u!114 &-4211632076796973821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205769703443517595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6474d433ca18c2e48affe8d83bdf6916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <MeleeAttacks>k__BackingField:

@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     
+    //remove after Sprint 3
+    [SerializeField] private AudioSource footstepAudio;
+    
     public Vector2 Direction { get; private set; }
     
     public bool CanMove { get; set; }
@@ -33,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
             scale.x = Direction.x;
             transform.localScale = scale;
         }
+        
+        //remove after Sprint 3
+        footstepAudio.Play();
     }
 
     private void FixedUpdate()
