@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 1
   <Target>k__BackingField: 0
-  <Duration>k__BackingField: 0.1
+  <Duration>k__BackingField: 0.7
   <DamageTypes>k__BackingField: 
   <DamageTypeAttackMultiplier>k__BackingField: 2
   <Projectile>k__BackingField: {fileID: 7389128019541876678, guid: 7b0f381e35b25204d9fb6e6ff52ec05d, type: 3}

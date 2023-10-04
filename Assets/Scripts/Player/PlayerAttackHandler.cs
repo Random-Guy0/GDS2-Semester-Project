@@ -96,7 +96,11 @@ public class PlayerAttackHandler : AttackHandler
 
     protected override IEnumerator WaitForAttack(float attackDuration)
     {
-        playerMovement.CanMove = false;
+        if (SelectedWeapon.Attack is not ContinuousRangedAttack)
+        {
+            playerMovement.CanMove = false;
+        }
+
         yield return base.WaitForAttack(attackDuration);
         playerMovement.CanMove = true;
         if (bufferAttack)
@@ -115,7 +119,7 @@ public class PlayerAttackHandler : AttackHandler
         
     }
 
-    protected override float GetDirection()
+    public override float GetDirection()
     {
         float direction = playerMovement.Direction.x;
         if (direction == 0f)
@@ -128,7 +132,10 @@ public class PlayerAttackHandler : AttackHandler
     public override void InterruptAttack()
     {
         base.InterruptAttack();
-        animator.SetTrigger("InterruptAttack");
+        if (SelectedWeapon.Attack is MeleeAttack)
+        {
+            animator.SetTrigger("InterruptAttack");
+        }
     }
 
     public void GrabBubble(BubbledEnemy bubble)
@@ -176,6 +183,11 @@ public class PlayerAttackHandler : AttackHandler
 
     private void SelectWeapon(int index)
     {
+        if (AttackButtonDown && SelectedWeapon.Attack is ContinuousRangedAttack)
+        {
+            return;
+        }
+        
         SelectedWeapon = Weapons[index];
     }
 

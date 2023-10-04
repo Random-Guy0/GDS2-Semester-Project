@@ -66,6 +66,7 @@ public class EnemyHealth : Health
         Destroy(enemyRigidbody);
         Destroy(enemyAttackHandler);
         Destroy(detectPlayerComponent);
+        Destroy(GetComponent<EnemyMeleeAttack>());
         Destroy(this);
     }
 

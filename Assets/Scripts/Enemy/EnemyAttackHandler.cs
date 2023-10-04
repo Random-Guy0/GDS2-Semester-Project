@@ -27,7 +27,7 @@ public class EnemyAttackHandler : AttackHandler
         }
     }
 
-    protected override float GetDirection()
+    public override float GetDirection()
     {
         float direction;
         if (this.transform.position.x - target.position.x < 0)
