@@ -4842,6 +4842,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
+      propertyPath: weaponsUIanimator
+      value: 
+      objectReference: {fileID: 711447007}
     - target: {fileID: 1610161608566021959, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
       propertyPath: m_RootOrder
       value: 3

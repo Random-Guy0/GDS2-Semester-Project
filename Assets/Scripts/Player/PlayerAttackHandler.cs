@@ -40,6 +40,9 @@ public class PlayerAttackHandler : AttackHandler
     
     public bool AttackButtonDown { get; private set; }
 
+    // Weapon UI animator
+    [SerializeField] private Animator weaponsUIanimator;
+
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -172,6 +175,7 @@ public class PlayerAttackHandler : AttackHandler
     private void SelectWeapon(int index)
     {
         SelectedWeapon = Weapons[index];
+        weaponsUIanimator.SetTrigger("Weapon" + index);
     }
 
     public void SelectWeapon1(InputAction.CallbackContext context)
