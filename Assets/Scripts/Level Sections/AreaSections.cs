@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AreaSections : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     public List<GameObject> section = new List<GameObject>();
     public List<GameObject> areaWalls = new List<GameObject>();
@@ -21,24 +20,18 @@ public class AreaSections : MonoBehaviour
             sectionsCompleted.Add(false);
         }
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if (sectionComplelted >= sectionsCompleted.Count && areaSectionDisabled == false) 
+        if (sectionComplelted == sectionsCompleted.Count && areaSectionDisabled == false) 
         {
-            Debug.Log("AreaSection completed");
             sectionManager.NewArea();
             ++sectionManager.currentArea;
-            //gameObject.SetActive(false);
             areaSectionDisabled = true;
         }
     }
 
     public void AreaSectionComplete()
     {
-        //sectionsCompleted[sectionComplelted] = true;
-        Debug.Log("Area Complete");
         section[sectionComplelted].SetActive(false);
 
         if (sectionComplelted == 0)

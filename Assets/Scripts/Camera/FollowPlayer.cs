@@ -9,9 +9,11 @@ public class FollowPlayer : MonoBehaviour
 
     private Transform player;
     public float cameraSpeed = 1;
+    public bool camRecenter;
     // Start is called before the first frame update
     void Start()
     {
+        camRecenter = false;
         OnOffSwitch(true);
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -19,6 +21,19 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (gameObject.transform.position.x == player.position.x)
+        {
+            Debug.Log("CamRecenter reset to false");
+            camRecenter = false;
+        }
+
+        if (camRecenter == true && gameObject.transform.position.x != player.position.x)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, 0, -10), cameraSpeed * Time.deltaTime);
+        }
+        else 
+
         if (player.transform.position.x <= 0.0f)
         {
             OnOffSwitch(true);
@@ -47,7 +62,7 @@ public class FollowPlayer : MonoBehaviour
     IEnumerator CamReFollow()
     {
 
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, 0, -10), cameraSpeed * Time.deltaTime);
+        camRecenter = true;
         yield return null;
     }
 }

@@ -17,7 +17,6 @@ public class SectionEnemyManager : MonoBehaviour
     {
         if (enemyCount <= 0)
         {
-            Debug.Log("All Enemies Defeated");
             sectionManager.AreaSectionComplete();
             gameObject.SetActive(false);
         }
@@ -26,13 +25,10 @@ public class SectionEnemyManager : MonoBehaviour
     public void SetNewEnemy()
     {
         ++enemyCount;
-        Debug.Log("Enemy Added to Section Manager of " + gameObject.name + " Total Enemies now: " + enemyCount);
     }
 
     public void EnemyKilled()
     {
-        Debug.Log("EnemyKilled");
         enemyCount--;
-        Debug.Log("Enemy Count for Section " + gameObject.name + "is now: " + enemyCount);
     }
 }
