@@ -28,7 +28,7 @@ public class EnemyMeleeAttack : AttackHandler
     }
     // Start is called before the first frame update
 
-    protected override float GetDirection()
+    public override float GetDirection()
     {
         float direction;
         if(this.transform.position.x - target.position.x < 0){

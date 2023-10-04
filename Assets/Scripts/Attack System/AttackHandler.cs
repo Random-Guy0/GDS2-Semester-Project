@@ -56,14 +56,14 @@ public abstract class AttackHandler : MonoBehaviour
         return width;
     }
 
-    protected abstract float GetDirection();
+    public abstract float GetDirection();
 
     public virtual void InterruptAttack()
     {
         if (attackCoroutine != null)
         {
             Debug.Log("Attack Interrupted");
-            //StopCoroutine(attackCoroutine);
+            StopCoroutine(attackCoroutine);
         }
         CurrentAttack = null;
     }
