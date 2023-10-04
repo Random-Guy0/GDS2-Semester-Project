@@ -10,14 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7752058234116014010}
   - component: {fileID: 2585495285066415758}
-  - component: {fileID: 8831299249130729824}
   - component: {fileID: 2980102513536050860}
   - component: {fileID: 9102721864597918552}
   - component: {fileID: 5715400789707310663}
-  - component: {fileID: 7525131703454876912}
-  - component: {fileID: -4211632076796973821}
+  - component: {fileID: 1535365293724065592}
+  - component: {fileID: 3281675850889452247}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: ShortRangedEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 860b2f57cce52294db29b85f29dfd47e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b11b8bf78a3e6ba48a27ac6ca1d97915, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -90,19 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8831299249130729824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205769703443517595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 689bfc6412b08c044b648d30826f98fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!50 &2980102513536050860
 Rigidbody2D:
   serializedVersion: 4
@@ -189,15 +175,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   <Weaknesses>k__BackingField: 00000000
-  detectPlayerComponent: {fileID: 8831299249130729824}
-  enemyAttackHandler: {fileID: 7525131703454876912}
+  detectPlayerComponent: {fileID: 0}
+  enemyAttackHandler: {fileID: 0}
   enemyRigidbody: {fileID: 2980102513536050860}
   enemyCollider: {fileID: 9102721864597918552}
   bubblePrefab: {fileID: 1446682404955272071, guid: 2727dd07c18a6f64e92d3bb149721607, type: 3}
-  bubbleScale: 1.2
+  bubbleScale: 1.5
   pickup: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
   ammoDropAmount: 1
---- !u!114 &7525131703454876912
+--- !u!114 &1535365293724065592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,13 +192,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 205769703443517595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a881c200effc624285aa82fb8791e5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9691e2b793acfb242b0eea6ad7b51962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MeleeAttacks>k__BackingField:
-  - {fileID: 11400000, guid: c1a3c638dd1a0ce48b41a7362b7dde56, type: 2}
-  <RangedAttacks>k__BackingField: []
---- !u!114 &-4211632076796973821
+  target: {fileID: 0}
+  speed: 1
+--- !u!114 &3281675850889452247
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,9 +206,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 205769703443517595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6474d433ca18c2e48affe8d83bdf6916, type: 3}
+  m_Script: {fileID: 11500000, guid: f445c2c8ed2803d41aedb4684117ee61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MeleeAttacks>k__BackingField:
-  - {fileID: 11400000, guid: c1a3c638dd1a0ce48b41a7362b7dde56, type: 2}
-  <RangedAttacks>k__BackingField: []
+  <MeleeAttacks>k__BackingField: []
+  <RangedAttacks>k__BackingField:
+  - {fileID: 11400000, guid: dcf877cb997e52b40810e10a1ce848af, type: 2}
