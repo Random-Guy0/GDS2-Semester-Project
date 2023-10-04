@@ -1791,6 +1791,7 @@ GameObject:
   - component: {fileID: 711447004}
   - component: {fileID: 711447006}
   - component: {fileID: 711447005}
+  - component: {fileID: 711447007}
   m_Layer: 5
   m_Name: WeaponsIcon
   m_TagString: Untagged
@@ -1856,6 +1857,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711447003}
   m_CullTransparentMesh: 1
+--- !u!95 &711447007
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711447003}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d64152882f90dcd48bf70d7622c811c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &738012556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
