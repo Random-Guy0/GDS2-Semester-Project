@@ -212,6 +212,39 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "1D Axis",
+                    "id": "df9bf794-dbe2-423d-aec9-a611d80d6b3b",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CycleWeapons",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "2a7bb1fa-1e68-45b8-bcfd-3cff7ad62864",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CycleWeapons",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "9d83a8b0-c003-4578-ae0d-f9b58858e1a6",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CycleWeapons",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "e1ec5296-1919-46fa-b7e4-b28d636993f7",
                     "path": "<Keyboard>/r",

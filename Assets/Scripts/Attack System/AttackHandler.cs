@@ -41,6 +41,7 @@ public abstract class AttackHandler : MonoBehaviour
         CurrentlyAttacking = true;
         yield return new WaitForSeconds(attackDuration);
         CurrentlyAttacking = false;
+
     }
 
     protected virtual float GetColliderSize()

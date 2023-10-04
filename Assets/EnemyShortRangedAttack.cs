@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class EnemyAttackHandler : AttackHandler
+public class EnemyShortRangedAttack : AttackHandler
 {
     Transform target;
     Rigidbody2D rb;
     private float stopDistance = 2.0f;
-    private float yPositionTolerance = 0.5f; // Tolerance for Y position check
 
     void Start()
     {
@@ -19,12 +17,11 @@ public class EnemyAttackHandler : AttackHandler
     {
         float yPositionDifference = Mathf.Abs(target.position.y - transform.position.y);
 
-        // Check if the Grunt is in the same Y position as the player within the tolerance
-        if (yPositionDifference <= yPositionTolerance && Mathf.Abs(target.position.x - transform.position.x) < stopDistance)
-        {
-           // DoMeleeAttack();
-           // WaitForAttack(2);
+        if(Mathf.Abs(yPositionDifference) < 1){
+            DoRangedAttack();
+            
         }
+        
     }
 
     protected override float GetDirection()
@@ -40,5 +37,4 @@ public class EnemyAttackHandler : AttackHandler
         }
         return direction;
     }
-
 }

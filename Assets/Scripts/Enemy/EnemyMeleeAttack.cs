@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class EnemyAttackHandler : AttackHandler
+public class EnemyMeleeAttack : AttackHandler
 {
     Rigidbody2D rb;
     Transform target;
+    private float stopDistance = 2.0f;
+
+    private float yPositionTolerance = 0.5f; // Tolerance for Y position check
 
     void Start(){
          rb = GetComponent<Rigidbody2D>();
@@ -15,9 +18,12 @@ public class EnemyAttackHandler : AttackHandler
 
     void Update(){
         Vector2 moveDirection = (target.position - transform.position).normalized;
-       
-        if(Mathf.Abs((target.position.x - transform.position.x)) < 1.5 && Mathf.Abs((target.position.y - transform.position.y)) < 1.0f){
+        float yPositionDifference = Mathf.Abs(target.position.y - transform.position.y);
+
+        if (yPositionDifference <= yPositionTolerance && Mathf.Abs(target.position.x - transform.position.x) < stopDistance){
+            
             DoMeleeAttack();
+
         }
     }
     // Start is called before the first frame update
