@@ -133,7 +133,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ad5b6a9559eb7241814d27e75f9bc65
+      spriteID: d7e5c30c285800d4e844a6b5700640ce
       internalID: -822022218
       vertices: []
       indices: 
@@ -154,7 +154,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42cab30f3f73a7740ac5c20b3fff186a
+      spriteID: b7e198a14ae6e7040a9556ed1f4f36dc
       internalID: -824823700
       vertices: []
       indices: 
@@ -175,7 +175,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbdc9bce0d8a89f4ba7cddffecba3415
+      spriteID: bd95c5370a9c7474e87c81b79bd48ff7
       internalID: -716959886
       vertices: []
       indices: 
@@ -196,7 +196,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c613f0cb02bf4a4b886ba16219cb33d
+      spriteID: e260e845efb6c874e9c89ec4514765f0
       internalID: -1322554928
       vertices: []
       indices: 
@@ -217,7 +217,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 276f85280726ed44a8ccdb096edf1958
+      spriteID: 672ccf06f61e76943b79974125f21eb9
       internalID: -2044523138
       vertices: []
       indices: 
@@ -238,8 +238,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a2c47769181b904fa2701a6f9f2a550
+      spriteID: de43730ed41a32f4d85f67b08db36703
       internalID: 1088446295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharacterAnimations-Melee 2_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c54c81b3f7b3f724b9e4bd776b608671
+      internalID: 906035722
       vertices: []
       indices: 
       edges: []
@@ -261,6 +282,7 @@ TextureImporter:
       CharacterAnimations-Melee 2_3: -1322554928
       CharacterAnimations-Melee 2_4: -2044523138
       CharacterAnimations-Melee 2_5: 1088446295
+      CharacterAnimations-Melee 2_6: 906035722
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
