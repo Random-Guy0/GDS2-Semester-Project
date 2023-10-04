@@ -4055,7 +4055,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'After bubbling (Killing) and enemy, click the left mouse button to grab
-    the bubble and left lick again to throw said bubble at your foes :)
+    the bubble and left click again to throw said bubble at your foes :)
 
 '
   m_isRightToLeft: 0
