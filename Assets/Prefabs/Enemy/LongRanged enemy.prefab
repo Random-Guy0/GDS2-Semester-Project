@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 2980102513536050860}
   - component: {fileID: 9102721864597918552}
   - component: {fileID: 5715400789707310663}
-  - component: {fileID: 1535365293724065592}
-  - component: {fileID: 3281675850889452247}
+  - component: {fileID: -1549578515986069473}
+  - component: {fileID: -1956353026212193312}
   m_Layer: 0
-  m_Name: ShortRangedEnemy
+  m_Name: LongRanged enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b11b8bf78a3e6ba48a27ac6ca1d97915, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 136a7a9ea02358442abade4c9ac6b8af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
   bubbleScale: 1.5
   pickup: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
   ammoDropAmount: 1
---- !u!114 &1535365293724065592
+--- !u!114 &-1549578515986069473
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,13 +192,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 205769703443517595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9691e2b793acfb242b0eea6ad7b51962, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d697bce4d2597849b82a7c32f771582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 1
-  stopDistance: 4
---- !u!114 &3281675850889452247
+  speed: 2
+--- !u!114 &-1956353026212193312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -207,9 +206,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 205769703443517595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f445c2c8ed2803d41aedb4684117ee61, type: 3}
+  m_Script: {fileID: 11500000, guid: 1db4d35559f07fc41bbab1ced0a77b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <MeleeAttacks>k__BackingField: []
   <RangedAttacks>k__BackingField:
-  - {fileID: 11400000, guid: dcf877cb997e52b40810e10a1ce848af, type: 2}
+  - {fileID: 11400000, guid: 082119dc8e8e7ef4dbd2112e55611812, type: 2}
