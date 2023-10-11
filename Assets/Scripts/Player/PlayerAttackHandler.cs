@@ -122,12 +122,12 @@ public class PlayerAttackHandler : AttackHandler
         
     }
 
-    public override float GetDirection()
+    public override Vector2 GetDirection()
     {
-        float direction = playerMovement.Direction.x;
-        if (direction == 0f)
+        Vector2 direction = playerMovement.Direction;
+        if (direction == Vector2.zero)
         {
-            direction = 1f;
+            direction = Vector2.one;
         }
         return direction;
     }

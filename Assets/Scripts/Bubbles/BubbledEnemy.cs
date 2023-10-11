@@ -92,7 +92,7 @@ public class BubbledEnemy : MonoBehaviour
         {
             playerGrabbing.HeldBubblePopped();
         }
-        Release(0f);
+        Release(Vector2.zero);
     }
 
     public void Grab(PlayerAttackHandler player)
@@ -104,7 +104,7 @@ public class BubbledEnemy : MonoBehaviour
         grabbed = true;
     }
 
-    public void Release(float directionAndForce)
+    public void Release(Vector2 directionAndForce)
     {
         float velocityMultiplier = Mathf.Abs(velocity.x);
         if (velocityMultiplier != 0f)

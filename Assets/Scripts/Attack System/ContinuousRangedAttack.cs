@@ -7,7 +7,7 @@ public class ContinuousRangedAttack : RangedAttack
 {
     [field: SerializeField] public float ProjectileTimer { get; private set; } = 0.02f;
     
-    public override IEnumerator DoAttack(float direction = 1, float attackerWidth = 1, Vector2? attackerPosition = null,
+    public override IEnumerator DoAttack(Vector2 direction, Vector2 attackerSize, Vector2 attackerPosition,
         AttackHandler attacker = null)
     {
         PlayerAttackHandler playerAttackHandler = (PlayerAttackHandler)attacker;
@@ -37,11 +37,12 @@ public class ContinuousRangedAttack : RangedAttack
                 direction = attacker.GetDirection();
 
                 Vector2 position = playerAttackHandler.SelectedWeapon.AttackOrigin.position;
-                Vector2 origin = GetAttackOrigin(direction, attackerWidth, position);
+                Vector2 origin = GetAttackOrigin(direction, attackerSize, position);
 
                 if (newProjectile.TryGetComponent<Collider2D>(out Collider2D projectileCollider))
                 {
-                    origin.x += direction * projectileCollider.bounds.extents.x;
+                    origin.x += direction.x * projectileCollider.bounds.extents.x;
+                    origin.y += direction.y * projectileCollider.bounds.extents.y;
                 }
 
                 newProjectile.transform.position = origin;

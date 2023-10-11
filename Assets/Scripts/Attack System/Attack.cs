@@ -12,14 +12,15 @@ public abstract class Attack : ScriptableObject
     [field: SerializeField] public DamageType[] DamageTypes { get; private set; }
     [field: SerializeField] public float DamageTypeAttackMultiplier { get; private set; } = 2f;
 
-    public abstract IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f,
-        Vector2? attackerPosition = null, AttackHandler attacker = null);
+    public abstract IEnumerator DoAttack(Vector2 direction, Vector2 attackerSize,
+        Vector2 attackerPosition, AttackHandler attacker = null);
 
-    protected virtual Vector2 GetAttackOrigin(float direction, float attackerWidth, Vector2 attackerPosition)
+    protected virtual Vector2 GetAttackOrigin(Vector2 direction, Vector2 attackerSize, Vector2 attackerPosition)
     {
         Vector2 origin = attackerPosition;
-        origin.x += attackerWidth * 0.5f * direction;
-        origin.x += direction * 0.01f;
+        origin.x += attackerSize.x * 0.5f * direction.x;
+        origin.y += attackerSize.y * 0.5f * direction.y;
+        origin += direction * 0.01f;
         return origin;
     }
 
