@@ -21,3 +21,4 @@ MonoBehaviour:
   <Range>k__BackingField: 5
   <Speed>k__BackingField: 7
   <AmmoCost>k__BackingField: 1
+  <CanMoveVertically>k__BackingField: 0

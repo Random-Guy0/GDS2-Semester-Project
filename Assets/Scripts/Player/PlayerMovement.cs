@@ -29,13 +29,22 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
 
+        Vector2 newDirection = Direction;
+
         if (moveInput.x != 0f)
         {
-            Direction = new Vector2(Mathf.Round(moveInput.x), Mathf.Round(moveInput.y));
+            newDirection = Vector2.right * Mathf.Round(moveInput.x);
             Vector3 scale = transform.localScale;
-            scale.x = Direction.x;
+            scale.x = newDirection.x;
             transform.localScale = scale;
         }
+
+        if (moveInput.y != 0f)
+        {
+            newDirection.y = Mathf.Round(moveInput.y);
+        }
+
+        Direction = newDirection;
         
         //remove after Sprint 3
         footstepAudio.Play();
