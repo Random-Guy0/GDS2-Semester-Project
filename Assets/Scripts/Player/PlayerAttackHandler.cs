@@ -127,7 +127,7 @@ public class PlayerAttackHandler : AttackHandler
         Vector2 direction = playerMovement.Direction;
         if (direction == Vector2.zero)
         {
-            direction = Vector2.one;
+            direction = Vector2.right;
         }
         return direction;
     }
@@ -186,9 +186,14 @@ public class PlayerAttackHandler : AttackHandler
 
     private void SelectWeapon(int index)
     {
-        if (AttackButtonDown && SelectedWeapon.Attack is ContinuousRangedAttack)
+        if ((AttackButtonDown && SelectedWeapon.Attack is ContinuousRangedAttack) || SelectedWeapon == Weapons[index])
         {
             return;
+        }
+
+        if (CarryingBubble)
+        {
+            ReleaseBubble();
         }
         
         SelectedWeapon = Weapons[index];

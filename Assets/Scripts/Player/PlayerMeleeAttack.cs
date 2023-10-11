@@ -10,9 +10,12 @@ public class PlayerMeleeAttack : MeleeAttack
     {
         Vector2 origin = GetAttackOrigin(direction, attackerSize, attackerPosition);
         
-        /*DebugBox hitTestCube = Instantiate(hitTestCubePrefab, origin, Quaternion.identity);
-        hitTestCube.transform.localScale = new Vector3(HitSize.x, HitSize.y, 1f);
-        hitTestCube.Duration = Duration;*/
+#if UNITY_EDITOR
+        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), Color.green, Duration);
+        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x + HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration);
+        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration);
+        Debug.DrawLine(new Vector3(origin.x - HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration);  
+#endif
         
         List<Health> allHits = new List<Health>();
         float currentTime = 0f;
