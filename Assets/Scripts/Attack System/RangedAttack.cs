@@ -6,7 +6,7 @@ using UnityEngine;
 public class RangedAttack : Attack
 {
     [field: SerializeField] public AttackProjectile Projectile { get; private set; }
-    [field: SerializeField] public float Range { get; private set; } = 5f;
+    [field: SerializeField] [Tooltip("Set to 0 for range to be unlimited.")] public float Range { get; private set; } = 5f;
     [field: SerializeField] public float Speed { get; private set; } = 7f;
     [field: SerializeField] public int AmmoCost { get; private set; } = 1;
 

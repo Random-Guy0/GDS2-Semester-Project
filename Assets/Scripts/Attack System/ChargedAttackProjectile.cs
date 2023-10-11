@@ -29,7 +29,7 @@ public class ChargedAttackProjectile : AttackProjectile
     {
         velocity.y -= gravity;
         float distanceTravelled = Mathf.Abs(startingXPosition - transform.position.x);
-        if (distanceTravelled >= attackStats.Range * chargeTime)
+        if (attackStats.Range > 0f && distanceTravelled >= attackStats.Range * chargeTime)
         {
             DoAttack();
         }

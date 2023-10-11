@@ -30,7 +30,7 @@ public class AttackProjectile : MonoBehaviour
     protected virtual void Move()
     {
         float distanceTravelled = Mathf.Abs(startingXPosition - transform.position.x);
-        if (distanceTravelled >= attackStats.Range)
+        if (attackStats.Range > 0f && distanceTravelled >= attackStats.Range)
         {
             Destroy(gameObject);
         }
@@ -52,6 +52,14 @@ public class AttackProjectile : MonoBehaviour
         if (other.gameObject.TryGetComponent<Health>(out Health otherHealth))
         {
             DoAttack(otherHealth);
+        }
+    }
+    
+    private void OnBecameInvisible()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            Destroy(gameObject);
         }
     }
 }
