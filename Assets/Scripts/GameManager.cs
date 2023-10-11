@@ -20,8 +20,6 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
-
-        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void ResetGame()
