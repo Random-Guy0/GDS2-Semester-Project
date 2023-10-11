@@ -17,8 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource footstepAudio;
     
     public Vector2 Direction { get; private set; }
-    
-    public bool CanMove { get; set; }
+
+    public bool CanMove { get; set; } = true;
 
     private void Start()
     {
