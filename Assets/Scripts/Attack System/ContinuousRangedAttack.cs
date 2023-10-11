@@ -42,7 +42,15 @@ public class ContinuousRangedAttack : RangedAttack
                 if (newProjectile.TryGetComponent<Collider2D>(out Collider2D projectileCollider))
                 {
                     origin.x += direction.x * projectileCollider.bounds.extents.x;
-                    origin.y += direction.y * projectileCollider.bounds.extents.y;
+                    if (CanMoveVertically)
+                    {
+                        origin.y += direction.y * projectileCollider.bounds.extents.y;
+                    }
+                }
+
+                if (!CanMoveVertically)
+                {
+                    direction.y = 0f;
                 }
 
                 newProjectile.transform.position = origin;

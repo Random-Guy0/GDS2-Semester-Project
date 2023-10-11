@@ -99,7 +99,7 @@ public class PlayerAttackHandler : AttackHandler
 
     protected override IEnumerator WaitForAttack(float attackDuration)
     {
-        if (SelectedWeapon.Attack is not ContinuousRangedAttack)
+        if (SelectedWeapon.Attack is not RangedAttack)
         {
             playerMovement.CanMove = false;
         }

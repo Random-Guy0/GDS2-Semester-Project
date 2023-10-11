@@ -9,6 +9,7 @@ public class RangedAttack : Attack
     [field: SerializeField] [Tooltip("Set to 0 for range to be unlimited.")] public float Range { get; private set; } = 5f;
     [field: SerializeField] public float Speed { get; private set; } = 7f;
     [field: SerializeField] public int AmmoCost { get; private set; } = 1;
+    [field: SerializeField] public bool CanMoveVertically { get; private set; } = false;
 
     public override IEnumerator DoAttack(Vector2 direction, Vector2 attackerSize,
         Vector2 attackerPosition, AttackHandler attacker = null)
@@ -27,11 +28,33 @@ public class RangedAttack : Attack
         if (newProjectile.TryGetComponent<Collider2D>(out Collider2D projectileCollider))
         {
             origin.x += direction.x * projectileCollider.bounds.extents.x;
-            origin.y += direction.y * projectileCollider.bounds.extents.y;
+            if (CanMoveVertically)
+            {
+                origin.y += direction.y * projectileCollider.bounds.extents.y;
+            }
+        }
+
+        if (!CanMoveVertically)
+        {
+            direction.y = 0f;
         }
 
         newProjectile.transform.position = origin;
         
         newProjectile.FireProjectile(direction, attacker);
+    }
+
+    protected override Vector2 GetAttackOrigin(Vector2 direction, Vector2 attackerSize, Vector2 attackerPosition)
+    {
+        Vector2 origin = attackerPosition;
+        origin.x += attackerSize.x * 0.5f * direction.x;
+        
+        if (CanMoveVertically)
+        {
+            origin.y += attackerSize.y * 0.5f * direction.y;
+        }
+
+        origin += direction * 0.01f;
+        return origin;
     }
 }
