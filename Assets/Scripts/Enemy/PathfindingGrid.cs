@@ -22,6 +22,13 @@ public class PathfindingGrid : MonoBehaviour
         return (Vector2)gridPosition * GridNodeSpacing + (Vector2)transform.position;
     }
 
+    public bool PositionWithinGrid(Vector2 position)
+    {
+        Vector2 corner1 = transform.position;
+        Vector2 corner2 = corner1 + (Vector2)GridSize * GridNodeSpacing;
+        return position.x >= corner1.x && position.y >= corner1.y && position.x <= corner2.x && position.y <= corner2.y;
+    }
+
     private Stack<PathfindingNode> GeneratePath(PathfindingNode start, PathfindingNode end)
     {
         List<PathfindingNode> openSet = new List<PathfindingNode> { start };

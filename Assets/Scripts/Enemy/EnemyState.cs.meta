@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: bc5d3f8d8d35b39419788bd22b1b1e4d
+guid: 61248fa5c4c945c47ab9064a17f4052b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - pathfindingNodePrefab: {fileID: 6703680534465696422, guid: 72f885bb374f83749814ea877b2b0db7, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
