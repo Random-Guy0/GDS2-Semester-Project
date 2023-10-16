@@ -2,10 +2,10 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{1944ad73-a092-496f-b49f-f06327a932d8}">
 		<property name="name">
-			<value>TestEvent2</value>
+			<value>EgyptLevelBossFight</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{771438a6-340a-4335-97b1-38b28538f405}</destination>
@@ -38,9 +38,6 @@
 		</relationship>
 	</object>
 	<object class="MasterTrack" id="{718dfce6-02fe-4c05-8674-6f30de29eacb}">
-		<relationship name="modules">
-			<destination>{e3c29f40-b571-4e97-8d4c-abfa7bd094a6}</destination>
-		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{ce913cbc-3012-48f3-84ab-59132ba107a1}</destination>
 		</relationship>
@@ -58,11 +55,7 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{e8a85df5-3a68-4bb2-957c-57e15a3ba147}" />
 	<object class="MarkerTrack" id="{7d6ea389-bc97-4762-9189-5be33d8366fc}" />
-	<object class="Timeline" id="{87218260-e175-4ad2-b136-062082f85cee}">
-		<relationship name="modules">
-			<destination>{e3c29f40-b571-4e97-8d4c-abfa7bd094a6}</destination>
-		</relationship>
-	</object>
+	<object class="Timeline" id="{87218260-e175-4ad2-b136-062082f85cee}" />
 	<object class="EventMixerMaster" id="{ce913cbc-3012-48f3-84ab-59132ba107a1}">
 		<relationship name="effectChain">
 			<destination>{c22e5acf-a8a3-4b0f-a216-edc8a66133d4}</destination>
@@ -72,14 +65,6 @@
 		</relationship>
 		<relationship name="mixer">
 			<destination>{d8db531e-2246-4e80-b932-11fbff0d7773}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{e3c29f40-b571-4e97-8d4c-abfa7bd094a6}">
-		<property name="length">
-			<value>440.16326530612247</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{bf292c76-214a-48e7-b549-a51cdb7754a7}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{b5e33cc0-e8de-47b7-8e60-2423d5bddaa9}">
