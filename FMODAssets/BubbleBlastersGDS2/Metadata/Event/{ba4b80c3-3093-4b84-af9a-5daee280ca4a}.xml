@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{ba4b80c3-3093-4b84-af9a-5daee280ca4a}">
 		<property name="name">
-			<value>Player Melee Attacks Impact</value>
+			<value>Player Melee Attacks Impact (One Shot)</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
