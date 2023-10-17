@@ -10,7 +10,7 @@ public class AreaSections : MonoBehaviour
     public List<SectionEnemyManager> areaEnemyManagers = new List<SectionEnemyManager>();
     public List<bool> sectionsCompleted = new List<bool>();
     public SectionsManager sectionManager;
-    public int sectionComplelted = 0;
+    public int sectionCount = 0;
     public bool beginningAreaSection = true;
     private bool areaSectionDisabled = false;
     void Start()
@@ -22,22 +22,21 @@ public class AreaSections : MonoBehaviour
     }
     void Update()
     {
-        if (sectionComplelted == sectionsCompleted.Count && areaSectionDisabled == false) 
+        if (sectionCount == sectionsCompleted.Count && areaSectionDisabled == false) 
         {
             sectionManager.NewArea();
-            ++sectionManager.currentArea;
             areaSectionDisabled = true;
         }
     }
 
     public void AreaSectionComplete()
     {
-        section[sectionComplelted].SetActive(false);
+        section[sectionCount].SetActive(false);
 
-        if (sectionComplelted == 0)
+        if (sectionCount == 0)
         {
             beginningAreaSection = false;
         }
-        ++sectionComplelted;
+        ++sectionCount;
     }
 }

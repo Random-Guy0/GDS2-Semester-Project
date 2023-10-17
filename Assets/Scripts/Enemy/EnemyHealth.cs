@@ -22,7 +22,6 @@ public class EnemyHealth : Health
         base.Start();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         enemySectionManager = GetComponentInParent<SectionEnemyManager>();
-        enemySectionManager.SetNewEnemy();
         animator = GetComponent<Animator>();
         OnTakeDamage += enemyAttackHandler.InterruptAttack;
         OnTakeDamage += TakeDamage;
