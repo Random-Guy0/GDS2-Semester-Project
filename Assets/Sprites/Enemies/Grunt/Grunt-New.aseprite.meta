@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638331602892091157
+  platformSettingsDirtyTick: 638331631609659135
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -130,7 +130,7 @@ ScriptedImporter:
       y: 4
       width: 27
       height: 29
-    spriteID: 0ee3694f69abafb48aa731ddc43d1cf0
+    spriteID: 73f1c1bfe9bbdde45b301f833bbdf3f4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,16 +141,16 @@ ScriptedImporter:
     uvTransform: {x: 139, y: 4}
   - name: Grunt-New_Frame_1
     originalName: 
-    pivot: {x: -0.16666667, y: 0}
+    pivot: {x: -0.16666667, y: -0.037037037}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 41
+      x: 128
+      y: 77
       width: 24
-      height: 28
-    spriteID: 995eff917a0815e4b8c06877a1ee14be
+      height: 27
+    spriteID: 120e720816e3c114eb09ce94feece9b6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -158,7 +158,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 41}
+    uvTransform: {x: 128, y: 77}
   - name: Grunt-New_Frame_2
     originalName: 
     pivot: {x: -0.21739131, y: -0.03448276}
@@ -170,7 +170,7 @@ ScriptedImporter:
       y: 77
       width: 23
       height: 29
-    spriteID: fc11dd1015e0d6e43ad935bd4081cb48
+    spriteID: 89b450e4d0558f549b559d8b0154f560
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -186,11 +186,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 128
+      x: 191
       y: 77
       width: 22
       height: 29
-    spriteID: 075b23d6693217049abb603cd7079422
+    spriteID: 681fc519e3734b547a9fe9170e1ec393
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -198,7 +198,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 128, y: 77}
+    uvTransform: {x: 191, y: 77}
   - name: Grunt-New_Frame_4
     originalName: 
     pivot: {x: -0.33333334, y: -0.06896552}
@@ -206,11 +206,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 218
-      y: 77
+      x: 4
+      y: 114
       width: 21
       height: 29
-    spriteID: 144f6060a4a921e448c4ab172da2c2a9
+    spriteID: a0d492ba917928e46bf0254e583617f1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,19 +218,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 218, y: 77}
+    uvTransform: {x: 4, y: 114}
   - name: Grunt-New_Frame_5
     originalName: 
-    pivot: {x: -0.47368422, y: 0}
+    pivot: {x: -0.47368422, y: -0.037037037}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 163
+      x: 130
       y: 41
       width: 19
-      height: 28
-    spriteID: 6604df81d7d13bd4bb010cd7412b6731
+      height: 27
+    spriteID: 4ad09b6b572488c48b82df975a168b2f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -238,7 +238,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 163, y: 41}
+    uvTransform: {x: 130, y: 41}
   - name: Grunt-New_Frame_6
     originalName: 
     pivot: {x: -0.27272728, y: -0.03448276}
@@ -246,11 +246,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 158
+      x: 221
       y: 77
       width: 22
       height: 29
-    spriteID: 291ad99237c30bc43bc4f9c72756c18c
+    spriteID: 9dd1358c08f74e446bf86b623b8fd7ce
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -258,7 +258,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 158, y: 77}
+    uvTransform: {x: 221, y: 77}
   - name: Grunt-New_Frame_7
     originalName: 
     pivot: {x: -0.21739131, y: -0.06896552}
@@ -270,7 +270,7 @@ ScriptedImporter:
       y: 77
       width: 23
       height: 29
-    spriteID: 2873886b2324c884b9efe4652ed6fd49
+    spriteID: b4499732f5877774db70553056d2b0b4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -290,7 +290,7 @@ ScriptedImporter:
       y: 77
       width: 23
       height: 29
-    spriteID: cc048e307e888fe4caa0787680bab035
+    spriteID: 33781c6da7cd7cd48b70296c5b3b6c32
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -306,11 +306,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 36
+      x: 4
       y: 41
       width: 24
       height: 28
-    spriteID: a878d816ab861b9479086b58cfe60809
+    spriteID: c5250d178ffe6154289e99db25196184
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -318,7 +318,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 36, y: 41}
+    uvTransform: {x: 4, y: 41}
   - name: Grunt-New_Frame_10
     originalName: 
     pivot: {x: -0.5263158, y: -0.03448276}
@@ -326,11 +326,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 32
+      x: 61
       y: 114
       width: 19
       height: 29
-    spriteID: dfeb255b110e89a46b5ba7c02d2565a8
+    spriteID: 4932a3c8b464ef444ab2d8822862616c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -338,7 +338,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 32, y: 114}
+    uvTransform: {x: 61, y: 114}
   - name: Grunt-New_Frame_11
     originalName: 
     pivot: {x: -0.5882353, y: -0.03448276}
@@ -346,11 +346,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 59
+      x: 88
       y: 114
       width: 17
       height: 29
-    spriteID: 04a4aa82e2e517641893aeaa6d5de2c2
+    spriteID: 648cc650f92200543a1a6b0757ffb3e3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -358,7 +358,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 59, y: 114}
+    uvTransform: {x: 88, y: 114}
   - name: Grunt-New_Frame_12
     originalName: 
     pivot: {x: -0.625, y: -0.03448276}
@@ -366,11 +366,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 84
+      x: 113
       y: 114
       width: 16
       height: 29
-    spriteID: 85d3897d1aa1b7045b88952b1c595cf3
+    spriteID: b34596ff5a8fcc843b1189451be59ef8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -378,7 +378,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 84, y: 114}
+    uvTransform: {x: 113, y: 114}
   - name: Grunt-New_Frame_13
     originalName: 
     pivot: {x: -0.4, y: -0.03448276}
@@ -386,11 +386,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 33
       y: 114
       width: 20
       height: 29
-    spriteID: 5280a5b27ced565439906aadbef3d02a
+    spriteID: 565825a2062ac804eb1e9ccdd0b06b3b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -398,7 +398,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 114}
+    uvTransform: {x: 33, y: 114}
   - name: Grunt-New_Frame_14
     originalName: 
     pivot: {x: -0.21739131, y: -0.03448276}
@@ -410,7 +410,7 @@ ScriptedImporter:
       y: 77
       width: 23
       height: 29
-    spriteID: 13aa0b902452889419cb89c16fd0cdee
+    spriteID: 7f43ede5066e43e4cba14e848e53d448
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -426,11 +426,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 68
+      x: 36
       y: 41
       width: 24
       height: 28
-    spriteID: 6ff22855552bd004dad6d210ea41d9ad
+    spriteID: 90bcc8e7de7b7684ea89d275ee392e6d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -438,7 +438,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 68, y: 41}
+    uvTransform: {x: 36, y: 41}
   - name: Grunt-New_Frame_16
     originalName: 
     pivot: {x: -0.11538462, y: -0.035714287}
@@ -450,7 +450,7 @@ ScriptedImporter:
       y: 4
       width: 26
       height: 28
-    spriteID: 6281f626383b7d5488e0984641d769ce
+    spriteID: 50045c7d3a7c2fa47920af375637d8a3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -470,7 +470,7 @@ ScriptedImporter:
       y: 4
       width: 33
       height: 29
-    spriteID: dcaadd59dd091ed40a2bd196aebf7584
+    spriteID: 6227f224a2577a44c8dea54cbd051d64
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -490,7 +490,7 @@ ScriptedImporter:
       y: 4
       width: 41
       height: 29
-    spriteID: 41a57cc5ed99da945b1a0fa8e29c12a5
+    spriteID: a6742be5ad304bd45a384eb5cbc7f9bf
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -510,7 +510,7 @@ ScriptedImporter:
       y: 4
       width: 37
       height: 28
-    spriteID: b552395eb049f144fba6bce2c53c4128
+    spriteID: df1d19946e046d0438b166948b3c258b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -530,7 +530,7 @@ ScriptedImporter:
       y: 4
       width: 26
       height: 28
-    spriteID: 86fcb64094edba24fbc3d110a7de8b29
+    spriteID: ed6a3d6c604fd0244be415e6631f5101
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -546,11 +546,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 132
-      y: 41
+      x: 160
+      y: 77
       width: 23
       height: 28
-    spriteID: 9fe0f098c59f7c642add29954d36ab6a
+    spriteID: 4daca20419105df429fb2be2af47c743
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -558,7 +558,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 132, y: 41}
+    uvTransform: {x: 160, y: 77}
   - name: Grunt-New_Frame_22
     originalName: 
     pivot: {x: -0.09090909, y: -0.035714287}
@@ -566,31 +566,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 188
-      y: 77
-      width: 22
-      height: 28
-    spriteID: 05729ca8add8d9b4a97d436d11824d0a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 188, y: 77}
-  - name: Grunt-New_Frame_23
-    originalName: 
-    pivot: {x: -0.125, y: -0.035714287}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
       x: 100
       y: 41
-      width: 24
+      width: 22
       height: 28
-    spriteID: 3fe10848b93b3ae4c948bdc92889ca78
+    spriteID: b9afb2543bdacb541a4772351c60a6c0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -599,6 +579,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 100, y: 41}
+  - name: Grunt-New_Frame_23
+    originalName: 
+    pivot: {x: -0.125, y: -0.035714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 68
+      y: 41
+      width: 24
+      height: 28
+    spriteID: 987ce565f95d3bb43a44e417da448815
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 68, y: 41}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -615,15 +615,15 @@ ScriptedImporter:
         y: 1
         width: 27
         height: 29
-      spriteId: 0ee3694f69abafb48aa731ddc43d1cf0
+      spriteId: 73f1c1bfe9bbdde45b301f833bbdf3f4
     - name: Grunt-New_Frame_1
       frameIndex: 1
       cellRect:
         x: 36
-        y: 0
+        y: 1
         width: 24
-        height: 28
-      spriteId: 995eff917a0815e4b8c06877a1ee14be
+        height: 27
+      spriteId: 120e720816e3c114eb09ce94feece9b6
     - name: Grunt-New_Frame_2
       frameIndex: 2
       cellRect:
@@ -631,7 +631,7 @@ ScriptedImporter:
         y: 1
         width: 23
         height: 29
-      spriteId: fc11dd1015e0d6e43ad935bd4081cb48
+      spriteId: 89b450e4d0558f549b559d8b0154f560
     - name: Grunt-New_Frame_3
       frameIndex: 3
       cellRect:
@@ -639,7 +639,7 @@ ScriptedImporter:
         y: 2
         width: 22
         height: 29
-      spriteId: 075b23d6693217049abb603cd7079422
+      spriteId: 681fc519e3734b547a9fe9170e1ec393
     - name: Grunt-New_Frame_4
       frameIndex: 4
       cellRect:
@@ -647,15 +647,15 @@ ScriptedImporter:
         y: 2
         width: 21
         height: 29
-      spriteId: 144f6060a4a921e448c4ab172da2c2a9
+      spriteId: a0d492ba917928e46bf0254e583617f1
     - name: Grunt-New_Frame_5
       frameIndex: 5
       cellRect:
         x: 41
-        y: 0
+        y: 1
         width: 19
-        height: 28
-      spriteId: 6604df81d7d13bd4bb010cd7412b6731
+        height: 27
+      spriteId: 4ad09b6b572488c48b82df975a168b2f
     - name: Grunt-New_Frame_6
       frameIndex: 6
       cellRect:
@@ -663,7 +663,7 @@ ScriptedImporter:
         y: 1
         width: 22
         height: 29
-      spriteId: 291ad99237c30bc43bc4f9c72756c18c
+      spriteId: 9dd1358c08f74e446bf86b623b8fd7ce
     - name: Grunt-New_Frame_7
       frameIndex: 7
       cellRect:
@@ -671,7 +671,7 @@ ScriptedImporter:
         y: 2
         width: 23
         height: 29
-      spriteId: 2873886b2324c884b9efe4652ed6fd49
+      spriteId: b4499732f5877774db70553056d2b0b4
     - name: Grunt-New_Frame_8
       frameIndex: 8
       cellRect:
@@ -679,7 +679,7 @@ ScriptedImporter:
         y: 1
         width: 23
         height: 29
-      spriteId: cc048e307e888fe4caa0787680bab035
+      spriteId: 33781c6da7cd7cd48b70296c5b3b6c32
     - name: Grunt-New_Frame_9
       frameIndex: 9
       cellRect:
@@ -687,7 +687,7 @@ ScriptedImporter:
         y: 1
         width: 24
         height: 28
-      spriteId: a878d816ab861b9479086b58cfe60809
+      spriteId: c5250d178ffe6154289e99db25196184
     - name: Grunt-New_Frame_10
       frameIndex: 10
       cellRect:
@@ -695,7 +695,7 @@ ScriptedImporter:
         y: 1
         width: 19
         height: 29
-      spriteId: dfeb255b110e89a46b5ba7c02d2565a8
+      spriteId: 4932a3c8b464ef444ab2d8822862616c
     - name: Grunt-New_Frame_11
       frameIndex: 11
       cellRect:
@@ -703,7 +703,7 @@ ScriptedImporter:
         y: 1
         width: 17
         height: 29
-      spriteId: 04a4aa82e2e517641893aeaa6d5de2c2
+      spriteId: 648cc650f92200543a1a6b0757ffb3e3
     - name: Grunt-New_Frame_12
       frameIndex: 12
       cellRect:
@@ -711,7 +711,7 @@ ScriptedImporter:
         y: 1
         width: 16
         height: 29
-      spriteId: 85d3897d1aa1b7045b88952b1c595cf3
+      spriteId: b34596ff5a8fcc843b1189451be59ef8
     - name: Grunt-New_Frame_13
       frameIndex: 13
       cellRect:
@@ -719,7 +719,7 @@ ScriptedImporter:
         y: 1
         width: 20
         height: 29
-      spriteId: 5280a5b27ced565439906aadbef3d02a
+      spriteId: 565825a2062ac804eb1e9ccdd0b06b3b
     - name: Grunt-New_Frame_14
       frameIndex: 14
       cellRect:
@@ -727,7 +727,7 @@ ScriptedImporter:
         y: 1
         width: 23
         height: 29
-      spriteId: 13aa0b902452889419cb89c16fd0cdee
+      spriteId: 7f43ede5066e43e4cba14e848e53d448
     - name: Grunt-New_Frame_15
       frameIndex: 15
       cellRect:
@@ -735,7 +735,7 @@ ScriptedImporter:
         y: 1
         width: 24
         height: 28
-      spriteId: 6ff22855552bd004dad6d210ea41d9ad
+      spriteId: 90bcc8e7de7b7684ea89d275ee392e6d
     - name: Grunt-New_Frame_16
       frameIndex: 16
       cellRect:
@@ -743,7 +743,7 @@ ScriptedImporter:
         y: 1
         width: 26
         height: 28
-      spriteId: 6281f626383b7d5488e0984641d769ce
+      spriteId: 50045c7d3a7c2fa47920af375637d8a3
     - name: Grunt-New_Frame_17
       frameIndex: 17
       cellRect:
@@ -751,7 +751,7 @@ ScriptedImporter:
         y: 0
         width: 33
         height: 29
-      spriteId: dcaadd59dd091ed40a2bd196aebf7584
+      spriteId: 6227f224a2577a44c8dea54cbd051d64
     - name: Grunt-New_Frame_18
       frameIndex: 18
       cellRect:
@@ -759,7 +759,7 @@ ScriptedImporter:
         y: 0
         width: 41
         height: 29
-      spriteId: 41a57cc5ed99da945b1a0fa8e29c12a5
+      spriteId: a6742be5ad304bd45a384eb5cbc7f9bf
     - name: Grunt-New_Frame_19
       frameIndex: 19
       cellRect:
@@ -767,7 +767,7 @@ ScriptedImporter:
         y: 1
         width: 37
         height: 28
-      spriteId: b552395eb049f144fba6bce2c53c4128
+      spriteId: df1d19946e046d0438b166948b3c258b
     - name: Grunt-New_Frame_20
       frameIndex: 20
       cellRect:
@@ -775,7 +775,7 @@ ScriptedImporter:
         y: 1
         width: 26
         height: 28
-      spriteId: 86fcb64094edba24fbc3d110a7de8b29
+      spriteId: ed6a3d6c604fd0244be415e6631f5101
     - name: Grunt-New_Frame_21
       frameIndex: 21
       cellRect:
@@ -783,7 +783,7 @@ ScriptedImporter:
         y: 1
         width: 23
         height: 28
-      spriteId: 9fe0f098c59f7c642add29954d36ab6a
+      spriteId: 4daca20419105df429fb2be2af47c743
     - name: Grunt-New_Frame_22
       frameIndex: 22
       cellRect:
@@ -791,7 +791,7 @@ ScriptedImporter:
         y: 1
         width: 22
         height: 28
-      spriteId: 05729ca8add8d9b4a97d436d11824d0a
+      spriteId: b9afb2543bdacb541a4772351c60a6c0
     - name: Grunt-New_Frame_23
       frameIndex: 23
       cellRect:
@@ -799,7 +799,7 @@ ScriptedImporter:
         y: 1
         width: 24
         height: 28
-      spriteId: 3fe10848b93b3ae4c948bdc92889ca78
+      spriteId: 987ce565f95d3bb43a44e417da448815
     linkedCells: []
     parentIndex: -1
   platformSettings:
