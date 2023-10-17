@@ -12,6 +12,40 @@ public class PathfindingGrid : MonoBehaviour
 
     private PathfindingNode[,] nodes;
 
+    private void OnEnable()
+    {
+        CreateGrid();
+        
+        for (int i = 0; i <= GridSize.x; i++)
+        {
+            for (int j = 0; j <= GridSize.y; j++)
+            {
+                List<PathfindingNode> connectedNodes = new List<PathfindingNode>();
+                if (i != 0)
+                {
+                    connectedNodes.Add(nodes[i - 1, j]);
+                }
+
+                if (i != GridSize.x)
+                {
+                    connectedNodes.Add(nodes[i + 1, j]);
+                }
+
+                if (j != 0)
+                {
+                    connectedNodes.Add(nodes[i, j - 1]);
+                }
+
+                if (j != GridSize.y)
+                {
+                    connectedNodes.Add(nodes[i, j + 1]);
+                }
+
+                nodes[i, j].ConnectedNodes = connectedNodes;
+            }
+        }
+    }
+
     public Vector2Int LocalToGridPosition(Vector2 localPosition)
     {
         return Vector2Int.RoundToInt((localPosition - (Vector2)transform.position) / GridNodeSpacing);
@@ -27,6 +61,11 @@ public class PathfindingGrid : MonoBehaviour
         Vector2 corner1 = transform.position;
         Vector2 corner2 = corner1 + (Vector2)GridSize * GridNodeSpacing;
         return position.x >= corner1.x && position.y >= corner1.y && position.x <= corner2.x && position.y <= corner2.y;
+    }
+
+    public Stack<PathfindingNode> GeneratePath(Vector2Int start, Vector2Int end)
+    {
+        return GeneratePath(nodes[start.x, start.y], nodes[end.x, end.y]);
     }
 
     private Stack<PathfindingNode> GeneratePath(PathfindingNode start, PathfindingNode end)

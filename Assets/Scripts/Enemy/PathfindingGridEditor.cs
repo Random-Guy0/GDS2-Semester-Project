@@ -19,7 +19,7 @@ public class PathfindingGridEditor : Editor
         {
             gridSize = pathfindingGrid.GridSize;
             gridNodeSpacing = pathfindingGrid.GridNodeSpacing;
-            pathfindingGrid.CreateGrid();
+            //pathfindingGrid.CreateGrid();
         }
     }
 }

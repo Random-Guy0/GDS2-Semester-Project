@@ -7,6 +7,17 @@ public class EnemyBehaviour : MonoBehaviour
 {
     private PathfindingGrid pathfinding;
 
+    private Stack<PathfindingNode> path;
+
+    private EnemyState state;
+    
+    public Vector2Int GridPosition { get; set; }
+    
+    public bool CanMove { get; set; }
+
+    [SerializeField] private float speed = 1.5f;
+    [SerializeField] private float attackDistance = 1f;
+
     protected virtual Transform Target
     {
         get => GameManager.Instance.Player.transform;
@@ -14,6 +25,58 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Start()
     {
+        path = new Stack<PathfindingNode>();
         pathfinding = GameManager.Instance.GetPathfindingGridAtPosition(transform.position);
+        GridPosition = pathfinding.LocalToGridPosition(pathfinding.transform.InverseTransformPoint(transform.position));
+        ChangeState(EnemyState.MoveToTarget);
+    }
+
+    private void Update()
+    {
+        if (CanMove)
+        {
+            if (path.Count == 0 || !path.Peek().IsMovable(gameObject))
+            {
+                GeneratePathToTarget();
+                Debug.Log("Path Empty");
+                return;
+            }
+
+            Vector2 position = transform.position;
+            Vector2 moveDir = position - (Vector2)path.Peek().transform.position;
+            position += moveDir.normalized * speed;
+            transform.position = position;
+
+            if (Vector3.Distance(path.Peek().transform.position, transform.position) < 0.1f)
+            {
+                path.Pop();
+            }
+        }
+    }
+
+    private void ChangeState(EnemyState newState)
+    {
+        state = newState;
+        switch (state)
+        {
+            case EnemyState.MoveToTarget:
+                GeneratePathToTarget();
+                break;
+            case EnemyState.Attack:
+                break;
+            case EnemyState.Stunned:
+                break;
+        }
+    }
+
+    private void GeneratePathToTarget()
+    {
+        CanMove = true;
+        if (pathfinding.PositionWithinGrid(Target.position))
+        {
+            Vector2Int targetPosition =
+                pathfinding.LocalToGridPosition(pathfinding.transform.InverseTransformPoint(Target.position));
+            path = pathfinding.GeneratePath(GridPosition, targetPosition);
+        }
     }
 }
