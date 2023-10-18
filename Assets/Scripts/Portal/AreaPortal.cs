@@ -25,5 +25,6 @@ public class AreaPortal : Portal
         
         EgyptLevel1Audio.Stop();
         EgyptLevel2Audio.Play();
+        Debug.Log("New Area Entered");
     }
 }

@@ -24,8 +24,10 @@ public class AreaSections : MonoBehaviour
     {
         if (sectionCount == sectionsCompleted.Count && areaSectionDisabled == false) 
         {
+            Debug.Log("Area Section Ended");
             sectionManager.NewArea();
             areaSectionDisabled = true;
+            sectionManager.endOfArea = true;
         }
     }
 

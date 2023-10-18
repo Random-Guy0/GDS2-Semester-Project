@@ -21,7 +21,7 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log("Cam Position = " + gameObject.transform.position);
         if (gameObject.transform.position.x == player.position.x)
         {
             Debug.Log("CamRecenter reset to false");
@@ -32,14 +32,10 @@ public class FollowPlayer : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, 0, -10), cameraSpeed * Time.deltaTime);
         }
-        else 
-
-        if (player.transform.position.x <= 0.0f)
+        Debug.Log("OnOffSwitch = " + offSwitch);
+        if (offSwitch == false)
         {
-            OnOffSwitch(true);
-        }
-        else if (offSwitch == false)
-        {
+            Debug.Log("Cam Follows Player, new Position equal to player position");
             transform.position = new Vector3(player.position.x, 0, -10);
         }
         OnOffSwitch(false);
