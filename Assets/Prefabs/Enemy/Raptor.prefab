@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7232158696684844300}
   - component: {fileID: 4005161209498471027}
   - component: {fileID: 4641396632519100213}
-  - component: {fileID: 741981524120769758}
+  - component: {fileID: 4836008297038854800}
   - component: {fileID: -3218021593331696552}
   - component: {fileID: -1875051802149849377}
   m_Layer: 3
@@ -144,7 +144,7 @@ MonoBehaviour:
   maxHealth: 15
   <Weaknesses>k__BackingField: 01000000
   detectPlayerComponent: {fileID: 4005161209498471027}
-  enemyAttackHandler: {fileID: 741981524120769758}
+  enemyAttackHandler: {fileID: 4836008297038854800}
   enemyRigidbody: {fileID: 7232158696684844300}
   enemyCollider: {fileID: -1875051802149849377}
   bubblePrefab: {fileID: 1446682404955272071, guid: 2727dd07c18a6f64e92d3bb149721607, type: 3}
@@ -152,7 +152,7 @@ MonoBehaviour:
   deathScale: 0.75
   pickup: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
   ammoDropAmount: 1
---- !u!114 &741981524120769758
+--- !u!114 &4836008297038854800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,12 +161,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1613337139579968509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a881c200effc624285aa82fb8791e5f, type: 3}
+  m_Script: {fileID: 11500000, guid: fe058bb6a3594387a399d85a0b24e106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <MeleeAttacks>k__BackingField:
   - {fileID: 11400000, guid: dc6d95cb9f7c9a5429ce4e073c95a339, type: 2}
   <RangedAttacks>k__BackingField: []
+  playerAttackDistance: 1.75
 --- !u!95 &-3218021593331696552
 Animator:
   serializedVersion: 5
@@ -220,5 +221,5 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.07}
-  m_Size: {x: 2, y: 1.23}
+  m_Size: {x: 1.67, y: 0.9}
   m_Direction: 1
