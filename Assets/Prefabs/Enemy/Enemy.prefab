@@ -111,6 +111,7 @@ MonoBehaviour:
     m_Bits: 55
   target: {fileID: 0}
   <StunDuration>k__BackingField: 0.5
+  animator: {fileID: 3501993973818938130}
 --- !u!50 &2980102513536050860
 Rigidbody2D:
   serializedVersion: 4
