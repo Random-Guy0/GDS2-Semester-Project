@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AreaSections : MonoBehaviour
 {
-
+    public AreaPortal nextAreaPortal;
     public List<GameObject> section = new List<GameObject>();
     public List<GameObject> areaWalls = new List<GameObject>();
     public List<SectionEnemyManager> areaEnemyManagers = new List<SectionEnemyManager>();
@@ -12,6 +12,7 @@ public class AreaSections : MonoBehaviour
     public SectionsManager sectionManager;
     public int sectionCount = 0;
     public bool beginningAreaSection = true;
+    public bool justBeganSecondSection = false;
     private bool areaSectionDisabled = false;
     void Start()
     {
@@ -25,6 +26,7 @@ public class AreaSections : MonoBehaviour
         if (sectionCount == sectionsCompleted.Count && areaSectionDisabled == false) 
         {
             Debug.Log("Area Section Ended");
+            nextAreaPortal.ableToEnter = true;
             sectionManager.NewArea();
             areaSectionDisabled = true;
             sectionManager.endOfArea = true;
@@ -38,6 +40,7 @@ public class AreaSections : MonoBehaviour
         if (sectionCount == 0)
         {
             beginningAreaSection = false;
+            justBeganSecondSection = true;
         }
         ++sectionCount;
     }

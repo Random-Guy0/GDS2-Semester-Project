@@ -14,6 +14,7 @@ public class SectionsManager : MonoBehaviour
     [SerializeField] private bool tutorialLevel = false;
     public GameObject rightWall;
     [SerializeField] private bool camAlreadyTracking = false;
+    [SerializeField] public List<Transform> camAreaPosition;
 
     public int numberOfAreas;
 
@@ -52,7 +53,7 @@ public class SectionsManager : MonoBehaviour
                 if (areas[currentArea].sectionCount == 0)
                 {
                     Debug.Log("Beginning Area in Update SectionsManager");
-                    camFollow.OnOffSwitch(true);
+                    camFollow.OnOffSwitchX(true);
                     SectionRunTime();
                 }
                 else
@@ -66,7 +67,15 @@ public class SectionsManager : MonoBehaviour
                             // set the new next sections manager to active including enemies.
                             areas[currentArea].areaEnemyManagers[areas[currentArea].sectionCount].gameObject.SetActive(true);
                         }
-                        camFollow.ResetCamPosition();
+                        if (areas[currentArea].justBeganSecondSection != true)
+                        {
+                            camFollow.ResetCamPosition();
+                        }
+                        else
+                        {
+                            areas[currentArea].justBeganSecondSection = false;
+                        }
+                        
 
                         // set the previous sections bool completed list object to true
                         areas[currentArea].sectionsCompleted[areas[currentArea].sectionCount - 1] = true;
@@ -77,6 +86,7 @@ public class SectionsManager : MonoBehaviour
                         // set the previous (Was current but just completed the previous section so current is one forward) wall to false
                         areas[currentArea].section[areas[currentArea].sectionCount - 1].SetActive(false);
                     }
+
                 }
             }
         }
@@ -90,12 +100,19 @@ public class SectionsManager : MonoBehaviour
     public void ActivateNewAreaEnemies()
     {
         ++currentArea;
+        if (currentArea == 2)
+        {
+            camFollow.diagonalArea = true;
+        }
+        else
+        {
+            camFollow.diagonalArea = false;
+        }
         areas[currentArea].areaEnemyManagers[areas[currentArea].sectionCount].gameObject.SetActive(true);
         playerAreaIn = currentArea;
         endOfArea = false;
-        Vector3 newCameraPosition = new Vector3(72.13f, 0f, -10f);
-        mainCamera.transform.position = newCameraPosition;
-        camFollow.OnOffSwitch(true);
+        mainCamera.transform.position = new Vector3(camAreaPosition[currentArea].position.x, camAreaPosition[currentArea].position.y, -10f);
+        camFollow.OnOffSwitchX(true);
     }
 
     public void SectionRunTime()
@@ -114,12 +131,12 @@ public class SectionsManager : MonoBehaviour
                 if (sectionWall.x <= 1.0f && playerPos.x > 0.5f)
                 {
                     Debug.Log("SectionRunTime Code 1 == true");
-                    camFollow.OnOffSwitch(true);
+                    camFollow.OnOffSwitchX(true);
                 }
                 else
                 {
                     Debug.Log("SectionRunTime Code 1 == false");
-                    camFollow.OnOffSwitch(false);
+                    camFollow.OnOffSwitchX(false);
                 }
 
                 //For the Left Most Wall
@@ -132,12 +149,12 @@ public class SectionsManager : MonoBehaviour
                     if (leftWall.x >= 0.0f && playerPos.x < 0.5f)
                     {
                         Debug.Log("SectionRunTime Code 2 == true");
-                        camFollow.OnOffSwitch(true);
+                        camFollow.OnOffSwitchX(true);
                     }
                     else
                     {
                         Debug.Log("SectionRunTime Code 2 == false");
-                        camFollow.OnOffSwitch(false);
+                        camFollow.OnOffSwitchX(false);
                     }
                 }
 
@@ -157,12 +174,30 @@ public class SectionsManager : MonoBehaviour
                     if (rightWall.x <= 1.0f && playerPos.x > 0.5f)
                     {
                         Debug.Log("SectionRunTime Code 3 == true");
-                        camFollow.OnOffSwitch(true);
+                        camFollow.OnOffSwitchX(true);
                     }
                     else
                     {
                         Debug.Log("SectionRunTime Code 3 == false");
-                        camFollow.OnOffSwitch(false);
+                        camFollow.OnOffSwitchX(false);
+                    }
+                }
+
+                if (camFollow.diagonalArea == true)
+                {
+                    Debug.Log("Diagonal Area = true");
+                    Vector3 bottomWall = mainCamera.WorldToViewportPoint(areas[currentArea].areaWalls[2].transform.position);
+                    Vector3 playBottom = mainCamera.WorldToViewportPoint(player.transform.position);
+                    if (bottomWall.y >= -0.5f)
+                    {
+                        if (bottomWall.y >= 0.0f && playBottom.y < 0.5f)
+                        {
+                            camFollow.OnOffSwitchX(true);
+                        }
+                        else
+                        {
+                            camFollow.OnOffSwitchX(false);
+                        }
                     }
                 }
             }
@@ -173,14 +208,14 @@ public class SectionsManager : MonoBehaviour
 
             if (playerPos5.x <= 0.5f)
             {
-                camFollow.OnOffSwitch(false);
+                camFollow.OnOffSwitchX(false);
             }
 
             Vector3 playerPosTut = mainCamera.WorldToViewportPoint(rightWall.transform.position);
 
             if (playerPosTut.x <= 1.0f)
             {
-                camFollow.OnOffSwitch(true);
+                camFollow.OnOffSwitchX(true);
             }
         }
 

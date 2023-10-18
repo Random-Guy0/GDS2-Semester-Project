@@ -7,6 +7,7 @@ public class AreaPortal : Portal
 {
     [SerializeField] private Vector2 teleportToPosition;
     [SerializeField] public SectionsManager secManager;
+    [SerializeField] public bool ableToEnter = false;
     
     //remove after Sprint 3
     [SerializeField] private AudioSource EgyptLevel1Audio;
@@ -14,17 +15,21 @@ public class AreaPortal : Portal
 
     protected override void EnterPortal(PlayerMovement player)
     {
-        if (SceneManager.GetActiveScene().name == "Tutorial")
+        if (ableToEnter == true)
         {
-            SceneManager.LoadScene(2);
-        }
-        base.EnterPortal(player);
-        player.transform.position = teleportToPosition;
+            if (SceneManager.GetActiveScene().name == "Tutorial")
+            {
+                SceneManager.LoadScene(2);
+            }
+            base.EnterPortal(player);
+            player.transform.position = teleportToPosition;
 
-        secManager.ActivateNewAreaEnemies();
+            secManager.ActivateNewAreaEnemies();
+
+            EgyptLevel1Audio.Stop();
+            EgyptLevel2Audio.Play();
+            Debug.Log("New Area Entered");
+        }
         
-        EgyptLevel1Audio.Stop();
-        EgyptLevel2Audio.Play();
-        Debug.Log("New Area Entered");
     }
 }
