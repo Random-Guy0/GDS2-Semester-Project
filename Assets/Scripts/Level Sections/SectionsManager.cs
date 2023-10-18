@@ -187,16 +187,28 @@ public class SectionsManager : MonoBehaviour
                 {
                     Debug.Log("Diagonal Area = true");
                     Vector3 bottomWall = mainCamera.WorldToViewportPoint(areas[currentArea].areaWalls[2].transform.position);
+                    Vector3 topWall = mainCamera.WorldToViewportPoint(areas[currentArea].areaWalls[3].transform.position);
                     Vector3 playBottom = mainCamera.WorldToViewportPoint(player.transform.position);
                     if (bottomWall.y >= -0.5f)
                     {
                         if (bottomWall.y >= 0.0f && playBottom.y < 0.5f)
                         {
-                            camFollow.OnOffSwitchX(true);
+                            camFollow.OnOffSwitchY(true);
                         }
                         else
                         {
-                            camFollow.OnOffSwitchX(false);
+                            camFollow.OnOffSwitchY(false);
+                        }
+                    }
+                    if (topWall.y <= 1.5f)
+                    {
+                        if (topWall.y <= 1.0f && playerPos.y > 0.5f)
+                        {
+                            camFollow.OnOffSwitchY(true);
+                        }
+                        else
+                        {
+                            camFollow.OnOffSwitchY(false);
                         }
                     }
                 }

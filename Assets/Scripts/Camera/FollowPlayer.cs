@@ -37,12 +37,19 @@ public class FollowPlayer : MonoBehaviour
             {
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, player.position.y, -10), cameraSpeed * Time.deltaTime);
                 offSwitchX = true;
+                offSwitchY = true;
             }
+
             if (offSwitchX == false)
             {
-                transform.position = new Vector3(player.position.x, player.position.y, -10);
+                transform.position = new Vector3(player.position.x, gameObject.transform.position.y, -10);
+            }
+            if (offSwitchY == false)
+            {
+                transform.position = new Vector3(gameObject.transform.position.x, player.position.y, -10);
             }
             OnOffSwitchX(false);
+            OnOffSwitchY(false);
         }
         else
         {
