@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,32 +15,6 @@ public class PlayerAttackHandlerValidator : Editor
         PlayerAttackHandler playerAttackHandler = (PlayerAttackHandler)target;
         
         EditorGUI.BeginChangeCheck();
-        
-        /*if (playerAttackHandler.MeleeAttacksUnlocked.Count > playerAttackHandler.MeleeAttacks.Length)
-        {
-            int count = playerAttackHandler.MeleeAttacksUnlocked.Count - playerAttackHandler.MeleeAttacks.Length;
-            playerAttackHandler.MeleeAttacksUnlocked.RemoveRange(playerAttackHandler.MeleeAttacks.Length, count);
-        }
-        else if (playerAttackHandler.MeleeAttacksUnlocked.Count < playerAttackHandler.MeleeAttacks.Length)
-        {
-            for (int i = playerAttackHandler.MeleeAttacksUnlocked.Count; i < playerAttackHandler.MeleeAttacks.Length; i++)
-            {
-                playerAttackHandler.MeleeAttacksUnlocked.Add(true);
-            }
-        }
-        
-        if (playerAttackHandler.RangedAttacksUnlocked.Count > playerAttackHandler.RangedAttacks.Length)
-        {
-            int count = playerAttackHandler.RangedAttacksUnlocked.Count - playerAttackHandler.RangedAttacks.Length;
-            playerAttackHandler.RangedAttacksUnlocked.RemoveRange(playerAttackHandler.RangedAttacks.Length, count);
-        }
-        else if (playerAttackHandler.RangedAttacksUnlocked.Count < playerAttackHandler.RangedAttacks.Length)
-        {
-            for (int i = playerAttackHandler.RangedAttacksUnlocked.Count; i < playerAttackHandler.RangedAttacks.Length; i++)
-            {
-                playerAttackHandler.RangedAttacksUnlocked.Add(true);
-            }
-        }*/
 
         List<Attack> attacks = new List<Attack>();
         attacks.AddRange(playerAttackHandler.MeleeAttacks);
@@ -75,3 +50,4 @@ public class PlayerAttackHandlerValidator : Editor
         EditorGUI.EndChangeCheck();
     }
 }
+#endif

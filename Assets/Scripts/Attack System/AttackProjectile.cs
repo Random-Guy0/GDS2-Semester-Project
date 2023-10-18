@@ -7,18 +7,18 @@ public class AttackProjectile : MonoBehaviour
 {
     [SerializeField] protected RangedAttack attackStats;
 
-    protected float direction = 1f;
+    protected Vector2 direction;
     protected float startingXPosition;
 
     protected Vector2 velocity = Vector2.zero;
 
     protected AttackHandler attacker;
 
-    public void FireProjectile(float direction, AttackHandler attacker = null)
+    public void FireProjectile(Vector2 direction, AttackHandler attacker = null)
     {
         this.direction = direction;
         startingXPosition = transform.position.x;
-        velocity.x = this.direction * attackStats.Speed;
+        velocity = this.direction.normalized * attackStats.Speed;
         this.attacker = attacker;
     }
 
@@ -30,7 +30,7 @@ public class AttackProjectile : MonoBehaviour
     protected virtual void Move()
     {
         float distanceTravelled = Mathf.Abs(startingXPosition - transform.position.x);
-        if (distanceTravelled >= attackStats.Range)
+        if (attackStats.Range > 0f && distanceTravelled >= attackStats.Range)
         {
             Destroy(gameObject);
         }
@@ -52,6 +52,14 @@ public class AttackProjectile : MonoBehaviour
         if (other.gameObject.TryGetComponent<Health>(out Health otherHealth))
         {
             DoAttack(otherHealth);
+        }
+    }
+    
+    private void OnBecameInvisible()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            Destroy(gameObject);
         }
     }
 }

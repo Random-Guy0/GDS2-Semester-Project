@@ -99,7 +99,7 @@ public class PlayerAttackHandler : AttackHandler
 
     protected override IEnumerator WaitForAttack(float attackDuration)
     {
-        if (SelectedWeapon.Attack is not ContinuousRangedAttack)
+        if (SelectedWeapon.Attack is not RangedAttack)
         {
             playerMovement.CanMove = false;
         }
@@ -122,12 +122,12 @@ public class PlayerAttackHandler : AttackHandler
         
     }
 
-    public override float GetDirection()
+    public override Vector2 GetDirection()
     {
-        float direction = playerMovement.Direction.x;
-        if (direction == 0f)
+        Vector2 direction = playerMovement.Direction;
+        if (direction == Vector2.zero)
         {
-            direction = 1f;
+            direction = Vector2.right;
         }
         return direction;
     }
@@ -186,9 +186,14 @@ public class PlayerAttackHandler : AttackHandler
 
     private void SelectWeapon(int index)
     {
-        if (AttackButtonDown && SelectedWeapon.Attack is ContinuousRangedAttack)
+        if ((AttackButtonDown && SelectedWeapon.Attack is ContinuousRangedAttack) || SelectedWeapon == Weapons[index])
         {
             return;
+        }
+
+        if (CarryingBubble)
+        {
+            ReleaseBubble();
         }
         
         SelectedWeapon = Weapons[index];

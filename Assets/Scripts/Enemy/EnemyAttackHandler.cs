@@ -27,7 +27,7 @@ public class EnemyAttackHandler : AttackHandler
         }
     }
 
-    public override float GetDirection()
+    public override Vector2 GetDirection()
     {
         float direction;
         if (this.transform.position.x - target.position.x < 0)
@@ -38,7 +38,7 @@ public class EnemyAttackHandler : AttackHandler
         {
             direction = -1.0f;
         }
-        return direction;
+        return Vector2.right * direction;
     }
 
 }

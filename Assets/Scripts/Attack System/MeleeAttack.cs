@@ -6,17 +6,18 @@ using UnityEngine;
 public class MeleeAttack : Attack
 {
     [field: SerializeField] public Vector2 HitSize { get; private set; } = Vector2.one;
-    //[SerializeField] private DebugBox hitTestCubePrefab;
     
-    public override IEnumerator DoAttack(float direction = 1f, float attackerWidth = 1f,
-        Vector2? attackerPosition = null, AttackHandler attacker = null)
+    public override IEnumerator DoAttack(Vector2 direction, Vector2 attackerSize,
+        Vector2 attackerPosition, AttackHandler attacker = null)
     {
-        Vector2 position = attackerPosition ?? Vector2.zero;
-        Vector2 origin = GetAttackOrigin(direction, attackerWidth, position);
+        Vector2 origin = GetAttackOrigin(direction, attackerSize, attackerPosition);
         
-        /*DebugBox hitTestCube = Instantiate(hitTestCubePrefab, origin, Quaternion.identity);
-        hitTestCube.transform.localScale = new Vector3(HitSize.x, HitSize.y, 1f);
-        hitTestCube.Duration = Duration;*/
+#if UNITY_EDITOR
+        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), Color.green, Duration);
+        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x + HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration);
+        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration);
+        Debug.DrawLine(new Vector3(origin.x - HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration);  
+#endif
         
         List<Health> allHits = new List<Health>();
         float currentTime = 0f;
@@ -41,11 +42,12 @@ public class MeleeAttack : Attack
         }
     }
 
-    protected override Vector2 GetAttackOrigin(float direction, float attackerWidth, Vector2 attackerPosition)
+    protected override Vector2 GetAttackOrigin(Vector2 direction, Vector2 attackerSize, Vector2 attackerPosition)
     {
-        Vector2 origin = base.GetAttackOrigin(direction, attackerWidth, attackerPosition);
+        Vector2 origin = base.GetAttackOrigin(direction, attackerSize, attackerPosition);
 
-        origin.x += direction * HitSize.x * 0.5f;
+        origin.x += direction.x * HitSize.x * 0.5f;
+        origin.y += direction.y * HitSize.y * 0.5f;
         
         return origin;
     }

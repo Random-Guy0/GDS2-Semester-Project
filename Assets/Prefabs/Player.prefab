@@ -696,6 +696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1951377738869401177}
   speed: 3
+  footstepAudio: {fileID: 0}
 --- !u!114 &6636351775345419368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,6 +751,7 @@ MonoBehaviour:
   meleeAttack1Animation: {fileID: 7400000, guid: 275c3fe9c4b572b478922bf781263e27, type: 2}
   meleeAttack2Animation: {fileID: 7400000, guid: cf141952325c7e04e831dcf5bbb37428, type: 2}
   bubbleReleaseForce: 2
+  weaponsUIanimator: {fileID: 0}
 --- !u!114 &5782404449363472846
 MonoBehaviour:
   m_ObjectHideFlags: 0

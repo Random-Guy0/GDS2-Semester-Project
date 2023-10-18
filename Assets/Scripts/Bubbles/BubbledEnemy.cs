@@ -92,7 +92,7 @@ public class BubbledEnemy : MonoBehaviour
         {
             playerGrabbing.HeldBubblePopped();
         }
-        Release(0f);
+        Release(Vector2.zero);
     }
 
     public void Grab(PlayerAttackHandler player)
@@ -104,18 +104,25 @@ public class BubbledEnemy : MonoBehaviour
         grabbed = true;
     }
 
-    public void Release(float directionAndForce)
+    public void Release(Vector2 directionAndForce)
     {
-        float velocityMultiplier = Mathf.Abs(velocity.x);
-        if (velocityMultiplier != 0f)
+        float velocityMultiplierX = Mathf.Abs(velocity.x);
+        float velocityMultiplierY = Mathf.Abs(velocity.y);
+        if (velocityMultiplierX != 0f)
         {
-            directionAndForce *= velocityMultiplier;
+            directionAndForce.x *= velocityMultiplierX;
         }
+
+        if (velocityMultiplierY != 0f)
+        {
+            directionAndForce.y *= velocityMultiplierY;
+        }
+        
         playerGrabbing = null;
         rb.bodyType = RigidbodyType2D.Dynamic;
         transform.parent = null;
         grabbed = false;
-        Bump(Vector2.right * directionAndForce);
+        Bump(Vector2.one * directionAndForce);
     }
 
     private void OnBecameInvisible()

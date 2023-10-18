@@ -13,7 +13,7 @@ public class ChargedAttackProjectile : AttackProjectile
     private float startingYPosition;
     private float chargeTime;
     
-    public void FireProjectile(float direction, float chargeTime, AttackHandler attacker = null)
+    public void FireProjectile(Vector2 direction, float chargeTime, AttackHandler attacker = null)
     {
         FireProjectile(direction, attacker);
         if (chargeTime != 0f)
@@ -29,7 +29,7 @@ public class ChargedAttackProjectile : AttackProjectile
     {
         velocity.y -= gravity;
         float distanceTravelled = Mathf.Abs(startingXPosition - transform.position.x);
-        if (distanceTravelled >= attackStats.Range * chargeTime)
+        if (attackStats.Range > 0f && distanceTravelled >= attackStats.Range * chargeTime)
         {
             DoAttack();
         }
