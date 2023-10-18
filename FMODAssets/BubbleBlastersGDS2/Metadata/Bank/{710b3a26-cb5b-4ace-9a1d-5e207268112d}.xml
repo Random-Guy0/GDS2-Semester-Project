@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Bank" id="{710b3a26-cb5b-4ace-9a1d-5e207268112d}">
+		<property name="name">
+			<value>Egpyt Atmosphere</value>
+		</property>
+		<relationship name="folder">
+			<destination>{8ec430bb-df5b-4bde-b655-4f51e4e33d8f}</destination>
+		</relationship>
+	</object>
+</objects>
