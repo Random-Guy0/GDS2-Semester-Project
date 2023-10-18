@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     
     [field: SerializeField] public GameplayUI GameplayUI { get; private set; }
+    [field: SerializeField] public GameOverUI GameOverUI { get; private set; }
     [field: SerializeField] public GameObject Player { get; private set; }
 
     private void Awake()
@@ -20,12 +21,15 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
-
-        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void ResetGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenuStart");
     }
 }

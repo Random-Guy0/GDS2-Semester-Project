@@ -12,13 +12,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput = Vector2.zero;
 
     private Rigidbody2D rb;
-    
-    //remove after Sprint 3
-    [SerializeField] private AudioSource footstepAudio;
+
+    [SerializeField] private FMODUnity.StudioEventEmitter walkSand;
     
     public Vector2 Direction { get; private set; }
-    
-    public bool CanMove { get; set; }
+
+    public bool CanMove { get; set; } = true;
 
     private void Start()
     {
@@ -29,16 +28,34 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
 
+        Vector2 newDirection = Direction;
+
         if (moveInput.x != 0f)
         {
-            Direction = new Vector2(Mathf.Round(moveInput.x), Mathf.Round(moveInput.y));
+            newDirection = Vector2.right * Mathf.Round(moveInput.x);
             Vector3 scale = transform.localScale;
-            scale.x = Direction.x;
+            scale.x = newDirection.x;
             transform.localScale = scale;
         }
-        
-        //remove after Sprint 3
-        footstepAudio.Play();
+
+        if (moveInput.y != 0f)
+        {
+            newDirection.y = Mathf.Round(moveInput.y);
+        }
+
+        Direction = newDirection;
+    }
+
+    private void Update()
+    {
+        if (moveInput != Vector2.zero && !walkSand.IsPlaying())
+        {
+            walkSand.Play();
+        }
+        else if (moveInput == Vector2.zero)
+        {
+            walkSand.Stop();
+        }
     }
 
     private void FixedUpdate()
@@ -52,6 +69,11 @@ public class PlayerMovement : MonoBehaviour
         
         rb.velocity = velocity;
         animator.SetFloat("MoveSpeed", velocity.magnitude);
+    }
+
+    public void StopMoving()
+    {
+        rb.velocity = Vector2.zero;
     }
 
     public void ResetGame(InputAction.CallbackContext context)

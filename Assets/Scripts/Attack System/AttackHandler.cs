@@ -29,9 +29,9 @@ public abstract class AttackHandler : MonoBehaviour
         if (!CurrentlyAttacking && enabled)
         {
             CurrentAttack = attack;
-            float width = GetColliderSize();
-            float direction = GetDirection();
-            attackCoroutine = StartCoroutine(attack.DoAttack(direction, width, GetAttackOrigin(), this));
+            Vector2 size = GetColliderSize();
+            Vector2 direction = GetDirection();
+            attackCoroutine = StartCoroutine(attack.DoAttack(direction, size, GetAttackOrigin(), this));
             StartCoroutine(WaitForAttack(attack.Duration));
         }
     }
@@ -44,25 +44,24 @@ public abstract class AttackHandler : MonoBehaviour
 
     }
 
-    protected virtual float GetColliderSize()
+    protected virtual Vector2 GetColliderSize()
     {
-        float width = 1f;        
+        Vector2 size = Vector2.one;
         
         if ((coll == null && TryGetComponent<Collider2D>(out coll)) || coll != null)
         {
-            width = coll.bounds.size.x;
+            size = coll.bounds.size;
         }
 
-        return width;
+        return size;
     }
 
-    public abstract float GetDirection();
+    public abstract Vector2 GetDirection();
 
     public virtual void InterruptAttack()
     {
         if (attackCoroutine != null)
         {
-            Debug.Log("Attack Interrupted");
             StopCoroutine(attackCoroutine);
         }
         CurrentAttack = null;

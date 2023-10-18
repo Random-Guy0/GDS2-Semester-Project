@@ -63,6 +63,7 @@ public class PlayerAttackHandler : AttackHandler
             if (!AttackButtonDown)
             {
                 AttackButtonDown = true;
+                
                 if (SelectedWeapon.Attack is MeleeAttack meleeAttack)
                 {
                     int index = Array.IndexOf(MeleeAttacks, meleeAttack);
@@ -93,14 +94,16 @@ public class PlayerAttackHandler : AttackHandler
         if (ammoController.CanUseAmmo(RangedAttacks[index].AmmoCost))
         {
             ammoController.UseAmmo(RangedAttacks[index].AmmoCost);
+            SelectedWeapon.weaponAttackSound.Play();
             base.DoRangedAttack(index);
         }
     }
 
     protected override IEnumerator WaitForAttack(float attackDuration)
     {
-        if (SelectedWeapon.Attack is not ContinuousRangedAttack)
+        if (SelectedWeapon.Attack is not RangedAttack)
         {
+            SelectedWeapon.weaponAttackSound.Play();
             playerMovement.CanMove = false;
         }
 
@@ -122,12 +125,12 @@ public class PlayerAttackHandler : AttackHandler
         
     }
 
-    public override float GetDirection()
+    public override Vector2 GetDirection()
     {
-        float direction = playerMovement.Direction.x;
-        if (direction == 0f)
+        Vector2 direction = playerMovement.Direction;
+        if (direction == Vector2.zero)
         {
-            direction = 1f;
+            direction = Vector2.right;
         }
         return direction;
     }
@@ -186,9 +189,14 @@ public class PlayerAttackHandler : AttackHandler
 
     private void SelectWeapon(int index)
     {
-        if (AttackButtonDown && SelectedWeapon.Attack is ContinuousRangedAttack)
+        if ((AttackButtonDown && SelectedWeapon.Attack is ContinuousRangedAttack) || SelectedWeapon == Weapons[index])
         {
             return;
+        }
+
+        if (CarryingBubble)
+        {
+            ReleaseBubble();
         }
         
         SelectedWeapon = Weapons[index];
@@ -267,6 +275,7 @@ public class PlayerWeapon
     [field: SerializeField] public bool Unlocked { get; set; } = true;
     [field: SerializeField] public SpriteRenderer Sprite { get; private set; }
     [field: SerializeField] public Transform AttackOrigin { get; private set; }
+    [field: SerializeField] public FMODUnity.StudioEventEmitter weaponAttackSound { get; private set; }
 
     public PlayerWeapon(Attack attack)
     {

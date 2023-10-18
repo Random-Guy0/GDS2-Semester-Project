@@ -1,0 +1,1030 @@
+fileFormatVersion: 2
+guid: 571214754d842114dafc0f611ffb0fb7
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Attack
+    second: {fileID: 7400000, guid: 6d9e81b4d2b05b34bb0e361febccab71, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Walk
+    second: {fileID: 7400000, guid: 9a4494cff0e31814ca34a84670d41740, type: 2}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 32
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638332540044177550
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Behemoth_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 208
+      width: 48
+      height: 47
+    spriteID: e51f28d14293cf24f80e81bdec8d0db2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 208}
+  - name: Behemoth_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 463
+      width: 47
+      height: 44
+    spriteID: 1c85dd23bbcb8394fbade639deaad550
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 463}
+  - name: Behemoth_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 165
+      y: 4
+      width: 45
+      height: 46
+    spriteID: e37b41a3ac2fd2e438fe948ed60dc3c8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 165, y: 4}
+  - name: Behemoth_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 165
+      y: 222
+      width: 41
+      height: 47
+    spriteID: 799781260feebf842b733de939887102
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 165, y: 222}
+  - name: Behemoth_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 214
+      y: 222
+      width: 37
+      height: 47
+    spriteID: 57010e34d15cce74aada3f730067d215
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 214, y: 222}
+  - name: Behemoth_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 165
+      y: 442
+      width: 34
+      height: 47
+    spriteID: 293938002ce7f64428129b8815dc0a30
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 165, y: 442}
+  - name: Behemoth_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 218
+      y: 4
+      width: 34
+      height: 46
+    spriteID: 65a4ce397ce525841b8cfaa9aa507f57
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 218, y: 4}
+  - name: Behemoth_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 216
+      y: 168
+      width: 33
+      height: 44
+    spriteID: 83afa982c6dbf4e47b8203cb56dde284
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 216, y: 168}
+  - name: Behemoth_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 216
+      y: 114
+      width: 33
+      height: 46
+    spriteID: 50b15ba3f74f2f74ca6f33704f99e240
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 216, y: 114}
+  - name: Behemoth_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 165
+      y: 332
+      width: 37
+      height: 47
+    spriteID: 7162270db1b6d9b49933514a6fb358ba
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 165, y: 332}
+  - name: Behemoth_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 165
+      y: 277
+      width: 41
+      height: 47
+    spriteID: 570800bb0c1a6434c96ce5b23be4137d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 165, y: 277}
+  - name: Behemoth_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 263
+      width: 45
+      height: 47
+    spriteID: 0abc907fb0bd80d40bb68f51880c5383
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 263}
+  - name: Behemoth_Frame_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 409
+      width: 47
+      height: 46
+    spriteID: 929f02096ee6dad44a7d070490e3758d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 409}
+  - name: Behemoth_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 354
+      width: 47
+      height: 47
+    spriteID: 873f4a8971c5b094ca21103d7d105b03
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 354}
+  - name: Behemoth_Frame_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 4
+      width: 80
+      height: 48
+    spriteID: 61992aa277355244fb316efd450af5a0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 4}
+  - name: Behemoth_Frame_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.27710843}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 120
+      y: 60
+      width: 29
+      height: 83
+    spriteID: ccd2b75e08a720e4cb051cdd6104bd8b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 120, y: 60}
+  - name: Behemoth_Frame_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.27710843}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 257
+      width: 47
+      height: 83
+    spriteID: c71b9c97a4957114897a78d9e0f932a1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 257}
+  - name: Behemoth_Frame_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.27380952}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 65
+      height: 84
+    spriteID: 9341a36f64a45b64c91e49bd2d3c939f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Behemoth_Frame_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.32857144}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 179
+      width: 56
+      height: 70
+    spriteID: 9b94fb41da271ea40998747e1e5e5d4b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 179}
+  - name: Behemoth_Frame_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.30666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 96
+      width: 65
+      height: 75
+    spriteID: cdd468f7125da8d44af1d1acbed7b74f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 96}
+  - name: Behemoth_Frame_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 153
+      width: 55
+      height: 47
+    spriteID: 28fa4cc63d5ba904ea4d09cc35ea1faf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 153}
+  - name: Behemoth_Frame_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 216
+      y: 58
+      width: 36
+      height: 47
+    spriteID: 4ae6dc3fdc7c60c4aac5dd2940c1d523
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 216, y: 58}
+  - name: Behemoth_Frame_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 165
+      y: 387
+      width: 35
+      height: 47
+    spriteID: 1d762f8d41f3824428a004cc7f628d7e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 165, y: 387}
+  - name: Behemoth_Frame_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 165
+      y: 114
+      width: 43
+      height: 46
+    spriteID: 2f2b12b17ab3b4a468df46662f694689
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 165, y: 114}
+  - name: Behemoth_Frame_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 165
+      y: 168
+      width: 43
+      height: 46
+    spriteID: 0742bc167a410dd439cb647e905258ed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 165, y: 168}
+  - name: Behemoth_Frame_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 165
+      y: 58
+      width: 43
+      height: 48
+    spriteID: 9b5a7f270bcfb14468166eaa92b5466c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 165, y: 58}
+  - name: Behemoth_Frame_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.359375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 441
+      width: 44
+      height: 64
+    spriteID: e367a9d72eb363542bbaa3f552bf8910
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 441}
+  - name: Behemoth_Frame_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.27058825}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 348
+      width: 36
+      height: 85
+    spriteID: dc598c2b32fc3ac4aaae662661bd27a5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 348}
+  - name: Behemoth_Frame_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.27058825}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 60
+      width: 35
+      height: 85
+    spriteID: 409fafaef5dc2324ba74e553b5584df3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 60}
+  - name: Behemoth_Frame_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.27710843}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 263
+      width: 27
+      height: 83
+    spriteID: bba461b7d38352249bdf9c4e4ef1b7f1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 263}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 308069536
+    name: Behemoth
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Behemoth_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 34
+        y: 0
+        width: 48
+        height: 47
+      spriteId: e51f28d14293cf24f80e81bdec8d0db2
+    - name: Behemoth_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 33
+        y: 0
+        width: 47
+        height: 44
+      spriteId: 1c85dd23bbcb8394fbade639deaad550
+    - name: Behemoth_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 33
+        y: 0
+        width: 45
+        height: 46
+      spriteId: e37b41a3ac2fd2e438fe948ed60dc3c8
+    - name: Behemoth_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 35
+        y: 0
+        width: 41
+        height: 47
+      spriteId: 799781260feebf842b733de939887102
+    - name: Behemoth_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 37
+        y: 0
+        width: 37
+        height: 47
+      spriteId: 57010e34d15cce74aada3f730067d215
+    - name: Behemoth_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 40
+        y: 0
+        width: 34
+        height: 47
+      spriteId: 293938002ce7f64428129b8815dc0a30
+    - name: Behemoth_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 44
+        y: 0
+        width: 34
+        height: 46
+      spriteId: 65a4ce397ce525841b8cfaa9aa507f57
+    - name: Behemoth_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 44
+        y: 0
+        width: 33
+        height: 44
+      spriteId: 83afa982c6dbf4e47b8203cb56dde284
+    - name: Behemoth_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 44
+        y: 0
+        width: 33
+        height: 46
+      spriteId: 50b15ba3f74f2f74ca6f33704f99e240
+    - name: Behemoth_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 37
+        y: 0
+        width: 37
+        height: 47
+      spriteId: 7162270db1b6d9b49933514a6fb358ba
+    - name: Behemoth_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 35
+        y: 0
+        width: 41
+        height: 47
+      spriteId: 570800bb0c1a6434c96ce5b23be4137d
+    - name: Behemoth_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 33
+        y: 0
+        width: 45
+        height: 47
+      spriteId: 0abc907fb0bd80d40bb68f51880c5383
+    - name: Behemoth_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 33
+        y: 0
+        width: 47
+        height: 46
+      spriteId: 929f02096ee6dad44a7d070490e3758d
+    - name: Behemoth_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 34
+        y: 0
+        width: 47
+        height: 47
+      spriteId: 873f4a8971c5b094ca21103d7d105b03
+    - name: Behemoth_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 1
+        y: 0
+        width: 80
+        height: 48
+      spriteId: 61992aa277355244fb316efd450af5a0
+    - name: Behemoth_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 50
+        y: 12
+        width: 29
+        height: 83
+      spriteId: ccd2b75e08a720e4cb051cdd6104bd8b
+    - name: Behemoth_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 39
+        y: 12
+        width: 47
+        height: 83
+      spriteId: c71b9c97a4957114897a78d9e0f932a1
+    - name: Behemoth_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 31
+        y: 12
+        width: 65
+        height: 84
+      spriteId: 9341a36f64a45b64c91e49bd2d3c939f
+    - name: Behemoth_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 28
+        y: 18
+        width: 56
+        height: 70
+      spriteId: 9b94fb41da271ea40998747e1e5e5d4b
+    - name: Behemoth_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 16
+        y: 2
+        width: 65
+        height: 75
+      spriteId: cdd468f7125da8d44af1d1acbed7b74f
+    - name: Behemoth_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 19
+        y: 0
+        width: 55
+        height: 47
+      spriteId: 28fa4cc63d5ba904ea4d09cc35ea1faf
+    - name: Behemoth_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 47
+        y: 0
+        width: 36
+        height: 47
+      spriteId: 4ae6dc3fdc7c60c4aac5dd2940c1d523
+    - name: Behemoth_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 48
+        y: 0
+        width: 35
+        height: 47
+      spriteId: 1d762f8d41f3824428a004cc7f628d7e
+    - name: Behemoth_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 49
+        y: 0
+        width: 43
+        height: 46
+      spriteId: 2f2b12b17ab3b4a468df46662f694689
+    - name: Behemoth_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 49
+        y: 0
+        width: 43
+        height: 46
+      spriteId: 0742bc167a410dd439cb647e905258ed
+    - name: Behemoth_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 49
+        y: 0
+        width: 43
+        height: 48
+      spriteId: 9b5a7f270bcfb14468166eaa92b5466c
+    - name: Behemoth_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 43
+        y: 0
+        width: 44
+        height: 64
+      spriteId: e367a9d72eb363542bbaa3f552bf8910
+    - name: Behemoth_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 48
+        y: 3
+        width: 36
+        height: 85
+      spriteId: dc598c2b32fc3ac4aaae662661bd27a5
+    - name: Behemoth_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 49
+        y: 5
+        width: 35
+        height: 85
+      spriteId: 409fafaef5dc2324ba74e553b5584df3
+    - name: Behemoth_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 52
+        y: 12
+        width: 27
+        height: 83
+      spriteId: bba461b7d38352249bdf9c4e4ef1b7f1
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 96, y: 96}

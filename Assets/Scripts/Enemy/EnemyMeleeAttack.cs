@@ -28,7 +28,7 @@ public class EnemyMeleeAttack : AttackHandler
     }
     // Start is called before the first frame update
 
-    public override float GetDirection()
+    public override Vector2 GetDirection()
     {
         float direction;
         if(this.transform.position.x - target.position.x < 0){
@@ -37,6 +37,6 @@ public class EnemyMeleeAttack : AttackHandler
         else{
             direction = -1.0f;
         }
-        return direction;
+        return Vector2.right * direction;
     }
 }

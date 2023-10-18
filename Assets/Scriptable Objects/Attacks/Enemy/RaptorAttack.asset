@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 1
   <Target>k__BackingField: 1
-  <Duration>k__BackingField: 1
+  <Duration>k__BackingField: 0.75
+  <DamageTypes>k__BackingField: 
+  <DamageTypeAttackMultiplier>k__BackingField: 2
+  <CanMoveVertically>k__BackingField: 1
   <HitSize>k__BackingField: {x: 1, y: 1}
-  hitTestCubePrefab: {fileID: 4575823049351085360, guid: 8b96204e0e13731469bf0b1224acdcb2, type: 3}

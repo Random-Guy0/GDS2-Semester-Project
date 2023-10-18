@@ -6,10 +6,10 @@ public class EnemyAttackHandler : AttackHandler
 {
     Transform target;
     Rigidbody2D rb;
-    private float stopDistance = 2.0f;
+    [SerializeField] private float stopDistance = 2.0f;
     private float yPositionTolerance = 0.5f; // Tolerance for Y position check
 
-    void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         target = GameManager.Instance.Player.transform;
@@ -17,17 +17,16 @@ public class EnemyAttackHandler : AttackHandler
 
     void Update()
     {
-        float yPositionDifference = Mathf.Abs(target.position.y - transform.position.y);
+        
 
         // Check if the Grunt is in the same Y position as the player within the tolerance
-        if (yPositionDifference <= yPositionTolerance && Mathf.Abs(target.position.x - transform.position.x) < stopDistance)
+        if (CanAttack())
         {
-           // DoMeleeAttack();
-           // WaitForAttack(2);
+           DoMeleeAttack();
         }
     }
 
-    public override float GetDirection()
+    public override Vector2 GetDirection()
     {
         float direction;
         if (this.transform.position.x - target.position.x < 0)
@@ -38,7 +37,21 @@ public class EnemyAttackHandler : AttackHandler
         {
             direction = -1.0f;
         }
-        return direction;
+        return Vector2.right * direction;
     }
 
+    protected virtual bool CanAttack()
+    {
+        float yPositionDifference = Mathf.Abs(target.position.y - transform.position.y);
+        return yPositionDifference <= yPositionTolerance &&
+               Mathf.Abs(target.position.x - transform.position.x) < stopDistance;
+    }
+
+    public override void InterruptAttack()
+    {
+        if (!CurrentlyAttacking)
+        {
+            base.InterruptAttack();
+        }
+    }
 }

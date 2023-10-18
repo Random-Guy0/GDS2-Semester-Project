@@ -10,21 +10,27 @@ public class SectionsManager : MonoBehaviour
     public int playerAreaIn = 0;
     public FollowPlayer camFollow;
     public GameObject player;
-    [SerializeField] private bool endOfArea;
+    [SerializeField] public bool endOfArea = false;
     [SerializeField] private bool tutorialLevel = false;
     public GameObject rightWall;
+    [SerializeField] private bool camAlreadyTracking = false;
+    [SerializeField] public List<Transform> camAreaPosition;
 
     public int numberOfAreas;
 
-    public List<AreaSections> levelAreaSection = new List<AreaSections>();
+    public List<AreaSections> areas = new List<AreaSections>();
 
     void Start()
     {
 
         if (SceneManager.GetActiveScene().name == "Tutorial")
         {
-            Debug.Log("true");
+            Debug.Log("Tutorial Level");
             tutorialLevel = true;
+        }
+        else
+        {
+            Debug.Log("Main Level");
         }
     }
 
@@ -36,33 +42,54 @@ public class SectionsManager : MonoBehaviour
         }
         else
         {
-            if (currentArea >= levelAreaSection.Count)
+            //When the currentArea is greater than the total number of areas (After the final area has been beaten):
+            if (currentArea >= areas.Count)
             {
                 SectionRunTime();
             }
             else
             {
-                if (levelAreaSection[currentArea].sectionComplelted == 0)
+                //if the current section the player is in is the first section of that area:
+                if (areas[currentArea].sectionCount == 0)
                 {
+                    Debug.Log("Beginning Area in Update SectionsManager");
+                    camFollow.OnOffSwitchX(true);
                     SectionRunTime();
                 }
-                else if (endOfArea == false)
+                else
                 {
-                    if (levelAreaSection[currentArea].sectionsCompleted[levelAreaSection[currentArea].sectionComplelted - 1] == false && levelAreaSection[currentArea].beginningAreaSection == false)
+                    Debug.Log("No first Area");
+                    Debug.Log(areas[currentArea].sectionsCompleted[areas[currentArea].sectionCount - 1] + " and " + endOfArea);
+                    // if the previous section in current area's bool list == false & the section for the current area is not the beginning area section
+                    if (areas[currentArea].sectionsCompleted[areas[currentArea].sectionCount - 1] == false && endOfArea == false)
                     {
-                        Debug.Log("Yeet");
+
+                        Debug.Log("endOfArea = " + endOfArea);
                         if (endOfArea == false)
                         {
-                            levelAreaSection[currentArea].areaEnemyManagers[levelAreaSection[currentArea].sectionComplelted].gameObject.SetActive(true);
+                            // set the new next sections manager to active including enemies.
+                            areas[currentArea].areaEnemyManagers[areas[currentArea].sectionCount].gameObject.SetActive(true);
                         }
-                        camFollow.ResetCamPosition();
-                        levelAreaSection[currentArea].sectionsCompleted[levelAreaSection[currentArea].sectionComplelted - 1] = true;
+                        if (areas[currentArea].justBeganSecondSection != true)
+                        {
+                            camFollow.ResetCamPosition();
+                        }
+                        else
+                        {
+                            areas[currentArea].justBeganSecondSection = false;
+                        }
+                        
+
+                        // set the previous sections bool completed list object to true
+                        areas[currentArea].sectionsCompleted[areas[currentArea].sectionCount - 1] = true;
                     }
                     SectionRunTime();
                     if (endOfArea == false)
                     {
-                        levelAreaSection[currentArea].section[levelAreaSection[currentArea].sectionComplelted - 1].SetActive(false);
+                        // set the previous (Was current but just completed the previous section so current is one forward) wall to false
+                        areas[currentArea].section[areas[currentArea].sectionCount - 1].SetActive(false);
                     }
+
                 }
             }
         }
@@ -75,62 +102,142 @@ public class SectionsManager : MonoBehaviour
 
     public void ActivateNewAreaEnemies()
     {
-        levelAreaSection[currentArea].areaEnemyManagers[levelAreaSection[currentArea].sectionComplelted].gameObject.SetActive(true);
+        ++currentArea;
+        if (currentArea == 2)
+        {
+            camFollow.diagonalArea = true;
+            camFollow.OnOffSwitchY(true);
+        }
+        else
+        {
+            camFollow.diagonalArea = false;
+        }
+        areas[currentArea].areaEnemyManagers[areas[currentArea].sectionCount].gameObject.SetActive(true);
         playerAreaIn = currentArea;
         endOfArea = false;
+        mainCamera.transform.position = new Vector3(camAreaPosition[currentArea].position.x, camAreaPosition[currentArea].position.y, -10f);
+        camFollow.OnOffSwitchX(true);
+    }
+
+    public int CurrentArea()
+    {
+        int area = currentArea + 1;
+        return area;
     }
 
     public void SectionRunTime()
     {
         if (tutorialLevel == false)
         {
-            Vector3 pos = mainCamera.WorldToViewportPoint(levelAreaSection[currentArea].section[levelAreaSection[currentArea].sectionComplelted].transform.position);
-            if (pos.x <= 1.0f)
+            Debug.Log("Begining Area bool = " + areas[currentArea].beginningAreaSection);
+            if (areas[currentArea].beginningAreaSection == false || currentArea == 2)
             {
-                camFollow.OnOffSwitch(true);
-            }
+                Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
 
-
-            Vector3 playerPos1;
-            if (playerAreaIn == currentArea - 1)
-            {
-
-                playerPos1 = mainCamera.WorldToViewportPoint(levelAreaSection[currentArea - 1].areaWalls[1].transform.position);
-
-                if (playerPos1.x <= 1.0f)
+                // For the Next Section
+                Vector3 sectionWall = mainCamera.WorldToViewportPoint(areas[currentArea].section[areas[currentArea].sectionCount].transform.position);
+                Debug.Log("SectionRunTime Code 1 sectionWall pos.x = " + sectionWall.x);
+                Debug.Log("Player Position = " + playerPos.x);
+                if (sectionWall.x <= 1.0f && playerPos.x > 0.5f)
                 {
-                    camFollow.OnOffSwitch(true);
+                    Debug.Log("SectionRunTime Code 1 == true");
+                    camFollow.OnOffSwitchX(true);
+                }
+                else
+                {
+                    Debug.Log("SectionRunTime Code 1 == false");
+                    camFollow.OnOffSwitchX(false);
                 }
 
-            }
-            else
-            {
-                Vector3 playerPos8 = mainCamera.WorldToViewportPoint(levelAreaSection[currentArea].areaWalls[1].transform.position);
-                if (playerPos8.x <= 1.0f)
+                //For the Left Most Wall
+                Vector3 leftWall = mainCamera.WorldToViewportPoint(areas[currentArea].areaWalls[0].transform.position);
+                Debug.Log("SectionRunTime Code 2 leftWall pos.x = " + leftWall.x);
+                if (leftWall.x >= -6f)
                 {
-                    camFollow.OnOffSwitch(true);
+                    Debug.Log("SectionRunTime Code 2 leftWall pos.x == true");
+                    Debug.Log("Player Position = " + playerPos.x);
+                    if (leftWall.x >= 0.0f && playerPos.x < 0.5f)
+                    {
+                        Debug.Log("SectionRunTime Code 2 == true");
+                        camFollow.OnOffSwitchX(true);
+                    }
+                    else
+                    {
+                        Debug.Log("SectionRunTime Code 2 == false");
+                        camFollow.OnOffSwitchX(false);
+                    }
                 }
-            }
-            Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
-            if (playerPos.x <= 0.5f)
-            {
-                camFollow.OnOffSwitch(false);
+
+                //For the Right Most Wall
+                Vector3 rightWall = mainCamera.WorldToViewportPoint(areas[currentArea].areaWalls[1].transform.position);
+                Debug.Log("SectionRunTime Code 3 rightWall pos.x = " + rightWall.x);
+                if (rightWall.x <= 1.2f)
+                {
+                    if (endOfArea == false)
+                    {
+                        Debug.Log("End Of Area = true");
+                        endOfArea = true;
+                    }
+
+                    Debug.Log("SectionRunTime Code 3 rightWall pos.x == true");
+                    Debug.Log("Player Position = " + playerPos.x);
+                    if (rightWall.x <= 1.0f && playerPos.x > 0.5f)
+                    {
+                        Debug.Log("SectionRunTime Code 3 == true");
+                        camFollow.OnOffSwitchX(true);
+                    }
+                    else
+                    {
+                        Debug.Log("SectionRunTime Code 3 == false");
+                        camFollow.OnOffSwitchX(false);
+                    }
+                }
+
+                if (camFollow.diagonalArea == true)
+                {
+                    Debug.Log("Diagonal Area = true");
+                    Vector3 bottomWall = mainCamera.WorldToViewportPoint(areas[currentArea].areaWalls[2].transform.position);
+                    Vector3 topWall = mainCamera.WorldToViewportPoint(areas[currentArea].areaWalls[3].transform.position);
+                    Vector3 playBottom = mainCamera.WorldToViewportPoint(player.transform.position);
+                    if (bottomWall.y >= -0.2f)
+                    {
+                        if (bottomWall.y >= 0.0f && playBottom.y < 0.5f)
+                        {
+                            camFollow.OnOffSwitchY(true);
+                        }
+                        else
+                        {
+                            camFollow.OnOffSwitchY(false);
+                        }
+                    }
+                    if (topWall.y <= 1.2f)
+                    {
+                        if (topWall.y <= 1.0f && playerPos.y > 0.5f)
+                        {
+                            camFollow.OnOffSwitchY(true);
+                        }
+                        else
+                        {
+                            camFollow.OnOffSwitchY(false);
+                        }
+                    }
+                }
             }
         }
         else {
-
+            Debug.Log("Tutorial Level SectionRunTime");
             Vector3 playerPos5 = mainCamera.WorldToViewportPoint(player.transform.position);
 
             if (playerPos5.x <= 0.5f)
             {
-                camFollow.OnOffSwitch(false);
+                camFollow.OnOffSwitchX(false);
             }
 
             Vector3 playerPosTut = mainCamera.WorldToViewportPoint(rightWall.transform.position);
 
             if (playerPosTut.x <= 1.0f)
             {
-                camFollow.OnOffSwitch(true);
+                camFollow.OnOffSwitchX(true);
             }
         }
 
