@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MeleeAttacks>k__BackingField:
-  - {fileID: 11400000, guid: c1a3c638dd1a0ce48b41a7362b7dde56, type: 2}
+  - {fileID: 11400000, guid: 60ee6ebef56112045824f700faa1ee42, type: 2}
   <RangedAttacks>k__BackingField: []
   stopDistance: 2
   meleeAttackAnimation: {fileID: 7400000, guid: 6d9e81b4d2b05b34bb0e361febccab71, type: 2}

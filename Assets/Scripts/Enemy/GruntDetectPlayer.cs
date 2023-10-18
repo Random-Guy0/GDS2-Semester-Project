@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -77,6 +78,11 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
                 }
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = Vector2.zero;
     }
 
     private void ChasePlayer()
