@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2980102513536050860}
   - component: {fileID: 9102721864597918552}
   - component: {fileID: 5715400789707310663}
-  - component: {fileID: 7525131703454876912}
+  - component: {fileID: 7903826979980892148}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -197,7 +197,7 @@ MonoBehaviour:
   maxHealth: 10
   <Weaknesses>k__BackingField: 00000000
   detectPlayerComponent: {fileID: 8831299249130729824}
-  enemyAttackHandler: {fileID: 7525131703454876912}
+  enemyAttackHandler: {fileID: 7903826979980892148}
   enemyRigidbody: {fileID: 2980102513536050860}
   enemyCollider: {fileID: 9102721864597918552}
   bubblePrefab: {fileID: 1446682404955272071, guid: 2727dd07c18a6f64e92d3bb149721607, type: 3}
@@ -205,7 +205,7 @@ MonoBehaviour:
   deathScale: 1
   pickup: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
   ammoDropAmount: 1
---- !u!114 &7525131703454876912
+--- !u!114 &7903826979980892148
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 205769703443517595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a881c200effc624285aa82fb8791e5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 425e34c98a9742c0858c3b2a1c0756ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <MeleeAttacks>k__BackingField:
