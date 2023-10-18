@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectionManager: {fileID: 0}
+  enemies: []
 --- !u!1 &125179012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,9 +1906,10 @@ MonoBehaviour:
   endOfArea: 0
   tutorialLevel: 0
   rightWall: {fileID: 1377016207}
+  camAlreadyTracking: 0
+  camAreaPosition: []
   numberOfAreas: 0
-  levelAreaSection:
-  - {fileID: 0}
+  areas: []
 --- !u!1 &953095031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,6 +1940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <GameplayUI>k__BackingField: {fileID: 1573826076}
+  <GameOverUI>k__BackingField: {fileID: 0}
   <Player>k__BackingField: {fileID: 1551076910}
 --- !u!4 &953095033
 Transform:
@@ -2359,6 +2362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectionManager: {fileID: 0}
+  enemies: []
 --- !u!1001 &1303585878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2480,8 +2484,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Switch Weapons: Scroll Wheel/Corresponing Number
 
-    Currently Equiped
-    Weapon: Melee
+    Destroy crates for
+    a chance at Health!
 
 '
   m_isRightToLeft: 0
@@ -2761,8 +2765,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3e31a18c9cde74ab5da0e35a563fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisCamera: {fileID: 0}
   cameraSpeed: 1
   camRecenter: 0
+  sectionManager: {fileID: 0}
+  diagonalArea: 0
 --- !u!114 &1369598282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3910,6 +3917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectionManager: {fileID: 0}
+  enemies: []
 --- !u!4 &1839417065 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2657809308483502168, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
