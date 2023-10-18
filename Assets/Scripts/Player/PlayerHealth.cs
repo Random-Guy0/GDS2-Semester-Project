@@ -40,6 +40,7 @@ public class PlayerHealth : Health
     {
         PlayerMovement playerMovement = GetComponent<PlayerMovement>();
         playerMovement.CanMove = false;
+        playerMovement.StopMoving();
         playerMovement.enabled = false;
         SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer sprite in sprites)
