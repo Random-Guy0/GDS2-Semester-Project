@@ -266,7 +266,7 @@ PrefabInstance:
     - target: {fileID: 4641396632519100213, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
       propertyPath: enemyAttackHandler
       value: 
-      objectReference: {fileID: 1450733635}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1236,7 +1236,7 @@ PrefabInstance:
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: EgyptLevel1Audio
       value: 
-      objectReference: {fileID: 1681483874}
+      objectReference: {fileID: 0}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: EgyptLevel2Audio
       value: 
@@ -2464,7 +2464,7 @@ PrefabInstance:
     - target: {fileID: 4641396632519100213, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
       propertyPath: enemyAttackHandler
       value: 
-      objectReference: {fileID: 1061176471}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2611,7 +2611,7 @@ PrefabInstance:
     - target: {fileID: 4641396632519100213, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
       propertyPath: enemyAttackHandler
       value: 
-      objectReference: {fileID: 1596094372}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2758,7 +2758,7 @@ PrefabInstance:
     - target: {fileID: 4641396632519100213, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
       propertyPath: enemyAttackHandler
       value: 
-      objectReference: {fileID: 1236251318}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3939,7 +3939,7 @@ PrefabInstance:
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: EgyptLevel1Audio
       value: 
-      objectReference: {fileID: 1681483874}
+      objectReference: {fileID: 0}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: EgyptLevel2Audio
       value: 
@@ -4680,17 +4680,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 205769703443517595, guid: eb529524626737743802f9fcbf8985c2, type: 3}
   m_PrefabInstance: {fileID: 1056679088}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1061176471 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 741981524120769758, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
-  m_PrefabInstance: {fileID: 610692138}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 610692139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a881c200effc624285aa82fb8791e5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1062721850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5652,7 +5641,7 @@ PrefabInstance:
     - target: {fileID: 4641396632519100213, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
       propertyPath: enemyAttackHandler
       value: 
-      objectReference: {fileID: 1266208264}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5663,17 +5652,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1613337139579968509, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
   m_PrefabInstance: {fileID: 1228501716}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1236251318 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 741981524120769758, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
-  m_PrefabInstance: {fileID: 633654437}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633654438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a881c200effc624285aa82fb8791e5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1242518498
 GameObject:
   m_ObjectHideFlags: 0
@@ -5795,17 +5773,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2657809308483502168, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
   m_PrefabInstance: {fileID: 618356493}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1266208264 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 741981524120769758, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
-  m_PrefabInstance: {fileID: 1228501716}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228501717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a881c200effc624285aa82fb8791e5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1266363645
 GameObject:
   m_ObjectHideFlags: 0
@@ -6105,7 +6072,7 @@ PrefabInstance:
     - target: {fileID: 4641396632519100213, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
       propertyPath: enemyAttackHandler
       value: 
-      objectReference: {fileID: 1839417068}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6965,17 +6932,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 205769703443517595, guid: eb529524626737743802f9fcbf8985c2, type: 3}
   m_PrefabInstance: {fileID: 1421749825}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1450733635 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 741981524120769758, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
-  m_PrefabInstance: {fileID: 28484956}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28484957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a881c200effc624285aa82fb8791e5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1467251410
 GameObject:
   m_ObjectHideFlags: 0
@@ -7510,17 +7466,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1114793ed4aea14ebe405d98dbb179c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1596094372 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 741981524120769758, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
-  m_PrefabInstance: {fileID: 618356493}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618356494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a881c200effc624285aa82fb8791e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1600333095
@@ -8769,7 +8714,7 @@ PrefabInstance:
     - target: {fileID: 4641396632519100213, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
       propertyPath: enemyAttackHandler
       value: 
-      objectReference: {fileID: 2084635067}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8985,17 +8930,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2657809308483502168, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
   m_PrefabInstance: {fileID: 1335771366}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1839417068 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 741981524120769758, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
-  m_PrefabInstance: {fileID: 1335771366}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335771367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a881c200effc624285aa82fb8791e5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1843296248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10180,17 +10114,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1286834965841613781, guid: e4b1c8d3bf329a448aa75c48226cbe59, type: 3}
   m_PrefabInstance: {fileID: 2083810072}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2084635067 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 741981524120769758, guid: 0407247d492311948b59cd5b5db1a44d, type: 3}
-  m_PrefabInstance: {fileID: 1794177114}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794177115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a881c200effc624285aa82fb8791e5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2132038130
 GameObject:
   m_ObjectHideFlags: 0
