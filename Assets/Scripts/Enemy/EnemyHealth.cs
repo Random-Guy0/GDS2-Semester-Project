@@ -30,6 +30,8 @@ public class EnemyHealth : Health
 
     public override void TakeDamage(int amount, Attack attack)
     {
+        IEnemyMovement enemyMovement = (IEnemyMovement)detectPlayerComponent;
+        enemyMovement.Stun();
         if (attack is MeleeAttack && CurrentHealth - amount <= 0 && ammoDropAmount > 0)
         {
             AmmoPickup newPickup = Instantiate(pickup, transform.position, Quaternion.identity);

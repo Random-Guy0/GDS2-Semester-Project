@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GruntDetectPlayer : MonoBehaviour
+public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
 {
     Rigidbody2D rb;
     [SerializeField] private float speed = 1.5f;
@@ -15,7 +15,11 @@ public class GruntDetectPlayer : MonoBehaviour
     private float targetDistance;
     private EnemyAttackHandler attackHandler;
 
+    [field: SerializeField] public float StunDuration { get; protected set; } = 0.25f;
+
     private Vector2 boxcastSize;
+
+    public bool CanMove { get; set; } = true;
 
     void Start()
     {
@@ -40,31 +44,34 @@ public class GruntDetectPlayer : MonoBehaviour
 
     void Update()
     {
-        targetDistance = Vector2.Distance(transform.position, target.transform.position);
-        if (!attackHandler.CurrentlyAttacking)
+        if (CanMove)
         {
-            if (targetDistance < chaseDistance)
+            targetDistance = Vector2.Distance(transform.position, target.transform.position);
+            if (!attackHandler.CurrentlyAttacking)
             {
-                if (targetDistance > stopDistance)
+                if (targetDistance < chaseDistance)
                 {
-                    ChasePlayer();
-                }
-                else
-                {
-                    // Check if the player is above the Grunt
-                    if (target.transform.position.y > transform.position.y)
+                    if (targetDistance > stopDistance)
                     {
-                        MoveHorizontallyAwayFromPlayer();
+                        ChasePlayer();
                     }
                     else
                     {
-                        MoveDownTowardsPlayer();
+                        // Check if the player is above the Grunt
+                        if (target.transform.position.y > transform.position.y)
+                        {
+                            MoveHorizontallyAwayFromPlayer();
+                        }
+                        else
+                        {
+                            MoveDownTowardsPlayer();
+                        }
                     }
                 }
-            }
-            else
-            {
-                StopMoving();
+                else
+                {
+                    StopMoving();
+                }
             }
         }
     }
@@ -156,5 +163,17 @@ public class GruntDetectPlayer : MonoBehaviour
     public void StopMoving()
     {
         rb.velocity = Vector2.zero;
+    }
+
+    public void Stun()
+    {
+        StartCoroutine(WaitForStun());
+    }
+
+    private IEnumerator WaitForStun()
+    {
+        CanMove = false;
+        yield return new WaitForSeconds(StunDuration);
+        CanMove = true;
     }
 }
