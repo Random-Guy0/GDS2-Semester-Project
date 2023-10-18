@@ -115,6 +115,12 @@ public class SectionsManager : MonoBehaviour
         camFollow.OnOffSwitchX(true);
     }
 
+    public int CurrentArea()
+    {
+        int area = currentArea + 1;
+        return area;
+    }
+
     public void SectionRunTime()
     {
         if (tutorialLevel == false)
