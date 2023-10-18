@@ -6,10 +6,11 @@ public class FollowPlayer : MonoBehaviour
 {
 
     private bool offSwitch;
-
+    public Camera thisCamera;
     private Transform player;
     public float cameraSpeed = 1;
     public bool camRecenter;
+    public SectionsManager sectionManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,10 +28,12 @@ public class FollowPlayer : MonoBehaviour
             Debug.Log("CamRecenter reset to false");
             camRecenter = false;
         }
-
+        Debug.Log("CamRecenter = " + camRecenter);
         if (camRecenter == true && gameObject.transform.position.x != player.position.x)
         {
+            Debug.Log("CamRecenter beginning offswitch = true");
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, 0, -10), cameraSpeed * Time.deltaTime);
+            offSwitch = true;
         }
         Debug.Log("OnOffSwitch = " + offSwitch);
         if (offSwitch == false)
@@ -48,7 +51,9 @@ public class FollowPlayer : MonoBehaviour
 
     public void ResetCamPosition()
     {
-        if (player.transform.position.x >= 0.0f)
+
+        Vector3 begPlayerPos = thisCamera.WorldToViewportPoint(player.position);
+        if (begPlayerPos.x >= 0.5f)
         {
             StartCoroutine(CamReFollow());
             offSwitch = false;
