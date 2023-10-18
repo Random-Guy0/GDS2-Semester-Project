@@ -86,7 +86,6 @@ public class PlayerAttackHandler : AttackHandler
     {
         bufferAttack = CurrentlyAttacking;
         animator.SetTrigger("DoMeleeAttack");
-        SelectedWeapon.weaponAttackSound.Play();
         base.DoMeleeAttack(index);
     }
 
@@ -104,6 +103,7 @@ public class PlayerAttackHandler : AttackHandler
     {
         if (SelectedWeapon.Attack is not RangedAttack)
         {
+            SelectedWeapon.weaponAttackSound.Play();
             playerMovement.CanMove = false;
         }
 
