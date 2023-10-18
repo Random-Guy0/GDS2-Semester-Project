@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 1
   <Target>k__BackingField: 1
-  <Duration>k__BackingField: 0.2
+  <Duration>k__BackingField: 0.75
   <DamageTypes>k__BackingField: 
   <DamageTypeAttackMultiplier>k__BackingField: 2
   <CanMoveVertically>k__BackingField: 1
