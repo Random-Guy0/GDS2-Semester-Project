@@ -1968,7 +1968,7 @@ GameObject:
   - component: {fileID: 380530996}
   - component: {fileID: 380530997}
   m_Layer: 0
-  m_Name: Level1-Area4-Parallax-Background
+  m_Name: Level1-Area4-Parallax-Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3936,7 +3936,7 @@ GameObject:
   - component: {fileID: 805918808}
   - component: {fileID: 805918807}
   m_Layer: 0
-  m_Name: Level1-Area4-Parallaxing-Group
+  m_Name: Level1-Area4-Foreground-Parallax
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4000,8 +4000,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7ecdf07892c8a0f4dbce0d922be10295, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4009,7 +4009,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 0.28125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &805918808
@@ -10343,11 +10343,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1476398647}
+  - {fileID: 380530996}
   - {fileID: 1557158718}
   - {fileID: 1436948218}
   - {fileID: 1656584265}
   - {fileID: 134194798}
-  - {fileID: 380530996}
   - {fileID: 1258507437}
   - {fileID: 1667518384}
   - {fileID: 359817957}
