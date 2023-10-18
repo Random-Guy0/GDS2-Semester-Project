@@ -12,9 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput = Vector2.zero;
 
     private Rigidbody2D rb;
-    
-    //remove after Sprint 3
-    [SerializeField] private AudioSource footstepAudio;
+
+    [SerializeField] private FMODUnity.StudioEventEmitter walkSand;
     
     public Vector2 Direction { get; private set; }
 
@@ -45,9 +44,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Direction = newDirection;
-        
-        //remove after Sprint 3
-        footstepAudio.Play();
+
+        if (moveInput != Vector2.zero && !walkSand.IsPlaying())
+        {
+            walkSand.Play();
+        }
+        else
+        {
+            walkSand.Stop();
+        }
     }
 
     private void FixedUpdate()

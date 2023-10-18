@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c2d8659d-6ad2-4eb4-a6ab-cba06fec55df}">
+		<property name="assetPath">
+			<value>Nile River MASTER v3.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>42.043812500000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d684575b-bb81-4f25-bc82-5953703e34cf}</destination>
+		</relationship>
+	</object>
+</objects>
