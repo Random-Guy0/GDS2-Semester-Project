@@ -6,7 +6,7 @@ public class EnemyAttackHandler : AttackHandler
 {
     Transform target;
     Rigidbody2D rb;
-    private float stopDistance = 2.0f;
+    [SerializeField] private float stopDistance = 2.0f;
     private float yPositionTolerance = 0.5f; // Tolerance for Y position check
 
     protected virtual void Start()
@@ -45,5 +45,13 @@ public class EnemyAttackHandler : AttackHandler
         float yPositionDifference = Mathf.Abs(target.position.y - transform.position.y);
         return yPositionDifference <= yPositionTolerance &&
                Mathf.Abs(target.position.x - transform.position.x) < stopDistance;
+    }
+
+    public override void InterruptAttack()
+    {
+        if (!CurrentlyAttacking)
+        {
+            base.InterruptAttack();
+        }
     }
 }

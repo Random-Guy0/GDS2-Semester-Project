@@ -8,6 +8,7 @@ public abstract class Attack : ScriptableObject
 {
     [field: SerializeField] public int Damage { get; private set; } = 5;
     [field: SerializeField] public AttackTarget Target { get; private set; } = AttackTarget.All;
+    [field: SerializeField] public float AttackStartDelay { get; private set; } = 0f;
     [field: SerializeField] public float Duration { get; private set; } = 0.2f;
     [field: SerializeField] public DamageType[] DamageTypes { get; private set; }
     [field: SerializeField] public float DamageTypeAttackMultiplier { get; private set; } = 2f;
@@ -56,5 +57,10 @@ public abstract class Attack : ScriptableObject
         return !((Target == AttackTarget.Enemies && otherHealth is PlayerHealth) ||
             (Target == AttackTarget.Players && otherHealth is EnemyHealth)) &&
                notAttackingSelf;
+    }
+
+    protected IEnumerator WaitToAttack()
+    {
+        yield return new WaitForSeconds(AttackStartDelay);
     }
 }
