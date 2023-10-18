@@ -19,6 +19,7 @@ public class SectionEnemyManager : MonoBehaviour
     {
         if (enemyCount <= 0)
         {
+            Debug.Log(gameObject.name + " completed ");
             sectionManager.AreaSectionComplete();
             gameObject.SetActive(false);
         }

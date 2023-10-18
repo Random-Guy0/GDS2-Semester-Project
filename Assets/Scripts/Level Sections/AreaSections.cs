@@ -13,24 +13,30 @@ public class AreaSections : MonoBehaviour
     public int sectionCount = 0;
     public bool beginningAreaSection = true;
     public bool justBeganSecondSection = false;
-    private bool areaSectionDisabled = false;
+    private bool areaSectionDisabled;
     void Start()
     {
+        Debug.Log("Section List Count = " + section.Count + gameObject.name);
         for (int i = 0; i < section.Count - 1; i++)
         {
             sectionsCompleted.Add(false);
         }
+        areaSectionDisabled = false;
     }
     void Update()
     {
-        if (sectionCount == sectionsCompleted.Count && areaSectionDisabled == false) 
+        if (section.Count != 1)
         {
-            Debug.Log("Area Section Ended");
-            nextAreaPortal.ableToEnter = true;
-            sectionManager.NewArea();
-            areaSectionDisabled = true;
-            sectionManager.endOfArea = true;
+            if (sectionCount == sectionsCompleted.Count && areaSectionDisabled == false)
+            {
+                Debug.Log("Area Section Ended");
+                nextAreaPortal.ableToEnter = true;
+                sectionManager.NewArea();
+                areaSectionDisabled = true;
+                sectionManager.endOfArea = true;
+            }
         }
+
     }
 
     public void AreaSectionComplete()
