@@ -58,9 +58,12 @@ public class SectionsManager : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("No first Area");
+                    Debug.Log(areas[currentArea].sectionsCompleted[areas[currentArea].sectionCount - 1] + " and " + endOfArea);
                     // if the previous section in current area's bool list == false & the section for the current area is not the beginning area section
                     if (areas[currentArea].sectionsCompleted[areas[currentArea].sectionCount - 1] == false && endOfArea == false)
                     {
+
                         Debug.Log("endOfArea = " + endOfArea);
                         if (endOfArea == false)
                         {
@@ -103,6 +106,7 @@ public class SectionsManager : MonoBehaviour
         if (currentArea == 2)
         {
             camFollow.diagonalArea = true;
+            camFollow.OnOffSwitchY(true);
         }
         else
         {
@@ -126,7 +130,7 @@ public class SectionsManager : MonoBehaviour
         if (tutorialLevel == false)
         {
             Debug.Log("Begining Area bool = " + areas[currentArea].beginningAreaSection);
-            if (areas[currentArea].beginningAreaSection == false)
+            if (areas[currentArea].beginningAreaSection == false || currentArea == 2)
             {
                 Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
 
@@ -148,7 +152,7 @@ public class SectionsManager : MonoBehaviour
                 //For the Left Most Wall
                 Vector3 leftWall = mainCamera.WorldToViewportPoint(areas[currentArea].areaWalls[0].transform.position);
                 Debug.Log("SectionRunTime Code 2 leftWall pos.x = " + leftWall.x);
-                if (leftWall.x >= -0.5f)
+                if (leftWall.x >= -6f)
                 {
                     Debug.Log("SectionRunTime Code 2 leftWall pos.x == true");
                     Debug.Log("Player Position = " + playerPos.x);
@@ -167,7 +171,7 @@ public class SectionsManager : MonoBehaviour
                 //For the Right Most Wall
                 Vector3 rightWall = mainCamera.WorldToViewportPoint(areas[currentArea].areaWalls[1].transform.position);
                 Debug.Log("SectionRunTime Code 3 rightWall pos.x = " + rightWall.x);
-                if (rightWall.x <= 1.5f)
+                if (rightWall.x <= 1.2f)
                 {
                     if (endOfArea == false)
                     {
@@ -195,7 +199,7 @@ public class SectionsManager : MonoBehaviour
                     Vector3 bottomWall = mainCamera.WorldToViewportPoint(areas[currentArea].areaWalls[2].transform.position);
                     Vector3 topWall = mainCamera.WorldToViewportPoint(areas[currentArea].areaWalls[3].transform.position);
                     Vector3 playBottom = mainCamera.WorldToViewportPoint(player.transform.position);
-                    if (bottomWall.y >= -0.5f)
+                    if (bottomWall.y >= -0.2f)
                     {
                         if (bottomWall.y >= 0.0f && playBottom.y < 0.5f)
                         {
@@ -206,7 +210,7 @@ public class SectionsManager : MonoBehaviour
                             camFollow.OnOffSwitchY(false);
                         }
                     }
-                    if (topWall.y <= 1.5f)
+                    if (topWall.y <= 1.2f)
                     {
                         if (topWall.y <= 1.0f && playerPos.y > 0.5f)
                         {

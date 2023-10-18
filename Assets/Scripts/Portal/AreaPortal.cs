@@ -10,8 +10,8 @@ public class AreaPortal : Portal
     [SerializeField] public bool ableToEnter = false;
     
     //remove after Sprint 3
-    [SerializeField] private AudioSource EgyptLevel1Audio;
-    [SerializeField] private AudioSource EgyptLevel2Audio;
+   // [SerializeField] private AudioSource EgyptLevel1Audio;
+   // [SerializeField] private AudioSource EgyptLevel2Audio;
 
     protected override void EnterPortal(PlayerMovement player)
     {
@@ -26,8 +26,8 @@ public class AreaPortal : Portal
 
             secManager.ActivateNewAreaEnemies();
 
-            EgyptLevel1Audio.Stop();
-            EgyptLevel2Audio.Play();
+        //    EgyptLevel1Audio.Stop();
+       //     EgyptLevel2Audio.Play();
             Debug.Log("New Area Entered");
         }
         

@@ -29,23 +29,30 @@ public class FollowPlayer : MonoBehaviour
         {
             Vector2 playPosition = new Vector2(player.position.x, player.position.y);
             Vector2 camPosition = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+            Debug.Log("Cam Position = " + gameObject.transform.position);
             if (playPosition == camPosition)
             {
+                Debug.Log("CamRecenter reset to false");
                 camRecenter = false;
             }
+            Debug.Log("CamRecenter = " + camRecenter);
             if (camRecenter == true && playPosition != camPosition)
             {
+                Debug.Log("CamRecenter beginning offswitch = true");
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, player.position.y, -10), cameraSpeed * Time.deltaTime);
                 offSwitchX = true;
                 offSwitchY = true;
             }
-
+            Debug.Log("OnOffSwitchX = " + offSwitchX);
             if (offSwitchX == false)
             {
+                Debug.Log("Cam Follows Player, new Position equal to player position || X");
                 transform.position = new Vector3(player.position.x, gameObject.transform.position.y, -10);
             }
+            Debug.Log("OnOffSwitchY = " + offSwitchY);
             if (offSwitchY == false)
             {
+                Debug.Log("Cam Follows Player, new Position equal to player position || Y");
                 transform.position = new Vector3(gameObject.transform.position.x, player.position.y, -10);
             }
             OnOffSwitchX(false);

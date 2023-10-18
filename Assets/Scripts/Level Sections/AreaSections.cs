@@ -13,16 +13,18 @@ public class AreaSections : MonoBehaviour
     public int sectionCount = 0;
     public bool beginningAreaSection = true;
     public bool justBeganSecondSection = false;
-    private bool areaSectionDisabled = false;
+    private bool areaSectionDisabled;
     void Start()
     {
         for (int i = 0; i < section.Count - 1; i++)
         {
             sectionsCompleted.Add(false);
         }
+        areaSectionDisabled = false;
     }
     void Update()
     {
+        Debug.Log(sectionCount + " and  " + section.Count);
         if (sectionCount == sectionsCompleted.Count && areaSectionDisabled == false) 
         {
             Debug.Log("Area Section Ended");
