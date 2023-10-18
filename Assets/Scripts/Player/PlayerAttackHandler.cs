@@ -43,8 +43,6 @@ public class PlayerAttackHandler : AttackHandler
     // Weapon UI animator
     [SerializeField] private Animator weaponsUIanimator;
 
-    [SerializeField] private FMODUnity.StudioEventEmitter weaponEmitter;
-
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -65,7 +63,6 @@ public class PlayerAttackHandler : AttackHandler
             if (!AttackButtonDown)
             {
                 AttackButtonDown = true;
-                weaponEmitter.Play();
                 
                 if (SelectedWeapon.Attack is MeleeAttack meleeAttack)
                 {
@@ -89,6 +86,7 @@ public class PlayerAttackHandler : AttackHandler
     {
         bufferAttack = CurrentlyAttacking;
         animator.SetTrigger("DoMeleeAttack");
+        SelectedWeapon.weaponAttackSound.Play();
         base.DoMeleeAttack(index);
     }
 
@@ -97,6 +95,7 @@ public class PlayerAttackHandler : AttackHandler
         if (ammoController.CanUseAmmo(RangedAttacks[index].AmmoCost))
         {
             ammoController.UseAmmo(RangedAttacks[index].AmmoCost);
+            SelectedWeapon.weaponAttackSound.Play();
             base.DoRangedAttack(index);
         }
     }
@@ -276,7 +275,7 @@ public class PlayerWeapon
     [field: SerializeField] public bool Unlocked { get; set; } = true;
     [field: SerializeField] public SpriteRenderer Sprite { get; private set; }
     [field: SerializeField] public Transform AttackOrigin { get; private set; }
-    [field: SerializeField] public FMODUnity.EventReference weaponAttackSound { get; private set; }
+    [field: SerializeField] public FMODUnity.StudioEventEmitter weaponAttackSound { get; private set; }
 
     public PlayerWeapon(Attack attack)
     {

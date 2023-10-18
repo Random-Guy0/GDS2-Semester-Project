@@ -4722,68 +4722,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4163123339647618832, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
   m_PrefabInstance: {fileID: 2044712311}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1551076921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551076910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1005407378
-      Data2: 1252245672
-      Data3: 800350118
-      Data4: 463651298
-    Path: event:/Footsteps Sand
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!114 &1551076922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551076910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
 --- !u!114 &1573826076 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6545529120976587224, guid: 85b26a17561dc864081a768d552f356b, type: 3}
@@ -5934,105 +5872,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: meleeAudio
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: weaponEmitter
-      value: 
-      objectReference: {fileID: 1551076922}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
       propertyPath: weaponsUIanimator
       value: 
       objectReference: {fileID: 869062101}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[0].<weaponAttackSound>k__BackingField.Path
-      value: event:/Player Melee Attacks Impact (One Shot)
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[1].<weaponAttackSound>k__BackingField.Path
-      value: event:/Player Bubble Blaster Shot (One Shot)
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[2].<weaponAttackSound>k__BackingField.Path
-      value: event:/Player Soap Grenade Launcher (One Shot)
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[3].<weaponAttackSound>k__BackingField.Path
-      value: event:/Portal Open (One Shot)
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[0].<weaponAttackSound>k__BackingField.Guid.Data1
-      value: -1169456957
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[0].<weaponAttackSound>k__BackingField.Guid.Data2
-      value: 1266954387
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[0].<weaponAttackSound>k__BackingField.Guid.Data3
-      value: -1369597265
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[0].<weaponAttackSound>k__BackingField.Guid.Data4
-      value: 1254785250
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[1].<weaponAttackSound>k__BackingField.Guid.Data1
-      value: 1825515349
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[1].<weaponAttackSound>k__BackingField.Guid.Data2
-      value: 1260333718
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[1].<weaponAttackSound>k__BackingField.Guid.Data3
-      value: 2098451592
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[1].<weaponAttackSound>k__BackingField.Guid.Data4
-      value: 302098978
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[2].<weaponAttackSound>k__BackingField.Guid.Data1
-      value: 1132315160
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[2].<weaponAttackSound>k__BackingField.Guid.Data2
-      value: 1269279062
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[2].<weaponAttackSound>k__BackingField.Guid.Data3
-      value: -443651681
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[2].<weaponAttackSound>k__BackingField.Guid.Data4
-      value: -717517766
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[3].<weaponAttackSound>k__BackingField.Guid.Data1
-      value: 1743764850
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[3].<weaponAttackSound>k__BackingField.Guid.Data2
-      value: 1098782999
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[3].<weaponAttackSound>k__BackingField.Guid.Data3
-      value: -2104900187
-      objectReference: {fileID: 0}
-    - target: {fileID: -2898517233979925625, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: <Weapons>k__BackingField.Array.data[3].<weaponAttackSound>k__BackingField.Guid.Data4
-      value: -217376610
-      objectReference: {fileID: 0}
-    - target: {fileID: 1440742671158942160, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: walkSand
-      value: 
-      objectReference: {fileID: 1551076921}
-    - target: {fileID: 1440742671158942160, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: footstepAudio
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1610161608566021959, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -6077,84 +5919,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2059253697034493927, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2059253697034493927, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2298194714985357708, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501374116686340378, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3501374116686340378, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4163123339647618832, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5769375277848089028, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5769375277848089028, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5769375277848089028, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 6182496898987152024, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6356558601176785758, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699700623205936450, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7840995900983155253, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8220398424206091338, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8220398424206091338, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9047962425139178172, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9047962425139178172, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4163123339647618832, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1551076921}
-    - targetCorrespondingSourceObject: {fileID: 4163123339647618832, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1551076922}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
 --- !u!1 &2070196373
 GameObject:

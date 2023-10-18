@@ -45,7 +45,14 @@ public class PlayerMovement : MonoBehaviour
 
         Direction = newDirection;
 
-        walkSand.Play();
+        if (moveInput != Vector2.zero && !walkSand.IsPlaying())
+        {
+            walkSand.Play();
+        }
+        else
+        {
+            walkSand.Stop();
+        }
     }
 
     private void FixedUpdate()
