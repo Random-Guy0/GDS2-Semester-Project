@@ -15,6 +15,7 @@ MonoBehaviour:
   <Damage>k__BackingField: 4
   <Target>k__BackingField: 0
   <Duration>k__BackingField: 0.3
-  <DamageTypes>k__BackingField: 00000000
+  <DamageTypes>k__BackingField: 
   <DamageTypeAttackMultiplier>k__BackingField: 2
-  <HitSize>k__BackingField: {x: 0.5, y: 0.5}
+  <CanMoveVertically>k__BackingField: 0
+  <HitSize>k__BackingField: {x: 0.75, y: 0.5}

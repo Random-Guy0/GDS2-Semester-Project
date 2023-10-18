@@ -106,7 +106,6 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
         Vector2 position = transform.position;
         position += speed * Time.deltaTime * moveDir;
         transform.position = position;
-        Debug.Log(moveDir);
 
         //transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }

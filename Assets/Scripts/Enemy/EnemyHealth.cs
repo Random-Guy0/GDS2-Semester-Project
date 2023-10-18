@@ -12,6 +12,7 @@ public class EnemyHealth : Health
     [SerializeField] private Collider2D enemyCollider;
     [SerializeField] private BubbledEnemy bubblePrefab;
     [SerializeField] private float bubbleScale = 1f;
+    [SerializeField] private float deathScale = 1f;
 
     [SerializeField] private AmmoPickup pickup;
     [SerializeReference] private int ammoDropAmount = 1;
@@ -76,7 +77,7 @@ public class EnemyHealth : Health
     {
         BubbledEnemy bubble = Instantiate(bubblePrefab, transform.position, Quaternion.identity);
         transform.parent = bubble.transform;
-        bubble.transform.localScale = (Vector3)(Mathf.Max(transform.localScale.x, transform.localScale.y) * bubbleScale * Vector2.one) + Vector3.forward;
+        bubble.transform.localScale = (Vector3)(Mathf.Max(transform.localScale.x, transform.localScale.y) * bubbleScale * Vector2.one) * deathScale + Vector3.forward;
         transform.localScale = (Vector3)(Vector2.one / bubbleScale) + Vector3.forward;
         bubble.PopDamage = Mathf.CeilToInt(maxHealth * 0.25f);
         bubble.enemySprite = _spriteRenderer;
