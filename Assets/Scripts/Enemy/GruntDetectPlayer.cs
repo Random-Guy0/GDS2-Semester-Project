@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,8 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
 
     public bool CanMove { get; set; } = true;
 
+    [SerializeField] private Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,6 +32,7 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
         enabled = false;
         boxcastSize = GetComponent<BoxCollider2D>().size;
         boxcastSize.y *= transform.localScale.x * 1.1f;
+        animator = GetComponent<Animator>();
     }
 
     void OnBecameInvisible()
@@ -74,6 +78,11 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
                 }
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = Vector2.zero;
     }
 
     private void ChasePlayer()

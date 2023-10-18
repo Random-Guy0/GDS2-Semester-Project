@@ -10,6 +10,8 @@ public class MeleeAttack : Attack
     public override IEnumerator DoAttack(Vector2 direction, Vector2 attackerSize,
         Vector2 attackerPosition, AttackHandler attacker = null)
     {
+        yield return WaitToAttack();
+        
         if (!CanMoveVertically)
         {
             direction.y = 0f;
