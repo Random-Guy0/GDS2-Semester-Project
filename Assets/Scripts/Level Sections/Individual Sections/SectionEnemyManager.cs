@@ -17,6 +17,7 @@ public class SectionEnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Enemy Count = " + enemyCount);
         if (enemyCount <= 0)
         {
             Debug.Log(gameObject.name + " completed ");

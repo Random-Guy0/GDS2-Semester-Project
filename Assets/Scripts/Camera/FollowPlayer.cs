@@ -77,7 +77,7 @@ public class FollowPlayer : MonoBehaviour
             if (offSwitchX == false)
             {
                 Debug.Log("Cam Follows Player, new Position equal to player position");
-                transform.position = new Vector3(player.position.x, 0, -10);
+                transform.position = new Vector3(player.position.x, gameObject.transform.position.y, -10);
             }
             OnOffSwitchX(false);
         }

@@ -43,8 +43,9 @@ public class SectionsManager : MonoBehaviour
         else
         {
             //When the currentArea is greater than the total number of areas (After the final area has been beaten):
-            if (currentArea >= areas.Count)
+            if (currentArea >= areas.Count - 1)
             {
+                Debug.Log("Current Area Count Exceeded");
                 SectionRunTime();
             }
             else
@@ -100,21 +101,36 @@ public class SectionsManager : MonoBehaviour
         endOfArea = true;
     }
 
-    public void ActivateNewAreaEnemies()
+    public void ActivateNewAreaEnemies(GameObject nextArea)
     {
         ++currentArea;
         if (currentArea == 2)
         {
+            Debug.Log("Diagonal Bool set to " + camFollow.diagonalArea);
             camFollow.diagonalArea = true;
             camFollow.OnOffSwitchY(true);
         }
         else
         {
+            Debug.Log("Diagonal Bool set to " + camFollow.diagonalArea);
             camFollow.diagonalArea = false;
         }
+        nextArea.SetActive(true);
         areas[currentArea].areaEnemyManagers[areas[currentArea].sectionCount].gameObject.SetActive(true);
+        Debug.Log("Current Area in Activate New Area Enemies = " + currentArea + "  areas.count is = " + areas.Count);
         playerAreaIn = currentArea;
-        endOfArea = false;
+        if (currentArea >= areas.Count - 1)
+        {
+            Debug.Log("CurrentArea >= areas.count");
+            endOfArea = true;
+            areas[currentArea].beginningAreaSection = false;
+        }
+        else
+        {
+            Debug.Log("CurrentArea is not >= areas.count");
+            endOfArea = false;
+        }
+        
         mainCamera.transform.position = new Vector3(camAreaPosition[currentArea].position.x, camAreaPosition[currentArea].position.y, -10f);
         camFollow.OnOffSwitchX(true);
     }
@@ -127,13 +143,14 @@ public class SectionsManager : MonoBehaviour
 
     public void SectionRunTime()
     {
-        if (tutorialLevel == false)
-        {
+
             Debug.Log("Begining Area bool = " + areas[currentArea].beginningAreaSection);
             if (areas[currentArea].beginningAreaSection == false || currentArea == 2)
             {
                 Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
 
+                if (currentArea < 3)
+                {
                 // For the Next Section
                 Vector3 sectionWall = mainCamera.WorldToViewportPoint(areas[currentArea].section[areas[currentArea].sectionCount].transform.position);
                 Debug.Log("SectionRunTime Code 1 sectionWall pos.x = " + sectionWall.x);
@@ -148,11 +165,14 @@ public class SectionsManager : MonoBehaviour
                     Debug.Log("SectionRunTime Code 1 == false");
                     camFollow.OnOffSwitchX(false);
                 }
+                }
+
+
 
                 //For the Left Most Wall
                 Vector3 leftWall = mainCamera.WorldToViewportPoint(areas[currentArea].areaWalls[0].transform.position);
                 Debug.Log("SectionRunTime Code 2 leftWall pos.x = " + leftWall.x);
-                if (leftWall.x >= -6f)
+                if (leftWall.x >= -0.2f)
                 {
                     Debug.Log("SectionRunTime Code 2 leftWall pos.x == true");
                     Debug.Log("Player Position = " + playerPos.x);
@@ -193,7 +213,10 @@ public class SectionsManager : MonoBehaviour
                     }
                 }
 
-                if (camFollow.diagonalArea == true)
+
+
+
+            if (camFollow.diagonalArea == true)
                 {
                     Debug.Log("Diagonal Area = true");
                     Vector3 bottomWall = mainCamera.WorldToViewportPoint(areas[currentArea].areaWalls[2].transform.position);
@@ -223,8 +246,9 @@ public class SectionsManager : MonoBehaviour
                     }
                 }
             }
-        }
-        else {
+       /*
+        else 
+        {
             Debug.Log("Tutorial Level SectionRunTime");
             Vector3 playerPos5 = mainCamera.WorldToViewportPoint(player.transform.position);
 
@@ -240,6 +264,7 @@ public class SectionsManager : MonoBehaviour
                 camFollow.OnOffSwitchX(true);
             }
         }
+       */
 
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AreaSections : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class AreaSections : MonoBehaviour
             sectionsCompleted.Add(false);
         }
         areaSectionDisabled = false;
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            beginningAreaSection = false;
+        }
     }
     void Update()
     {
@@ -29,11 +34,22 @@ public class AreaSections : MonoBehaviour
         {
             if (sectionCount == sectionsCompleted.Count && areaSectionDisabled == false)
             {
-                Debug.Log("Area Section Ended");
-                nextAreaPortal.ableToEnter = true;
-                sectionManager.NewArea();
-                areaSectionDisabled = true;
-                sectionManager.endOfArea = true;
+                if (sectionManager.currentArea == 3)
+                {
+                    Debug.Log("Final Area Finished");
+                    nextAreaPortal.ableToEnter = true;
+                    areaSectionDisabled = true;
+                }
+                else
+                {
+
+                    Debug.Log("Area Section Ended");
+                    nextAreaPortal.ableToEnter = true;
+                    sectionManager.NewArea();
+                    areaSectionDisabled = true;
+                    sectionManager.endOfArea = true;
+                }
+
             }
         }
 
@@ -47,6 +63,11 @@ public class AreaSections : MonoBehaviour
         {
             beginningAreaSection = false;
             justBeganSecondSection = true;
+        }
+
+        if (sectionCount == sectionsCompleted.Count && section.Count != 1)
+        {
+            sectionManager.endOfArea = true;
         }
         ++sectionCount;
     }
