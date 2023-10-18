@@ -149,6 +149,7 @@ MonoBehaviour:
   enemyCollider: {fileID: -1875051802149849377}
   bubblePrefab: {fileID: 1446682404955272071, guid: 2727dd07c18a6f64e92d3bb149721607, type: 3}
   bubbleScale: 2.2
+  deathScale: 0.75
   pickup: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
   ammoDropAmount: 1
 --- !u!114 &741981524120769758

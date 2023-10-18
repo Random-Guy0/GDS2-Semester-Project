@@ -10,6 +10,11 @@ public class MeleeAttack : Attack
     public override IEnumerator DoAttack(Vector2 direction, Vector2 attackerSize,
         Vector2 attackerPosition, AttackHandler attacker = null)
     {
+        if (!CanMoveVertically)
+        {
+            direction.y = 0f;
+        }
+        
         Vector2 origin = GetAttackOrigin(direction, attackerSize, attackerPosition);
         
 #if UNITY_EDITOR
