@@ -177,3 +177,7 @@ fmod_editor.log
 # Ignore Blender Backup files
 *.blend1
 *.blend1.meta
+
+/FMODAssets/BubbleBlastersGDS2/.cache/
+/FMODAssets/BubbleBlastersGDS2/.user/
+/FMODAssets/BubbleBlastersGDS2/.unsaved/

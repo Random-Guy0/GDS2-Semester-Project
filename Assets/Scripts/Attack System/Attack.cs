@@ -11,6 +11,7 @@ public abstract class Attack : ScriptableObject
     [field: SerializeField] public float Duration { get; private set; } = 0.2f;
     [field: SerializeField] public DamageType[] DamageTypes { get; private set; }
     [field: SerializeField] public float DamageTypeAttackMultiplier { get; private set; } = 2f;
+    [field: SerializeField] public bool CanMoveVertically { get; private set; } = false;
 
     public abstract IEnumerator DoAttack(Vector2 direction, Vector2 attackerSize,
         Vector2 attackerPosition, AttackHandler attacker = null);

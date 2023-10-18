@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RaptorDetectPlayer : MonoBehaviour
+public class RaptorDetectPlayer : MonoBehaviour, IEnemyMovement
 {
     Rigidbody2D rb;
     float patrolDistance = 7.0f;
@@ -39,7 +39,7 @@ public class RaptorDetectPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        LookAtTarget();
         if (!isSwooping)
         {
             if (Left)
@@ -127,6 +127,23 @@ public class RaptorDetectPlayer : MonoBehaviour
     public void StopMoving()
     {
         rb.velocity = Vector2.zero;
+    }
+
+    private void LookAtTarget()
+    {
+        if (transform.position.x < player.transform.position.x)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+    }
+
+    public void Stun()
+    {
+        
     }
 }
 

@@ -72,13 +72,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5769375277848089028}
   - component: {fileID: 6182496898987152024}
+  - component: {fileID: 4693617348041078985}
   m_Layer: 0
   m_Name: Melee Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5769375277848089028
 Transform:
   m_ObjectHideFlags: 0
@@ -87,8 +88,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2298194714985357708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
+  m_LocalPosition: {x: 0, y: 0.05, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3406793581254633291}
@@ -147,6 +148,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4693617348041078985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2298194714985357708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1169456957
+      Data2: 1266954387
+      Data3: -1369597265
+      Data4: 1254785250
+    Path: event:/Player Melee Attacks Impact (One Shot)
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2573876331684086027
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8220398424206091338}
   - component: {fileID: 7840995900983155253}
+  - component: {fileID: 2012171720674077420}
   m_Layer: 0
   m_Name: Bubble Blaster
   m_TagString: Untagged
@@ -204,7 +237,7 @@ Transform:
   m_GameObject: {fileID: 2705336261656496391}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1394151961740517707}
@@ -263,6 +296,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2012171720674077420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2705336261656496391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1825515349
+      Data2: 1260333718
+      Data3: 2098451592
+      Data4: 302098978
+    Path: event:/Player Bubble Blaster Shot (One Shot)
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3936994438111887032
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +354,7 @@ Transform:
   m_GameObject: {fileID: 3936994438111887032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.05, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1610161608566021959}
@@ -385,6 +449,7 @@ GameObject:
   - component: {fileID: -2898517233979925625}
   - component: {fileID: 5782404449363472846}
   - component: {fileID: 8666489073779572076}
+  - component: {fileID: 105814648231285784}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -410,7 +475,7 @@ Transform:
   - {fileID: 2059253697034493927}
   - {fileID: 3501374116686340378}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1975238070001126628
 BoxCollider2D:
@@ -696,7 +761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1951377738869401177}
   speed: 3
-  footstepAudio: {fileID: 0}
+  walkSand: {fileID: 105814648231285784}
 --- !u!114 &6636351775345419368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,18 +800,22 @@ MonoBehaviour:
     <Unlocked>k__BackingField: 1
     <Sprite>k__BackingField: {fileID: 6182496898987152024}
     <AttackOrigin>k__BackingField: {fileID: 3406793581254633291}
+    <weaponAttackSound>k__BackingField: {fileID: 4693617348041078985}
   - <Attack>k__BackingField: {fileID: 11400000, guid: 507b5bcd9d874a14494e8b7510ffe6ed, type: 2}
     <Unlocked>k__BackingField: 1
     <Sprite>k__BackingField: {fileID: 7840995900983155253}
     <AttackOrigin>k__BackingField: {fileID: 1394151961740517707}
+    <weaponAttackSound>k__BackingField: {fileID: 2012171720674077420}
   - <Attack>k__BackingField: {fileID: 11400000, guid: 7363ed20b973d1340ac592ba14d66426, type: 2}
     <Unlocked>k__BackingField: 1
     <Sprite>k__BackingField: {fileID: 7699700623205936450}
     <AttackOrigin>k__BackingField: {fileID: 3684123894311985015}
+    <weaponAttackSound>k__BackingField: {fileID: 2540502137858605394}
   - <Attack>k__BackingField: {fileID: 11400000, guid: cf3ac0386b14b324ea3c3797dfb86813, type: 2}
     <Unlocked>k__BackingField: 1
     <Sprite>k__BackingField: {fileID: 6356558601176785758}
     <AttackOrigin>k__BackingField: {fileID: 7655727950581793681}
+    <weaponAttackSound>k__BackingField: {fileID: 8755944889547597618}
   animator: {fileID: 1951377738869401177}
   meleeAttack1Animation: {fileID: 7400000, guid: 275c3fe9c4b572b478922bf781263e27, type: 2}
   meleeAttack2Animation: {fileID: 7400000, guid: cf141952325c7e04e831dcf5bbb37428, type: 2}
@@ -779,6 +848,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushMultiplier: 1.25
+--- !u!114 &105814648231285784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163123339647618832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1005407378
+      Data2: 1252245672
+      Data3: 800350118
+      Data4: 463651298
+    Path: event:/Footsteps Sand
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &4354286222388350129
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2059253697034493927}
   - component: {fileID: 7699700623205936450}
+  - component: {fileID: 2540502137858605394}
   m_Layer: 0
   m_Name: Soap Grenade Launcher
   m_TagString: Untagged
@@ -805,7 +906,7 @@ Transform:
   m_GameObject: {fileID: 4354286222388350129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3684123894311985015}
@@ -864,6 +965,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2540502137858605394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354286222388350129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1132315160
+      Data2: 1269279062
+      Data3: -443651681
+      Data4: -717517766
+    Path: event:/Player Soap Grenade Launcher (One Shot)
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6395161785529228319
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +1037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3501374116686340378}
   - component: {fileID: 6356558601176785758}
+  - component: {fileID: 8755944889547597618}
   m_Layer: 0
   m_Name: Soap Ray Gun
   m_TagString: Untagged
@@ -921,7 +1054,7 @@ Transform:
   m_GameObject: {fileID: 8443680599147585112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7655727950581793681}
@@ -980,3 +1113,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8755944889547597618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8443680599147585112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1743764850
+      Data2: 1098782999
+      Data3: -2104900187
+      Data4: -217376610
+    Path: event:/Portal Open (One Shot)
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

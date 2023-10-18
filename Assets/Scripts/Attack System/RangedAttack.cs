@@ -9,7 +9,6 @@ public class RangedAttack : Attack
     [field: SerializeField] [Tooltip("Set to 0 for range to be unlimited.")] public float Range { get; private set; } = 5f;
     [field: SerializeField] public float Speed { get; private set; } = 7f;
     [field: SerializeField] public int AmmoCost { get; private set; } = 1;
-    [field: SerializeField] public bool CanMoveVertically { get; private set; } = false;
 
     public override IEnumerator DoAttack(Vector2 direction, Vector2 attackerSize,
         Vector2 attackerPosition, AttackHandler attacker = null)
