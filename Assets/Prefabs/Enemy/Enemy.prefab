@@ -102,6 +102,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689bfc6412b08c044b648d30826f98fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1.5
+  chaseDistance: 15
+  stopDistance: 1
+  lookAheadDistance: 1
+  avoidLayers:
+    serializedVersion: 2
+    m_Bits: 55
   target: {fileID: 0}
 --- !u!50 &2980102513536050860
 Rigidbody2D:

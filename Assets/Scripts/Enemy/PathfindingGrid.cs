@@ -48,12 +48,12 @@ public class PathfindingGrid : MonoBehaviour
 
     public Vector2Int LocalToGridPosition(Vector2 localPosition)
     {
-        return Vector2Int.RoundToInt((localPosition - (Vector2)transform.position) / GridNodeSpacing);
+        return Vector2Int.RoundToInt(localPosition / GridNodeSpacing);
     }
 
     public Vector2 GridToLocalPosition(Vector2Int gridPosition)
     {
-        return (Vector2)gridPosition * GridNodeSpacing + (Vector2)transform.position;
+        return (Vector2)gridPosition * GridNodeSpacing;
     }
 
     public bool PositionWithinGrid(Vector2 position)
@@ -65,6 +65,7 @@ public class PathfindingGrid : MonoBehaviour
 
     public Stack<PathfindingNode> GeneratePath(Vector2Int start, Vector2Int end)
     {
+        Debug.Log(start + " " + end);
         return GeneratePath(nodes[start.x, start.y], nodes[end.x, end.y]);
     }
 
@@ -97,7 +98,7 @@ public class PathfindingGrid : MonoBehaviour
             {
                 return ReconstructPath(start, end);
             }
-
+            
             foreach (PathfindingNode connectedNode in currentNode.ConnectedNodes)
             {
                 float tentativeGScore = currentNode.GScore + Distance(currentNode, connectedNode);
@@ -164,6 +165,7 @@ public class PathfindingGrid : MonoBehaviour
                 Vector2 position = new Vector2(i, j) * GridNodeSpacing + (Vector2)transform.position;
                 nodes[i, j] = Instantiate(pathfindingNodePrefab, position, Quaternion.identity, transform);
                 nodes[i, j].GridNodeSpacing = GridNodeSpacing;
+                nodes[i, j].GridPosition = new Vector2Int(i, j);
             }
         }
     }
@@ -183,11 +185,25 @@ public class PathfindingGrid : MonoBehaviour
         Debug.DrawLine(points[3], points[0], Color.red);
 
         Gizmos.color = Color.blue;
-        for (float i = points[0].x; i <= points[2].x; i += GridNodeSpacing)
+        if (nodes == null || nodes.Length == 0)
         {
-            for (float j = points[0].y; j <= points[2].y; j += GridNodeSpacing)
+            for (float i = points[0].x; i <= points[2].x; i += GridNodeSpacing)
             {
-                Gizmos.DrawWireSphere(new Vector3(i, j), 0.1f);
+                for (float j = points[0].y; j <= points[2].y; j += GridNodeSpacing)
+                {
+                    Gizmos.DrawWireSphere(new Vector3(i, j), 0.1f);
+                }
+            }
+        }
+        else
+        {
+            foreach (PathfindingNode node in nodes)
+            {
+                Gizmos.DrawWireSphere(node.transform.position, 0.1f);
+                foreach (PathfindingNode connectedNode in node.ConnectedNodes)
+                {
+                    Debug.DrawLine(node.transform.position, connectedNode.transform.position, Color.green);
+                }
             }
         }
     }

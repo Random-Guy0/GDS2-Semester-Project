@@ -5,13 +5,17 @@ using UnityEngine;
 public class GruntDetectPlayer : MonoBehaviour
 {
     Rigidbody2D rb;
-    private float speed = 1.5f;
-    private float chaseDistance = 15.0f;
-    private float stopDistance = 1.0f;
+    [SerializeField] private float speed = 1.5f;
+    [SerializeField] private float chaseDistance = 15.0f;
+    [SerializeField] private float stopDistance = 1.0f;
+    [SerializeField] private float lookAheadDistance = 2.5f;
+    [SerializeField] private LayerMask avoidLayers;
     private float horizontalDistance = 1.0f; // Distance to move horizontally away from the player
     public GameObject target;
     private float targetDistance;
     private EnemyAttackHandler attackHandler;
+
+    private Vector2 boxcastSize;
 
     void Start()
     {
@@ -19,6 +23,8 @@ public class GruntDetectPlayer : MonoBehaviour
         target = GameManager.Instance.Player;
         attackHandler = GetComponent<EnemyAttackHandler>();
         enabled = false;
+        boxcastSize = GetComponent<BoxCollider2D>().size;
+        boxcastSize.y *= transform.localScale.x * 1.1f;
     }
 
     void OnBecameInvisible()
@@ -65,16 +71,52 @@ public class GruntDetectPlayer : MonoBehaviour
 
     private void ChasePlayer()
     {
-        if (transform.position.x < target.transform.position.x)
+        bool facingRight = transform.position.x < target.transform.position.x;
+        GetComponent<SpriteRenderer>().flipX = facingRight;
+        
+        Vector2 moveDir = target.transform.position - transform.position;
+        moveDir.Normalize();
+        RaycastHit2D[] checkInFront = Physics2D.BoxCastAll(transform.position, boxcastSize, 0f, moveDir, lookAheadDistance, avoidLayers);
+        if (!ValidRaycast(checkInFront))
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            Vector2 lookUp = Quaternion.AngleAxis(90f, Vector3.forward) * moveDir;
+            lookUp.Normalize();
+            RaycastHit2D[] checkUp = Physics2D.BoxCastAll(transform.position, boxcastSize, 90f, moveDir, lookAheadDistance, avoidLayers);
+            if (!ValidRaycast(checkUp))
+            {
+                Vector2 lookDown = Quaternion.AngleAxis(-90f, Vector3.forward) * moveDir;
+                lookDown.Normalize();
+                moveDir = lookDown;
+            }
+            else
+            {
+                moveDir = lookUp;
+            }
         }
-        else
+        
+        Debug.DrawRay(transform.position, moveDir * lookAheadDistance);
+
+        Vector2 position = transform.position;
+        position += speed * Time.deltaTime * moveDir;
+        transform.position = position;
+        Debug.Log(moveDir);
+
+        //transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+    }
+
+    private bool ValidRaycast(RaycastHit2D[] hits)
+    {
+        bool result = true;
+        foreach (RaycastHit2D hit in hits)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            if (hit.transform != transform && hit.transform != target.transform && hit.collider != null)
+            {
+                result = false;
+                break;
+            }
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        return result;
     }
 
     private void MoveHorizontallyAwayFromPlayer()

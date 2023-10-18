@@ -10,6 +10,8 @@ public class EnemyBehaviour : MonoBehaviour
     private Stack<PathfindingNode> path;
 
     private EnemyState state;
+
+    private PathfindingNode currentNode;
     
     public Vector2Int GridPosition { get; set; }
     
@@ -26,7 +28,7 @@ public class EnemyBehaviour : MonoBehaviour
     private void Start()
     {
         path = new Stack<PathfindingNode>();
-        pathfinding = GameManager.Instance.GetPathfindingGridAtPosition(transform.position);
+        //pathfinding = GameManager.Instance.GetPathfindingGridAtPosition(transform.position);
         GridPosition = pathfinding.LocalToGridPosition(pathfinding.transform.InverseTransformPoint(transform.position));
         ChangeState(EnemyState.MoveToTarget);
     }
@@ -42,14 +44,21 @@ public class EnemyBehaviour : MonoBehaviour
                 return;
             }
 
+            if (currentNode == null)
+            {
+                currentNode = path.Pop();
+            }
+
             Vector2 position = transform.position;
-            Vector2 moveDir = position - (Vector2)path.Peek().transform.position;
-            position += moveDir.normalized * speed;
+            Vector2 moveDir = (Vector2)currentNode.transform.position - position;
+            position += speed * Time.deltaTime * moveDir.normalized;
             transform.position = position;
 
-            if (Vector3.Distance(path.Peek().transform.position, transform.position) < 0.1f)
+            if (Vector3.Distance(currentNode.transform.position, transform.position) < 0.01f)
             {
-                path.Pop();
+                transform.position = currentNode.transform.position;
+                GridPosition = currentNode.GridPosition;
+                currentNode = null;
             }
         }
     }
