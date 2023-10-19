@@ -2293,7 +2293,7 @@ MonoBehaviour:
   - {fileID: 1435780729}
   - {fileID: 1377016207}
   areaEnemyManagers:
-  - {fileID: 2017640410}
+  - {fileID: 0}
   sectionsCompleted: 
   sectionManager: {fileID: 934395832}
   sectionCount: 0
@@ -2464,7 +2464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1275992085
 Transform:
   m_ObjectHideFlags: 0
@@ -4173,7 +4173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd41749fa93b1b04f9db6e7e48c8951a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextAreaPortal: {fileID: 0}
+  nextAreaPortal: {fileID: 1536946893}
   section:
   - {fileID: 519360397}
   - {fileID: 389526053}
@@ -4472,7 +4472,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2017640409}
-  - component: {fileID: 2017640410}
   m_Layer: 0
   m_Name: Sectioned Enemires
   m_TagString: Untagged
@@ -4498,22 +4497,6 @@ Transform:
   m_Father: {fileID: 989261976}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2017640410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017640408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sectionManager: {fileID: 1050167814}
-  enemies:
-  - {fileID: 982569407}
-  - {fileID: 708007879}
 --- !u!1001 &2019337109
 PrefabInstance:
   m_ObjectHideFlags: 0
