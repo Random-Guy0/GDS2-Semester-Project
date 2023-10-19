@@ -204,7 +204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &28630191
 Transform:
   m_ObjectHideFlags: 0
@@ -784,7 +784,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
   m_PrefabInstance: {fileID: 1609689543}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1544453178}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9de76aa7a720c964cbe634f42f5df32c, type: 3}
@@ -1466,6 +1466,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 934395832}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: areaGameObject
+      value: 
+      objectReference: {fileID: 2088730679}
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: EgyptLevel1Audio
       value: 
       objectReference: {fileID: 0}
@@ -1475,11 +1479,11 @@ PrefabInstance:
       objectReference: {fileID: 136424483}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: teleportToPosition.x
-      value: -5.82
+      value: -85.41
       objectReference: {fileID: 0}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: teleportToPosition.y
-      value: -61.41
+      value: -0.86
       objectReference: {fileID: 0}
     - target: {fileID: 79711111856007355, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: m_RootOrder
@@ -1715,6 +1719,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 934395832}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: areaGameObject
+      value: 
+      objectReference: {fileID: 1544453178}
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: EgyptLevel1Audio
       value: 
       objectReference: {fileID: 1681483874, guid: 2febb32f5d3b3cb4b9c74958862b3e8d, type: 2}
@@ -1748,11 +1756,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 79711111856007355, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.5
+      value: -56.8
       objectReference: {fileID: 0}
     - target: {fileID: 79711111856007355, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -61.9
+      value: -1.8
       objectReference: {fileID: 0}
     - target: {fileID: 79711111856007355, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1760,7 +1768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 79711111856007355, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.83914554
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 79711111856007355, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1772,7 +1780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 79711111856007355, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.5439069
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 79711111856007355, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1784,7 +1792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 79711111856007355, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -65.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 79711111856007355, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -1982,7 +1990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380530995}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -18.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4495,6 +4503,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 934395832}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: areaGameObject
+      value: 
+      objectReference: {fileID: 1405938747}
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: EgyptLevel1Audio
       value: 
       objectReference: {fileID: 0}
@@ -4905,8 +4917,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 615280273
-  m_SortingLayer: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 7ecdf07892c8a0f4dbce0d922be10295, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5020,8 +5032,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 615280273
-  m_SortingLayer: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 7ecdf07892c8a0f4dbce0d922be10295, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7131,7 +7143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1405938748
 Transform:
   m_ObjectHideFlags: 0
@@ -7460,7 +7472,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476398646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.37, y: 0.02, z: 0}
+  m_LocalPosition: {x: -6.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7609,6 +7621,11 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 205769703443517595, guid: eb529524626737743802f9fcbf8985c2, type: 3}
   m_PrefabInstance: {fileID: 1520632852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1544453178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9055031128468546414, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+  m_PrefabInstance: {fileID: 1609689543}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1550891761
 GameObject:
@@ -7988,6 +8005,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 934395832}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: areaGameObject
+      value: 
+      objectReference: {fileID: 28630190}
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: EgyptLevel1Audio
       value: 
       objectReference: {fileID: 0}
@@ -8304,11 +8325,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6939554981931739785, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.82
+      value: -85.41
       objectReference: {fileID: 0}
     - target: {fileID: 6939554981931739785, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -61.41
+      value: -0.86
       objectReference: {fileID: 0}
     - target: {fileID: 6939554981931739785, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8796,8 +8817,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 615280273
-  m_SortingLayer: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 7ecdf07892c8a0f4dbce0d922be10295, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10329,7 +10350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2088730680
 Transform:
   m_ObjectHideFlags: 0
@@ -10338,7 +10359,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088730679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: -60, z: 0}
+  m_LocalPosition: {x: -70, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
