@@ -63,6 +63,7 @@ public class PlayerAttackHandler : AttackHandler
             if (!AttackButtonDown)
             {
                 AttackButtonDown = true;
+                
                 if (SelectedWeapon.Attack is MeleeAttack meleeAttack)
                 {
                     int index = Array.IndexOf(MeleeAttacks, meleeAttack);
@@ -93,6 +94,7 @@ public class PlayerAttackHandler : AttackHandler
         if (ammoController.CanUseAmmo(RangedAttacks[index].AmmoCost))
         {
             ammoController.UseAmmo(RangedAttacks[index].AmmoCost);
+            SelectedWeapon.weaponAttackSound.Play();
             base.DoRangedAttack(index);
         }
     }
@@ -101,6 +103,7 @@ public class PlayerAttackHandler : AttackHandler
     {
         if (SelectedWeapon.Attack is not RangedAttack)
         {
+            SelectedWeapon.weaponAttackSound.Play();
             playerMovement.CanMove = false;
         }
 
@@ -272,6 +275,7 @@ public class PlayerWeapon
     [field: SerializeField] public bool Unlocked { get; set; } = true;
     [field: SerializeField] public SpriteRenderer Sprite { get; private set; }
     [field: SerializeField] public Transform AttackOrigin { get; private set; }
+    [field: SerializeField] public FMODUnity.StudioEventEmitter weaponAttackSound { get; private set; }
 
     public PlayerWeapon(Attack attack)
     {
