@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{9f7d2bc5-222e-450b-8c80-c4fde0ebb26e}">
+	<object class="AudioFile" id="{66c346a5-f09c-4d0f-886a-a74b8ba06f2f}">
 		<property name="assetPath">
-			<value>Grunt Hurt 2.wav</value>
+			<value>Grunt Hurt.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.609375</value>
+			<value>0.95037499999999997</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{d684575b-bb81-4f25-bc82-5953703e34cf}</destination>
