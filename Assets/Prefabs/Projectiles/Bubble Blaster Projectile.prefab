@@ -24,6 +24,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1534754890003651889, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534754890003651889, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1771564457
+      objectReference: {fileID: 0}
     - target: {fileID: 2066678052054794070, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
       propertyPath: m_Name
       value: Bubble Blaster Projectile
