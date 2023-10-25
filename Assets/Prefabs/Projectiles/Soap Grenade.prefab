@@ -119,3 +119,4 @@ MonoBehaviour:
   dropDistance: 0.3
   gravity: 1
   bounceFactor: 10
+  explosionPrefab: {fileID: 3732663908273955644, guid: e9470564b4b15024da59048e8b9a581e, type: 3}

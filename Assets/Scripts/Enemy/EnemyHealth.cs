@@ -57,8 +57,11 @@ public class EnemyHealth : Health
         {
             raptorDetectPlayer.StopMoving();
         }
-        
-        CreateBubble();
+
+        if (!transform.parent.TryGetComponent<BubbledEnemy>(out BubbledEnemy bubbledEnemy))
+        {
+            CreateBubble();
+        }
 
         if (animator != null)
         {
