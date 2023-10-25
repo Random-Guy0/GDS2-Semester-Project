@@ -867,6 +867,7 @@ MonoBehaviour:
   meleeAttack2Animation: {fileID: 7400000, guid: cf141952325c7e04e831dcf5bbb37428, type: 2}
   bubbleReleaseForce: 2
   weaponsUIanimator: {fileID: 0}
+  weaponSwitchDelay: 0.1
 --- !u!114 &5782404449363472846
 MonoBehaviour:
   m_ObjectHideFlags: 0
