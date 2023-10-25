@@ -10,6 +10,7 @@ public class EnemyHealth : Health
     [SerializeField] private EnemyAttackHandler enemyAttackHandler;
     [SerializeField] private Rigidbody2D enemyRigidbody;
     [SerializeField] private Collider2D enemyCollider;
+    [SerializeField] private Collider2D secondCollider;
     [SerializeField] private BubbledEnemy bubblePrefab;
     [SerializeField] private float bubbleScale = 1f;
     [SerializeField] private float deathScale = 1f;
@@ -65,6 +66,12 @@ public class EnemyHealth : Health
         }
 
         Destroy(enemyCollider);
+        
+        if (secondCollider != null)
+        {
+            Destroy(secondCollider);
+        }
+
         Destroy(enemyRigidbody);
         Destroy(enemyAttackHandler);
         Destroy(detectPlayerComponent);
