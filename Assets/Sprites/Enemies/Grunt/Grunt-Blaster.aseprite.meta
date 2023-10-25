@@ -2,7 +2,17 @@ fileFormatVersion: 2
 guid: e9ec0e2e6a6b54d4eae65999c420811f
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Shoot
+    second: {fileID: 7400000, guid: 4d4cf6401fb5ac3489432ce8a6e432c4, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Walk
+    second: {fileID: 7400000, guid: 915e52563e7f2964c89ab311018e23ef, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -95,7 +105,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638338697777085480
+  platformSettingsDirtyTick: 638338702296484151
   textureAssetName: 
   singleSpriteImportData:
   - name: 

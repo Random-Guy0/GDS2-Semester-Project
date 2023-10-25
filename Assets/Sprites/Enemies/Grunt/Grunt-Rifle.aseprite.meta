@@ -2,7 +2,27 @@ fileFormatVersion: 2
 guid: b7563364007336c4bbd013f7d8a9b6f2
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Position
+    second: {fileID: 7400000, guid: cdc0afc469bb84546874f2b1e938cc2b, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Shoot
+    second: {fileID: 7400000, guid: 8a2392781bb019444b5fef030ad4c3da, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Unposition
+    second: {fileID: 7400000, guid: fbaa7b838dc3f5b4aa9f94ddb15b9cb4, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Walk
+    second: {fileID: 7400000, guid: ffa539a09dad39643ac2f324d3e9b2c5, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -95,7 +115,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638338698114318337
+  platformSettingsDirtyTick: 638338702521875672
   textureAssetName: 
   singleSpriteImportData:
   - name: 
