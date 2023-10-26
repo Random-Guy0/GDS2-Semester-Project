@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sectionManager: {fileID: 2880859742246889599}
+  areaManager: {fileID: 2880859742246889599}
   enemies:
   - {fileID: 6015388452575926279}
   - {fileID: 4321609531250104362}
@@ -793,8 +793,6 @@ MonoBehaviour:
   sectionsCompleted: 
   sectionManager: {fileID: 0}
   sectionCount: 0
-  beginningAreaSection: 1
-  justBeganSecondSection: 0
 --- !u!1 &3453311733214261731
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,7 +916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sectionManager: {fileID: 2880859742246889599}
+  areaManager: {fileID: 2880859742246889599}
   enemies:
   - {fileID: 1470650509650856163}
   - {fileID: 3388262665068624881}
@@ -1768,7 +1766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sectionManager: {fileID: 2880859742246889599}
+  areaManager: {fileID: 2880859742246889599}
   enemies:
   - {fileID: 7322070115746382471}
   - {fileID: 6400148480298969434}

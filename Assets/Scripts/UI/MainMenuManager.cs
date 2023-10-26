@@ -9,6 +9,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Button startButton;
     [SerializeField] private Button tutorialButton;
     [SerializeField] private Button egyptButton;
+    [SerializeField] private Button babylonButton;
 
     public void LoadLevelSelect()
     {
@@ -25,5 +26,10 @@ public class MainMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
-    
+
+    public void LoadBabylonLevel()
+    {
+        SceneManager.LoadScene(4);
+    }
+
 }

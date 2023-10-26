@@ -13,6 +13,7 @@ public class FollowPlayer : MonoBehaviour
     public bool camRecenter;
     public SectionsManager sectionManager;
     public bool diagonalArea = false;
+    [SerializeField] private bool beginRecentering = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,14 +37,21 @@ public class FollowPlayer : MonoBehaviour
             {
                 Debug.Log("CamRecenter reset to false");
                 camRecenter = false;
+                if (beginRecentering)
+                {
+                    beginRecentering = false;
+                }
             }
             Debug.Log("CamRecenter = " + camRecenter);
             if (camRecenter == true && playPosition != camPosition)
             {
-                Debug.Log("CamRecenter beginning offswitch = true");
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, player.position.y, -10), cameraSpeed * Time.deltaTime);
-                offSwitchX = true;
-                offSwitchY = true;
+                if (beginRecentering)
+                {
+                    Debug.Log("CamRecenter beginning offswitch = true");
+                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, player.position.y, -10), cameraSpeed * Time.deltaTime);
+                    offSwitchX = true;
+                    offSwitchY = true;
+                }
             }
             Debug.Log("OnOffSwitchX = " + offSwitchX);
             if (offSwitchX == false)
@@ -67,13 +75,20 @@ public class FollowPlayer : MonoBehaviour
             {
                 Debug.Log("CamRecenter reset to false");
                 camRecenter = false;
+                if (beginRecentering)
+                {
+                    beginRecentering = false;
+                }
             }
             Debug.Log("CamRecenter = " + camRecenter);
             if (camRecenter == true && gameObject.transform.position.x != player.position.x)
             {
-                Debug.Log("CamRecenter beginning offswitch = true");
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, 0, -10), cameraSpeed * Time.deltaTime);
-                offSwitchX = true;
+                if (beginRecentering)
+                {
+                    Debug.Log("CamRecenter beginning offswitch = true");
+                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, 0, -10), cameraSpeed * Time.deltaTime);
+                    offSwitchX = true;
+                }
             }
             Debug.Log("OnOffSwitch = " + offSwitchX);
             if (offSwitchX == false)
@@ -117,21 +132,10 @@ public class FollowPlayer : MonoBehaviour
 
     
 
-    public void ResetCamPosition()
+    public void ResetCamPosition(bool firstSection, bool diagonalArea)
     {
-
-        Vector3 begPlayerPos = thisCamera.WorldToViewportPoint(player.position);
-        if (begPlayerPos.x >= 0.5f)
-        {
-            StartCoroutine(CamReFollow());
-            offSwitchX = false;
-        }
-    }
-
-    IEnumerator CamReFollow()
-    {
-
         camRecenter = true;
-        yield return null;
+        if (diagonalArea) { sectionManager.DiagonalCameraTrackingDecider(); beginRecentering = true; }
+        else if (firstSection) { sectionManager.CameraTrackingDecider(); beginRecentering = true; }
     }
 }
