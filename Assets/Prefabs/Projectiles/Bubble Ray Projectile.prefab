@@ -11,7 +11,15 @@ PrefabInstance:
     - target: {fileID: 1534754890003651889, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 75ffa5212405d5d4e9c3c039144ddca6, type: 3}
+      objectReference: {fileID: 21300000, guid: 29968ff843a02f14a95cae855d07bb7c, type: 3}
+    - target: {fileID: 1534754890003651889, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534754890003651889, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1771564457
+      objectReference: {fileID: 0}
     - target: {fileID: 2066678052054794070, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
       propertyPath: m_Name
       value: Bubble Ray Projectile
@@ -26,11 +34,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8268237125840512431, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8268237125840512431, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8268237125840512431, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
       propertyPath: m_LocalPosition.x

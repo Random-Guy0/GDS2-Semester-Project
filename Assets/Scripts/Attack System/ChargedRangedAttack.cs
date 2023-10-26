@@ -22,8 +22,10 @@ public class ChargedRangedAttack : RangedAttack
         }
         
         ChargedAttackProjectile newProjectile = (ChargedAttackProjectile)Instantiate(Projectile, Vector3.zero, Quaternion.identity);
+
+        Vector2 position = playerAttackHandler.SelectedWeapon.AttackOrigin.position;
         
-        Vector2 origin = GetAttackOrigin(direction, attackerSize, attackerPosition);
+        Vector2 origin = GetAttackOrigin(direction, attackerSize, position);
         
         if (newProjectile.TryGetComponent<Collider2D>(out Collider2D projectileCollider))
         {
