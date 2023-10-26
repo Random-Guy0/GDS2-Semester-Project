@@ -46,7 +46,7 @@ public class SectionsManager : MonoBehaviour
             if (currentArea >= areas.Count - 1)
             {
                 Debug.Log("Current Area Count Exceeded");
-                SectionRunTime();
+                //SectionRunTime();
             }
             else
             {
@@ -55,14 +55,14 @@ public class SectionsManager : MonoBehaviour
                 {
                     Debug.Log("Beginning Area in Update SectionsManager");
                     camFollow.OnOffSwitchX(true);
-                    SectionRunTime();
+                    //SectionRunTime();
                 }
-                else
+                else if (endOfArea == false)
                 {
                     Debug.Log("No first Area");
-                    Debug.Log(areas[currentArea].sectionsCompleted[areas[currentArea].sectionCount - 1] + " and " + endOfArea);
+                    Debug.LogWarning(areas[currentArea].sectionsCompleted[areas[currentArea].sectionCount - 1] + " and " + endOfArea);
                     // if the previous section in current area's bool list == false & the section for the current area is not the beginning area section
-                    if (areas[currentArea].sectionsCompleted[areas[currentArea].sectionCount - 1] == false && endOfArea == false)
+                    if (areas[currentArea].sectionsCompleted[areas[currentArea].sectionCount - 1] == false)
                     {
 
                         Debug.Log("endOfArea = " + endOfArea);
@@ -84,7 +84,7 @@ public class SectionsManager : MonoBehaviour
                         // set the previous sections bool completed list object to true
                         areas[currentArea].sectionsCompleted[areas[currentArea].sectionCount - 1] = true;
                     }
-                    SectionRunTime();
+                    //SectionRunTime();
                     if (endOfArea == false)
                     {
                         // set the previous (Was current but just completed the previous section so current is one forward) wall to false
@@ -139,6 +139,120 @@ public class SectionsManager : MonoBehaviour
     {
         int area = currentArea + 1;
         return area;
+    }
+
+
+    public void CameraTrackingDecider()
+    {
+        int measurment = 0;
+        Vector3 leftSide = mainCamera.ViewportToWorldPoint(new Vector3(0f, 0.5f, player.transform.position.z));
+        Vector3 rightSide = mainCamera.ViewportToWorldPoint(new Vector3(1f, 0.5f, player.transform.position.z));
+
+        Debug.LogWarning("leftSide = " + leftSide + " and rightSide = " + rightSide);
+
+        float leftGap = leftSide.x - areas[currentArea].areaWalls[0].transform.position.x;
+        float rightGap = rightSide.x - areas[currentArea].section[areas[currentArea].sectionCount].transform.position.x;
+
+        Debug.LogWarning("rightSide wall is " + areas[currentArea].section[areas[currentArea].sectionCount].name);
+        Debug.LogWarning("rightside.x = " + rightSide.x + " and rightSide Wall is = " + areas[currentArea].section[areas[currentArea].sectionCount].transform.position.x);
+        Debug.LogWarning("leftGap = " + leftGap + " and rightGap = " + rightGap);
+
+        Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
+        if (leftGap <= 0) { measurment = 1; }
+        else if (rightGap >= 0) { measurment = 2; }
+        
+        switch(measurment)
+        {
+            case 1:
+                Debug.Log("Case 1");
+                camFollow.OnOffSwitchX(true);
+                goto case 3;
+            case 2:
+                Debug.Log("Case 2");
+                camFollow.OnOffSwitchX(true);
+                goto case 4;
+            case 3:
+                Debug.Log("Case 3");
+                if (playerPos.x > 0.5f) { camFollow.OnOffSwitchX(false); Debug.Log("Case 3, if = true"); }
+                break;
+            case 4:
+                Debug.Log("Case 4");
+                if (playerPos.x < 0.5f) { camFollow.OnOffSwitchX(false); Debug.Log("Case 4, if = true"); }
+                break;
+            default:
+                Debug.Log("Case Default");
+                camFollow.OnOffSwitchX(false);
+                break;
+        }
+    }
+
+    public void DiagonalCameraTrackingDecider()
+    {
+        int measurment = 0;
+        Vector3 leftSide = mainCamera.ViewportToWorldPoint(new Vector3(0f, 0.5f, player.transform.position.z));
+        Vector3 rightSide = mainCamera.ViewportToWorldPoint(new Vector3(1f, 0.5f, player.transform.position.z));
+        Vector3 topSide = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 1f, player.transform.position.z));
+        Vector3 bottomSide = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0f, player.transform.position.z));
+
+        Debug.LogWarning("leftSide = " + leftSide + ", rightSide = " + rightSide + ", topSide = " + topSide + " and bottomSide = " + bottomSide);
+
+        float leftGap = leftSide.x - areas[currentArea].areaWalls[0].transform.position.x;
+        float rightGap = rightSide.x - areas[currentArea].section[areas[currentArea].sectionCount].transform.position.x;
+        float topGap = topSide.y - areas[currentArea].areaWalls[2].transform.position.x;
+        float bottomGap = bottomSide.y - areas[currentArea].areaWalls[3].transform.position.x;
+
+        Debug.LogWarning("rightSide wall is " + areas[currentArea].section[areas[currentArea].sectionCount].name);
+        Debug.LogWarning("rightSide.x = " + rightSide.x + " and rightSide Wall is = " + areas[currentArea].section[areas[currentArea].sectionCount].transform.position.x);
+        Debug.LogWarning("topSide.x = " + topSide.x + " and topSide Wall is = " + areas[currentArea].areaWalls[2].transform.position.x);
+        Debug.LogWarning("rightside.x = " + bottomSide.x + " and bottomSide Wall is = " + areas[currentArea].areaWalls[3].transform.position.x);
+        Debug.LogWarning("leftGap = " + leftGap + ", rightGap = " + rightGap + ", topGap = " + topGap + " and bottomGap = " + bottomGap);
+
+        Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
+        if (leftGap <= 0) { measurment = 1; }
+        else if (rightGap >= 0) { measurment = 2; }
+        else if (topGap >= 0) { measurment = 3; }
+        else if (bottomGap <= 0) { measurment = 4; }
+
+        switch (measurment)
+        {
+            case 1:
+                Debug.Log("Case 1");
+                camFollow.OnOffSwitchX(true);
+                goto case 3;
+            case 2:
+                Debug.Log("Case 2");
+                camFollow.OnOffSwitchX(true);
+                goto case 4;
+            case 3:
+                Debug.Log("Case 3");
+                camFollow.OnOffSwitchY(true);
+                goto case 7;
+            case 4:
+                Debug.Log("Case 4");
+                camFollow.OnOffSwitchY(true);
+                goto case 8;
+            case 5:
+                Debug.Log("Case 5");
+                if (playerPos.x > 0.5f) { camFollow.OnOffSwitchX(false); Debug.Log("Case 5, if = true"); }
+                break;
+            case 6:
+                Debug.Log("Case 6");
+                if (playerPos.x < 0.5f) { camFollow.OnOffSwitchX(false); Debug.Log("Case 6, if = true"); }
+                break;
+            case 7:
+                Debug.Log("Case 7");
+                if (playerPos.y < 0.5f) { camFollow.OnOffSwitchY(false); Debug.Log("Case 7, if = true"); }
+                goto case 5;
+            case 8:
+                Debug.Log("Case 8");
+                if (playerPos.y > 0.5f) { camFollow.OnOffSwitchY(false); Debug.Log("Case 8, if = true"); }
+                goto case 6;
+            default:
+                Debug.Log("Case Default");
+                camFollow.OnOffSwitchX(false);
+                camFollow.OnOffSwitchY(false);
+                break;
+        }
     }
 
     public void SectionRunTime()

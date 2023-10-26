@@ -29,6 +29,8 @@ public class FollowPlayer : MonoBehaviour
         {
             Vector2 playPosition = new Vector2(player.position.x, player.position.y);
             Vector2 camPosition = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+            Debug.Log("MainCamera begining camera tracking determination");
+            sectionManager.DiagonalCameraTrackingDecider();
             Debug.Log("Cam Position = " + gameObject.transform.position);
             if (playPosition == camPosition)
             {
@@ -55,12 +57,12 @@ public class FollowPlayer : MonoBehaviour
                 Debug.Log("Cam Follows Player, new Position equal to player position || Y");
                 transform.position = new Vector3(gameObject.transform.position.x, player.position.y, -10);
             }
-            OnOffSwitchX(false);
-            OnOffSwitchY(false);
         }
         else
         {
-            Debug.Log("Cam Position = " + gameObject.transform.position);
+            Debug.Log("MainCamera begining camera tracking determination");
+            sectionManager.CameraTrackingDecider();
+            Debug.Log("Cam Position = " + gameObject.transform.position + " and Player Position = " + player.position.x);
             if (gameObject.transform.position.x == player.position.x)
             {
                 Debug.Log("CamRecenter reset to false");
@@ -79,7 +81,6 @@ public class FollowPlayer : MonoBehaviour
                 Debug.Log("Cam Follows Player, new Position equal to player position");
                 transform.position = new Vector3(player.position.x, gameObject.transform.position.y, -10);
             }
-            OnOffSwitchX(false);
         }
 
 

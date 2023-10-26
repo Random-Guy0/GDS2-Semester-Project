@@ -543,8 +543,6 @@ MonoBehaviour:
   section:
   - {fileID: 7661689810777500199}
   - {fileID: 6268616501152001132}
-  - {fileID: 8905994095917994786}
-  - {fileID: 4369809638813545815}
   areaWalls:
   - {fileID: 8550015530147743443}
   - {fileID: 4369809638813545815}
@@ -1032,7 +1030,7 @@ GameObject:
   - component: {fileID: 2153784231374637860}
   - component: {fileID: 8003533889430460564}
   m_Layer: 0
-  m_Name: Area1-Section3
+  m_Name: Area1-Section2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1358,7 +1356,7 @@ GameObject:
   - component: {fileID: 7761380914120602301}
   - component: {fileID: 232555913663694451}
   m_Layer: 0
-  m_Name: Area1-Section2
+  m_Name: Area1-Section1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

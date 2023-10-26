@@ -774,7 +774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e796f0bd398bad458f1613c06b4a7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 6
   <Weaknesses>k__BackingField: 
   spriteRenderer: {fileID: 8480036590840728028}
 --- !u!114 &-2898517233979925625
@@ -834,7 +834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAmmo: 20
-  startingAmmo: 5
+  startingAmmo: 20
 --- !u!114 &8666489073779572076
 MonoBehaviour:
   m_ObjectHideFlags: 0

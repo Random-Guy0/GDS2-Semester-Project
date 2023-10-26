@@ -18,7 +18,7 @@ public class AreaSections : MonoBehaviour
     void Start()
     {
         Debug.Log("Section List Count = " + section.Count + gameObject.name);
-        for (int i = 0; i < section.Count - 1; i++)
+        for (int i = 0; i < section.Count; i++)
         {
             sectionsCompleted.Add(false);
         }
@@ -27,6 +27,7 @@ public class AreaSections : MonoBehaviour
         {
             beginningAreaSection = false;
         }
+        section.Add(areaWalls[1]);
     }
     void Update()
     {
@@ -47,12 +48,23 @@ public class AreaSections : MonoBehaviour
                     nextAreaPortal.ableToEnter = true;
                     sectionManager.NewArea();
                     areaSectionDisabled = true;
-                    sectionManager.endOfArea = true;
                 }
 
             }
         }
 
+    }
+
+    public bool FinalArea()
+    {
+        if (sectionCount == section.Count)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void AreaSectionComplete()
