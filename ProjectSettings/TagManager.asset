@@ -45,3 +45,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Projectiles
+    uniqueID: 2523402839
+    locked: 0
+  - name: Enemy
+    uniqueID: 1241395309
+    locked: 0
+  - name: Player
+    uniqueID: 2976215399
+    locked: 0
+  - name: Weapon
+    uniqueID: 500773583
+    locked: 0
+  - name: Foreground
+    uniqueID: 1500642183
+    locked: 0

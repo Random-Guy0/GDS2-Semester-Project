@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6013368be0247819e71716aa2e8fce7, type: 3}
   m_Name: Soap Grenade Launcher
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 30
+  <Damage>k__BackingField: 12
   <Target>k__BackingField: 0
+  <AttackStartDelay>k__BackingField: 0
   <Duration>k__BackingField: 1.5
   <DamageTypes>k__BackingField: 
   <DamageTypeAttackMultiplier>k__BackingField: 2
+  <CanMoveVertically>k__BackingField: 0
   <Projectile>k__BackingField: {fileID: 7038892992658947043, guid: 6760d122190aa284589c685d6dbba47b, type: 3}
-  <Range>k__BackingField: 5
+  <Range>k__BackingField: 2.5
   <Speed>k__BackingField: 10
   <AmmoCost>k__BackingField: 3

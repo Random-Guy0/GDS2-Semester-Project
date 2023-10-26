@@ -165,9 +165,9 @@ GameObject:
   - component: {fileID: 1286834965841613781}
   - component: {fileID: 2216133613823911265}
   - component: {fileID: 1985843182146064134}
-  - component: {fileID: 2987254782119623345}
+  - component: {fileID: 938165173104739034}
   m_Layer: 0
-  m_Name: Crate
+  m_Name: Ammo Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,7 +287,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8730463, y: 0.50228214}
   m_EdgeRadius: 0
---- !u!114 &2987254782119623345
+--- !u!114 &938165173104739034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,11 +296,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8678156977561434510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e27e80a03fa4c645be8edcd1305fe65, type: 3}
+  m_Script: {fileID: 11500000, guid: 85244e4665b9e3140b0ebcb8001cf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
   <Weaknesses>k__BackingField: 
-  dropRatePercentage: 25
-  pickup: {fileID: 5034651603994373109, guid: c3b2cab1d43737e44b2f9b648c6b4d86, type: 3}
-  healthAmount: 1
+  dropRatePercentage: 100
+  ammoPickup: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
+  ammoAmount: 3

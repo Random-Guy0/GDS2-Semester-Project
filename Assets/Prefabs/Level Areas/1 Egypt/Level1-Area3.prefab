@@ -179,7 +179,7 @@ Transform:
   - {fileID: 1014580593299935475}
   - {fileID: 7128854167006952739}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1206893060667167331
 GameObject:
@@ -1294,7 +1294,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 682876969941156505}
+  - {fileID: 6083281103048008088}
   - {fileID: 5709394043341658751}
   m_Father: {fileID: 4262316405866600447}
   m_RootOrder: -1
@@ -1313,7 +1313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sectionManager: {fileID: 2673478342332381446}
   enemies:
-  - {fileID: 6932673066343001528}
+  - {fileID: 4405640283697204921}
   - {fileID: 2770850879697712478}
 --- !u!1 &7636222039588663318
 GameObject:
@@ -1695,13 +1695,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb529524626737743802f9fcbf8985c2, type: 3}
---- !u!4 &682876969941156505 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
-  m_PrefabInstance: {fileID: 4609698146680151586}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6932673066343001528 stripped
+--- !u!1 &4405640283697204921 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 205769703443517595, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+  m_PrefabInstance: {fileID: 4609698146680151586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6083281103048008088 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
   m_PrefabInstance: {fileID: 4609698146680151586}
   m_PrefabAsset: {fileID: 0}

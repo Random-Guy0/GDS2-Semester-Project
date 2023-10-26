@@ -42,6 +42,7 @@ public class PlayerAttackHandler : AttackHandler
 
     // Weapon UI animator
     [SerializeField] private Animator weaponsUIanimator;
+    [SerializeField] private float weaponSwitchDelay = 0.1f;
 
     private void Start()
     {
@@ -187,17 +188,19 @@ public class PlayerAttackHandler : AttackHandler
         return false;
     }
 
-    private void SelectWeapon(int index)
+    private IEnumerator SelectWeapon(int index)
     {
         if ((AttackButtonDown && SelectedWeapon.Attack is ContinuousRangedAttack) || SelectedWeapon == Weapons[index])
         {
-            return;
+            yield break;
         }
 
         if (CarryingBubble)
         {
             ReleaseBubble();
         }
+
+        yield return new WaitForSeconds(weaponSwitchDelay);
         
         SelectedWeapon = Weapons[index];
         weaponsUIanimator.SetTrigger("Weapon" + index);
@@ -207,7 +210,7 @@ public class PlayerAttackHandler : AttackHandler
     {
         if (context.performed)
         {
-            SelectWeapon(0);
+            StartCoroutine(SelectWeapon(0));
         }
     }
     
@@ -215,7 +218,7 @@ public class PlayerAttackHandler : AttackHandler
     {
         if (context.performed)
         {
-            SelectWeapon(1);
+            StartCoroutine(SelectWeapon(1));
         }
     }
     
@@ -223,7 +226,7 @@ public class PlayerAttackHandler : AttackHandler
     {
         if (context.performed)
         {
-            SelectWeapon(2);
+            StartCoroutine(SelectWeapon(2));
         }
     }
     
@@ -231,7 +234,7 @@ public class PlayerAttackHandler : AttackHandler
     {
         if (context.performed)
         {
-            SelectWeapon(3);
+            StartCoroutine(SelectWeapon(3));
         }
     }
 
@@ -246,22 +249,22 @@ public class PlayerAttackHandler : AttackHandler
             {
                 if (currentWeaponIndex == Weapons.Count - 1)
                 {
-                    SelectWeapon(0);
+                    StartCoroutine(SelectWeapon(0));
                 }
                 else
                 {
-                    SelectWeapon(currentWeaponIndex + 1);
+                    StartCoroutine(SelectWeapon(currentWeaponIndex + 1));
                 }
             }
             else if (direction < 0f)
             {
                 if (currentWeaponIndex == 0)
                 {
-                    SelectWeapon(Weapons.Count - 1);
+                    StartCoroutine(SelectWeapon(Weapons.Count - 1));
                 }
                 else
                 {
-                    SelectWeapon(currentWeaponIndex - 1);
+                    StartCoroutine(SelectWeapon(currentWeaponIndex - 1));
                 }
             }
         }

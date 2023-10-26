@@ -9,6 +9,7 @@ public class ChargedAttackProjectile : AttackProjectile
     [SerializeField] private float dropDistance = 1.2f;
     [SerializeField] private float gravity = 1f;
     [SerializeField] private float bounceFactor = 2.5f;
+    [SerializeField] private GameObject explosionPrefab;
 
     private float startingYPosition;
     private float chargeTime;
@@ -68,16 +69,19 @@ public class ChargedAttackProjectile : AttackProjectile
                     }
 
                     float distanceFromAttack = Vector2.Distance(transform.position, otherHealth.transform.position);
-                    damageToDeal *= (int)(distanceFromAttack / explosionRadius);
+                    damageToDeal *= (int)(explosionRadius / distanceFromAttack);
                     if (damageToDeal <= 0)
                     {
                         damageToDeal = 1;
                     }
         
+                    Debug.Log(distanceFromAttack + " " + damageToDeal);
                     otherHealth.TakeDamage(damageToDeal, attackStats);
                 }
             }
         }
+
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         
         Destroy(gameObject);
     }
