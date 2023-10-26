@@ -2409,6 +2409,10 @@ PrefabInstance:
       propertyPath: areaWalls.Array.data[3]
       value: 
       objectReference: {fileID: 7770841095570045894}
+    - target: {fileID: 7629010569693638436, guid: 3b891257a023a0d43b22ee5450b3b197, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8620663942057458949, guid: 3b891257a023a0d43b22ee5450b3b197, type: 3}
       propertyPath: cam
       value: 

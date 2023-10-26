@@ -27,7 +27,7 @@ public class AreaSections : MonoBehaviour
     {
             if (sectionCount == sectionsCompleted.Count && areaSectionDisabled == false)
             {
-                if (sectionManager.currentArea == 3)
+                if (sectionManager.currentArea == 4)
                 {
                     Debug.Log("Final Area Finished");
                     nextAreaPortal.ableToEnter = true;
@@ -47,6 +47,16 @@ public class AreaSections : MonoBehaviour
                 }
 
             }
+            else if (sectionManager.currentArea == 2)
+        {
+            Debug.Log("Area Section Ended");
+            nextAreaPortal.ableToEnter = true;
+            sectionManager.NewArea();
+            areaSectionDisabled = true;
+            Debug.LogWarning("sectionCount before = " + sectionCount);
+            --sectionCount;
+            Debug.LogWarning("sectionCount after = " + sectionCount);
+        }
 
     }
 

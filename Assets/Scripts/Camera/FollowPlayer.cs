@@ -26,12 +26,14 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.LogWarning("Diagonal Area bool = " + diagonalArea);
         if (diagonalArea == true)
         {
             Vector2 playPosition = new Vector2(player.position.x, player.position.y);
             Vector2 camPosition = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
             Debug.Log("MainCamera begining camera tracking determination");
             sectionManager.DiagonalCameraTrackingDecider();
+            sectionManager.CameraTrackingDecider();
             Debug.Log("Cam Position = " + gameObject.transform.position);
             if (playPosition == camPosition)
             {
@@ -135,7 +137,12 @@ public class FollowPlayer : MonoBehaviour
     public void ResetCamPosition(bool firstSection, bool diagonalArea)
     {
         camRecenter = true;
-        if (diagonalArea) { sectionManager.DiagonalCameraTrackingDecider(); beginRecentering = true; }
-        else if (firstSection) { sectionManager.CameraTrackingDecider(); beginRecentering = true; }
+        if (diagonalArea) { 
+            sectionManager.DiagonalCameraTrackingDecider();
+            sectionManager.CameraTrackingDecider();
+            beginRecentering = true; }
+        else if (firstSection) { 
+            sectionManager.CameraTrackingDecider(); 
+            beginRecentering = true; }
     }
 }
