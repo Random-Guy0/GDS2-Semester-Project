@@ -26,11 +26,11 @@ public abstract class Attack : ScriptableObject
         return origin;
     }
 
-    public void DoDamage(Health otherHealth, AttackHandler attacker = null)
+    public bool DoDamage(Health otherHealth, AttackHandler attacker = null)
     {
         if (!CanAttack(otherHealth, attacker))
         {
-            return;
+            return false;
         }
 
         int damageToDeal = Damage;
@@ -43,7 +43,7 @@ public abstract class Attack : ScriptableObject
             }
         }
         
-        otherHealth.TakeDamage(damageToDeal, this);
+        return otherHealth.TakeDamage(damageToDeal, this);
     }
 
     public bool CanAttack(Health otherHealth, AttackHandler attacker = null)

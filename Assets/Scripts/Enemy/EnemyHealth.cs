@@ -29,7 +29,7 @@ public class EnemyHealth : Health
         OnTakeDamage += TakeDamage;
     }
 
-    public override void TakeDamage(int amount, Attack attack)
+    public override bool TakeDamage(int amount, Attack attack)
     {
         IEnemyMovement enemyMovement = (IEnemyMovement)detectPlayerComponent;
         enemyMovement.Stun();
@@ -39,7 +39,7 @@ public class EnemyHealth : Health
             newPickup.AmmoAmount = ammoDropAmount;
         }
         
-        base.TakeDamage(amount, attack);
+        return base.TakeDamage(amount, attack);
     }
 
     //bubble function

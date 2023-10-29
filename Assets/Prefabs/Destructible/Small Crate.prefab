@@ -302,5 +302,5 @@ MonoBehaviour:
   maxHealth: 1
   <Weaknesses>k__BackingField: 
   dropRatePercentage: 25
-  ammoPickup: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
+  drop: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
   ammoAmount: 1

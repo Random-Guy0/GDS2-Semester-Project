@@ -302,5 +302,5 @@ MonoBehaviour:
   maxHealth: 5
   <Weaknesses>k__BackingField: 
   dropRatePercentage: 100
-  pickup: {fileID: 5034651603994373109, guid: c3b2cab1d43737e44b2f9b648c6b4d86, type: 3}
+  drop: {fileID: 5034651603994373109, guid: c3b2cab1d43737e44b2f9b648c6b4d86, type: 3}
   healthAmount: 1
