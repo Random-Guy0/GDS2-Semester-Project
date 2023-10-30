@@ -14,10 +14,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
-        canvasGroup[0].alpha = 1f;
-        canvasGroup[0].interactable = true;
-        canvasGroup[1].alpha = 0f;
-        canvasGroup[1].interactable = false;
+        ReturnToMainMenu();
     }
     public void LoadLevelSelect()
     {
@@ -50,9 +47,9 @@ public class MainMenuManager : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
-        canvasGroup[1].alpha = 0f;
-        canvasGroup[0].interactable = true;
         canvasGroup[0].alpha = 1f;
+        canvasGroup[0].interactable = true;
+        canvasGroup[1].alpha = 0f;
         canvasGroup[1].interactable = false;
     }
     public void doExitGame()
