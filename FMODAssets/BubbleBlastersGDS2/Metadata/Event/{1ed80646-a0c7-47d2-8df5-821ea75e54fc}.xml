@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{1ed80646-a0c7-47d2-8df5-821ea75e54fc}">
 		<property name="name">
-			<value>PLayer Low Health</value>
+			<value>Player Low Health</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -30,6 +30,9 @@
 		</relationship>
 		<relationship name="timeline">
 			<destination>{a9d8d71a-489a-4c7d-894d-1426e0ac4ffb}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{660377fa-b4e9-4741-adc1-e4836d822426}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{583c0738-d09e-4be9-ba40-eb3c149dd42b}">
