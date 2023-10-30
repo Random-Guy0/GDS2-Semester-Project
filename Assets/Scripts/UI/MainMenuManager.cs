@@ -25,5 +25,15 @@ public class MainMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+
+    public void LoadBabylonLevel()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void doExitGame()
+    {
+        Application.Quit();
+    }
     
 }
