@@ -737,6 +737,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1-Area4
       objectReference: {fileID: 0}
+    - target: {fileID: 7450194011816049236, guid: 89ba6437db5c5f248aa7b32cdfe78c6e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1704,6 +1708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1-Area2
       objectReference: {fileID: 0}
+    - target: {fileID: 7860931092699585528, guid: 68f038a2a9a4c3a4f9ee7b51b75c0f56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8097607323375853752, guid: 68f038a2a9a4c3a4f9ee7b51b75c0f56, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -2513,7 +2521,7 @@ MonoBehaviour:
   maxHealth: 5
   <Weaknesses>k__BackingField: 
   dropRatePercentage: 25
-  pickup: {fileID: 5034651603994373109, guid: c3b2cab1d43737e44b2f9b648c6b4d86, type: 3}
+  drop: {fileID: 0}
   healthAmount: 1
 --- !u!1 &8457316692359485511
 GameObject:
@@ -2651,7 +2659,7 @@ MonoBehaviour:
   maxHealth: 5
   <Weaknesses>k__BackingField: 
   dropRatePercentage: 25
-  pickup: {fileID: 5034651603994373109, guid: c3b2cab1d43737e44b2f9b648c6b4d86, type: 3}
+  drop: {fileID: 0}
   healthAmount: 1
 --- !u!212 &8903258071305277767
 SpriteRenderer:

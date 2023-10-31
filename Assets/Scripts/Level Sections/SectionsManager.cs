@@ -31,7 +31,7 @@ public class SectionsManager : MonoBehaviour
 
     void Update()
     {
-
+        Debug.LogError("Current section count = " + areas[currentArea].sectionCount + " and the current section.count = " + areas[currentArea].section.Count);
     }
 
     public void NextSection(AreaPortal nextAreaPortal)

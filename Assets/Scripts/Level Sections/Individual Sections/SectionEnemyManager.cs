@@ -26,8 +26,9 @@ public class SectionEnemyManager : MonoBehaviour
         }
     }
 
-    public void EnemyKilled()
+    public void EnemyKilled(GameObject enemy)
     {
+        Debug.LogWarning(enemy.name + " has been killed");
         enemyCount--;
     }
 }

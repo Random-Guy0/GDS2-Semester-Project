@@ -25,31 +25,31 @@ public class AreaSections : MonoBehaviour
     }
     void Update()
     {
-            if (sectionCount == sectionsCompleted.Count && areaSectionDisabled == false)
+        if (sectionCount == sectionsCompleted.Count && areaSectionDisabled == false)
+        {
+            if (sectionManager.currentArea == 4)
             {
-                if (sectionManager.currentArea == 4)
-                {
-                    Debug.Log("Final Area Finished");
-                    nextAreaPortal.ableToEnter = true;
-                    areaSectionDisabled = true;
-
-                }
-                else
-                {
-
-                    Debug.Log("Area Section Ended");
-                    nextAreaPortal.ableToEnter = true;
-                    sectionManager.NewArea();  
+                Debug.Log("Final Area Finished");
+                nextAreaPortal.ableToEnter = true;
                 areaSectionDisabled = true;
-                    Debug.LogWarning("sectionCount before = " + sectionCount);
-                    --sectionCount;
-                    Debug.LogWarning("sectionCount after = " + sectionCount);   
-                }
 
             }
-            else if (sectionManager.currentArea == 2)
+            else
+            {
+
+                Debug.Log("Area Section Ended");
+                nextAreaPortal.ableToEnter = true;
+                sectionManager.NewArea();
+                areaSectionDisabled = true;
+                Debug.LogWarning("sectionCount before = " + sectionCount);
+                --sectionCount;
+                Debug.LogWarning("sectionCount after = " + sectionCount);
+            }
+
+        }
+        else if (sectionManager.currentArea == 2 && sectionsCompleted[0] == true)
         {
-            Debug.Log("Area Section Ended");
+            Debug.Log("Area Section Ended - Section 3");
             nextAreaPortal.ableToEnter = true;
             sectionManager.NewArea();
             areaSectionDisabled = true;

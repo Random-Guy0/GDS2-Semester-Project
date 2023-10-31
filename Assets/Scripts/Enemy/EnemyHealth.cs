@@ -44,7 +44,6 @@ public class EnemyHealth : Health
 
     //bubble function
     protected override void Die(){
-        enemySectionManager.EnemyKilled();
         enemyAttackHandler.InterruptAttack();
         StopAllCoroutines();
         _spriteRenderer.color = Color.white;
@@ -61,6 +60,7 @@ public class EnemyHealth : Health
         if (!transform.parent.TryGetComponent<BubbledEnemy>(out BubbledEnemy bubbledEnemy))
         {
             CreateBubble();
+            enemySectionManager.EnemyKilled(gameObject);
         }
 
         if (animator != null)
