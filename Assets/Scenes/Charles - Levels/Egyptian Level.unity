@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &1611846050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3802542369947519870, guid: 3b891257a023a0d43b22ee5450b3b197, type: 3}
+  m_PrefabInstance: {fileID: 7770841095570045890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &108459488663159250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -619,6 +630,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5994365329078460861, guid: 89ba6437db5c5f248aa7b32cdfe78c6e, type: 3}
   m_PrefabInstance: {fileID: 1808600315047266332}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1808600315047266336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6690297849597565171, guid: 89ba6437db5c5f248aa7b32cdfe78c6e, type: 3}
+  m_PrefabInstance: {fileID: 1808600315047266332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1888616240109895489
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +800,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2060837419642452073}
   - component: {fileID: 9180300626388588825}
+  - component: {fileID: 9180300626388588826}
   m_Layer: 0
   m_Name: Sections-Manager
   m_TagString: LevelSectionManager
@@ -878,6 +901,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5585721544162308223, guid: e3159a0cf1bc80d4aa51d142b3a139e0, type: 3}
   m_PrefabInstance: {fileID: 3514542752157956792}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3514542752157956795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 34899344751154611, guid: e3159a0cf1bc80d4aa51d142b3a139e0, type: 3}
+  m_PrefabInstance: {fileID: 3514542752157956792}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3514542752157956796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5046050296483227252, guid: e3159a0cf1bc80d4aa51d142b3a139e0, type: 3}
+  m_PrefabInstance: {fileID: 3514542752157956792}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3514542752157956797 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8297383787226142371, guid: e3159a0cf1bc80d4aa51d142b3a139e0, type: 3}
+  m_PrefabInstance: {fileID: 3514542752157956792}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3768016696470818924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1408,6 +1464,39 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7860931092699585528, guid: 68f038a2a9a4c3a4f9ee7b51b75c0f56, type: 3}
   m_PrefabInstance: {fileID: 6453545721515227204}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6453545721515227208 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 757119245154772643, guid: 68f038a2a9a4c3a4f9ee7b51b75c0f56, type: 3}
+  m_PrefabInstance: {fileID: 6453545721515227204}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6453545721515227209 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3830101670553860634, guid: 68f038a2a9a4c3a4f9ee7b51b75c0f56, type: 3}
+  m_PrefabInstance: {fileID: 6453545721515227204}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6453545721515227210 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2568155804209806350, guid: 68f038a2a9a4c3a4f9ee7b51b75c0f56, type: 3}
+  m_PrefabInstance: {fileID: 6453545721515227204}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6457214645884712106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1601,6 +1690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3e31a18c9cde74ab5da0e35a563fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 1
   thisCamera: {fileID: 2120163251811816604}
   cameraSpeed: 3.3
   camRecenter: 0
@@ -2195,6 +2285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b86df614a61ff84dbbe2575e9cd1fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   mainCamera: {fileID: 2120163251811816604}
   currentArea: 0
   playerAreaIn: 0
@@ -2210,3 +2301,37 @@ MonoBehaviour:
   - {fileID: 6453545721515227205}
   - {fileID: 7770841095570045891}
   - {fileID: 1808600315047266334}
+--- !u!114 &9180300626388588826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3196336289478792031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 027423c41c4be874b9d87b6bdf4d3724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debuggingSwitch: 0
+  sectionEnemyManager:
+  - {fileID: 3514542752157956797}
+  - {fileID: 3514542752157956796}
+  - {fileID: 3514542752157956795}
+  - {fileID: 6453545721515227210}
+  - {fileID: 6453545721515227209}
+  - {fileID: 6453545721515227208}
+  - {fileID: 1611846050}
+  - {fileID: 1808600315047266336}
+  areaSections:
+  - {fileID: 3514542752157956793}
+  - {fileID: 6453545721515227205}
+  - {fileID: 7770841095570045891}
+  - {fileID: 1808600315047266334}
+  areaPortal:
+  - {fileID: 7376233624162089920}
+  - {fileID: 108459488663159251}
+  - {fileID: 6460311814063919928}
+  - {fileID: 766972068115625296}
+  sectionManager: {fileID: 9180300626388588825}
+  followPlayer: {fileID: 6651222783845024066}

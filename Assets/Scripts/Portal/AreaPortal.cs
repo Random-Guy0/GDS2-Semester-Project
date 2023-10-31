@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AreaPortal : Portal
 {
+    [SerializeField] public bool debugConsoleLog = false;
     [SerializeField] private Vector2 teleportToPosition;
     [SerializeField] public SectionsManager secManager;
     [SerializeField] public bool ableToEnter = false;
@@ -25,7 +26,7 @@ public class AreaPortal : Portal
             }
             else if ( secManager.currentArea < 4 && alreadyActivated == false)
             {
-                Debug.Log("Activating New Area, Current Area = " + secManager.currentArea);
+                if (debugConsoleLog == true) { Debug.Log("Activating New Area, Current Area = " + secManager.currentArea); }
                 secManager.ActivateNewAreaEnemies(areaGameObject);
                 alreadyActivated = true;
             }
@@ -39,12 +40,7 @@ public class AreaPortal : Portal
             {
                 SceneManager.LoadScene("MainMenuStart");
             }
-            
-
-        //    EgyptLevel1Audio.Stop();
-       //     EgyptLevel2Audio.Play();
-            Debug.Log("New Area Entered");
+            if (debugConsoleLog == true) { Debug.Log("New Area Entered"); }
         }
-        
     }
 }

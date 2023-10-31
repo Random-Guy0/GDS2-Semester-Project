@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AreaSections : MonoBehaviour
 {
+    [SerializeField] public bool debugConsoleLog;
     public AreaPortal nextAreaPortal;
     public List<GameObject> section = new List<GameObject>();
     public List<GameObject> areaWalls = new List<GameObject>();
@@ -15,7 +16,11 @@ public class AreaSections : MonoBehaviour
     private bool areaSectionDisabled;
     void Start()
     {
-        Debug.Log("Section List Count = " + section.Count + gameObject.name);
+        if (debugConsoleLog == true) { debugConsoleLog = true; }
+        else { debugConsoleLog = false; }
+
+        if (debugConsoleLog == true) { Debug.Log("Section List Count = " + section.Count + gameObject.name); }
+
         for (int i = 0; i <= section.Count; i++)
         {
             sectionsCompleted.Add(false);
@@ -29,21 +34,24 @@ public class AreaSections : MonoBehaviour
         {
             if (sectionManager.currentArea == 4)
             {
-                Debug.Log("Final Area Finished");
+                if (debugConsoleLog == true) { Debug.Log("Final Area Finished"); }
+
                 nextAreaPortal.ableToEnter = true;
                 areaSectionDisabled = true;
 
             }
             else
             {
+                if (debugConsoleLog == true) { Debug.Log("Area Section Ended"); }
 
-                Debug.Log("Area Section Ended");
                 nextAreaPortal.ableToEnter = true;
                 sectionManager.NewArea();
                 areaSectionDisabled = true;
-                Debug.LogWarning("sectionCount before = " + sectionCount);
+                if (debugConsoleLog == true) { Debug.LogWarning("sectionCount before = " + sectionCount); }
+
                 --sectionCount;
-                Debug.LogWarning("sectionCount after = " + sectionCount);
+                if (debugConsoleLog == true) { Debug.LogWarning("sectionCount after = " + sectionCount); }
+
             }
 
         }
@@ -51,13 +59,16 @@ public class AreaSections : MonoBehaviour
         {
             if (areaSectionDisabled == false)
             {
-                Debug.Log("Area Section Ended - Section 3");
+                if (debugConsoleLog == true) { Debug.Log("Area Section Ended - Section 3"); }
+
                 nextAreaPortal.ableToEnter = true;
                 sectionManager.NewArea();
                 areaSectionDisabled = true;
-                Debug.LogWarning("sectionCount before = " + sectionCount);
+                if (debugConsoleLog == true) { Debug.LogWarning("sectionCount before = " + sectionCount); }
+
                 //--sectionCount;
-                Debug.LogWarning("sectionCount after = " + sectionCount);
+                if (debugConsoleLog == true) { Debug.LogWarning("sectionCount after = " + sectionCount); }
+
             }
         }
 
