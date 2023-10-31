@@ -21,15 +21,18 @@ public class SectionsManager : MonoBehaviour
         if (debugConsoleLog == true) { debugConsoleLog = true; }
         else { debugConsoleLog = false; }
 
-        if (SceneManager.GetActiveScene().name == "Tutorial")
+        if (SceneManager.GetActiveScene().name == "Tutorial New")
         {
-            Debug.Log("Tutorial Level");
+            if (debugConsoleLog == true) { Debug.Log("Tutorial Level"); }
+            
         }
         else
         {
-            Debug.Log("Main Level");
+            if (debugConsoleLog == true) { Debug.Log("Main Level"); }
+            
         }
-        Debug.LogError("Current Area is " + currentArea);
+        if (debugConsoleLog == true) { Debug.Log("Current Area is " + currentArea); }
+            
     }
 
     void Update()
@@ -57,7 +60,11 @@ public class SectionsManager : MonoBehaviour
             ++areas[currentArea].sectionCount;
 
             //Set previous section completed bool in list to true
-            areas[currentArea].areaEnemyManagers[areas[currentArea].sectionCount].gameObject.SetActive(true);
+            if (currentArea < 3)
+            {
+                areas[currentArea].areaEnemyManagers[areas[currentArea].sectionCount].gameObject.SetActive(true);
+            }
+
 
             //Smooth the cam position to play position if cam was limited
             bool diagonalArea;

@@ -175,7 +175,7 @@ public class FollowPlayer : MonoBehaviour
             sectionManager.DiagonalCameraTrackingDecider();
             sectionManager.CameraTrackingDecider();
             beginRecentering = true; }
-        else if (firstSection) { 
+        else { 
             sectionManager.CameraTrackingDecider(); 
             beginRecentering = true; }
     }

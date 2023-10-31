@@ -917,6 +917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   areaManager: {fileID: 3724997071841349977}
   enemies:
   - {fileID: 2737010092269189390}
@@ -1241,6 +1242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd41749fa93b1b04f9db6e7e48c8951a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   nextAreaPortal: {fileID: 0}
   section:
   - {fileID: 5136772875784437856}
@@ -1797,6 +1799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   areaManager: {fileID: 3724997071841349977}
   enemies:
   - {fileID: 1683216475069640478}
@@ -1945,7 +1948,7 @@ Transform:
   - {fileID: 11637398551646956}
   - {fileID: 1393363637132557205}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8482991452352737938
 GameObject:
@@ -2076,6 +2079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   areaManager: {fileID: 3724997071841349977}
   enemies:
   - {fileID: 7855684318009466439}

@@ -20,7 +20,7 @@ public class AreaPortal : Portal
     {
         if (ableToEnter == true)
         {
-            if (SceneManager.GetActiveScene().name == "Tutorial")
+            if (SceneManager.GetActiveScene().name == "Tutorial New")
             {
                 SceneManager.LoadScene("Egyptian Level");
             }

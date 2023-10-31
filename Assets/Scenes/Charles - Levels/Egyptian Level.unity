@@ -552,6 +552,10 @@ PrefabInstance:
       propertyPath: sectionManager
       value: 
       objectReference: {fileID: 9180300626388588825}
+    - target: {fileID: 249974263263934119, guid: 89ba6437db5c5f248aa7b32cdfe78c6e, type: 3}
+      propertyPath: debugConsoleLog
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5809399228948917204, guid: 89ba6437db5c5f248aa7b32cdfe78c6e, type: 3}
       propertyPath: cam
       value: 
@@ -1692,7 +1696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugConsoleLog: 1
   thisCamera: {fileID: 2120163251811816604}
-  cameraSpeed: 3.3
+  cameraSpeed: 4
   camRecenter: 0
   sectionManager: {fileID: 9180300626388588825}
   diagonalArea: 0
@@ -2043,6 +2047,10 @@ PrefabInstance:
       propertyPath: sectionManager
       value: 
       objectReference: {fileID: 9180300626388588825}
+    - target: {fileID: 2673478342332381446, guid: 3b891257a023a0d43b22ee5450b3b197, type: 3}
+      propertyPath: debugConsoleLog
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2673478342332381446, guid: 3b891257a023a0d43b22ee5450b3b197, type: 3}
       propertyPath: section.Array.size
       value: 1

@@ -128,6 +128,22 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 3356510818373505300, guid: 85b26a17561dc864081a768d552f356b, type: 3}
   m_PrefabInstance: {fileID: 811372956}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &294334650 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7151792347757243466, guid: 69bca04ef8dcb6f42b2cf446ad7a7c0f, type: 3}
+  m_PrefabInstance: {fileID: 5862195340142159649}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &458327317 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6985000645558954017, guid: 69bca04ef8dcb6f42b2cf446ad7a7c0f, type: 3}
+  m_PrefabInstance: {fileID: 5862195340142159649}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &811372956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -329,6 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 934395831}
   - component: {fileID: 934395832}
+  - component: {fileID: 934395833}
   m_Layer: 0
   m_Name: Sections-Manager
   m_TagString: LevelSectionManager
@@ -363,14 +380,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b86df614a61ff84dbbe2575e9cd1fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   mainCamera: {fileID: 1369598279}
   currentArea: 0
   playerAreaIn: 0
   camFollow: {fileID: 1369598281}
   player: {fileID: 1551076910}
-  camAreaPosition: []
+  camAreaPosition:
+  - {fileID: 294334650}
   areas:
-  - {fileID: 1050167814}
+  - {fileID: 1475598788}
+--- !u!114 &934395833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934395830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 027423c41c4be874b9d87b6bdf4d3724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debuggingSwitch: 0
+  sectionEnemyManager:
+  - {fileID: 1429365139}
+  - {fileID: 1762977665}
+  - {fileID: 458327317}
+  areaSections:
+  - {fileID: 1475598788}
+  areaPortal:
+  - {fileID: 1536946893}
+  sectionManager: {fileID: 934395832}
+  followPlayer: {fileID: 1369598281}
 --- !u!1 &953095031
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,17 +465,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5382633914441543617, guid: 69bca04ef8dcb6f42b2cf446ad7a7c0f, type: 3}
   m_PrefabInstance: {fileID: 5862195340142159649}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1050167814 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1220910802860036654, guid: 69bca04ef8dcb6f42b2cf446ad7a7c0f, type: 3}
-  m_PrefabInstance: {fileID: 5862195340142159649}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd41749fa93b1b04f9db6e7e48c8951a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1369598277
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,8 +563,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3e31a18c9cde74ab5da0e35a563fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisCamera: {fileID: 0}
-  cameraSpeed: 1
+  debugConsoleLog: 0
+  thisCamera: {fileID: 1369598279}
+  cameraSpeed: 4
   camRecenter: 0
   sectionManager: {fileID: 934395832}
   diagonalArea: 0
@@ -672,6 +704,28 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!114 &1429365139 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5066110389127185543, guid: 69bca04ef8dcb6f42b2cf446ad7a7c0f, type: 3}
+  m_PrefabInstance: {fileID: 5862195340142159649}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1475598788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1391961889132715930, guid: 69bca04ef8dcb6f42b2cf446ad7a7c0f, type: 3}
+  m_PrefabInstance: {fileID: 5862195340142159649}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd41749fa93b1b04f9db6e7e48c8951a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1536946893 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
@@ -713,7 +767,7 @@ PrefabInstance:
       objectReference: {fileID: 934395832}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: ableToEnter
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: areaGameObject
@@ -721,7 +775,7 @@ PrefabInstance:
       objectReference: {fileID: 989261975}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: alreadyActivated
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: teleportToPosition.x
@@ -784,6 +838,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+--- !u!114 &1762977665 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1142050799248903517, guid: 69bca04ef8dcb6f42b2cf446ad7a7c0f, type: 3}
+  m_PrefabInstance: {fileID: 5862195340142159649}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2019337109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1075,6 +1140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd41749fa93b1b04f9db6e7e48c8951a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   nextAreaPortal: {fileID: 0}
   section:
   - {fileID: 7253364054501708539}
@@ -1292,7 +1358,8 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1369598277}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1220910802860036654, guid: 69bca04ef8dcb6f42b2cf446ad7a7c0f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
