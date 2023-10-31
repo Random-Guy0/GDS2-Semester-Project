@@ -52,31 +52,36 @@ public class ChargedAttackProjectile : AttackProjectile
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, explosionRadius, Vector2.zero);
 
+        List<GameObject> alreadyHit = new List<GameObject>();
+        
         foreach (RaycastHit2D hit in hits)
         {
-            if (hit.transform.TryGetComponent<Health>(out Health otherHealth))
+            if (!alreadyHit.Contains(hit.transform.gameObject))
             {
-                if (attackStats.CanAttack(otherHealth, attacker))
+                alreadyHit.Add(hit.transform.gameObject);
+                if (hit.transform.TryGetComponent<Health>(out Health otherHealth))
                 {
-                    int damageToDeal = attackStats.Damage;
-
-                    foreach (DamageType type in attackStats.DamageTypes)
+                    if (attackStats.CanAttack(otherHealth, attacker))
                     {
-                        if (otherHealth.Weaknesses.Contains(type))
+                        int damageToDeal = attackStats.Damage;
+
+                        foreach (DamageType type in attackStats.DamageTypes)
                         {
-                            damageToDeal *= (int)attackStats.DamageTypeAttackMultiplier;
+                            if (otherHealth.Weaknesses.Contains(type))
+                            {
+                                damageToDeal *= (int)attackStats.DamageTypeAttackMultiplier;
+                            }
                         }
-                    }
 
-                    float distanceFromAttack = Vector2.Distance(transform.position, otherHealth.transform.position);
-                    damageToDeal *= (int)(explosionRadius / distanceFromAttack);
-                    if (damageToDeal <= 0)
-                    {
-                        damageToDeal = 1;
+                        float distanceFromAttack = Vector2.Distance(transform.position, otherHealth.transform.position);
+                        damageToDeal *= (int)(explosionRadius / distanceFromAttack);
+                        if (damageToDeal <= 0)
+                        {
+                            damageToDeal = 1;
+                        }
+
+                        otherHealth.TakeDamage(damageToDeal, attackStats);
                     }
-        
-                    Debug.Log(distanceFromAttack + " " + damageToDeal);
-                    otherHealth.TakeDamage(damageToDeal, attackStats);
                 }
             }
         }

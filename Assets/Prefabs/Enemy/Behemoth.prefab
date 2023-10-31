@@ -76,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1241395309
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -7605494618199621878, guid: 571214754d842114dafc0f611ffb0fb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -202,6 +202,7 @@ MonoBehaviour:
   enemyAttackHandler: {fileID: 7903826979980892148}
   enemyRigidbody: {fileID: 2980102513536050860}
   enemyCollider: {fileID: 9102721864597918552}
+  secondCollider: {fileID: 0}
   bubblePrefab: {fileID: 1446682404955272071, guid: 2727dd07c18a6f64e92d3bb149721607, type: 3}
   bubbleScale: 2
   deathScale: 0.9
@@ -223,7 +224,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60ee6ebef56112045824f700faa1ee42, type: 2}
   <RangedAttacks>k__BackingField: []
   stopDistance: 2
-  meleeAttackAnimation: {fileID: 7400000, guid: 6d9e81b4d2b05b34bb0e361febccab71, type: 2}
+  attackAnimation: {fileID: 7400000, guid: 6d9e81b4d2b05b34bb0e361febccab71, type: 2}
+  attackOrigin: {fileID: 0}
 --- !u!95 &3501993973818938130
 Animator:
   serializedVersion: 5
