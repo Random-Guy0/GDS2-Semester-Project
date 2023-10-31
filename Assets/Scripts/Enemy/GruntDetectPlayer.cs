@@ -88,7 +88,7 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
     private void ChasePlayer()
     {
         bool facingRight = transform.position.x < target.transform.position.x;
-        GetComponent<SpriteRenderer>().flipX = facingRight;
+        Flip(facingRight);
         
         Vector2 moveDir = target.transform.position - transform.position;
         moveDir.Normalize();
@@ -141,11 +141,11 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
 
         if (transform.position.x < target.transform.position.x)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            Flip(true);
         }
         else
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            Flip(false);
         }
 
         transform.position = Vector2.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
@@ -158,11 +158,11 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
 
         if (transform.position.x < target.transform.position.x)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            Flip(true);
         }
         else
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            Flip(false);
         }
 
         transform.position = newPosition;
@@ -183,5 +183,20 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
         CanMove = false;
         yield return new WaitForSeconds(StunDuration);
         CanMove = true;
+    }
+
+    private void Flip(bool flipped)
+    {
+        Vector3 scale = transform.localScale;
+        if (flipped)
+        {
+            scale.x = Mathf.Abs(scale.x) * -1f;
+        }
+        else
+        {
+            scale.x = Mathf.Abs(scale.x);
+        }
+
+        transform.localScale = scale;
     }
 }

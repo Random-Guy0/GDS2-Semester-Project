@@ -6,6 +6,7 @@ public class ShieldedEnemyHealth : EnemyHealth
 {
     [SerializeField] private Animator shieldAnimator;
     [SerializeField] private AnimationClip shieldBreakAnimation;
+    [SerializeField] private Collider2D shieldCollider;
     private bool shielded = true;
     
     public override bool TakeDamage(int amount, Attack attack)
@@ -18,6 +19,7 @@ public class ShieldedEnemyHealth : EnemyHealth
         if ((attack is MeleeAttack || attack is ChargedRangedAttack) && shielded)
         {
             shieldAnimator.SetTrigger("ShieldBreak");
+            Destroy(shieldCollider);
             StartCoroutine(DestroyShield());
             shielded = false;
             return true;

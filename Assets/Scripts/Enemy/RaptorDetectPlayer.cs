@@ -139,17 +139,32 @@ public class RaptorDetectPlayer : MonoBehaviour, IEnemyMovement
     {
         if (transform.position.x < player.transform.position.x)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            Flip(true);
         }
         else
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            Flip(false);
         }
     }
 
     public void Stun()
     {
         
+    }
+    
+    private void Flip(bool flipped)
+    {
+        Vector3 scale = transform.localScale;
+        if (flipped)
+        {
+            scale.x = Mathf.Abs(scale.x) * -1f;
+        }
+        else
+        {
+            scale.x = Mathf.Abs(scale.x);
+        }
+
+        transform.localScale = scale;
     }
 }
 
