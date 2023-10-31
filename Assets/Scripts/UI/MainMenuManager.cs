@@ -35,7 +35,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void LoadBabylonLevel()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 
     public void LoadLevelSelectNew()
