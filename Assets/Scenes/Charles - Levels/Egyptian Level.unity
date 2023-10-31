@@ -832,6 +832,10 @@ PrefabInstance:
       propertyPath: sectionManager
       value: 
       objectReference: {fileID: 9180300626388588825}
+    - target: {fileID: 2880859742246889599, guid: e3159a0cf1bc80d4aa51d142b3a139e0, type: 3}
+      propertyPath: debugConsoleLog
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4470596941336808547, guid: e3159a0cf1bc80d4aa51d142b3a139e0, type: 3}
       propertyPath: m_Name
       value: Level1-Area1
