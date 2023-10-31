@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4434181248570401779
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 205769703443517595, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_Name
+      value: ShortRangeGrunt
+      objectReference: {fileID: 0}
+    - target: {fileID: 2585495285066415758, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3026220219363606454, guid: e9ec0e2e6a6b54d4eae65999c420811f, type: 3}
+    - target: {fileID: 2912512292137961725, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.90625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501993973818938130, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ee64b835e0d63ef4dad4310f21770b31, type: 2}
+    - target: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903826979980892148, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: stopDistance
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903826979980892148, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: attackAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: 4d4cf6401fb5ac3489432ce8a6e432c4, type: 2}
+    - target: {fileID: 7903826979980892148, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: <MeleeAttacks>k__BackingField.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903826979980892148, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: <RangedAttacks>k__BackingField.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903826979980892148, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: <RangedAttacks>k__BackingField.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: c85314865591b7447a7f1ad9ea32cd75, type: 2}
+    - target: {fileID: 8831299249130729824, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: stopDistance
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102721864597918552, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.90625
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb529524626737743802f9fcbf8985c2, type: 3}
