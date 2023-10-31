@@ -78,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7903826979980892148, guid: eb529524626737743802f9fcbf8985c2, type: 3}
       propertyPath: stopDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7903826979980892148, guid: eb529524626737743802f9fcbf8985c2, type: 3}
       propertyPath: attackAnimation
@@ -98,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: fa6273942aafa524c8d2d34d1ef1a5fb, type: 2}
     - target: {fileID: 8831299249130729824, guid: eb529524626737743802f9fcbf8985c2, type: 3}
       propertyPath: stopDistance
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
