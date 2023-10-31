@@ -9,15 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a39336c6af0b92f449f64a777a0e8777, type: 3}
-  m_Name: EnemyShortRangedAttack
+  m_Script: {fileID: 11500000, guid: ec832b6151a74d944b966cbbcb79e3f5, type: 3}
+  m_Name: LongRangedGruntAttack
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 5
+  <Damage>k__BackingField: 1
   <Target>k__BackingField: 1
-  <Duration>k__BackingField: 2
+  <AttackStartDelay>k__BackingField: 0
+  <Duration>k__BackingField: 1
   <DamageTypes>k__BackingField: 
   <DamageTypeAttackMultiplier>k__BackingField: 2
-  <Projectile>k__BackingField: {fileID: 0}
-  <Range>k__BackingField: 15
+  <CanMoveVertically>k__BackingField: 0
+  <Projectile>k__BackingField: {fileID: 1412099055109086251, guid: 19d1664f7cb253948a9b4a5a44a47114, type: 3}
+  <Range>k__BackingField: -1
   <Speed>k__BackingField: 7
   <AmmoCost>k__BackingField: 1

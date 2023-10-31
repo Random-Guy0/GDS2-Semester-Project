@@ -1,20 +1,31 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GruntAttackHandler : EnemyAttackHandler
 {
     private GruntDetectPlayer movement;
     private Animator animator;
-    [SerializeField] private AnimationClip meleeAttackAnimation;
-    private float meleeAttackSpeed;
+    [FormerlySerializedAs("meleeAttackAnimation")] [SerializeField] private AnimationClip attackAnimation;
+    [SerializeField] private Transform attackOrigin;
+    private float attackSpeed;
 
     protected override void Start()
     {
         base.Start();
         movement = GetComponent<GruntDetectPlayer>();
         animator = GetComponent<Animator>();
-        meleeAttackSpeed = meleeAttackAnimation.length / MeleeAttacks[0].Duration;
-        animator.SetFloat("AttackSpeed", meleeAttackSpeed);
+        float attackDuration = 1f;
+        if (MeleeAttacks.Length > 0)
+        {
+            attackDuration = MeleeAttacks[0].Duration;
+        }
+        else if (RangedAttacks.Length > 0)
+        {
+            attackDuration = RangedAttacks[0].Duration;
+        }
+        attackSpeed = attackAnimation.length / attackDuration;
+        animator.SetFloat("AttackSpeed", attackSpeed);
     }
 
     protected override IEnumerator WaitForAttack(float attackDuration)
@@ -29,9 +40,14 @@ public class GruntAttackHandler : EnemyAttackHandler
         return base.CanAttack() && movement.CanMove;
     }
 
-    public override void DoMeleeAttack(int index = 0)
+    protected override void DoAttack()
     {
         animator.SetTrigger("DoAttack");
-        base.DoMeleeAttack(index);
+        base.DoAttack();
+    }
+
+    protected override Vector2 GetAttackOrigin()
+    {
+        return attackOrigin.position;
     }
 }
