@@ -9,6 +9,7 @@ public class AreaPortal : Portal
     [SerializeField] public SectionsManager secManager;
     [SerializeField] public bool ableToEnter = false;
     [SerializeField] public GameObject areaGameObject;
+    [SerializeField] public bool alreadyActivated = false;
     
     //remove after Sprint 3
    // [SerializeField] private AudioSource EgyptLevel1Audio;
@@ -22,11 +23,17 @@ public class AreaPortal : Portal
             {
                 SceneManager.LoadScene("Egyptian Level");
             }
+            else if ( secManager.currentArea < 4 && alreadyActivated == false)
+            {
+                Debug.Log("Activating New Area, Current Area = " + secManager.currentArea);
+                secManager.ActivateNewAreaEnemies(areaGameObject);
+                alreadyActivated = true;
+            }
             base.EnterPortal(player);
             player.transform.position = teleportToPosition;
-            if (SceneManager.GetActiveScene().name != "Tutorial" && secManager.currentArea < 3)
+            if (SceneManager.GetActiveScene().name != "Tutorial" && secManager.currentArea < 4)
             {
-                secManager.ActivateNewAreaEnemies(areaGameObject);
+                
             }
             else if (SceneManager.GetActiveScene().name != "Tutorial")
             {

@@ -37,7 +37,8 @@ public class SectionsManager : MonoBehaviour
     public void NextSection(AreaPortal nextAreaPortal)
     {
         Debug.LogError("Current section count = " + areas[currentArea].sectionCount + " and the current section.count = " + areas[currentArea].section.Count);
-        if (areas[currentArea].sectionCount != areas[currentArea].section.Count - 1)
+        Debug.LogError("Current Area = " + currentArea);
+        if (areas[currentArea].sectionCount != areas[currentArea].section.Count - 1 && currentArea != 2)
         {
             //check if player was in begining section
             bool beginingSection;
@@ -50,17 +51,21 @@ public class SectionsManager : MonoBehaviour
             ++areas[currentArea].sectionCount;
 
             //Set previous section completed bool in list to true
-
-            if (currentArea != 2)
-            {
-                areas[currentArea].areaEnemyManagers[areas[currentArea].sectionCount].gameObject.SetActive(true);
-            }
+            areas[currentArea].areaEnemyManagers[areas[currentArea].sectionCount].gameObject.SetActive(true);
 
             //Smooth the cam position to play position if cam was limited
             bool diagonalArea;
             if (currentArea == 2) { diagonalArea = true; }
             else { diagonalArea = false; }
             camFollow.ResetCamPosition(beginingSection, diagonalArea);
+        }
+        else if (currentArea == 2)
+        {
+            Debug.LogWarning("Area 3 only section completed");
+            areas[currentArea].section[areas[currentArea].sectionCount].SetActive(false);
+            areas[currentArea].sectionsCompleted[areas[currentArea].sectionCount] = true;
+            ++areas[currentArea].sectionCount;
+            camFollow.ResetCamPosition(false, true);
         }
         else
         {
@@ -75,23 +80,29 @@ public class SectionsManager : MonoBehaviour
 
     public void ActivateNewAreaEnemies(GameObject nextArea)
     {
-        ++currentArea;
-        Debug.LogError("Current Area is " + currentArea);
-        if (currentArea == 2) { 
-            Debug.Log("Diagonal Bool set to " + camFollow.diagonalArea);
-            camFollow.diagonalArea = true;
-            camFollow.OnOffSwitchY(true);
-            camFollow.OnOffSwitchX(true);
-        }   else {   
-            camFollow.diagonalArea = false; 
-            camFollow.OnOffSwitchX(true);   
-        }
-        Debug.LogError("Cam Current Position = " + mainCamera.transform.position);
-        mainCamera.transform.position = new Vector3(camAreaPosition[currentArea].position.x, camAreaPosition[currentArea].position.y, -10f);
-        Debug.LogError("Cam New Position = " + mainCamera.transform.position);
-        nextArea.SetActive(true);
-        //Set First Area New Section Enemies to active
-        areas[currentArea].areaEnemyManagers[areas[currentArea].sectionCount].gameObject.SetActive(true);        
+        if (currentArea < 4)
+        {
+            ++currentArea;
+            Debug.LogError("Current Area is " + currentArea);
+            if (currentArea == 2)
+            {
+                Debug.Log("Diagonal Bool set to " + camFollow.diagonalArea);
+                camFollow.diagonalArea = true;
+                camFollow.OnOffSwitchY(true);
+                camFollow.OnOffSwitchX(true);
+            }
+            else
+            {
+                camFollow.diagonalArea = false;
+                camFollow.OnOffSwitchX(true);
+            }
+            Debug.LogError("Cam Current Position = " + mainCamera.transform.position);
+            mainCamera.transform.position = new Vector3(camAreaPosition[currentArea].position.x, camAreaPosition[currentArea].position.y, -10f);
+            Debug.LogError("Cam New Position = " + mainCamera.transform.position);
+            nextArea.SetActive(true);
+            //Set First Area New Section Enemies to active
+            areas[currentArea].areaEnemyManagers[areas[currentArea].sectionCount].gameObject.SetActive(true);
+        }       
 
 
     }
@@ -114,6 +125,7 @@ public class SectionsManager : MonoBehaviour
         Debug.LogWarning("leftGap = " + leftGap + " and rightGap = " + rightGap);
 
         Vector3 playerPos = mainCamera.WorldToViewportPoint(player.transform.position);
+        Debug.LogWarning("Player Pos for CameraTrackingDecider = " + playerPos.x);
         if (leftGap <= 0) { measurment = 1; }
         else if (rightGap >= 0) { measurment = 2; }
         

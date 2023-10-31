@@ -49,13 +49,16 @@ public class AreaSections : MonoBehaviour
         }
         else if (sectionManager.currentArea == 2 && sectionsCompleted[0] == true)
         {
-            Debug.Log("Area Section Ended - Section 3");
-            nextAreaPortal.ableToEnter = true;
-            sectionManager.NewArea();
-            areaSectionDisabled = true;
-            Debug.LogWarning("sectionCount before = " + sectionCount);
-            --sectionCount;
-            Debug.LogWarning("sectionCount after = " + sectionCount);
+            if (areaSectionDisabled == false)
+            {
+                Debug.Log("Area Section Ended - Section 3");
+                nextAreaPortal.ableToEnter = true;
+                sectionManager.NewArea();
+                areaSectionDisabled = true;
+                Debug.LogWarning("sectionCount before = " + sectionCount);
+                //--sectionCount;
+                Debug.LogWarning("sectionCount after = " + sectionCount);
+            }
         }
 
     }
