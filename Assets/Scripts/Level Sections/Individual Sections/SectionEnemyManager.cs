@@ -5,7 +5,7 @@ using UnityEngine;
 public class SectionEnemyManager : MonoBehaviour
 {
 
-    public AreaSections sectionManager;
+    public AreaSections areaManager;
     public List<GameObject> enemies;
     private float enemyCount;
     // Start is called before the first frame update
@@ -21,13 +21,14 @@ public class SectionEnemyManager : MonoBehaviour
         if (enemyCount <= 0)
         {
             Debug.Log(gameObject.name + " completed ");
-            sectionManager.AreaSectionComplete();
+            areaManager.AreaSectionComplete();
             gameObject.SetActive(false);
         }
     }
 
-    public void EnemyKilled()
+    public void EnemyKilled(GameObject enemy)
     {
+        Debug.LogWarning(enemy.name + " has been killed");
         enemyCount--;
     }
 }
