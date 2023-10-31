@@ -65,6 +65,7 @@ public abstract class AttackHandler : MonoBehaviour
             StopCoroutine(attackCoroutine);
         }
         CurrentAttack = null;
+        CurrentlyAttacking = false;
     }
 
     protected virtual Vector2 GetAttackOrigin()

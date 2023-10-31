@@ -10,7 +10,7 @@ public class ChargedRangedAttack : RangedAttack
         PlayerAttackHandler playerAttackHandler = (PlayerAttackHandler)attacker;
         
         float chargeTime = 0f;
-        while (chargeTime < Duration && playerAttackHandler.AttackButtonDown)
+        while (chargeTime <= Duration && playerAttackHandler.AttackButtonDown)
         {
             chargeTime += Time.deltaTime;
             yield return null;
@@ -20,6 +20,7 @@ public class ChargedRangedAttack : RangedAttack
         {
             chargeTime = Duration;
         }
+        Debug.LogWarning(chargeTime);
         
         ChargedAttackProjectile newProjectile = (ChargedAttackProjectile)Instantiate(Projectile, Vector3.zero, Quaternion.identity);
 
@@ -44,5 +45,7 @@ public class ChargedRangedAttack : RangedAttack
         newProjectile.transform.position = origin;
         
         newProjectile.FireProjectile(direction, chargeTime, attacker);
+        
+        attacker.InterruptAttack();
     }
 }

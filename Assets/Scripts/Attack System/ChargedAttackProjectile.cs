@@ -74,8 +74,7 @@ public class ChargedAttackProjectile : AttackProjectile
                     {
                         damageToDeal = 1;
                     }
-        
-                    Debug.Log(distanceFromAttack + " " + damageToDeal);
+                    
                     otherHealth.TakeDamage(damageToDeal, attackStats);
                 }
             }
