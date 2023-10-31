@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 8220398424206091338}
   - component: {fileID: 7840995900983155253}
   - component: {fileID: 2012171720674077420}
+  - component: {fileID: 8603753204038005994}
   m_Layer: 0
   m_Name: Bubble Blaster
   m_TagString: Untagged
@@ -327,6 +328,26 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!95 &8603753204038005994
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2705336261656496391}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 885b404f53ee03d408c11c252e3ac441, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &3936994438111887032
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +958,7 @@ GameObject:
   - component: {fileID: 2059253697034493927}
   - component: {fileID: 7699700623205936450}
   - component: {fileID: 2540502137858605394}
+  - component: {fileID: 7477421911139569334}
   m_Layer: 0
   m_Name: Soap Grenade Launcher
   m_TagString: Untagged
@@ -1043,6 +1065,26 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!95 &7477421911139569334
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354286222388350129}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f6af46bc5faa3d4ab157a44ca860bdb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &6395161785529228319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1127,7 @@ GameObject:
   - component: {fileID: 3501374116686340378}
   - component: {fileID: 6356558601176785758}
   - component: {fileID: 8755944889547597618}
+  - component: {fileID: 4794720442237608790}
   m_Layer: 0
   m_Name: Soap Ray Gun
   m_TagString: Untagged
@@ -1191,3 +1234,23 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!95 &4794720442237608790
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8443680599147585112}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2a6b9d2f7df49654b906ff5f42f0050a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

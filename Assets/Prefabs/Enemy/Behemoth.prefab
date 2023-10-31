@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 1241395309
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7605494618199621878, guid: 571214754d842114dafc0f611ffb0fb7, type: 3}
+  m_Sprite: {fileID: 1547427971, guid: 9a0330c028ae1874c9241ebabda3b6c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -171,18 +171,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.18, y: 0}
+  m_Offset: {x: 0.44629645, y: -0.75297594}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.46875}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 3, y: 2.9375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.21, y: 1.5}
+  m_Size: {x: 0.9712515, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &5715400789707310663
 MonoBehaviour:
@@ -207,7 +207,7 @@ MonoBehaviour:
   bubbleScale: 2
   deathScale: 0.9
   pickup: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
-  ammoDropAmount: 1
+  ammoDropAmount: 3
 --- !u!114 &7903826979980892148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60ee6ebef56112045824f700faa1ee42, type: 2}
   <RangedAttacks>k__BackingField: []
   stopDistance: 2
-  attackAnimation: {fileID: 7400000, guid: 6d9e81b4d2b05b34bb0e361febccab71, type: 2}
+  attackAnimation: {fileID: 7400000, guid: 464ba8d2c161c9e47bcbd3ebf0c8cf72, type: 2}
   attackOrigin: {fileID: 0}
 --- !u!95 &3501993973818938130
 Animator:
@@ -236,7 +236,7 @@ Animator:
   m_GameObject: {fileID: 205769703443517595}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97387eced4c0e244989d2c693f82b358, type: 2}
+  m_Controller: {fileID: 9100000, guid: 063932e4930caab4284678902a26d07e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

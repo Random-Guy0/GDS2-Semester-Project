@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85244e4665b9e3140b0ebcb8001cf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 6
   <Weaknesses>k__BackingField: 
   dropRatePercentage: 100
   drop: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
