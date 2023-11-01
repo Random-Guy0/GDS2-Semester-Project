@@ -59,7 +59,7 @@ public class PlayerAttackHandler : AttackHandler
 
     public void DoAttack(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !GameManager.Instance.Paused)
         {
             if (!AttackButtonDown)
             {
@@ -208,7 +208,7 @@ public class PlayerAttackHandler : AttackHandler
 
     public void SelectWeapon1(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !GameManager.Instance.Paused)
         {
             StartCoroutine(SelectWeapon(0));
         }
@@ -216,7 +216,7 @@ public class PlayerAttackHandler : AttackHandler
     
     public void SelectWeapon2(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !GameManager.Instance.Paused)
         {
             StartCoroutine(SelectWeapon(1));
         }
@@ -224,7 +224,7 @@ public class PlayerAttackHandler : AttackHandler
     
     public void SelectWeapon3(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !GameManager.Instance.Paused)
         {
             StartCoroutine(SelectWeapon(2));
         }
@@ -232,7 +232,7 @@ public class PlayerAttackHandler : AttackHandler
     
     public void SelectWeapon4(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !GameManager.Instance.Paused)
         {
             StartCoroutine(SelectWeapon(3));
         }
@@ -240,7 +240,7 @@ public class PlayerAttackHandler : AttackHandler
 
     public void CycleWeapon(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !GameManager.Instance.Paused)
         {
             float direction = context.ReadValue<float>();
             int currentWeaponIndex = Weapons.IndexOf(SelectedWeapon);

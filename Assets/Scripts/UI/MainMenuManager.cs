@@ -16,6 +16,7 @@ public class MainMenuManager : MonoBehaviour
     private void Start()
     {
         ReturnToMainMenu();
+        Time.timeScale = 1f;
     }
     public void LoadLevelSelect()
     {

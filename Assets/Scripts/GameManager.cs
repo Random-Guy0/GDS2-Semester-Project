@@ -13,14 +13,20 @@ public class GameManager : MonoBehaviour
     [field: SerializeField] public GameOverUI GameOverUI { get; private set; }
     [field: SerializeField] public GameObject Player { get; private set; }
 
+    [SerializeField] private GameObject pauseUI;
+
+    public bool Paused { get; private set; } = false;
+
     private void Awake()
     {
-        if (Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
         }
 
         Instance = this;
+        
+        UnPause();
     }
 
     public void ResetGame()
@@ -31,5 +37,35 @@ public class GameManager : MonoBehaviour
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("MainMenuStart");
+    }
+
+    private void Update()
+    {
+        Debug.Log(Keyboard.current.escapeKey.wasPressedThisFrame);
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            if (Paused)
+            {
+                UnPause();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+        Paused = true;
+        pauseUI.SetActive(true);
+    }
+
+    public void UnPause()
+    {
+        Time.timeScale = 1f;
+        Paused = false;
+        pauseUI.SetActive(false);
     }
 }
