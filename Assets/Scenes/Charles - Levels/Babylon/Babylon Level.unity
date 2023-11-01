@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &1001696573 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6084791255072098071, guid: 8a85c2c82501aeb4dbc79cfdfd23e56a, type: 3}
+  m_PrefabInstance: {fileID: 5166920485793627100}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f13264a76902d0498847764ad81ee7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1636841540 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
@@ -132,6 +143,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9de76aa7a720c964cbe634f42f5df32c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1715498335 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6545529120976587224, guid: 85b26a17561dc864081a768d552f356b, type: 3}
+  m_PrefabInstance: {fileID: 868477804684188839}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1114793ed4aea14ebe405d98dbb179c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &379872973799065571
@@ -838,9 +860,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd6603c543c094c4681af5cabebddb13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <GameplayUI>k__BackingField: {fileID: 0}
-  <GameOverUI>k__BackingField: {fileID: 0}
-  <Player>k__BackingField: {fileID: 0}
+  <GameplayUI>k__BackingField: {fileID: 1715498335}
+  <GameOverUI>k__BackingField: {fileID: 1001696573}
+  <Player>k__BackingField: {fileID: 5147350005224466080}
 --- !u!114 &2762124660967950297
 MonoBehaviour:
   m_ObjectHideFlags: 0
