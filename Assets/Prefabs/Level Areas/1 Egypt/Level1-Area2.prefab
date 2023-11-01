@@ -1259,6 +1259,7 @@ MonoBehaviour:
   sectionCount: 0
   areaSectionDisabled: 0
   diagonalArea: 0
+  cameraLocationSpawn: {fileID: 7528347595671073227}
 --- !u!1 &5291673204356634549
 GameObject:
   m_ObjectHideFlags: 0

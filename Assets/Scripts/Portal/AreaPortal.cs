@@ -24,7 +24,23 @@ public class AreaPortal : Portal
             {
                 SceneManager.LoadScene("Egyptian Level");
             }
-            else if ( secManager.currentArea < 4 && alreadyActivated == false)
+            if (SceneManager.GetActiveScene().name == "Egyptian Level" && secManager.currentArea == 3)
+            {
+                if (secManager.areas[secManager.currentArea].areaSectionDisabled)
+                {
+                    SceneManager.LoadScene("Babylon Level");
+                }
+
+            }
+            else if (SceneManager.GetActiveScene().name == "Babylon Level" && secManager.currentArea == 3)
+            {
+                if (secManager.areas[secManager.currentArea].areaSectionDisabled)
+                {
+                    SceneManager.LoadScene("MainMenuStart");
+                }
+
+            }
+            else if ( secManager.currentArea < 3 && alreadyActivated == false)
             {
                 if (debugConsoleLog == true) { Debug.Log("Activating New Area, Current Area = " + secManager.currentArea); }
                 secManager.ActivateNewAreaEnemies(areaGameObject);
@@ -32,10 +48,7 @@ public class AreaPortal : Portal
             }
             base.EnterPortal(player);
             player.transform.position = teleportToPosition;
-            if (SceneManager.GetActiveScene().name != "Tutorial New" && secManager.currentArea == 4)
-            {
-                SceneManager.LoadScene("Babylon Level");
-            }
+            
             if (debugConsoleLog == true) { Debug.Log("New Area Entered"); }
         }
     }

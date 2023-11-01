@@ -1839,11 +1839,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugConsoleLog: 0
   nextAreaPortal: {fileID: 0}
-  section:
-  - {fileID: 6566971563898521067}
+  section: []
   areaWalls:
   - {fileID: 8636410943377859228}
   - {fileID: 8048400452555735494}
+  - {fileID: 6566971563898521067}
   areaEnemyManagers:
   - {fileID: 6690297849597565171}
   sectionsCompleted: 
@@ -1851,6 +1851,7 @@ MonoBehaviour:
   sectionCount: 0
   areaSectionDisabled: 0
   diagonalArea: 0
+  cameraLocationSpawn: {fileID: 5994365329078460861}
 --- !u!1 &8048400452555735494
 GameObject:
   m_ObjectHideFlags: 0

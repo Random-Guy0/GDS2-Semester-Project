@@ -13,8 +13,9 @@ public class AreaSections : MonoBehaviour
     public List<bool> sectionsCompleted = new List<bool>();
     public SectionsManager sectionManager;
     public int sectionCount = 0;
-    [SerializeField] private bool areaSectionDisabled;
+    public bool areaSectionDisabled;
     public bool diagonalArea = false;
+    public Transform cameraLocationSpawn;
     void Start()
     {
         if (debugConsoleLog == true) { debugConsoleLog = true; }
@@ -60,12 +61,15 @@ public class AreaSections : MonoBehaviour
 
             }
         }
-        else
+        else if (sectionManager.currentArea == sectionManager.areas.Count - 1)
         {
-            if (debugConsoleLog == true) { Debug.Log("Final Area Finished"); }
+            if (sectionCount == sectionsCompleted.Count)
+            {
+                if (debugConsoleLog == true) { Debug.Log("Final Area Finished"); }
 
-            nextAreaPortal.ableToEnter = true;
-            areaSectionDisabled = true;
+                nextAreaPortal.ableToEnter = true;
+                areaSectionDisabled = true;
+            }
         }
 
     }

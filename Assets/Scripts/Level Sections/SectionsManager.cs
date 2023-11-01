@@ -47,7 +47,7 @@ public class SectionsManager : MonoBehaviour
             Debug.LogError("Current section count = " + areas[currentArea].sectionCount + " and the current section.count = " + areas[currentArea].section.Count);
             Debug.LogError("Current Area = " + currentArea);
         }
-        if (areas[currentArea].sectionCount != areas[currentArea].section.Count - 1 && currentArea != 2)
+        if (areas[currentArea].sectionCount != areas[currentArea].section.Count - 1 && !areas[currentArea].diagonalArea)
         {
             //check if player was in begining section
             bool beginingSection;
@@ -60,7 +60,7 @@ public class SectionsManager : MonoBehaviour
             ++areas[currentArea].sectionCount;
 
             //Set previous section completed bool in list to true
-            if (currentArea < 3)
+            if (currentArea < 3 && areas[currentArea].sectionCount < 3)
             {
                 areas[currentArea].areaEnemyManagers[areas[currentArea].sectionCount].gameObject.SetActive(true);
             }
@@ -72,7 +72,7 @@ public class SectionsManager : MonoBehaviour
             else { diagonalArea = false; }
             camFollow.ResetCamPosition(beginingSection, diagonalArea);
         }
-        else if (currentArea == 2)
+        else if (areas[currentArea].diagonalArea)
         {
             if (debugConsoleLog == true)     {    Debug.LogWarning("Area 3 only section completed");  }
             areas[currentArea].section[areas[currentArea].sectionCount].SetActive(false);
@@ -82,6 +82,7 @@ public class SectionsManager : MonoBehaviour
         }
         else
         {
+            ++areas[currentArea].sectionCount;
             nextAreaPortal.ableToEnter = true;
         }
     }
@@ -93,7 +94,7 @@ public class SectionsManager : MonoBehaviour
 
     public void ActivateNewAreaEnemies(GameObject nextArea)
     {
-        if (currentArea < 4)
+        if (currentArea < 3)
         {
             ++currentArea;
             if (debugConsoleLog == true)    {   Debug.LogError("Current Area is " + currentArea);   }
@@ -127,7 +128,20 @@ public class SectionsManager : MonoBehaviour
         Vector3 rightSide = mainCamera.ViewportToWorldPoint(new Vector3(1f, 0.5f, player.transform.position.z));
         if (debugConsoleLog == true)    {   Debug.LogWarning("leftSide = " + leftSide + " and rightSide = " + rightSide);   }
         float leftGap = leftSide.x - areas[currentArea].areaWalls[0].transform.position.x;
-        float rightGap = rightSide.x - areas[currentArea].section[areas[currentArea].sectionCount].transform.position.x;
+        float rightGap;
+        if (currentArea >= 3 && areas[currentArea].sectionCount > 0)
+        {
+            rightGap = rightSide.x - areas[currentArea].areaWalls[2].transform.position.x;
+        }
+        else if (areas[currentArea].sectionCount < areas[currentArea].sectionsCompleted.Count)
+        {
+            rightGap = rightSide.x - areas[currentArea].section[areas[currentArea].sectionCount].transform.position.x;
+        }
+        else
+        {
+            rightGap = rightSide.x - areas[currentArea].areaWalls[2].transform.position.x;
+        }
+
         if (debugConsoleLog == true)
         {
             Debug.LogWarning("rightSide wall is " + areas[currentArea].section[areas[currentArea].sectionCount].name);

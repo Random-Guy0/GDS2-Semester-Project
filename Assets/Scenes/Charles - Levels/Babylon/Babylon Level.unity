@@ -759,6 +759,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 96542336073713149, guid: e16203bf56c4f644e9d2ed0196d9b281, type: 3}
+      propertyPath: nextAreaPortal
+      value: 
+      objectReference: {fileID: 1732286258140250560}
+    - target: {fileID: 96542336073713149, guid: e16203bf56c4f644e9d2ed0196d9b281, type: 3}
       propertyPath: sectionManager
       value: 
       objectReference: {fileID: 3364895652230956851}
@@ -978,7 +982,7 @@ MonoBehaviour:
   currentArea: 0
   playerAreaIn: 0
   camFollow: {fileID: 5974072384410415431}
-  player: {fileID: 0}
+  player: {fileID: 5147350005224466080}
   camAreaPosition:
   - {fileID: 7431899501166896928}
   - {fileID: 7218662734663564028}
@@ -1015,11 +1019,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: teleportToPosition.x
-      value: -6.8
+      value: -15.95
       objectReference: {fileID: 0}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: teleportToPosition.y
-      value: -25.5
+      value: -31.5
       objectReference: {fileID: 0}
     - target: {fileID: 79711111856007355, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: m_RootOrder
@@ -1098,7 +1102,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704715467985319521}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1328,6 +1332,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 7176131366265584290}
   m_SourcePrefab: {fileID: 100100000, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
+--- !u!4 &5147350005224466079 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1610161608566021959, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
+  m_PrefabInstance: {fileID: 5147350005224466078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5147350005224466080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4163123339647618832, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
@@ -1578,14 +1587,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugConsoleLog: 0
   thisCamera: {fileID: 6430756542228811133}
-  cameraSpeed: 3.3
+  cameraSpeed: 4
   camRecenter: 0
   sectionManager: {fileID: 3364895652230956851}
   diagonalArea: 0
   offSwitchX: 0
   offSwitchY: 0
   beginRecentering: 0
-  player: {fileID: 0}
+  player: {fileID: 5147350005224466079}
 --- !u!20 &6430756542228811133
 Camera:
   m_ObjectHideFlags: 0
@@ -1645,6 +1654,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1199061936525515608, guid: 338a475e74fb9994cbc0b3cffd45289b, type: 3}
+      propertyPath: nextAreaPortal
+      value: 
+      objectReference: {fileID: 1422482561829300035}
     - target: {fileID: 1199061936525515608, guid: 338a475e74fb9994cbc0b3cffd45289b, type: 3}
       propertyPath: sectionManager
       value: 
@@ -1972,6 +1985,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4964101850858852102, guid: f0fd77d277ea96f4097934f4de5268eb, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1704715467985319521}
     - target: {fileID: 6427900536295027586, guid: f0fd77d277ea96f4097934f4de5268eb, type: 3}
       propertyPath: nextAreaPortal
       value: 

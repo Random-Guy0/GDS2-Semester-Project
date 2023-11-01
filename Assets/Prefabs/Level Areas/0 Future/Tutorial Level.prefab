@@ -141,7 +141,9 @@ MonoBehaviour:
   sectionsCompleted: 
   sectionManager: {fileID: 0}
   sectionCount: 0
+  areaSectionDisabled: 0
   diagonalArea: 0
+  cameraLocationSpawn: {fileID: 7151792347757243466}
 --- !u!1 &667843164044246407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,7 +1687,7 @@ Transform:
   - {fileID: 108340510740439320}
   - {fileID: 1503102393430180662}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5555449544801394449
 GameObject:

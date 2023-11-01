@@ -140,7 +140,9 @@ MonoBehaviour:
   sectionsCompleted: 
   sectionManager: {fileID: 0}
   sectionCount: 0
+  areaSectionDisabled: 0
   diagonalArea: 1
+  cameraLocationSpawn: {fileID: 6729937319515545613}
 --- !u!1 &567557959216842970
 GameObject:
   m_ObjectHideFlags: 0

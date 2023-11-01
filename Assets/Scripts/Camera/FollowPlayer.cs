@@ -121,7 +121,7 @@ public class FollowPlayer : MonoBehaviour
 
                     if (debugConsoleLog == true) { Debug.Log("CamRecenter beginning offswitch = true"); }
 
-                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, 0, -10), cameraSpeed * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, sectionManager.areas[sectionManager.currentArea].cameraLocationSpawn.position.y, -10), cameraSpeed * Time.deltaTime);
                     offSwitchX = true;
                 }
             }
