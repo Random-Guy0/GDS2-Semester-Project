@@ -86,6 +86,9 @@
 		<property name="length">
 			<value>0.15675</value>
 		</property>
+		<property name="name">
+			<value>UI Back Button</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{402ba227-7f4f-4968-b453-d3e48e9e8371}</destination>
 		</relationship>
