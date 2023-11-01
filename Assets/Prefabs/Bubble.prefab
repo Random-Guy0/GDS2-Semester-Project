@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 15
-  popRadius: 1.25
+  popRadius: 1.5
   timeToDisappear: 2.5
 --- !u!114 &1820214440067426047
 MonoBehaviour:

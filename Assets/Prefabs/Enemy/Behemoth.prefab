@@ -249,7 +249,7 @@ MonoBehaviour:
   enemyAttackHandler: {fileID: 7903826979980892148}
   enemyRigidbody: {fileID: 2980102513536050860}
   enemyCollider: {fileID: 9102721864597918552}
-  secondCollider: {fileID: 0}
+  secondCollider: {fileID: 6107652424102965798}
   bubblePrefab: {fileID: 1446682404955272071, guid: 2727dd07c18a6f64e92d3bb149721607, type: 3}
   bubbleScale: 2
   deathScale: 0.9
