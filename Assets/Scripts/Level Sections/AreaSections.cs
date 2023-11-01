@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AreaSections : MonoBehaviour
 {
-    [SerializeField] public bool debugConsoleLog;
+    public bool debugConsoleLog;
     public AreaPortal nextAreaPortal;
     public List<GameObject> section = new List<GameObject>();
     public List<GameObject> areaWalls = new List<GameObject>();
@@ -13,7 +13,7 @@ public class AreaSections : MonoBehaviour
     public List<bool> sectionsCompleted = new List<bool>();
     public SectionsManager sectionManager;
     public int sectionCount = 0;
-    private bool areaSectionDisabled;
+    [SerializeField] private bool areaSectionDisabled;
     public bool diagonalArea = false;
     void Start()
     {

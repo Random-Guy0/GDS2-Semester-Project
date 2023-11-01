@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class AreaPortal : Portal
 {
-    [SerializeField] public bool debugConsoleLog = false;
+    public bool debugConsoleLog = false;
     [SerializeField] private Vector2 teleportToPosition;
-    [SerializeField] public SectionsManager secManager;
-    [SerializeField] public bool ableToEnter = false;
-    [SerializeField] public GameObject areaGameObject;
-    [SerializeField] public bool alreadyActivated = false;
+    public SectionsManager secManager;
+    public bool ableToEnter = false;
+    public GameObject areaGameObject;
+    public bool alreadyActivated = false;
     
     //remove after Sprint 3
    // [SerializeField] private AudioSource EgyptLevel1Audio;

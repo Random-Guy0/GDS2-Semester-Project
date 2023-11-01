@@ -608,6 +608,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1-Area4
       objectReference: {fileID: 0}
+    - target: {fileID: 7450194011816049236, guid: 89ba6437db5c5f248aa7b32cdfe78c6e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -824,6 +828,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 5062688537527581811}
+    - target: {fileID: 1411397809195312218, guid: e3159a0cf1bc80d4aa51d142b3a139e0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2880859742246889599, guid: e3159a0cf1bc80d4aa51d142b3a139e0, type: 3}
       propertyPath: nextAreaPortal
       value: 
@@ -888,7 +896,8 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 5062688537527581811}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5908999054675117445, guid: e3159a0cf1bc80d4aa51d142b3a139e0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1402,6 +1411,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1-Area2
       objectReference: {fileID: 0}
+    - target: {fileID: 7860931092699585528, guid: 68f038a2a9a4c3a4f9ee7b51b75c0f56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8097607323375853752, guid: 68f038a2a9a4c3a4f9ee7b51b75c0f56, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -1704,7 +1717,10 @@ MonoBehaviour:
   camRecenter: 0
   sectionManager: {fileID: 9180300626388588825}
   diagonalArea: 0
+  offSwitchX: 0
+  offSwitchY: 0
   beginRecentering: 0
+  player: {fileID: 0}
 --- !u!82 &6672989935533383798
 AudioSource:
   m_ObjectHideFlags: 0

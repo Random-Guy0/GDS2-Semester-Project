@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    [SerializeField] public bool debugConsoleLog;
-    private bool offSwitchX;
-    private bool offSwitchY;
+    public bool debugConsoleLog;
     public Camera thisCamera;
-    private Transform player;
     public float cameraSpeed = 1;
     public bool camRecenter;
     public SectionsManager sectionManager;
     public bool diagonalArea = false;
+
+    [SerializeField] private bool offSwitchX;
+    [SerializeField] private bool offSwitchY;
     [SerializeField] private bool beginRecentering = false;
+    [SerializeField] private Transform player;
+
     // Start is called before the first frame update
     void Start()
     {

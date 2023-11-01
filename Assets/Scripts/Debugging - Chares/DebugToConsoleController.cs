@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DebugToConsoleController : MonoBehaviour
 {
-    [SerializeField] public bool debuggingSwitch;
-    [SerializeField] public List<SectionEnemyManager> sectionEnemyManager;
-    [SerializeField] public List<AreaSections> areaSections;
-    [SerializeField] public List<AreaPortal> areaPortal;
-    [SerializeField] public SectionsManager sectionManager;
-    [SerializeField] public FollowPlayer followPlayer;
+    public bool debuggingSwitch;
+    public List<SectionEnemyManager> sectionEnemyManager;
+    public List<AreaSections> areaSections;
+    public List<AreaPortal> areaPortal;
+    public SectionsManager sectionManager;
+    public FollowPlayer followPlayer;
     // Start is called before the first frame update
     void Start()
     {

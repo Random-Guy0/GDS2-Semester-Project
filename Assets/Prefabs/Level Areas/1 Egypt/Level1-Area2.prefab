@@ -1257,6 +1257,8 @@ MonoBehaviour:
   sectionsCompleted: 
   sectionManager: {fileID: 0}
   sectionCount: 0
+  areaSectionDisabled: 0
+  diagonalArea: 0
 --- !u!1 &5291673204356634549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1309,8 @@ GameObject:
   - component: {fileID: 1038036187901526746}
   - component: {fileID: 4996066299810863911}
   - component: {fileID: 962526444784149884}
+  - component: {fileID: 4417845083784573562}
+  - component: {fileID: 7931748058797364075}
   - component: {fileID: 3200157730296841595}
   m_Layer: 9
   m_Name: Level1-Area1-2-Foreground
@@ -1396,6 +1400,118 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &4417845083784573562
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5376241204551653995}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 2147483647
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.84, y: 0.72}
+    newSize: {x: 1.92, y: 0.36}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.78, y: -0.28}
+      - {x: 0.78, y: -0.22}
+      - {x: 0.74, y: -0.17}
+      - {x: 0.71999997, y: -0.14}
+      - {x: 0.65999997, y: -0.14}
+      - {x: 0.52, y: -0.16}
+      - {x: 0.45, y: -0.26999998}
+      - {x: 0.42999998, y: -0.31}
+      - {x: 0.35, y: -0.26999998}
+      - {x: 0.25, y: -0.26999998}
+      - {x: 0.19999999, y: -0.24}
+      - {x: -0.03, y: -0.25}
+      - {x: -0.19, y: -0.26999998}
+      - {x: -0.26, y: -0.25}
+      - {x: -0.32999998, y: -0.29}
+      - {x: -0.39999998, y: -0.26}
+      - {x: -0.48, y: -0.26}
+      - {x: -0.51, y: -0.31}
+      - {x: -0.56, y: -0.29}
+      - {x: -0.61, y: -0.26}
+      - {x: -0.69, y: -0.26999998}
+      - {x: -0.74, y: -0.24}
+      - {x: -0.96999997, y: -0.25}
+      - {x: -1.13, y: -0.26999998}
+      - {x: -1.1999999, y: -0.25}
+      - {x: -1.28, y: -0.31}
+      - {x: -1.3, y: -0.35999998}
+      - {x: 0.7, y: -0.35999998}
+      - {x: 0.7, y: -0.31}
+      - {x: 0.76, y: -0.32}
+    - - {x: 1.41, y: -0.16}
+      - {x: 1.4, y: -0.14999999}
+      - {x: 1.09, y: -0.14999999}
+      - {x: 1.05, y: -0.16}
+      - {x: 0.96, y: -0.28}
+      - {x: 0.96, y: -0.35999998}
+      - {x: 1.43, y: -0.35999998}
+      - {x: 1.48, y: -0.32}
+      - {x: 1.48, y: -0.24}
+      - {x: 1.4699999, y: -0.21}
+    - - {x: 1.56, y: -0.22}
+      - {x: 1.49, y: -0.28}
+      - {x: 1.48, y: -0.35999998}
+      - {x: 1.66, y: -0.35999998}
+      - {x: 1.66, y: -0.32999998}
+      - {x: 1.5899999, y: -0.22}
+    - - {x: 1.65, y: -0.14}
+      - {x: 1.65, y: -0.32}
+      - {x: 1.7099999, y: -0.35999998}
+      - {x: 1.88, y: -0.35999998}
+      - {x: 1.92, y: -0.32}
+      - {x: 1.92, y: -0.14}
+  m_UseDelaunayMesh: 0
+--- !u!114 &7931748058797364075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5376241204551653995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dd5b339fad13143b5fe9fa94aff0ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foreground: {fileID: 962526444784149884}
+  foregroundOpacity: 0.2
+  fadeDuration: 0.3
 --- !u!95 &3200157730296841595
 Animator:
   serializedVersion: 5
@@ -1923,7 +2039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8097607323375853752
 Transform:
   m_ObjectHideFlags: 0

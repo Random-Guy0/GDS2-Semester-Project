@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SectionsManager : MonoBehaviour
 {
-    [SerializeField] public bool debugConsoleLog;
+    public bool debugConsoleLog;
     public Camera mainCamera;
     public int currentArea = 0;
     public int playerAreaIn = 0;

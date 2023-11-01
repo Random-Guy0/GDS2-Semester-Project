@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SectionEnemyManager : MonoBehaviour
 {
-    [SerializeField] public bool debugConsoleLog;
+    public bool debugConsoleLog;
     public AreaSections areaManager;
     public List<GameObject> enemies;
     private float enemyCount;
