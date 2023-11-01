@@ -31,6 +31,9 @@
 		<relationship name="timeline">
 			<destination>{40b40a80-a696-48ff-a0f3-781a93aecec7}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{660377fa-b4e9-4741-adc1-e4836d822426}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{2687afb7-9fd1-4464-8290-1afc5aa860b7}">
 		<relationship name="masterBus">
@@ -114,6 +117,7 @@
 	<object class="MixerBusEffectChain" id="{1644cb89-3087-497b-b910-3f8631e1892d}">
 		<relationship name="effects">
 			<destination>{46bcf09a-3b70-4621-b5b9-6ecee54085e8}</destination>
+			<destination>{c193d109-9ac5-4624-a3f1-3b62ee0300e5}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{24d3b5e4-7cd4-47a6-9e58-949721472dd2}" />
@@ -145,10 +149,17 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{057e2a21-0c5d-4e8b-b98e-1ba6c29714bf}">
 		<relationship name="effects">
+			<destination>{1decaf66-8409-4828-8c6c-512470f1ea64}</destination>
 			<destination>{d6020261-f5d4-4caf-aa15-5eb2dc11cf3f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{87a326dc-8c51-4cba-9040-54a7bc2b01ac}" />
 	<object class="MixerBusFader" id="{46bcf09a-3b70-4621-b5b9-6ecee54085e8}" />
+	<object class="LoudnessMeter" id="{c193d109-9ac5-4624-a3f1-3b62ee0300e5}" />
+	<object class="LoudnessMeter" id="{1decaf66-8409-4828-8c6c-512470f1ea64}">
+		<property name="loudnessTarget">
+			<value>-24</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{d6020261-f5d4-4caf-aa15-5eb2dc11cf3f}" />
 </objects>

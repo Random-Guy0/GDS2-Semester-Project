@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{6ccf2755-2a96-4b1f-88d4-137d22aa0112}">
 		<property name="name">
-			<value>Player Bubble Blaster Shot (One Shot)</value>
+			<value>Player - Bubble Blaster Shot</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -95,15 +95,24 @@
 	<object class="MixerBusPanner" id="{969f4b28-f35b-43df-b87b-92adb825ac9e}" />
 	<object class="MixerBusEffectChain" id="{85a2f8c3-5ce3-4fb4-85d1-506277240538}">
 		<relationship name="effects">
+			<destination>{9ff621ca-8e3a-4352-9888-e5feded2950e}</destination>
 			<destination>{814fb742-1ee7-4775-a767-aadf5b37a3fa}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a21e8694-a839-492b-bc8d-11b5300577fd}" />
 	<object class="SingleSound" id="{3b133f42-55a0-4e67-a136-d4721c5dbf25}">
+		<property name="volume">
+			<value>-10.5</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{58717be0-1a7b-44ef-9601-8b35851f10d3}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{611f8394-642b-40f9-a777-218e3b9e090a}" />
+	<object class="LoudnessMeter" id="{9ff621ca-8e3a-4352-9888-e5feded2950e}">
+		<property name="loudnessTarget">
+			<value>-24</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{814fb742-1ee7-4775-a767-aadf5b37a3fa}" />
 </objects>

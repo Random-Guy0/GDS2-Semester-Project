@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{7d3ca4d0-70b8-4cd8-9067-e9d77ba69353}">
 		<property name="name">
-			<value>Behemoth Jump Attack (One Shot)</value>
+			<value>Behemoth - Jump Attack</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>

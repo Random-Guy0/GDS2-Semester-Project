@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{c412b36e-c0a8-4aa3-a65f-b42fe2c1a21b}">
 		<property name="name">
-			<value>Footsteps Sand</value>
+			<value>Footsteps - Sand</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -105,6 +105,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{39de6fcd-af62-4503-bac5-221c28bac9ed}">
+		<property name="volume">
+			<value>10</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -120,6 +123,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{372a4bfd-ce24-4c40-a352-3398acd4d17c}">
 		<relationship name="effects">
+			<destination>{1e6df34a-e7f0-4486-9c8d-ef63ea31b4b7}</destination>
 			<destination>{6a87b65e-ba71-4ef9-a53e-71c216ab8d2e}</destination>
 		</relationship>
 	</object>
@@ -161,6 +165,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{bc23e3bd-7069-48f9-9e29-24492a3dfb1f}" />
+	<object class="LoudnessMeter" id="{1e6df34a-e7f0-4486-9c8d-ef63ea31b4b7}">
+		<property name="loudnessTarget">
+			<value>-14</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{6a87b65e-ba71-4ef9-a53e-71c216ab8d2e}" />
 	<object class="MixerBusFader" id="{7e1a1ee1-b682-4f04-b79e-7ee72169ed23}" />
 </objects>
