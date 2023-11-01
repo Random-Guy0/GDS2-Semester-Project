@@ -48,6 +48,8 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
 
     void Update()
     {
+        Vector3 position = transform.position;
+        
         if (CanMove)
         {
             targetDistance = Vector2.Distance(transform.position, target.transform.position);
@@ -57,18 +59,18 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
                 {
                     if (targetDistance > stopDistance)
                     {
-                        ChasePlayer();
+                        position = ChasePlayer();
                     }
                     else
                     {
                         // Check if the player is above the Grunt
                         if (target.transform.position.y > transform.position.y)
                         {
-                            MoveHorizontallyAwayFromPlayer();
+                            position = MoveHorizontallyAwayFromPlayer();
                         }
                         else
                         {
-                            MoveDownTowardsPlayer();
+                            position = MoveDownTowardsPlayer();
                         }
                     }
                 }
@@ -78,6 +80,10 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
                 }
             }
         }
+
+        transform.position = position;
+
+        rb.velocity = Vector2.zero;
     }
 
     private void FixedUpdate()
@@ -85,7 +91,7 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
         rb.velocity = Vector2.zero;
     }
 
-    private void ChasePlayer()
+    private Vector3 ChasePlayer()
     {
         bool facingRight = transform.position.x < target.transform.position.x;
         Flip(facingRight);
@@ -114,7 +120,7 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
 
         Vector2 position = transform.position;
         position += speed * Time.deltaTime * moveDir;
-        transform.position = position;
+        return position;
 
         //transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
@@ -134,7 +140,7 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
         return result;
     }
 
-    private void MoveHorizontallyAwayFromPlayer()
+    private Vector3 MoveHorizontallyAwayFromPlayer()
     {
         // Calculate the new position to move horizontally away from the player
         Vector2 newPosition = new Vector2(transform.position.x + horizontalDistance, transform.position.y);
@@ -148,10 +154,10 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
             Flip(false);
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
+        return Vector2.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
     }
 
-    private void MoveDownTowardsPlayer()
+    private Vector3 MoveDownTowardsPlayer()
     {
         // Calculate the new position to move down towards the player
         Vector2 newPosition = new Vector2(transform.position.x, transform.position.y - speed * Time.deltaTime);
@@ -165,7 +171,7 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
             Flip(false);
         }
 
-        transform.position = newPosition;
+        return newPosition;
     }
 
     public void StopMoving()
