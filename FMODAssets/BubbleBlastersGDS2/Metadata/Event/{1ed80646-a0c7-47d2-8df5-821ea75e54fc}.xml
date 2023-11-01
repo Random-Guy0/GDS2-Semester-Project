@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{1ed80646-a0c7-47d2-8df5-821ea75e54fc}">
 		<property name="name">
-			<value>Player Low Health</value>
+			<value>Player - Low Health</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -90,7 +90,7 @@
 	<object class="MixerBusPanner" id="{55113ae1-3257-4603-b8dd-009cebaa25b9}" />
 	<object class="SingleSound" id="{dd7412bf-d4f1-44e0-ad0b-1636cd624733}">
 		<property name="length">
-			<value>11.322458333333334</value>
+			<value>1.5</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{6a754416-6d90-4868-9d63-0239c9c58ed5}</destination>
@@ -112,6 +112,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{3d84d19e-33ea-4732-a451-4974e74cf568}">
 		<relationship name="effects">
+			<destination>{8a00e745-d3f7-44fd-bc8e-4e24a45c666f}</destination>
 			<destination>{a259a2ca-6487-4937-b966-1f9d394eaf98}</destination>
 		</relationship>
 	</object>
@@ -123,6 +124,7 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{9f19f6f1-5900-4edf-a904-07c002d2149f}" />
+	<object class="LoudnessMeter" id="{8a00e745-d3f7-44fd-bc8e-4e24a45c666f}" />
 	<object class="MixerBusFader" id="{a259a2ca-6487-4937-b966-1f9d394eaf98}" />
 	<object class="MixerBusFader" id="{9a28daab-c3d4-494c-ae71-dd62cc71f33f}" />
 </objects>
