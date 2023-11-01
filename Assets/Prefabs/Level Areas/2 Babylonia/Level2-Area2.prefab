@@ -603,6 +603,7 @@ MonoBehaviour:
   areaWalls:
   - {fileID: 4385306230307066640}
   - {fileID: 8445037490340947094}
+  - {fileID: 700047865219727607}
   areaEnemyManagers:
   - {fileID: 497976415217885130}
   - {fileID: 1108864824741326830}

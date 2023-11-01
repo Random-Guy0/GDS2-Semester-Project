@@ -131,7 +131,7 @@ public class SectionsManager : MonoBehaviour
         float rightGap;
         if (currentArea >= 3 && areas[currentArea].sectionCount > 0)
         {
-            rightGap = rightSide.x - areas[currentArea].areaWalls[2].transform.position.x;
+            rightGap = rightSide.x - areas[currentArea].areaWalls[4].transform.position.x;
         }
         else if (areas[currentArea].sectionCount < areas[currentArea].sectionsCompleted.Count)
         {
@@ -139,7 +139,7 @@ public class SectionsManager : MonoBehaviour
         }
         else
         {
-            rightGap = rightSide.x - areas[currentArea].areaWalls[2].transform.position.x;
+            rightGap = rightSide.x - areas[currentArea].areaWalls[4].transform.position.x;
         }
 
         if (debugConsoleLog == true)

@@ -135,6 +135,7 @@ MonoBehaviour:
   - {fileID: 8235717924416772068}
   - {fileID: 1234500292756722717}
   - {fileID: 5829526302713953803}
+  - {fileID: 8235717924416772068}
   areaEnemyManagers:
   - {fileID: 3802542369947519870}
   sectionsCompleted: 
