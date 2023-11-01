@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{d4afc719-84be-4137-9e2f-d44f883399cd}">
 		<property name="name">
-			<value>Player - Melee Swing</value>
+			<value>Player - Melee Attack</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>

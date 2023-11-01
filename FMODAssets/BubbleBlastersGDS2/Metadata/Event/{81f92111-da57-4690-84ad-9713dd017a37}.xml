@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{81f92111-da57-4690-84ad-9713dd017a37}">
 		<property name="name">
-			<value>UI Back Button</value>
+			<value>UI - Back Button</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -100,6 +100,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{38c3dde4-f860-4fee-85b2-6b539231f006}">
+		<property name="volume">
+			<value>-7.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -115,6 +118,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{6231437d-e106-42a3-9d52-f5fda2525436}">
 		<relationship name="effects">
+			<destination>{b0cbe46f-3e05-4c0d-8217-e680f71987b7}</destination>
 			<destination>{9152412a-bab8-43b8-88e8-47b1b54d92af}</destination>
 		</relationship>
 	</object>
@@ -126,6 +130,7 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{6c29e07f-3b24-42a3-a699-cb06941a9140}" />
+	<object class="LoudnessMeter" id="{b0cbe46f-3e05-4c0d-8217-e680f71987b7}" />
 	<object class="MixerBusFader" id="{9152412a-bab8-43b8-88e8-47b1b54d92af}" />
 	<object class="MixerBusFader" id="{b25fc213-cb41-4b37-9cad-b0d96de57917}" />
 </objects>

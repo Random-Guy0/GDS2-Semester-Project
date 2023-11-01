@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{0d126766-f785-4e42-859e-3eadb0616b54}">
 		<property name="name">
-			<value>BabylonLevelVersion1</value>
+			<value>Babylon Level - Version 1</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -100,6 +100,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{c3ce3392-3e37-4bbf-ab7e-2b44ac21eff0}">
+		<property name="volume">
+			<value>-5.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>

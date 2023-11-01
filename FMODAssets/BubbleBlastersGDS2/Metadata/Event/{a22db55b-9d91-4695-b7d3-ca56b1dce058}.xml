@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{a22db55b-9d91-4695-b7d3-ca56b1dce058}">
 		<property name="name">
-			<value>Grunt Melee Attack</value>
+			<value>Grunt - Melee Attack</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -113,6 +113,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{c16a637b-f43c-4b26-a09b-1828965129af}">
 		<relationship name="effects">
+			<destination>{f8e9dc88-a905-4388-84cc-0c06e9bbca15}</destination>
 			<destination>{ccb17151-1bdb-4a3f-ba90-e0e1d181a0ed}</destination>
 		</relationship>
 	</object>
@@ -134,6 +135,7 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{36085640-44a3-4d85-bfa9-17441f64a219}" />
+	<object class="LoudnessMeter" id="{f8e9dc88-a905-4388-84cc-0c06e9bbca15}" />
 	<object class="MixerBusFader" id="{ccb17151-1bdb-4a3f-ba90-e0e1d181a0ed}" />
 	<object class="MixerBusFader" id="{8d92fd46-570f-434b-b204-317cbc17142b}" />
 </objects>

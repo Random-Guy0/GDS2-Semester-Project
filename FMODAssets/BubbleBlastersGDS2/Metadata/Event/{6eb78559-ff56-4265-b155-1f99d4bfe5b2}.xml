@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{6eb78559-ff56-4265-b155-1f99d4bfe5b2}">
 		<property name="name">
-			<value>Grunt Rifle Shoot</value>
+			<value>Rifle Grunt - Rifle Shoot</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{fe11c373-9159-42ed-8515-f6b09df4be06}">
+		<property name="volume">
+			<value>-3</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{edcb3d22-299a-45fc-a68a-33965757aa8d}</destination>
 		</relationship>
@@ -96,6 +99,7 @@
 	<object class="MixerBusEffectChain" id="{edcb3d22-299a-45fc-a68a-33965757aa8d}">
 		<relationship name="effects">
 			<destination>{035cba9f-eb9d-4e42-b3da-50992476fea1}</destination>
+			<destination>{91d7fcb8-2e83-4473-94a3-2c9596a714b2}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{094e85be-2de3-4377-b46f-1c280b2ccc3c}" />
@@ -106,4 +110,5 @@
 	</object>
 	<object class="MixerBusFader" id="{e168d5b6-8e74-4533-b024-430ad5058b57}" />
 	<object class="MixerBusFader" id="{035cba9f-eb9d-4e42-b3da-50992476fea1}" />
+	<object class="LoudnessMeter" id="{91d7fcb8-2e83-4473-94a3-2c9596a714b2}" />
 </objects>

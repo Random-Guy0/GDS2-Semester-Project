@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{6738039b-c03e-475d-bfeb-af78c628f328}">
 		<property name="name">
-			<value>Grunt Noises</value>
+			<value>Grunt - Noises</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -106,6 +106,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{fb53988a-c0b7-4445-9a11-cfc6be70ff89}">
+		<property name="volume">
+			<value>9.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -121,6 +124,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{06ad0da6-2858-4bd2-8610-f445241600d1}">
 		<relationship name="effects">
+			<destination>{58b353fe-134f-4d10-80bf-7615d0c433f6}</destination>
 			<destination>{70667152-4e06-40f9-bb0b-075bf16839c1}</destination>
 		</relationship>
 	</object>
@@ -167,6 +171,7 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{12c6b29f-0be2-4613-8f59-50ef873d2438}" />
+	<object class="LoudnessMeter" id="{58b353fe-134f-4d10-80bf-7615d0c433f6}" />
 	<object class="MixerBusFader" id="{70667152-4e06-40f9-bb0b-075bf16839c1}" />
 	<object class="MixerBusFader" id="{ed18df60-ad23-4404-9613-b48708f5b2f1}" />
 </objects>
