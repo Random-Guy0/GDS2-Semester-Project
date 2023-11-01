@@ -18,15 +18,10 @@ public class MainMenuManager : MonoBehaviour
         ReturnToMainMenu();
         Time.timeScale = 1f;
     }
-    public void LoadLevelSelect()
-    {
-        //DontDestroyOnLoad(this);
-        SceneManager.LoadScene(1);
-    }
     
     public void LoadTutorialLevel()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Tutorial New");
     }
 
     public void LoadEgyptLevel()
