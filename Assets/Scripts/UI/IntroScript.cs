@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class IntroScript : MonoBehaviour
 {
-    [SerializeField] private float cutsceneEndTime = 34.5f;
+    [SerializeField] private float cutsceneEndTime = 34.25f;
     // Start is called before the first frame update
     void Start()
     {

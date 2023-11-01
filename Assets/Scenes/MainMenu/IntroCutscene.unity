@@ -271,6 +271,8 @@ GameObject:
   - component: {fileID: 199387976}
   - component: {fileID: 199387975}
   - component: {fileID: 199387974}
+  - component: {fileID: 199387977}
+  - component: {fileID: 199387978}
   m_Layer: 5
   m_Name: CutScene Canvas
   m_TagString: Untagged
@@ -362,6 +364,38 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!95 &199387977
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199387972}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!225 &199387978
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199387972}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &363892006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,7 +1428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.039215688, g: 0.039215688, b: 0.13333334, a: 1}
+  m_Color: {r: 0.0015663909, g: 0.0015663909, b: 0.03773582, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1452,6 +1486,8 @@ PlayableDirector:
     value: {fileID: 525217713}
   - key: {fileID: -2103666596835588847, guid: 6a4fd04382e05b44e822d1553cec793f, type: 2}
     value: {fileID: 1579391834}
+  - key: {fileID: -3272699224818251923, guid: 6a4fd04382e05b44e822d1553cec793f, type: 2}
+    value: {fileID: 199387977}
   m_ExposedReferences:
     m_References: []
 --- !u!225 &1546747298
