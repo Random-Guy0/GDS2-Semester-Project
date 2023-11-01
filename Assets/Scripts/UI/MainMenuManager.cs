@@ -16,11 +16,7 @@ public class MainMenuManager : MonoBehaviour
     private void Start()
     {
         ReturnToMainMenu();
-    }
-    public void LoadLevelSelect()
-    {
-        //DontDestroyOnLoad(this);
-        SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
     }
     
     public void LoadTutorialLevel()

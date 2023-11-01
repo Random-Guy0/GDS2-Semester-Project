@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Charles - Levels/Test Levels/Tutorial.unity
-    guid: 7ea60bd7f9fd99e4c95961a3a912b4cd
+    path: Assets/Scenes/MainMenu/IntroCutscene.unity
+    guid: 71dd553a7dad0cc47b8a1d5270916b80
   - enabled: 1
     path: Assets/Scenes/MainMenu/MainMenuStart.unity
     guid: b41bf642afb9ebb468a84684b0176a0d
