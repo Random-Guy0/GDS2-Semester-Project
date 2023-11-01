@@ -1434,6 +1434,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 5782404449363472846, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
+      propertyPath: startingAmmo
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6182496898987152024, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1441,6 +1445,10 @@ PrefabInstance:
     - target: {fileID: 6356558601176785758, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636351775345419368, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
+      propertyPath: maxHealth
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7699700623205936450, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
       propertyPath: m_Enabled
