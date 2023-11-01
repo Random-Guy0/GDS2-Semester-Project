@@ -20,7 +20,6 @@ public class ChargedRangedAttack : RangedAttack
         {
             chargeTime = Duration;
         }
-        Debug.LogWarning(chargeTime);
         
         ChargedAttackProjectile newProjectile = (ChargedAttackProjectile)Instantiate(Projectile, Vector3.zero, Quaternion.identity);
 

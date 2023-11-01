@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerAttackHandler : AttackHandler
 { 
@@ -44,6 +45,8 @@ public class PlayerAttackHandler : AttackHandler
     [SerializeField] private Animator weaponsUIanimator;
     [SerializeField] private float weaponSwitchDelay = 0.1f;
 
+    [SerializeField] private Slider bathBombSlider;
+
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -55,6 +58,8 @@ public class PlayerAttackHandler : AttackHandler
         animator.SetFloat("MeleeAttack2Speed", meleeAttack2Speed);
 
         SelectedWeapon = Weapons[0];
+
+        bathBombSlider.maxValue = Weapons[2].Attack.Duration;
     }
 
     public void DoAttack(InputAction.CallbackContext context)
@@ -94,6 +99,11 @@ public class PlayerAttackHandler : AttackHandler
     {
         if (ammoController.CanUseAmmo(RangedAttacks[index].AmmoCost))
         {
+            if (RangedAttacks[index] is ChargedRangedAttack)
+            {
+                StartCoroutine(BathBombChargeUI());
+            }
+            
             ammoController.UseAmmo(RangedAttacks[index].AmmoCost);
             SelectedWeapon.weaponAttackSound.Play();
             base.DoRangedAttack(index);
@@ -268,6 +278,21 @@ public class PlayerAttackHandler : AttackHandler
                 }
             }
         }
+    }
+
+    private IEnumerator BathBombChargeUI()
+    {
+        float chargeTime = 0f;
+        bathBombSlider.gameObject.SetActive(true);
+        
+        while (AttackButtonDown)
+        {
+            chargeTime += Time.deltaTime;
+            bathBombSlider.value = chargeTime;
+            yield return null;
+        }
+        
+        bathBombSlider.gameObject.SetActive(false);
     }
 }
 
