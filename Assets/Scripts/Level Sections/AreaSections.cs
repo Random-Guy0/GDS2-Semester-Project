@@ -14,6 +14,7 @@ public class AreaSections : MonoBehaviour
     public SectionsManager sectionManager;
     public int sectionCount = 0;
     private bool areaSectionDisabled;
+    public bool diagonalArea = false;
     void Start()
     {
         if (debugConsoleLog == true) { debugConsoleLog = true; }
@@ -32,16 +33,6 @@ public class AreaSections : MonoBehaviour
     {
         if (sectionCount == sectionsCompleted.Count && areaSectionDisabled == false)
         {
-            if (sectionManager.currentArea == 4)
-            {
-                if (debugConsoleLog == true) { Debug.Log("Final Area Finished"); }
-
-                nextAreaPortal.ableToEnter = true;
-                areaSectionDisabled = true;
-
-            }
-            else
-            {
                 if (debugConsoleLog == true) { Debug.Log("Area Section Ended"); }
 
                 nextAreaPortal.ableToEnter = true;
@@ -52,10 +43,8 @@ public class AreaSections : MonoBehaviour
                 --sectionCount;
                 if (debugConsoleLog == true) { Debug.LogWarning("sectionCount after = " + sectionCount); }
 
-            }
-
         }
-        else if (sectionManager.currentArea == 2 && sectionsCompleted[0] == true)
+        else if (diagonalArea == true && sectionsCompleted[0] == true)
         {
             if (areaSectionDisabled == false)
             {
@@ -70,6 +59,13 @@ public class AreaSections : MonoBehaviour
                 if (debugConsoleLog == true) { Debug.LogWarning("sectionCount after = " + sectionCount); }
 
             }
+        }
+        else
+        {
+            if (debugConsoleLog == true) { Debug.Log("Final Area Finished"); }
+
+            nextAreaPortal.ableToEnter = true;
+            areaSectionDisabled = true;
         }
 
     }

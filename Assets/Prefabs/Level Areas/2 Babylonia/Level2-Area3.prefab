@@ -93,7 +93,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &241876213493812660
 Transform:
   m_ObjectHideFlags: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   areaManager: {fileID: 96542336073713149}
   enemies:
   - {fileID: 8097184903401000183}
@@ -258,7 +259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7403161576484530195
 Transform:
   m_ObjectHideFlags: 0
@@ -289,6 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   areaManager: {fileID: 96542336073713149}
   enemies:
   - {fileID: 6540039412770392613}
@@ -788,7 +790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7280218815537010440
 Transform:
   m_ObjectHideFlags: 0
@@ -820,6 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   areaManager: {fileID: 96542336073713149}
   enemies:
   - {fileID: 1183856549722947861}
@@ -1054,6 +1057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd41749fa93b1b04f9db6e7e48c8951a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   nextAreaPortal: {fileID: 0}
   section:
   - {fileID: 462736099472253459}
@@ -1065,6 +1069,8 @@ MonoBehaviour:
   - {fileID: 2232088522459651673}
   areaEnemyManagers:
   - {fileID: 3757189612234629941}
+  - {fileID: 6219711572021579307}
+  - {fileID: 8142129846335757526}
   sectionsCompleted: 
   sectionManager: {fileID: 0}
   sectionCount: 0
@@ -2367,7 +2373,7 @@ Transform:
   - {fileID: 8115323472548876705}
   - {fileID: 8429041416557798795}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8614600155608661962
 GameObject:

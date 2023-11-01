@@ -1101,6 +1101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd41749fa93b1b04f9db6e7e48c8951a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   nextAreaPortal: {fileID: 0}
   section:
   - {fileID: 8935764701633842164}
@@ -1788,7 +1789,7 @@ Transform:
   - {fileID: 3997832537072674307}
   - {fileID: 5487311198019037871}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6882239807164300944
 GameObject:
@@ -1930,7 +1931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1009891629389977297
 Transform:
   m_ObjectHideFlags: 0
@@ -1968,6 +1969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   areaManager: {fileID: 1199061936525515608}
   enemies:
   - {fileID: 2456950259615878663}

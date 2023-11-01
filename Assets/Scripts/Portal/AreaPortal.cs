@@ -32,13 +32,9 @@ public class AreaPortal : Portal
             }
             base.EnterPortal(player);
             player.transform.position = teleportToPosition;
-            if (SceneManager.GetActiveScene().name != "Tutorial" && secManager.currentArea < 4)
+            if (SceneManager.GetActiveScene().name != "Tutorial New" && secManager.currentArea == 4)
             {
-                
-            }
-            else if (SceneManager.GetActiveScene().name != "Tutorial")
-            {
-                SceneManager.LoadScene("MainMenuStart");
+                SceneManager.LoadScene("Babylon Level");
             }
             if (debugConsoleLog == true) { Debug.Log("New Area Entered"); }
         }

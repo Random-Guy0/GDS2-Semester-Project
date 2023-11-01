@@ -68,7 +68,7 @@ public class SectionsManager : MonoBehaviour
 
             //Smooth the cam position to play position if cam was limited
             bool diagonalArea;
-            if (currentArea == 2) { diagonalArea = true; }
+            if (areas[currentArea].diagonalArea == true) { diagonalArea = true; }
             else { diagonalArea = false; }
             camFollow.ResetCamPosition(beginingSection, diagonalArea);
         }
@@ -97,7 +97,7 @@ public class SectionsManager : MonoBehaviour
         {
             ++currentArea;
             if (debugConsoleLog == true)    {   Debug.LogError("Current Area is " + currentArea);   }
-            if (currentArea == 2)
+            if (areas[currentArea].diagonalArea == true)
             {
                 if (debugConsoleLog == true)    {   Debug.Log("Diagonal Bool set to " + camFollow.diagonalArea);    }
                 camFollow.diagonalArea = true;

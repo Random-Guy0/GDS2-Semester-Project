@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd41749fa93b1b04f9db6e7e48c8951a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   nextAreaPortal: {fileID: 0}
   section:
   - {fileID: 37049874004806843}
@@ -139,6 +140,7 @@ MonoBehaviour:
   sectionsCompleted: 
   sectionManager: {fileID: 0}
   sectionCount: 0
+  diagonalArea: 1
 --- !u!1 &567557959216842970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,6 +1311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   areaManager: {fileID: 2673478342332381446}
   enemies:
   - {fileID: 4405640283697204921}

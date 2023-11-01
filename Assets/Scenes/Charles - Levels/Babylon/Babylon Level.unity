@@ -439,6 +439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7742995266883590637}
   - component: {fileID: 3364895652230956851}
+  - component: {fileID: 7742995266883590638}
   m_Layer: 0
   m_Name: Sections-Manager
   m_TagString: LevelSectionManager
@@ -459,9 +460,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: secManager
+      value: 
+      objectReference: {fileID: 3364895652230956851}
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: areaGameObject
       value: 
       objectReference: {fileID: 8219451868022718655}
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: debugConsoleLog
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: EgyptLevel1Audio
       value: 
@@ -587,6 +596,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: secManager
+      value: 
+      objectReference: {fileID: 3364895652230956851}
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: areaGameObject
+      value: 
+      objectReference: {fileID: 6851273789089269291}
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: debugConsoleLog
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: EgyptLevel1Audio
       value: 
@@ -753,6 +774,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level2-Area3
       objectReference: {fileID: 0}
+    - target: {fileID: 8609341589988421913, guid: e16203bf56c4f644e9d2ed0196d9b281, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9055861556294331259, guid: e16203bf56c4f644e9d2ed0196d9b281, type: 3}
       propertyPath: cam
       value: 
@@ -776,6 +801,11 @@ MonoBehaviour:
 --- !u!4 &2307298167784026331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 199346028452175112, guid: e16203bf56c4f644e9d2ed0196d9b281, type: 3}
+  m_PrefabInstance: {fileID: 2307298167784026329}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2307298167784026332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8609341589988421913, guid: e16203bf56c4f644e9d2ed0196d9b281, type: 3}
   m_PrefabInstance: {fileID: 2307298167784026329}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2477601213444646829
@@ -866,6 +896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b86df614a61ff84dbbe2575e9cd1fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   mainCamera: {fileID: 6430756542228811133}
   currentArea: 0
   playerAreaIn: 0
@@ -889,6 +920,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: secManager
+      value: 
+      objectReference: {fileID: 3364895652230956851}
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: areaGameObject
+      value: 
+      objectReference: {fileID: 2307298167784026332}
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: debugConsoleLog
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: EgyptLevel1Audio
       value: 
@@ -1456,6 +1499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3e31a18c9cde74ab5da0e35a563fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   thisCamera: {fileID: 6430756542228811133}
   cameraSpeed: 3.3
   camRecenter: 0
@@ -1585,11 +1629,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level2-Area4
       objectReference: {fileID: 0}
+    - target: {fileID: 6691258573120442489, guid: 338a475e74fb9994cbc0b3cffd45289b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 338a475e74fb9994cbc0b3cffd45289b, type: 3}
+--- !u!1 &6851273789089269291 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6691258573120442489, guid: 338a475e74fb9994cbc0b3cffd45289b, type: 3}
+  m_PrefabInstance: {fileID: 6851273789089269290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6851273789089269292 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1199061936525515608, guid: 338a475e74fb9994cbc0b3cffd45289b, type: 3}
@@ -1697,6 +1750,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level2-Area2
       objectReference: {fileID: 0}
+    - target: {fileID: 4723631776651817614, guid: 63286ca86dd752f4a89f2f4a07995e05, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1716,6 +1773,11 @@ MonoBehaviour:
 --- !u!4 &7218662734663564028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6786186971420265468, guid: 63286ca86dd752f4a89f2f4a07995e05, type: 3}
+  m_PrefabInstance: {fileID: 7218662734663564026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7218662734663564029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4723631776651817614, guid: 63286ca86dd752f4a89f2f4a07995e05, type: 3}
   m_PrefabInstance: {fileID: 7218662734663564026}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7431899501166896926
@@ -1834,6 +1896,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7742995266883590638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361108004926936577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 027423c41c4be874b9d87b6bdf4d3724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debuggingSwitch: 0
+  sectionEnemyManager:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  areaSections: []
+  areaPortal: []
+  sectionManager: {fileID: 0}
+  followPlayer: {fileID: 0}
 --- !u!114 &8010028751447808615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1902,6 +1990,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: secManager
+      value: 
+      objectReference: {fileID: 3364895652230956851}
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: areaGameObject
+      value: 
+      objectReference: {fileID: 7218662734663564029}
+    - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
+      propertyPath: debugConsoleLog
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -5167635935346954111, guid: d2fdb98b17717a549a209c28f8d14cc1, type: 3}
       propertyPath: EgyptLevel1Audio
       value: 
