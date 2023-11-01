@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{402ba227-7f4f-4968-b453-d3e48e9e8371}">
 		<property name="assetPath">
-			<value>UI Back:Reject.wav</value>
+			<value>UI Back-Reject.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
