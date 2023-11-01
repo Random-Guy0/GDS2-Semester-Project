@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6824426982761741076}
   - component: {fileID: 2043451435238128019}
   - component: {fileID: 7704517458562388074}
+  - component: {fileID: 723627073144149250}
   m_Layer: 0
   m_Name: Flowerbeds
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6824426982761741076
 SpriteRenderer:
@@ -115,3 +116,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   <Weaknesses>k__BackingField: 
+--- !u!60 &723627073144149250
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508839859789032973}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.57617056, y: 0.96214557}
+      - {x: -0.63674647, y: 0.72904676}
+      - {x: -0.992677, y: 0.2149086}
+      - {x: -0.992677, y: -0.875508}
+      - {x: -0.6851396, y: -1.0214541}
+      - {x: 0.74658024, y: -1.0132382}
+      - {x: 1.014646, y: -0.83889264}
+      - {x: 0.9853539, y: 0.28473163}
+      - {x: 0.7556325, y: 0.64516145}
+      - {x: 0.61426944, y: 0.9340925}
+  m_UseDelaunayMesh: 0
