@@ -1155,6 +1155,7 @@ MonoBehaviour:
   sectionsCompleted: 
   sectionManager: {fileID: 0}
   sectionCount: 0
+  diagonalArea: 0
 --- !u!61 &2957464425939476194
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1286,14 +1287,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1220910802860036654, guid: 69bca04ef8dcb6f42b2cf446ad7a7c0f, type: 3}
-      propertyPath: nextAreaPortal
-      value: 
-      objectReference: {fileID: 1536946893}
-    - target: {fileID: 1220910802860036654, guid: 69bca04ef8dcb6f42b2cf446ad7a7c0f, type: 3}
-      propertyPath: sectionManager
-      value: 
-      objectReference: {fileID: 934395832}
     - target: {fileID: 1391961889132715930, guid: 69bca04ef8dcb6f42b2cf446ad7a7c0f, type: 3}
       propertyPath: nextAreaPortal
       value: 
@@ -1358,8 +1351,7 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1369598277}
-    m_RemovedComponents:
-    - {fileID: 1220910802860036654, guid: 69bca04ef8dcb6f42b2cf446ad7a7c0f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

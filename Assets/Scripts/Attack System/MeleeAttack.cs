@@ -20,15 +20,15 @@ public class MeleeAttack : Attack
         Vector2 origin = GetAttackOrigin(direction, attackerSize, attackerPosition);
         
 #if UNITY_EDITOR
-        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), Color.green, Duration);
-        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x + HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration);
-        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration);
-        Debug.DrawLine(new Vector3(origin.x - HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration);  
+        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), Color.green, Duration - AttackStartDelay);
+        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x + HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration - AttackStartDelay);
+        Debug.DrawLine(new Vector3(origin.x + HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration - AttackStartDelay);
+        Debug.DrawLine(new Vector3(origin.x - HitSize.x * 0.5f, origin.y + HitSize.y * 0.5f), new Vector3(origin.x - HitSize.x * 0.5f, origin.y - HitSize.y * 0.5f), Color.green, Duration - AttackStartDelay);  
 #endif
         
         List<Health> allHits = new List<Health>();
-        float currentTime = 0f;
-
+        float currentTime = AttackStartDelay;
+        
         while (currentTime < Duration)
         {
             RaycastHit2D[] hits = Physics2D.BoxCastAll(origin, HitSize, 0f, Vector2.zero);
