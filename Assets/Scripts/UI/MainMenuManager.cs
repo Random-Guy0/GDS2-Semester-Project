@@ -25,7 +25,7 @@ public class MainMenuManager : MonoBehaviour
     
     public void LoadTutorialLevel()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Tutorial New");
     }
 
     public void LoadEgyptLevel()

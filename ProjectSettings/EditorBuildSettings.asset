@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Charles - Levels/Babylon/Babylon Level.unity
     guid: 032e7a324309540429dc5c5efe2dbe84
+  - enabled: 1
+    path: Assets/Scenes/Tutorial/Tutorial New.unity
+    guid: 0960d460f474d254b9466e1d2e73a0a0
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 24ed174a356dc0a4897cca30e427653c, type: 2}
