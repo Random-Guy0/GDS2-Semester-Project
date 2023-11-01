@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(Keyboard.current.escapeKey.wasPressedThisFrame);
+        //Debug.Log(Keyboard.current.escapeKey.wasPressedThisFrame);
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             if (Paused)
