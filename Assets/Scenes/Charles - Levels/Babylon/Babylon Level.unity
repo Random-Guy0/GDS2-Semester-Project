@@ -928,10 +928,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level2-Area3
       objectReference: {fileID: 0}
-    - target: {fileID: 8609341589988421913, guid: e16203bf56c4f644e9d2ed0196d9b281, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9055861556294331259, guid: e16203bf56c4f644e9d2ed0196d9b281, type: 3}
       propertyPath: cam
       value: 
