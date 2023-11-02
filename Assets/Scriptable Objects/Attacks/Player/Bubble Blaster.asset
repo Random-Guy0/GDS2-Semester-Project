@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec832b6151a74d944b966cbbcb79e3f5, type: 3}
   m_Name: Bubble Blaster
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 12
+  <Damage>k__BackingField: 5
   <Target>k__BackingField: 0
+  <AttackStartDelay>k__BackingField: 0
   <Duration>k__BackingField: 0.2
   <DamageTypes>k__BackingField: 
   <DamageTypeAttackMultiplier>k__BackingField: 2
+  <CanMoveVertically>k__BackingField: 0
   <Projectile>k__BackingField: {fileID: 7537023358800004572, guid: 86c9726c6e0cce54f9d724da39a8e70a, type: 3}
-  <Range>k__BackingField: 5
+  <Range>k__BackingField: -1
   <Speed>k__BackingField: 7
   <AmmoCost>k__BackingField: 1
-  <CanMoveVertically>k__BackingField: 0

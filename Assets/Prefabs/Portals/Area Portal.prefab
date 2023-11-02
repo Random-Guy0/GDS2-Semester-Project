@@ -90,6 +90,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportToPosition: {x: 0, y: 0}
+  secManager: {fileID: 0}
+  ableToEnter: 0
+  areaGameObject: {fileID: 0}
+  alreadyActivated: 0
 --- !u!95 &979165910322364617
 Animator:
   serializedVersion: 5
