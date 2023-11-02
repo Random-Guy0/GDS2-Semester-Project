@@ -306,7 +306,7 @@ MonoBehaviour:
   hurtSound: {fileID: 0}
   deathSound: {fileID: 2042402067811640864}
   impactSound: {fileID: 8870319214976502050}
-  dropRatePercentage: 25
+  dropRatePercentage: 35
   drop: {fileID: 5034651603994373109, guid: c3b2cab1d43737e44b2f9b648c6b4d86, type: 3}
   healthAmount: 1
 --- !u!114 &8870319214976502050
