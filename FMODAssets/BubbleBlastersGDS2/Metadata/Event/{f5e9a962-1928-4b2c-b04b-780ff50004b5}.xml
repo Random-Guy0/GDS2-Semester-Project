@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{f5e9a962-1928-4b2c-b04b-780ff50004b5}">
 		<property name="name">
-			<value>BabylonLevelBossFight</value>
+			<value>Babylon Level - BossFight</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -100,6 +100,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{601a32b2-00d3-44f3-bc07-128e4879a28f}">
+		<property name="volume">
+			<value>-6.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>

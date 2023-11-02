@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{732579f9-a645-4ca1-ac04-ef7b261d5d33}">
 		<property name="name">
-			<value>Raptor Player Spotted (One Shot)</value>
+			<value>Raptor - Player Spotted</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{712f6c31-dc31-4d47-9614-b03f1c999653}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{ed185586-529d-4874-84f4-1aeec5dd5563}</destination>
 		</relationship>
@@ -95,8 +98,8 @@
 	<object class="MixerBusPanner" id="{461f3c7b-bcf2-4999-bbbf-ca8b189ed517}" />
 	<object class="MixerBusEffectChain" id="{ed185586-529d-4874-84f4-1aeec5dd5563}">
 		<relationship name="effects">
-			<destination>{9598e31a-d988-47ed-8378-f4bb327a3009}</destination>
 			<destination>{72606f5a-d3fb-4d5a-84cb-de5adfd2d2c6}</destination>
+			<destination>{9598e31a-d988-47ed-8378-f4bb327a3009}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ae2c1700-3d5c-4e40-a1ed-e26e44b1ffe3}" />
@@ -109,10 +112,10 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{6318a04d-18a6-4143-977b-ac426ab40bc7}" />
+	<object class="MixerBusFader" id="{72606f5a-d3fb-4d5a-84cb-de5adfd2d2c6}" />
 	<object class="LoudnessMeter" id="{9598e31a-d988-47ed-8378-f4bb327a3009}">
 		<property name="loudnessTarget">
-			<value>-14</value>
+			<value>-24</value>
 		</property>
 	</object>
-	<object class="MixerBusFader" id="{72606f5a-d3fb-4d5a-84cb-de5adfd2d2c6}" />
 </objects>
