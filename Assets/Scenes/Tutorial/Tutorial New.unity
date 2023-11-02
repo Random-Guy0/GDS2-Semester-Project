@@ -541,11 +541,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1071122708
-      Data2: 1205956193
-      Data3: -656100202
-      Data4: -71111047
-    Path: event:/EgyptLevel1
+      Data1: -1239524074
+      Data2: 1216918593
+      Data3: 1676326276
+      Data4: -720945988
+    Path: event:/Cutscene Track
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -612,6 +612,9 @@ MonoBehaviour:
   - {fileID: 294334650}
   areas:
   - {fileID: 1475598788}
+  version1Music: {fileID: 853364547}
+  version2Music: {fileID: 0}
+  bossfightMusic: {fileID: 0}
 --- !u!114 &934395833
 MonoBehaviour:
   m_ObjectHideFlags: 0

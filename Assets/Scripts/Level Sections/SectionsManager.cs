@@ -106,14 +106,22 @@ public class SectionsManager : MonoBehaviour
             switch (currentArea)
             {
                 case 2:
-                    version2Music.Play();
-                    StartCoroutine(FadeTracks(version1Music, version2Music, 2f));
-                    version1Music.Stop();
+                    if (version2Music != null)
+                    {
+                        version2Music.Play();
+                        StartCoroutine(FadeTracks(version1Music, version2Music, 2f));
+                        version1Music.Stop();
+                    }
+
                     break;
                 case 3:
-                    bossfightMusic.Play();
-                    StartCoroutine(FadeTracks(version2Music, bossfightMusic, 1f));
-                    version2Music.Stop();
+                    if (bossfightMusic != null)
+                    {
+                        bossfightMusic.Play();
+                        StartCoroutine(FadeTracks(version2Music, bossfightMusic, 1f));
+                        version2Music.Stop();
+                    }
+
                     break;
             }
             
