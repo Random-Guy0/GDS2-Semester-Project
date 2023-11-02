@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b52c483579cb2a45b1ee993cc47a705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 40
   <Weaknesses>k__BackingField: 02000000
   hurtSound: {fileID: 0}
   deathSound: {fileID: -8824528265323626697}

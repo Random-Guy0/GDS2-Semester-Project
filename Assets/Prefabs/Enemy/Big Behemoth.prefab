@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689bfc6412b08c044b648d30826f98fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.75
+  speed: 1
   chaseDistance: 15
   stopDistance: 4
   lookAheadDistance: 2.25
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b52c483579cb2a45b1ee993cc47a705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 80
   <Weaknesses>k__BackingField: 02000000
   hurtSound: {fileID: 0}
   deathSound: {fileID: -3440174239188913367}
