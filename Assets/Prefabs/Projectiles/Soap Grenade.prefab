@@ -96,6 +96,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2066678052054794070, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
       insertIndex: 2
       addedObject: {fileID: 7038892992658947043}
+    - targetCorrespondingSourceObject: {fileID: 2066678052054794070, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4783614000808105613}
   m_SourcePrefab: {fileID: 100100000, guid: fd484f63b967c8545a473b0b694388bb, type: 3}
 --- !u!1 &7724238140117031113 stripped
 GameObject:
@@ -120,3 +123,35 @@ MonoBehaviour:
   gravity: 1
   bounceFactor: 10
   explosionPrefab: {fileID: 3732663908273955644, guid: e9470564b4b15024da59048e8b9a581e, type: 3}
+  explosionSound: {fileID: -4783614000808105613}
+--- !u!114 &-4783614000808105613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7724238140117031113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1886426345
+      Data2: 1251751716
+      Data3: -184075868
+      Data4: -1259460672
+    Path: event:/Player - Soap Grenade Blast
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

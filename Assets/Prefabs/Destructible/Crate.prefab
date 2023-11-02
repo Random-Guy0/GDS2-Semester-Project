@@ -166,6 +166,8 @@ GameObject:
   - component: {fileID: 2216133613823911265}
   - component: {fileID: 1985843182146064134}
   - component: {fileID: 2987254782119623345}
+  - component: {fileID: 8870319214976502050}
+  - component: {fileID: 2042402067811640864}
   m_Layer: 0
   m_Name: Crate
   m_TagString: Untagged
@@ -301,6 +303,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 6
   <Weaknesses>k__BackingField: 
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: 2042402067811640864}
+  impactSound: {fileID: 8870319214976502050}
   dropRatePercentage: 25
   drop: {fileID: 5034651603994373109, guid: c3b2cab1d43737e44b2f9b648c6b4d86, type: 3}
   healthAmount: 1
+--- !u!114 &8870319214976502050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8678156977561434510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1394750609
+      Data2: 1098337435
+      Data3: 1271896499
+      Data4: -138680804
+    Path: event:/Player - Melee Attacks Impact
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &2042402067811640864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8678156977561434510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -733492662
+      Data2: 1294771778
+      Data3: 329829521
+      Data4: 1793722006
+    Path: event:/UI - Crate Break
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

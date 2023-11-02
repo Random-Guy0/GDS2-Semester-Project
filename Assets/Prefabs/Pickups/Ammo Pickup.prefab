@@ -8,6 +8,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: EventReference.Path
+      value: event:/UI - Soap Ammo
+      objectReference: {fileID: 0}
+    - target: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: OverrideMinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: -1915360055
+      objectReference: {fileID: 0}
+    - target: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1326897225
+      objectReference: {fileID: 0}
+    - target: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: 238933685
+      objectReference: {fileID: 0}
+    - target: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: 1359519862
+      objectReference: {fileID: 0}
     - target: {fileID: 4084306337204938366, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -111,6 +139,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5058453269982079373}
   m_SourcePrefab: {fileID: 100100000, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+--- !u!114 &1654555635024358492 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+  m_PrefabInstance: {fileID: 8042906776578155308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515157430051554823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4515157430051554823 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5852193360889357611, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
@@ -128,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc9f2edef3346948b0beb3f4af6c6c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectSound: {fileID: 1654555635024358492}
   <AmmoAmount>k__BackingField: 3
 --- !u!95 &5058453269982079373
 Animator:

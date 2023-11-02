@@ -16,6 +16,10 @@ GameObject:
   - component: {fileID: 4836008297038854800}
   - component: {fileID: -3218021593331696552}
   - component: {fileID: -1875051802149849377}
+  - component: {fileID: 369229275553625499}
+  - component: {fileID: -4192323463374804290}
+  - component: {fileID: -3365777291097599819}
+  - component: {fileID: 4351120219116767755}
   m_Layer: 3
   m_Name: Raptor
   m_TagString: Untagged
@@ -129,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6f6d88ba5cc8446b7a521c00d1ff03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raptorNoise: {fileID: 4351120219116767755}
 --- !u!114 &4641396632519100213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +148,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 15
   <Weaknesses>k__BackingField: 01000000
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: 369229275553625499}
+  impactSound: {fileID: -4192323463374804290}
   detectPlayerComponent: {fileID: 4005161209498471027}
   enemyAttackHandler: {fileID: 4836008297038854800}
   enemyRigidbody: {fileID: 7232158696684844300}
@@ -168,6 +176,7 @@ MonoBehaviour:
   <MeleeAttacks>k__BackingField:
   - {fileID: 11400000, guid: dc6d95cb9f7c9a5429ce4e073c95a339, type: 2}
   <RangedAttacks>k__BackingField: []
+  attackSound: {fileID: -3365777291097599819}
   stopDistance: 2
   playerAttackDistance: 1.75
 --- !u!95 &-3218021593331696552
@@ -225,3 +234,127 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.07}
   m_Size: {x: 1.67, y: 0.9}
   m_Direction: 1
+--- !u!114 &369229275553625499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613337139579968509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -488990995
+      Data2: 1157735119
+      Data3: -554932561
+      Data4: -98995091
+    Path: event:/Raptor - Death
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &-4192323463374804290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613337139579968509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
+--- !u!114 &-3365777291097599819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613337139579968509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
+--- !u!114 &4351120219116767755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613337139579968509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1931835897
+      Data2: 1285662277
+      Data3: 2079261868
+      Data4: 861740326
+    Path: event:/Raptor - Player Spotted
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

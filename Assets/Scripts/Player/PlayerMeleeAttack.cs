@@ -5,9 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Attacks/Melee Attacks/Player Melee Attack", fileName = "new Player Melee Attack")]
 public class PlayerMeleeAttack : MeleeAttack
 {
+    [field: SerializeField] public FMODUnity.EventReference ImpactSound { get; private set; }
     public override IEnumerator DoAttack(Vector2 direction, Vector2 attackerSize,
         Vector2 attackerPosition, AttackHandler attacker = null)
     {
+        yield return WaitToAttack();
+        
         if (!CanMoveVertically)
         {
             direction.y = 0f;

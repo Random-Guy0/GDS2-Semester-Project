@@ -19,6 +19,14 @@ MonoBehaviour:
   <DamageTypes>k__BackingField: 
   <DamageTypeAttackMultiplier>k__BackingField: 2
   <CanMoveVertically>k__BackingField: 0
+  <AttackSound>k__BackingField:
+    Guid:
+      Data1: 1857520985
+      Data2: 1113980758
+      Data3: -1725999695
+      Data4: -1293565996
+    Path: event:/Rifle Grunt - Rifle Shoot
+  <AttackSoundDelay>k__BackingField: 0
   <Projectile>k__BackingField: {fileID: 1412099055109086251, guid: 19d1664f7cb253948a9b4a5a44a47114, type: 3}
   <Range>k__BackingField: -1
   <Speed>k__BackingField: 7

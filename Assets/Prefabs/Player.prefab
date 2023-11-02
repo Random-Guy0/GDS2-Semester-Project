@@ -562,6 +562,8 @@ GameObject:
   - component: {fileID: 5782404449363472846}
   - component: {fileID: 8666489073779572076}
   - component: {fileID: 105814648231285784}
+  - component: {fileID: 6380878883233161428}
+  - component: {fileID: 1558190965745883914}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -633,7 +635,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6556829, y: 1.269193}
+  m_Size: {x: 0.6, y: 1.269193}
   m_EdgeRadius: 0
 --- !u!61 &1975238070001126628
 BoxCollider2D:
@@ -934,7 +936,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 6
   <Weaknesses>k__BackingField: 
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: 6380878883233161428}
+  impactSound: {fileID: 0}
   spriteRenderer: {fileID: 8480036590840728028}
+  lowHealthSound: {fileID: 1558190965745883914}
 --- !u!114 &-2898517233979925625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,6 +959,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 507b5bcd9d874a14494e8b7510ffe6ed, type: 2}
   - {fileID: 11400000, guid: 7363ed20b973d1340ac592ba14d66426, type: 2}
   - {fileID: 11400000, guid: cf3ac0386b14b324ea3c3797dfb86813, type: 2}
+  attackSound: {fileID: 0}
   <Weapons>k__BackingField:
   - <Attack>k__BackingField: {fileID: 11400000, guid: c9cc7ef37a9a77e4c92f6f250f48d442, type: 2}
     <Unlocked>k__BackingField: 1
@@ -1027,7 +1034,69 @@ MonoBehaviour:
       Data2: 1252245672
       Data3: 800350118
       Data4: 463651298
-    Path: event:/Footsteps Sand
+    Path: event:/Footsteps - Sand
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &6380878883233161428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163123339647618832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1296426192
+      Data2: 1165017141
+      Data3: -561926486
+      Data4: 1537096814
+    Path: event:/Player - Death
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1558190965745883914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163123339647618832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 517473862
+      Data2: 1204986055
+      Data3: 511899021
+      Data4: -61579609
+    Path: event:/Player - Low Health
   Event: 
   PlayEvent: 0
   StopEvent: 0

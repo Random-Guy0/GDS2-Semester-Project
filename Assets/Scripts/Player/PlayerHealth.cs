@@ -1,12 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public class PlayerHealth : Health
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
     private PlayerAttackHandler attackHandler;
+
+    [SerializeField] private StudioEventEmitter lowHealthSound;
+    
     public override int CurrentHealth
     {
         get => base.CurrentHealth;
@@ -24,6 +28,16 @@ public class PlayerHealth : Health
         attackHandler = GetComponent<PlayerAttackHandler>();
         OnTakeDamage += attackHandler.InterruptAttack;
         OnTakeDamage += TakeDamage;
+    }
+
+    public override bool TakeDamage(int amount, Attack attack)
+    {
+        if (CurrentHealth - amount == 1)
+        {
+            lowHealthSound.Play();
+        }
+        
+        return base.TakeDamage(amount, attack);
     }
 
     public void Heal(int amount)

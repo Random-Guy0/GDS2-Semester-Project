@@ -29,6 +29,7 @@ public class MeleeAttack : Attack
         List<Health> allHits = new List<Health>();
         float currentTime = AttackStartDelay;
         
+        
         while (currentTime < Duration)
         {
             RaycastHit2D[] hits = Physics2D.BoxCastAll(origin, HitSize, 0f, Vector2.zero);

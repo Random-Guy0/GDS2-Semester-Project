@@ -19,6 +19,8 @@ public class RaptorDetectPlayer : MonoBehaviour, IEnemyMovement
 
     private Vector2 playerLastPosition;
 
+    [SerializeField] private FMODUnity.StudioEventEmitter raptorNoise;
+
     void Start()
     {
         initialY = this.transform.position.y;
@@ -31,6 +33,7 @@ public class RaptorDetectPlayer : MonoBehaviour, IEnemyMovement
     }
 
     void OnBecameVisible(){
+        raptorNoise.Play();
         enabled = true;
     }
 

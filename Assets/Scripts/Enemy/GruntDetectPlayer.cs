@@ -23,6 +23,7 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
     public bool CanMove { get; set; } = true;
 
     [SerializeField] private Animator animator;
+    [SerializeField] private FMODUnity.StudioEventEmitter gruntNoise;
 
     void Start()
     {
@@ -43,6 +44,11 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
 
     void OnBecameVisible()
     {
+        if (gruntNoise != null)
+        {
+            gruntNoise.Play();
+        }
+
         enabled = true;
     }
 

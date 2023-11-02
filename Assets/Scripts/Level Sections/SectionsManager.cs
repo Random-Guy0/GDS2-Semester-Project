@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,10 @@ public class SectionsManager : MonoBehaviour
 
     [SerializeField] public List<Transform> camAreaPosition;
     [SerializeField] public List<AreaSections> areas = new List<AreaSections>();
+
+    [SerializeField] private StudioEventEmitter version1Music;
+    [SerializeField] private StudioEventEmitter version2Music;
+    [SerializeField] private StudioEventEmitter bossfightMusic;
 
     void Start()
     {
@@ -97,6 +102,21 @@ public class SectionsManager : MonoBehaviour
         if (currentArea < 3)
         {
             ++currentArea;
+
+            switch (currentArea)
+            {
+                case 2:
+                    version2Music.Play();
+                    StartCoroutine(FadeTracks(version1Music, version2Music, 2f));
+                    version1Music.Stop();
+                    break;
+                case 3:
+                    bossfightMusic.Play();
+                    StartCoroutine(FadeTracks(version2Music, bossfightMusic, 1f));
+                    version2Music.Stop();
+                    break;
+            }
+            
             if (debugConsoleLog == true)    {   Debug.LogError("Current Area is " + currentArea);   }
             if (areas[currentArea].diagonalArea == true)
             {
@@ -222,5 +242,24 @@ public class SectionsManager : MonoBehaviour
                 camFollow.OnOffSwitchY(false);
                 break;
         }
+    }
+
+    private IEnumerator FadeTracks(StudioEventEmitter track1, StudioEventEmitter track2, float fadeDuration)
+    {
+        float timer = 0f;
+        track1.EventInstance.setVolume(1f);
+        track2.EventInstance.setVolume(0f);
+
+        while (timer <= fadeDuration)
+        {
+            timer += Time.deltaTime;
+            float percent = timer / fadeDuration;
+            track2.EventInstance.setVolume(percent);
+            track1.EventInstance.setVolume(1f - percent);
+            
+            yield return null;
+        }
+        track1.EventInstance.setVolume(0f);
+        track2.EventInstance.setVolume(1f);
     }
 }

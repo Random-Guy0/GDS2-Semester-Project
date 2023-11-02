@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 205769703443517595, guid: eb529524626737743802f9fcbf8985c2, type: 3}
       propertyPath: m_Name
-      value: LongRangedGrunt
+      value: RifleGrunt
       objectReference: {fileID: 0}
     - target: {fileID: 2585495285066415758, guid: eb529524626737743802f9fcbf8985c2, type: 3}
       propertyPath: m_Sprite
@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 98326b200cd9f9b4aa09be6e098896d9, type: 2}
+    - target: {fileID: 5715400789707310663, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: impactSound
+      value: 
+      objectReference: {fileID: 6270670746694000962}
     - target: {fileID: 7416225508900568699, guid: eb529524626737743802f9fcbf8985c2, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.132
@@ -105,3 +109,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+--- !u!114 &6270670746694000962 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3740693012547359722, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+  m_PrefabInstance: {fileID: 1951050759813795156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

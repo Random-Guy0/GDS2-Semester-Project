@@ -17,6 +17,11 @@ GameObject:
   - component: {fileID: 5715400789707310663}
   - component: {fileID: 7903826979980892148}
   - component: {fileID: 3501993973818938130}
+  - component: {fileID: 6968774632970206505}
+  - component: {fileID: 7946673276329569309}
+  - component: {fileID: -8023427117034464942}
+  - component: {fileID: -3740693012547359722}
+  - component: {fileID: 3684306116300545091}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -114,6 +119,7 @@ MonoBehaviour:
   target: {fileID: 0}
   <StunDuration>k__BackingField: 0.5
   animator: {fileID: 3501993973818938130}
+  gruntNoise: {fileID: 3684306116300545091}
 --- !u!50 &2980102513536050860
 Rigidbody2D:
   serializedVersion: 4
@@ -245,6 +251,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   <Weaknesses>k__BackingField: 00000000
+  hurtSound: {fileID: 6968774632970206505}
+  deathSound: {fileID: 7946673276329569309}
+  impactSound: {fileID: -3740693012547359722}
   detectPlayerComponent: {fileID: 8831299249130729824}
   enemyAttackHandler: {fileID: 7903826979980892148}
   enemyRigidbody: {fileID: 2980102513536050860}
@@ -270,6 +279,7 @@ MonoBehaviour:
   <MeleeAttacks>k__BackingField:
   - {fileID: 11400000, guid: c1a3c638dd1a0ce48b41a7362b7dde56, type: 2}
   <RangedAttacks>k__BackingField: []
+  attackSound: {fileID: -8023427117034464942}
   stopDistance: 1.5
   attackAnimation: {fileID: 7400000, guid: 843be83d426b7bd40862687d451ed738, type: 2}
   attackOrigin: {fileID: 7416225508900568699}
@@ -293,6 +303,161 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &6968774632970206505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205769703443517595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -790103697
+      Data2: 1160299439
+      Data3: -91803243
+      Data4: -1565155685
+    Path: event:/Grunt - Hurt
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &7946673276329569309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205769703443517595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -361331388
+      Data2: 1251732755
+      Data3: 1215324818
+      Data4: -2056618895
+    Path: event:/Grunt - Death
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &-8023427117034464942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205769703443517595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1574062757
+      Data2: 1184210321
+      Data3: 1456133047
+      Data4: 1491131569
+    Path: event:/Grunt - Melee Attack
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &-3740693012547359722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205769703443517595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1394750609
+      Data2: 1098337435
+      Data3: 1271896499
+      Data4: -138680804
+    Path: event:/Player - Melee Attacks Impact
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &3684306116300545091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205769703443517595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1731724187
+      Data2: 1197326398
+      Data3: 2024795071
+      Data4: 687024326
+    Path: event:/Grunt - Noises
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &4475993860844160326
 GameObject:
   m_ObjectHideFlags: 0

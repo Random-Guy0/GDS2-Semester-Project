@@ -14,8 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 1
   <Target>k__BackingField: 1
+  <AttackStartDelay>k__BackingField: 0
   <Duration>k__BackingField: 0.75
   <DamageTypes>k__BackingField: 
   <DamageTypeAttackMultiplier>k__BackingField: 2
   <CanMoveVertically>k__BackingField: 1
+  <AttackSound>k__BackingField:
+    Guid:
+      Data1: 1112263811
+      Data2: 1176790234
+      Data3: 998183065
+      Data4: 614386330
+    Path: event:/Raptor - Swooping
+  <AttackSoundDelay>k__BackingField: 0
   <HitSize>k__BackingField: {x: 1, y: 1}

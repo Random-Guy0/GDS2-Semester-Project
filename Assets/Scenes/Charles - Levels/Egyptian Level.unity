@@ -868,6 +868,9 @@ GameObject:
   - component: {fileID: 7497794205527980902}
   - component: {fileID: 4592031619764984954}
   - component: {fileID: 8731415241199789652}
+  - component: {fileID: 8731415241199789655}
+  - component: {fileID: 8731415241199789654}
+  - component: {fileID: 8731415241199789653}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -2444,6 +2447,99 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &8731415241199789653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888616240109895489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1544696795
+      Data2: 1134864763
+      Data3: 482968503
+      Data4: -1757254356
+    Path: event:/Egpyt Atmosphere
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &8731415241199789654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888616240109895489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 423931251
+      Data2: 1232052370
+      Data3: 1676713908
+      Data4: -667768537
+    Path: event:/EgyptLevelBossFight
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &8731415241199789655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888616240109895489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1088345421
+      Data2: 1108327472
+      Data3: -798748027
+      Data4: -1825896515
+    Path: event:/EgyptLevelVersion2
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &8980422686242739883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2597,6 +2693,9 @@ MonoBehaviour:
   - {fileID: 6453545721515227205}
   - {fileID: 7770841095570045891}
   - {fileID: 1808600315047266334}
+  version1Music: {fileID: 8731415241199789652}
+  version2Music: {fileID: 8731415241199789655}
+  bossfightMusic: {fileID: 8731415241199789654}
 --- !u!114 &9180300626388588826
 MonoBehaviour:
   m_ObjectHideFlags: 0

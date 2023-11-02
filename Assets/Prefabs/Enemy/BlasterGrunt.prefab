@@ -233,6 +233,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 205769703443517595, guid: eb529524626737743802f9fcbf8985c2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7828139176342503298}
+    - targetCorrespondingSourceObject: {fileID: 205769703443517595, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3928641756279232904}
+    - targetCorrespondingSourceObject: {fileID: 205769703443517595, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4617359052851510008}
   m_SourcePrefab: {fileID: 100100000, guid: eb529524626737743802f9fcbf8985c2, type: 3}
 --- !u!50 &1500282689715701087 stripped
 Rigidbody2D:
@@ -263,6 +269,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   <Weaknesses>k__BackingField: 00000000
+  hurtSound: {fileID: 6719212045579689690}
+  deathSound: {fileID: 6035141706130264046}
+  impactSound: {fileID: 8187266891076112357}
   detectPlayerComponent: {fileID: 5117905270716027539}
   enemyAttackHandler: {fileID: 5780766604074972167}
   enemyRigidbody: {fileID: 1500282689715701087}
@@ -276,6 +285,8 @@ MonoBehaviour:
   shieldAnimator: {fileID: 2929088305776467606}
   shieldBreakAnimation: {fileID: 7400000, guid: fdf34b8b61f946e468a68ff8dc9d5700, type: 2}
   shieldCollider: {fileID: 7828139176342503298}
+  shieldHitSound: {fileID: -3928641756279232904}
+  shieldBreakSound: {fileID: 4617359052851510008}
 --- !u!61 &7828139176342503298
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -321,6 +332,68 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.37, y: 0.90625}
   m_EdgeRadius: 0
+--- !u!114 &-3928641756279232904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562826119655813992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1683869447
+      Data2: 1201978860
+      Data3: 2008495020
+      Data4: -296314991
+    Path: event:/Blaster Grunt - Shield Deflect
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &4617359052851510008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562826119655813992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -268417411
+      Data2: 1289598474
+      Data3: 1518473918
+      Data4: -2090211224
+    Path: event:/Blaster Grunt - Shield Destroyed
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!61 &4889287504025809067 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 9102721864597918552, guid: eb529524626737743802f9fcbf8985c2, type: 3}
@@ -348,8 +421,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e34c98a9742c0858c3b2a1c0756ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6035141706130264046 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7946673276329569309, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+  m_PrefabInstance: {fileID: 4434181248570401779}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562826119655813992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6205317889937693769 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7752058234116014010, guid: eb529524626737743802f9fcbf8985c2, type: 3}
   m_PrefabInstance: {fileID: 4434181248570401779}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6719212045579689690 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6968774632970206505, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+  m_PrefabInstance: {fileID: 4434181248570401779}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562826119655813992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8187266891076112357 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3740693012547359722, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+  m_PrefabInstance: {fileID: 4434181248570401779}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562826119655813992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

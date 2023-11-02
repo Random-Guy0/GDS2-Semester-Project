@@ -24,6 +24,8 @@ public class ChargedRangedAttack : RangedAttack
         ChargedAttackProjectile newProjectile = (ChargedAttackProjectile)Instantiate(Projectile, Vector3.zero, Quaternion.identity);
 
         Vector2 position = playerAttackHandler.SelectedWeapon.AttackOrigin.position;
+
+        direction = attacker.GetDirection();
         
         Vector2 origin = GetAttackOrigin(direction, attackerSize, position);
         

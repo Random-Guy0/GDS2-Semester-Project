@@ -60,6 +60,29 @@ public class PlayerAttackHandler : AttackHandler
         SelectedWeapon = Weapons[0];
 
         bathBombSlider.maxValue = Weapons[2].Attack.Duration;
+
+        foreach (PlayerWeapon weapon in Weapons)
+        {
+            weapon.weaponAttackSound.EventReference = weapon.Attack.AttackSound;
+        }
+    }
+
+    private void Update()
+    {
+        if (SelectedWeapon.Attack is ContinuousRangedAttack attack)
+        {
+            if (AttackButtonDown && ammoController.CanUseAmmo(attack.AmmoCost))
+            {
+                if (!SelectedWeapon.weaponAttackSound.IsPlaying())
+                {
+                    SelectedWeapon.weaponAttackSound.Play();
+                }
+            }
+            else
+            {
+                SelectedWeapon.weaponAttackSound.Stop();
+            }
+        }
     }
 
     public void DoAttack(InputAction.CallbackContext context)
@@ -101,11 +124,14 @@ public class PlayerAttackHandler : AttackHandler
         {
             if (RangedAttacks[index] is ChargedRangedAttack)
             {
-                StartCoroutine(BathBombChargeUI());
+                StartCoroutine(BathBombCharge());
+            }
+            else if (RangedAttacks[index] is not ContinuousRangedAttack)
+            {
+                SelectedWeapon.weaponAttackSound.Play();
             }
             
             ammoController.UseAmmo(RangedAttacks[index].AmmoCost);
-            SelectedWeapon.weaponAttackSound.Play();
             base.DoRangedAttack(index);
         }
     }
@@ -280,18 +306,19 @@ public class PlayerAttackHandler : AttackHandler
         }
     }
 
-    private IEnumerator BathBombChargeUI()
+    private IEnumerator BathBombCharge()
     {
         float chargeTime = 0f;
         bathBombSlider.gameObject.SetActive(true);
         
-        while (AttackButtonDown)
+        while (AttackButtonDown && chargeTime <= SelectedWeapon.Attack.Duration)
         {
             chargeTime += Time.deltaTime;
             bathBombSlider.value = chargeTime;
             yield return null;
         }
         
+        SelectedWeapon.weaponAttackSound.Play();
         bathBombSlider.gameObject.SetActive(false);
     }
 }

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2043451435238128019}
   - component: {fileID: 7704517458562388074}
   - component: {fileID: 723627073144149250}
+  - component: {fileID: 3704078696707464082}
+  - component: {fileID: -69541043717759003}
   m_Layer: 0
   m_Name: Flowerbeds
   m_TagString: Untagged
@@ -101,6 +103,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   <Weaknesses>k__BackingField: 
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  impactSound: {fileID: 0}
   rangedAttacksHit: 0
 --- !u!114 &7704517458562388074
 MonoBehaviour:
@@ -116,6 +121,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   <Weaknesses>k__BackingField: 
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: -69541043717759003}
+  impactSound: {fileID: 3704078696707464082}
 --- !u!60 &723627073144149250
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -171,3 +179,65 @@ PolygonCollider2D:
       - {x: 0.7556325, y: 0.64516145}
       - {x: 0.61426944, y: 0.9340925}
   m_UseDelaunayMesh: 0
+--- !u!114 &3704078696707464082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508839859789032973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1394750609
+      Data2: 1098337435
+      Data3: 1271896499
+      Data4: -138680804
+    Path: event:/Player - Melee Attacks Impact
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &-69541043717759003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508839859789032973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -733492662
+      Data2: 1294771778
+      Data3: 329829521
+      Data4: 1793722006
+    Path: event:/UI - Crate Break
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

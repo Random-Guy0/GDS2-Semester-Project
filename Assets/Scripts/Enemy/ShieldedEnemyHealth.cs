@@ -8,6 +8,9 @@ public class ShieldedEnemyHealth : EnemyHealth
     [SerializeField] private AnimationClip shieldBreakAnimation;
     [SerializeField] private Collider2D shieldCollider;
     private bool shielded = true;
+
+    [SerializeField] private FMODUnity.StudioEventEmitter shieldHitSound;
+    [SerializeField] private FMODUnity.StudioEventEmitter shieldBreakSound;
     
     public override bool TakeDamage(int amount, Attack attack)
     {
@@ -16,15 +19,17 @@ public class ShieldedEnemyHealth : EnemyHealth
             return base.TakeDamage(amount, attack);
         }
         
-        if ((attack is MeleeAttack || attack is ChargedRangedAttack) && shielded)
+        if (attack is MeleeAttack or ChargedRangedAttack && shielded)
         {
             shieldAnimator.SetTrigger("ShieldBreak");
             Destroy(shieldCollider);
             StartCoroutine(DestroyShield());
             shielded = false;
+            shieldBreakSound.Play();
             return true;
         }
 
+        shieldHitSound.Play();
         return true;
     }
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public abstract class Health : MonoBehaviour
@@ -14,6 +15,12 @@ public abstract class Health : MonoBehaviour
 
     public event TakeDamageHandler OnTakeDamage;
 
+    [SerializeField] private FMODUnity.StudioEventEmitter hurtSound;
+    [SerializeField] private FMODUnity.StudioEventEmitter deathSound;
+    [SerializeField] private FMODUnity.StudioEventEmitter impactSound;
+
+    private bool deathSoundPlayed = false;
+
     protected virtual void Start()
     {
         CurrentHealth = maxHealth;
@@ -21,6 +28,12 @@ public abstract class Health : MonoBehaviour
 
     public virtual bool TakeDamage(int amount, Attack attack)
     {
+        if (attack is PlayerMeleeAttack meleeAttack && !meleeAttack.ImpactSound.IsNull && impactSound != null)
+        {
+            impactSound.EventReference = meleeAttack.ImpactSound;
+            impactSound.Play();
+        }
+        
         TakeDamage(amount);
         return true;
     }
@@ -31,8 +44,21 @@ public abstract class Health : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
+            if (deathSound != null && !deathSoundPlayed)
+            {
+                deathSound.Play();
+                deathSoundPlayed = true;
+            }
+            
             CurrentHealth = 0;
             Die();
+        }
+        else
+        {
+            if (hurtSound != null)
+            {
+                hurtSound.Play();
+            }
         }
         
         OnTakeDamage?.Invoke();

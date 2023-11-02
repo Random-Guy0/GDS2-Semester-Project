@@ -413,11 +413,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1071122708
-      Data2: 1205956193
-      Data3: -656100202
-      Data4: -71111047
-    Path: event:/EgyptLevelVersion1
+      Data1: 219309926
+      Data2: 1313011589
+      Data3: -1388405115
+      Data4: 1416323504
+    Path: event:/Babylon Level - Version 1
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -1006,6 +1006,9 @@ GameObject:
   - component: {fileID: 2097412661456308322}
   - component: {fileID: 379872973799065571}
   - component: {fileID: 878269135781235571}
+  - component: {fileID: 2477601213444646831}
+  - component: {fileID: 2477601213444646830}
+  - component: {fileID: 2477601213444646832}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1013,6 +1016,99 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2477601213444646830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477601213444646829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -169236126
+      Data2: 1261181224
+      Data3: 259541936
+      Data4: -1258028811
+    Path: event:/Babylon Level - BossFight
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &2477601213444646831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477601213444646829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1326971473
+      Data2: 1209745859
+      Data3: 1049259963
+      Data4: 753674406
+    Path: event:/Babylon Level - Version 2
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &2477601213444646832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477601213444646829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 252053601
+      Data2: 1089048025
+      Data3: 1531958455
+      Data4: -590151052
+    Path: event:/Babylon Atmosphere
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &2532271992681100540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,6 +1196,9 @@ MonoBehaviour:
   - {fileID: 7218662734663564027}
   - {fileID: 2307298167784026330}
   - {fileID: 6851273789089269292}
+  version1Music: {fileID: 878269135781235571}
+  version2Music: {fileID: 2477601213444646831}
+  bossfightMusic: {fileID: 2477601213444646830}
 --- !u!1001 &3432921722968326465
 PrefabInstance:
   m_ObjectHideFlags: 0

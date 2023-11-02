@@ -8,6 +8,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: EventReference.Path
+      value: event:/UI - HP
+      objectReference: {fileID: 0}
+    - target: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: OverrideMinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: -1396297229
+      objectReference: {fileID: 0}
+    - target: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1296235854
+      objectReference: {fileID: 0}
+    - target: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: 274182068
+      objectReference: {fileID: 0}
+    - target: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: -1377088620
+      objectReference: {fileID: 0}
     - target: {fileID: 4084306337204938366, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -132,7 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea32b1586e291e4994ed0fd99aa32cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthAmount: 1
+  collectSound: {fileID: 2534010428530725643}
+  <HealthAmount>k__BackingField: 1
 --- !u!95 &1844508014948161106
 Animator:
   serializedVersion: 5
@@ -153,3 +182,14 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2534010428530725643 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -475115961675247760, guid: 3c54c75cd2fe4b44097b73d3e08fc515, type: 3}
+  m_PrefabInstance: {fileID: 6503920807135091835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825772096750270800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

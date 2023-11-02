@@ -13,6 +13,8 @@ public class ChargedAttackProjectile : AttackProjectile
 
     private float startingYPosition;
     private float chargeTime;
+
+    [SerializeField] private FMODUnity.StudioEventEmitter explosionSound;
     
     public void FireProjectile(Vector2 direction, float chargeTime, AttackHandler attacker = null)
     {
@@ -87,6 +89,7 @@ public class ChargedAttackProjectile : AttackProjectile
         }
 
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        explosionSound.Play();
         
         Destroy(gameObject);
     }

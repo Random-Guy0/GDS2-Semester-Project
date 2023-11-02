@@ -13,6 +13,8 @@ public abstract class Attack : ScriptableObject
     [field: SerializeField] public DamageType[] DamageTypes { get; private set; }
     [field: SerializeField] public float DamageTypeAttackMultiplier { get; private set; } = 2f;
     [field: SerializeField] public bool CanMoveVertically { get; private set; } = false;
+    [field: SerializeField] public FMODUnity.EventReference AttackSound { get; private set; }
+    [field: SerializeField] public float AttackSoundDelay { get; private set; }
 
     public abstract IEnumerator DoAttack(Vector2 direction, Vector2 attackerSize,
         Vector2 attackerPosition, AttackHandler attacker = null);

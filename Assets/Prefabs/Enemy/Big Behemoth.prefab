@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: 5715400789707310663}
   - component: {fileID: 7903826979980892148}
   - component: {fileID: 3501993973818938130}
+  - component: {fileID: -4137392933182365303}
+  - component: {fileID: -3440174239188913367}
+  - component: {fileID: -897240717995539724}
   m_Layer: 0
   m_Name: Big Behemoth
   m_TagString: Untagged
@@ -245,6 +248,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   <Weaknesses>k__BackingField: 02000000
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: -3440174239188913367}
+  impactSound: {fileID: -897240717995539724}
   detectPlayerComponent: {fileID: 8831299249130729824}
   enemyAttackHandler: {fileID: 7903826979980892148}
   enemyRigidbody: {fileID: 2980102513536050860}
@@ -270,6 +276,7 @@ MonoBehaviour:
   <MeleeAttacks>k__BackingField:
   - {fileID: 11400000, guid: 60ee6ebef56112045824f700faa1ee42, type: 2}
   <RangedAttacks>k__BackingField: []
+  attackSound: {fileID: -4137392933182365303}
   stopDistance: 4
   attackAnimation: {fileID: 7400000, guid: 464ba8d2c161c9e47bcbd3ebf0c8cf72, type: 2}
   attackOrigin: {fileID: 1431593844513595539}
@@ -293,6 +300,99 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-4137392933182365303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205769703443517595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2101126352
+      Data2: 1289253048
+      Data3: -672569456
+      Data4: 1402185339
+    Path: event:/Behemoth - Jump Attack
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &-3440174239188913367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205769703443517595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1246076651
+      Data2: 1280869910
+      Data3: 1147075748
+      Data4: 1142844145
+    Path: event:/Behemoth Death
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &-897240717995539724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205769703443517595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1 &1832969228543198478
 GameObject:
   m_ObjectHideFlags: 0
