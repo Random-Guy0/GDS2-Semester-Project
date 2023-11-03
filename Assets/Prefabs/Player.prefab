@@ -406,7 +406,7 @@ MonoBehaviour:
       Data2: 1260333718
       Data3: 2098451592
       Data4: 302098978
-    Path: event:/Player Bubble Blaster Shot (One Shot)
+    Path: event:/Player - Bubble Blaster Shot
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -1687,7 +1687,7 @@ MonoBehaviour:
       Data2: 1098782999
       Data3: -2104900187
       Data4: -217376610
-    Path: event:/Portal Open (One Shot)
+    Path: event:/UI - Portal Open
   Event: 
   PlayEvent: 0
   StopEvent: 0
