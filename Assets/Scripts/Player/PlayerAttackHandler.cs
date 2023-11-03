@@ -25,6 +25,7 @@ public class PlayerAttackHandler : AttackHandler
     }
     
     [SerializeField] private Animator animator;
+    private bool doSecondAttack = false;
     private PlayerMovement playerMovement;
     private AmmoController ammoController;
 
@@ -69,6 +70,7 @@ public class PlayerAttackHandler : AttackHandler
 
     private void Update()
     {
+        //print(animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
         if (SelectedWeapon.Attack is ContinuousRangedAttack attack)
         {
             if (AttackButtonDown && ammoController.CanUseAmmo(attack.AmmoCost))
@@ -92,6 +94,7 @@ public class PlayerAttackHandler : AttackHandler
             if (!AttackButtonDown)
             {
                 AttackButtonDown = true;
+                animator.ResetTrigger("InterruptAttack");
                 
                 if (SelectedWeapon.Attack is MeleeAttack meleeAttack)
                 {
@@ -114,8 +117,23 @@ public class PlayerAttackHandler : AttackHandler
     public override void DoMeleeAttack(int index = 0)
     {
         bufferAttack = CurrentlyAttacking;
-        animator.SetTrigger("DoMeleeAttack");
-        base.DoMeleeAttack(index);
+
+        //print(doSecondAttack);
+        if (!bufferAttack)
+        {
+            if (!doSecondAttack)
+            {
+                animator.SetTrigger("DoMeleeAttack");
+            }
+            else
+            {
+                animator.SetTrigger("DoSecondMeleeAttack");
+            }
+
+            animator.SetBool("Attacking", true);
+
+            base.DoMeleeAttack(index);
+        }
     }
 
     public override void DoRangedAttack(int index = 0)
@@ -148,6 +166,7 @@ public class PlayerAttackHandler : AttackHandler
         playerMovement.CanMove = true;
         if (bufferAttack)
         {
+            doSecondAttack = bufferAttack && !doSecondAttack;
             bufferAttack = false;
             DoMeleeAttack();
         }
@@ -159,15 +178,23 @@ public class PlayerAttackHandler : AttackHandler
             }
             InterruptAttack();
         }
-        
+
+        if (!doSecondAttack)
+        {
+            animator.ResetTrigger("DoMeleeAttack");
+        }
+        else if(!bufferAttack)
+        {
+            animator.ResetTrigger("DoSecondMeleeAttack");
+        }
     }
 
     public override Vector2 GetDirection()
     {
         Vector2 direction = playerMovement.Direction;
-        if (direction == Vector2.zero)
+        if (direction.x == 0f)
         {
-            direction = Vector2.right;
+            direction.x = 1f;
         }
         return direction;
     }
@@ -178,6 +205,7 @@ public class PlayerAttackHandler : AttackHandler
         if (SelectedWeapon.Attack is MeleeAttack)
         {
             animator.SetTrigger("InterruptAttack");
+            animator.SetBool("Attacking", false);
         }
     }
 
