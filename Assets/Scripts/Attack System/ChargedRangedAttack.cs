@@ -10,7 +10,7 @@ public class ChargedRangedAttack : RangedAttack
         PlayerAttackHandler playerAttackHandler = (PlayerAttackHandler)attacker;
         
         float chargeTime = 0f;
-        while (chargeTime < Duration && playerAttackHandler.AttackButtonDown)
+        while (chargeTime <= Duration && playerAttackHandler.AttackButtonDown)
         {
             chargeTime += Time.deltaTime;
             yield return null;
@@ -22,8 +22,12 @@ public class ChargedRangedAttack : RangedAttack
         }
         
         ChargedAttackProjectile newProjectile = (ChargedAttackProjectile)Instantiate(Projectile, Vector3.zero, Quaternion.identity);
+
+        Vector2 position = playerAttackHandler.SelectedWeapon.AttackOrigin.position;
+
+        direction = attacker.GetDirection();
         
-        Vector2 origin = GetAttackOrigin(direction, attackerSize, attackerPosition);
+        Vector2 origin = GetAttackOrigin(direction, attackerSize, position);
         
         if (newProjectile.TryGetComponent<Collider2D>(out Collider2D projectileCollider))
         {
@@ -42,5 +46,7 @@ public class ChargedRangedAttack : RangedAttack
         newProjectile.transform.position = origin;
         
         newProjectile.FireProjectile(direction, chargeTime, attacker);
+        
+        attacker.InterruptAttack();
     }
 }

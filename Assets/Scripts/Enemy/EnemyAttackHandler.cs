@@ -22,7 +22,7 @@ public class EnemyAttackHandler : AttackHandler
         // Check if the Grunt is in the same Y position as the player within the tolerance
         if (CanAttack())
         {
-           DoMeleeAttack();
+           DoAttack();
         }
     }
 
@@ -44,7 +44,8 @@ public class EnemyAttackHandler : AttackHandler
     {
         float yPositionDifference = Mathf.Abs(target.position.y - transform.position.y);
         return yPositionDifference <= yPositionTolerance &&
-               Mathf.Abs(target.position.x - transform.position.x) < stopDistance;
+               Mathf.Abs(target.position.x - transform.position.x) < stopDistance
+               && !CurrentlyAttacking;
     }
 
     public override void InterruptAttack()
@@ -52,6 +53,18 @@ public class EnemyAttackHandler : AttackHandler
         if (!CurrentlyAttacking)
         {
             base.InterruptAttack();
+        }
+    }
+    
+    protected virtual void DoAttack()
+    {
+        if (MeleeAttacks.Length > 0)
+        {
+            base.DoMeleeAttack();
+        }
+        else if(RangedAttacks.Length > 0)
+        {
+            base.DoRangedAttack();
         }
     }
 }

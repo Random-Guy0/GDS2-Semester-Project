@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4078307836585485084}
   - component: {fileID: 5896474185784537896}
   - component: {fileID: 5824083827732423699}
+  - component: {fileID: 1374686052470403429}
+  - component: {fileID: -30462969529600280}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -133,3 +135,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e0a341a724a20419393c49cf2098f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enterPortalSound: {fileID: 1374686052470403429}
+  exitPortalSound: {fileID: -30462969529600280}
+--- !u!114 &1374686052470403429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088718589417333084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1743764850
+      Data2: 1098782999
+      Data3: -2104900187
+      Data4: -217376610
+    Path: event:/UI - Portal Open
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &-30462969529600280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088718589417333084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -195160644
+      Data2: 1120807359
+      Data3: 2067792538
+      Data4: 819180598
+    Path: event:/UI - Portal Close
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

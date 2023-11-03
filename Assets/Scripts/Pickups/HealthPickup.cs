@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class HealthPickup : Pickup<PlayerHealth>
 {
-    [SerializeField] private int healthAmount = 1;
+    [field: SerializeField] public int HealthAmount { get; set; } = 1;
     
     protected override void Collect(PlayerHealth collector)
     {
-        collector.Heal(healthAmount);
+        collector.Heal(HealthAmount);
     }
 }

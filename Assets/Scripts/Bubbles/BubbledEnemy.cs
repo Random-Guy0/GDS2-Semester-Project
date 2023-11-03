@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -10,6 +11,7 @@ public class BubbledEnemy : MonoBehaviour
     [SerializeField] private float maxSpeed = 15f;
     [SerializeField] private float popRadius = 1.25f;
     [SerializeField] private float timeToDisappear = 2.5f;
+    [SerializeField] private StudioEventEmitter popSound;
 
     private Coroutine disappearCoroutine;
     private bool popped = false;
@@ -68,12 +70,17 @@ public class BubbledEnemy : MonoBehaviour
     {
         if (other.TryGetComponent<EnemyHealth>(out EnemyHealth enemyHealth) && enemyHealth.CurrentHealth > 0 && !popped)
         {
-            RaycastHit2D[] allHits = Physics2D.CircleCastAll(transform.position, popRadius * transform.localScale.magnitude, Vector2.zero);
+            #if UNITY_EDITOR
+            Debug.DrawLine(transform.position, transform.position + popRadius * transform.localScale.x * 0.5f * Vector3.right, Color.red, 2f);
+            #endif
+            RaycastHit2D[] allHits = Physics2D.CircleCastAll(transform.position, popRadius * transform.lossyScale.x * 0.5f, Vector2.zero);
+            List<GameObject> alreadyHit = new List<GameObject>();
             foreach (RaycastHit2D hit in allHits)
             {
-                if (hit.transform.TryGetComponent<EnemyHealth>(out EnemyHealth otherHealth))
+                if (!alreadyHit.Contains(hit.transform.gameObject) && hit.transform.TryGetComponent<EnemyHealth>(out EnemyHealth otherHealth))
                 {
                     otherHealth.TakeDamage(PopDamage);
+                    alreadyHit.Add(hit.transform.gameObject);
                 }
             }
             Pop();
@@ -82,6 +89,7 @@ public class BubbledEnemy : MonoBehaviour
 
     private void Pop()
     {
+        popSound.Play();
         Destroy(col);
         spriteRenderer.enabled = false;
         enemySprite.color = Color.red;

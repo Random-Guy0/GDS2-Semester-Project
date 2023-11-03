@@ -13,6 +13,8 @@ public abstract class Attack : ScriptableObject
     [field: SerializeField] public DamageType[] DamageTypes { get; private set; }
     [field: SerializeField] public float DamageTypeAttackMultiplier { get; private set; } = 2f;
     [field: SerializeField] public bool CanMoveVertically { get; private set; } = false;
+    [field: SerializeField] public FMODUnity.EventReference AttackSound { get; private set; }
+    [field: SerializeField] public float AttackSoundDelay { get; private set; }
 
     public abstract IEnumerator DoAttack(Vector2 direction, Vector2 attackerSize,
         Vector2 attackerPosition, AttackHandler attacker = null);
@@ -26,11 +28,11 @@ public abstract class Attack : ScriptableObject
         return origin;
     }
 
-    public void DoDamage(Health otherHealth, AttackHandler attacker = null)
+    public bool DoDamage(Health otherHealth, AttackHandler attacker = null)
     {
         if (!CanAttack(otherHealth, attacker))
         {
-            return;
+            return false;
         }
 
         int damageToDeal = Damage;
@@ -43,7 +45,7 @@ public abstract class Attack : ScriptableObject
             }
         }
         
-        otherHealth.TakeDamage(damageToDeal, this);
+        return otherHealth.TakeDamage(damageToDeal, this);
     }
 
     public bool CanAttack(Health otherHealth, AttackHandler attacker = null)

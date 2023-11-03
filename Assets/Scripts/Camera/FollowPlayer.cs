@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-
-    private bool offSwitchX;
-    private bool offSwitchY;
+    public bool debugConsoleLog;
     public Camera thisCamera;
-    private Transform player;
     public float cameraSpeed = 1;
     public bool camRecenter;
     public SectionsManager sectionManager;
     public bool diagonalArea = false;
+
+    [SerializeField] private bool offSwitchX;
+    [SerializeField] private bool offSwitchY;
+    [SerializeField] private bool beginRecentering = false;
+    [SerializeField] private Transform player;
+
     // Start is called before the first frame update
     void Start()
     {
+        if (debugConsoleLog == true) { debugConsoleLog = true; }
+        else { debugConsoleLog = false; }
         camRecenter = false;
         OnOffSwitchX(true);
         OnOffSwitchY(true);
@@ -25,61 +30,110 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (debugConsoleLog == true) { Debug.LogWarning("Diagonal Area bool = " + diagonalArea); }
+
         if (diagonalArea == true)
         {
             Vector2 playPosition = new Vector2(player.position.x, player.position.y);
             Vector2 camPosition = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
-            Debug.Log("Cam Position = " + gameObject.transform.position);
+
+            if (debugConsoleLog == true) { Debug.Log("MainCamera begining camera tracking determination"); }
+
+            sectionManager.DiagonalCameraTrackingDecider();
+            sectionManager.CameraTrackingDecider();
+
+            if (debugConsoleLog == true) { Debug.Log("Cam Position = " + gameObject.transform.position); }
+
             if (playPosition == camPosition)
             {
-                Debug.Log("CamRecenter reset to false");
+
+                if (debugConsoleLog == true) { Debug.Log("CamRecenter reset to false"); }
+
                 camRecenter = false;
+                if (beginRecentering)
+                {
+                    beginRecentering = false;
+                }
             }
-            Debug.Log("CamRecenter = " + camRecenter);
+
+            if (debugConsoleLog == true) { Debug.Log("CamRecenter = " + camRecenter); }
+
             if (camRecenter == true && playPosition != camPosition)
             {
-                Debug.Log("CamRecenter beginning offswitch = true");
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, player.position.y, -10), cameraSpeed * Time.deltaTime);
-                offSwitchX = true;
-                offSwitchY = true;
+                if (beginRecentering)
+                {
+
+                    if (debugConsoleLog == true) { Debug.Log("CamRecenter beginning offswitch = true"); }
+
+                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, player.position.y, -10), cameraSpeed * Time.deltaTime);
+                    offSwitchX = true;
+                    offSwitchY = true;
+                }
             }
-            Debug.Log("OnOffSwitchX = " + offSwitchX);
+
+            if (debugConsoleLog == true) { Debug.Log("OnOffSwitchX = " + offSwitchX); }
+
             if (offSwitchX == false)
             {
-                Debug.Log("Cam Follows Player, new Position equal to player position || X");
+
+                if (debugConsoleLog == true) { Debug.Log("Cam Follows Player, new Position equal to player position || X"); }
+
                 transform.position = new Vector3(player.position.x, gameObject.transform.position.y, -10);
             }
-            Debug.Log("OnOffSwitchY = " + offSwitchY);
+            if (debugConsoleLog == true) { Debug.Log("OnOffSwitchY = " + offSwitchY); }
+
             if (offSwitchY == false)
             {
-                Debug.Log("Cam Follows Player, new Position equal to player position || Y");
+
+                if (debugConsoleLog == true) { Debug.Log("Cam Follows Player, new Position equal to player position || Y"); }
+
                 transform.position = new Vector3(gameObject.transform.position.x, player.position.y, -10);
             }
-            OnOffSwitchX(false);
-            OnOffSwitchY(false);
         }
         else
         {
-            Debug.Log("Cam Position = " + gameObject.transform.position);
+
+            if (debugConsoleLog == true) { Debug.Log("MainCamera begining camera tracking determination"); }
+
+            sectionManager.CameraTrackingDecider();
+
+            if (debugConsoleLog == true) { Debug.Log("Cam Position = " + gameObject.transform.position + " and Player Position = " + player.position.x); }
+
             if (gameObject.transform.position.x == player.position.x)
             {
-                Debug.Log("CamRecenter reset to false");
+
+                if (debugConsoleLog == true) { Debug.Log("CamRecenter reset to false"); }
+
                 camRecenter = false;
+                if (beginRecentering)
+                {
+                    beginRecentering = false;
+                }
             }
-            Debug.Log("CamRecenter = " + camRecenter);
+
+            if (debugConsoleLog == true) { Debug.Log("CamRecenter = " + camRecenter); }
+
             if (camRecenter == true && gameObject.transform.position.x != player.position.x)
             {
-                Debug.Log("CamRecenter beginning offswitch = true");
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, 0, -10), cameraSpeed * Time.deltaTime);
-                offSwitchX = true;
+                if (beginRecentering)
+                {
+
+                    if (debugConsoleLog == true) { Debug.Log("CamRecenter beginning offswitch = true"); }
+
+                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.position.x, sectionManager.areas[sectionManager.currentArea].cameraLocationSpawn.position.y, -10), cameraSpeed * Time.deltaTime);
+                    offSwitchX = true;
+                }
             }
-            Debug.Log("OnOffSwitch = " + offSwitchX);
+            if (debugConsoleLog == true) { Debug.Log("OnOffSwitch = " + offSwitchX); }
+
             if (offSwitchX == false)
             {
-                Debug.Log("Cam Follows Player, new Position equal to player position");
-                transform.position = new Vector3(player.position.x, 0, -10);
+
+                if (debugConsoleLog == true) { Debug.Log("Cam Follows Player, new Position equal to player position"); }
+
+                transform.position = new Vector3(player.position.x, gameObject.transform.position.y, -10);
             }
-            OnOffSwitchX(false);
         }
 
 
@@ -116,21 +170,15 @@ public class FollowPlayer : MonoBehaviour
 
     
 
-    public void ResetCamPosition()
+    public void ResetCamPosition(bool firstSection, bool diagonalArea)
     {
-
-        Vector3 begPlayerPos = thisCamera.WorldToViewportPoint(player.position);
-        if (begPlayerPos.x >= 0.5f)
-        {
-            StartCoroutine(CamReFollow());
-            offSwitchX = false;
-        }
-    }
-
-    IEnumerator CamReFollow()
-    {
-
         camRecenter = true;
-        yield return null;
+        if (diagonalArea) { 
+            sectionManager.DiagonalCameraTrackingDecider();
+            sectionManager.CameraTrackingDecider();
+            beginRecentering = true; }
+        else { 
+            sectionManager.CameraTrackingDecider(); 
+            beginRecentering = true; }
     }
 }

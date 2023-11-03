@@ -23,6 +23,7 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
     public bool CanMove { get; set; } = true;
 
     [SerializeField] private Animator animator;
+    [SerializeField] private FMODUnity.StudioEventEmitter gruntNoise;
 
     void Start()
     {
@@ -43,11 +44,18 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
 
     void OnBecameVisible()
     {
+        if (gruntNoise != null)
+        {
+            gruntNoise.Play();
+        }
+
         enabled = true;
     }
 
     void Update()
     {
+        Vector3 position = transform.position;
+        
         if (CanMove)
         {
             targetDistance = Vector2.Distance(transform.position, target.transform.position);
@@ -57,18 +65,18 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
                 {
                     if (targetDistance > stopDistance)
                     {
-                        ChasePlayer();
+                        position = ChasePlayer();
                     }
                     else
                     {
                         // Check if the player is above the Grunt
                         if (target.transform.position.y > transform.position.y)
                         {
-                            MoveHorizontallyAwayFromPlayer();
+                            position = MoveHorizontallyAwayFromPlayer();
                         }
                         else
                         {
-                            MoveDownTowardsPlayer();
+                            position = MoveDownTowardsPlayer();
                         }
                     }
                 }
@@ -78,6 +86,10 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
                 }
             }
         }
+
+        transform.position = position;
+
+        rb.velocity = Vector2.zero;
     }
 
     private void FixedUpdate()
@@ -85,10 +97,10 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
         rb.velocity = Vector2.zero;
     }
 
-    private void ChasePlayer()
+    private Vector3 ChasePlayer()
     {
         bool facingRight = transform.position.x < target.transform.position.x;
-        GetComponent<SpriteRenderer>().flipX = facingRight;
+        Flip(facingRight);
         
         Vector2 moveDir = target.transform.position - transform.position;
         moveDir.Normalize();
@@ -114,7 +126,7 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
 
         Vector2 position = transform.position;
         position += speed * Time.deltaTime * moveDir;
-        transform.position = position;
+        return position;
 
         //transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
@@ -134,38 +146,38 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
         return result;
     }
 
-    private void MoveHorizontallyAwayFromPlayer()
+    private Vector3 MoveHorizontallyAwayFromPlayer()
     {
         // Calculate the new position to move horizontally away from the player
         Vector2 newPosition = new Vector2(transform.position.x + horizontalDistance, transform.position.y);
 
         if (transform.position.x < target.transform.position.x)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            Flip(true);
         }
         else
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            Flip(false);
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
+        return Vector2.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
     }
 
-    private void MoveDownTowardsPlayer()
+    private Vector3 MoveDownTowardsPlayer()
     {
         // Calculate the new position to move down towards the player
         Vector2 newPosition = new Vector2(transform.position.x, transform.position.y - speed * Time.deltaTime);
 
         if (transform.position.x < target.transform.position.x)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            Flip(true);
         }
         else
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            Flip(false);
         }
 
-        transform.position = newPosition;
+        return newPosition;
     }
 
     public void StopMoving()
@@ -183,5 +195,20 @@ public class GruntDetectPlayer : MonoBehaviour, IEnemyMovement
         CanMove = false;
         yield return new WaitForSeconds(StunDuration);
         CanMove = true;
+    }
+
+    private void Flip(bool flipped)
+    {
+        Vector3 scale = transform.localScale;
+        if (flipped)
+        {
+            scale.x = Mathf.Abs(scale.x) * -1f;
+        }
+        else
+        {
+            scale.x = Mathf.Abs(scale.x);
+        }
+
+        transform.localScale = scale;
     }
 }

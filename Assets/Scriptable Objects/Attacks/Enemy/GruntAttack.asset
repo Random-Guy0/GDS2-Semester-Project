@@ -19,4 +19,12 @@ MonoBehaviour:
   <DamageTypes>k__BackingField: 
   <DamageTypeAttackMultiplier>k__BackingField: 2
   <CanMoveVertically>k__BackingField: 0
+  <AttackSound>k__BackingField:
+    Guid:
+      Data1: -1574062757
+      Data2: 1184210321
+      Data3: 1456133047
+      Data4: 1491131569
+    Path: event:/Grunt - Melee Attack
+  <AttackSoundDelay>k__BackingField: 0
   <HitSize>k__BackingField: {x: 0.75, y: 0.5}

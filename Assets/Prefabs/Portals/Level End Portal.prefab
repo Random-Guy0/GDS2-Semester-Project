@@ -65,6 +65,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: -6317728604042127562}
   m_SourcePrefab: {fileID: 100100000, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
+--- !u!114 &3731335504411129321 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1374686052470403429, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
+  m_PrefabInstance: {fileID: 2367627253091976332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334466206761051600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4334466206761051600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2088718589417333084, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
@@ -82,4 +93,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329edbf5b44b6ca4492afdb8cad8ad35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enterPortalSound: {fileID: 3731335504411129321}
+  exitPortalSound: {fileID: 6865815037831197284}
   levelEndScreen: {fileID: 0}
+--- !u!114 &6865815037831197284 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -30462969529600280, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
+  m_PrefabInstance: {fileID: 2367627253091976332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334466206761051600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

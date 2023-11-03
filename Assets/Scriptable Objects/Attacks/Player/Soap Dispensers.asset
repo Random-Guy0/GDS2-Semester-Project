@@ -19,4 +19,19 @@ MonoBehaviour:
   <DamageTypes>k__BackingField: 
   <DamageTypeAttackMultiplier>k__BackingField: 2
   <CanMoveVertically>k__BackingField: 0
+  <AttackSound>k__BackingField:
+    Guid:
+      Data1: -726677735
+      Data2: 1094157502
+      Data3: 1339305886
+      Data4: -845597816
+    Path: event:/Player - Melee Attack
+  <AttackSoundDelay>k__BackingField: 0
   <HitSize>k__BackingField: {x: 0.75, y: 0.5}
+  <ImpactSound>k__BackingField:
+    Guid:
+      Data1: -1394750609
+      Data2: 1098337435
+      Data3: 1271896499
+      Data4: -138680804
+    Path: event:/Player - Melee Attacks Impact

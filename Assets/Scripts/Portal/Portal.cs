@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using UnityEngine;
 
 public class Portal : MonoBehaviour
@@ -6,6 +7,9 @@ public class Portal : MonoBehaviour
     public delegate void EnterPortalHandler(PlayerMovement player);
 
     public event EnterPortalHandler OnEnterPortal;
+
+    [SerializeField] private StudioEventEmitter enterPortalSound;
+    [SerializeField] private StudioEventEmitter exitPortalSound;
 
     protected virtual void EnterPortal(PlayerMovement player)
     {
@@ -18,5 +22,15 @@ public class Portal : MonoBehaviour
         {
             EnterPortal(player);
         }
+    }
+
+    private void OnBecameVisible()
+    {
+        enterPortalSound.Play();
+    }
+
+    private void OnBecameInvisible()
+    {
+        exitPortalSound.Play();
     }
 }

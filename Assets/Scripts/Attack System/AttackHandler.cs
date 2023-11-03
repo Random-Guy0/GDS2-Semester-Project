@@ -14,6 +14,8 @@ public abstract class AttackHandler : MonoBehaviour
     protected Attack CurrentAttack { get; set; }
     protected Coroutine attackCoroutine;
 
+    [SerializeField] private FMODUnity.StudioEventEmitter attackSound;
+
     public virtual void DoMeleeAttack(int index = 0)
     {
         DoAttack(MeleeAttacks[index]);
@@ -33,6 +35,7 @@ public abstract class AttackHandler : MonoBehaviour
             Vector2 direction = GetDirection();
             attackCoroutine = StartCoroutine(attack.DoAttack(direction, size, GetAttackOrigin(), this));
             StartCoroutine(WaitForAttack(attack.Duration));
+            StartCoroutine(WaitForSoundDelay(attack));
         }
     }
 
@@ -41,7 +44,16 @@ public abstract class AttackHandler : MonoBehaviour
         CurrentlyAttacking = true;
         yield return new WaitForSeconds(attackDuration);
         CurrentlyAttacking = false;
+    }
 
+    protected virtual IEnumerator WaitForSoundDelay(Attack attack)
+    {
+        yield return new WaitForSeconds(attack.AttackSoundDelay);
+        if (attackSound != null)
+        {
+            attackSound.EventReference = attack.AttackSound;
+            attackSound.Play();
+        }
     }
 
     protected virtual Vector2 GetColliderSize()
@@ -65,6 +77,7 @@ public abstract class AttackHandler : MonoBehaviour
             StopCoroutine(attackCoroutine);
         }
         CurrentAttack = null;
+        CurrentlyAttacking = false;
     }
 
     protected virtual Vector2 GetAttackOrigin()

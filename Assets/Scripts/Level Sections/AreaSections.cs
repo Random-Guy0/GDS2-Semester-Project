@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AreaSections : MonoBehaviour
 {
+    public bool debugConsoleLog;
     public AreaPortal nextAreaPortal;
     public List<GameObject> section = new List<GameObject>();
     public List<GameObject> areaWalls = new List<GameObject>();
@@ -11,43 +13,81 @@ public class AreaSections : MonoBehaviour
     public List<bool> sectionsCompleted = new List<bool>();
     public SectionsManager sectionManager;
     public int sectionCount = 0;
-    public bool beginningAreaSection = true;
-    public bool justBeganSecondSection = false;
-    private bool areaSectionDisabled;
+    public bool areaSectionDisabled;
+    public bool diagonalArea = false;
+    public Transform cameraLocationSpawn;
     void Start()
     {
-        Debug.Log("Section List Count = " + section.Count + gameObject.name);
-        for (int i = 0; i < section.Count - 1; i++)
+        if (debugConsoleLog == true) { debugConsoleLog = true; }
+        else { debugConsoleLog = false; }
+
+        if (debugConsoleLog == true) { Debug.Log("Section List Count = " + section.Count + gameObject.name); }
+
+        for (int i = 0; i <= section.Count; i++)
         {
             sectionsCompleted.Add(false);
         }
         areaSectionDisabled = false;
+        section.Add(areaWalls[1]);
     }
     void Update()
     {
-        if (section.Count != 1)
+        if (sectionCount == sectionsCompleted.Count && areaSectionDisabled == false)
         {
-            if (sectionCount == sectionsCompleted.Count && areaSectionDisabled == false)
-            {
-                Debug.Log("Area Section Ended");
+                if (debugConsoleLog == true) { Debug.Log("Area Section Ended"); }
+
                 nextAreaPortal.ableToEnter = true;
                 sectionManager.NewArea();
                 areaSectionDisabled = true;
-                sectionManager.endOfArea = true;
+                if (debugConsoleLog == true) { Debug.LogWarning("sectionCount before = " + sectionCount); }
+
+                --sectionCount;
+                if (debugConsoleLog == true) { Debug.LogWarning("sectionCount after = " + sectionCount); }
+
+        }
+        else if (diagonalArea == true && sectionsCompleted[0] == true)
+        {
+            if (areaSectionDisabled == false)
+            {
+                if (debugConsoleLog == true) { Debug.Log("Area Section Ended - Section 3"); }
+
+                nextAreaPortal.ableToEnter = true;
+                sectionManager.NewArea();
+                areaSectionDisabled = true;
+                if (debugConsoleLog == true) { Debug.LogWarning("sectionCount before = " + sectionCount); }
+
+                //--sectionCount;
+                if (debugConsoleLog == true) { Debug.LogWarning("sectionCount after = " + sectionCount); }
+
+            }
+        }
+        else if (sectionManager.currentArea == sectionManager.areas.Count - 1)
+        {
+            if (sectionCount == sectionsCompleted.Count)
+            {
+                if (debugConsoleLog == true) { Debug.Log("Final Area Finished"); }
+
+                nextAreaPortal.ableToEnter = true;
+                areaSectionDisabled = true;
             }
         }
 
     }
 
+    public bool FinalArea()
+    {
+        if (sectionCount == section.Count)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void AreaSectionComplete()
     {
-        section[sectionCount].SetActive(false);
-
-        if (sectionCount == 0)
-        {
-            beginningAreaSection = false;
-            justBeganSecondSection = true;
-        }
-        ++sectionCount;
+        sectionManager.NextSection(nextAreaPortal);
     }
 }

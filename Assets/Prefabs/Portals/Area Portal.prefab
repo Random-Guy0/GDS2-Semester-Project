@@ -72,6 +72,28 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 979165910322364617}
   m_SourcePrefab: {fileID: 100100000, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
+--- !u!114 &2217660799422510298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -30462969529600280, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
+  m_PrefabInstance: {fileID: 7013635863292756530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9055031128468546414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8234459210187797335 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1374686052470403429, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
+  m_PrefabInstance: {fileID: 7013635863292756530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9055031128468546414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9055031128468546414 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2088718589417333084, guid: 72a9a61286143944a87c8fff3e4a79c3, type: 3}
@@ -89,7 +111,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de76aa7a720c964cbe634f42f5df32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enterPortalSound: {fileID: 8234459210187797335}
+  exitPortalSound: {fileID: 2217660799422510298}
+  debugConsoleLog: 0
   teleportToPosition: {x: 0, y: 0}
+  secManager: {fileID: 0}
+  ableToEnter: 0
+  areaGameObject: {fileID: 0}
+  alreadyActivated: 0
 --- !u!95 &979165910322364617
 Animator:
   serializedVersion: 5

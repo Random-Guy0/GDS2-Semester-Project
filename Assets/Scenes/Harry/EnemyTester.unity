@@ -427,25 +427,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b86df614a61ff84dbbe2575e9cd1fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
   mainCamera: {fileID: 646393195}
-  currentSection: 0
+  currentArea: 0
+  playerAreaIn: 0
   camFollow: {fileID: 646393194}
   player: {fileID: 252727147}
-  section:
-  - {fileID: 1686436916}
-  - {fileID: 547575597}
-  - {fileID: 693827813}
-  - {fileID: 1214073550}
-  - {fileID: 1858426065}
-  - {fileID: 31527481}
-  - {fileID: 684275197}
-  sectionsManagers:
-  - {fileID: 156630379}
-  - {fileID: 1633801546}
-  - {fileID: 2065322879}
-  - {fileID: 1482632282}
-  - {fileID: 316625000}
-  - {fileID: 513837118}
+  camAreaPosition: []
+  areas: []
+  version1Music: {fileID: 0}
+  version2Music: {fileID: 0}
+  bossfightMusic: {fileID: 0}
 --- !u!4 &104233184
 Transform:
   m_ObjectHideFlags: 0
@@ -563,7 +555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sectionManager: {fileID: 104233183}
+  debugConsoleLog: 0
+  areaManager: {fileID: 0}
+  enemies: []
 --- !u!4 &156630380
 Transform:
   m_ObjectHideFlags: 0
@@ -685,7 +679,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sectionManager: {fileID: 104233183}
+  debugConsoleLog: 0
+  areaManager: {fileID: 0}
+  enemies: []
 --- !u!4 &316625001
 Transform:
   m_ObjectHideFlags: 0
@@ -952,7 +948,7 @@ MonoBehaviour:
       Data2: 1205956193
       Data3: -656100202
       Data4: -71111047
-    Path: event:/EgyptLevel1
+    Path: event:/EgyptLevelVersion1
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -1164,7 +1160,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <GameplayUI>k__BackingField: {fileID: 1600397037}
+  <GameOverUI>k__BackingField: {fileID: 0}
   <Player>k__BackingField: {fileID: 252727147}
+  pauseUI: {fileID: 0}
 --- !u!4 &478224361
 Transform:
   m_ObjectHideFlags: 0
@@ -1320,7 +1318,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sectionManager: {fileID: 104233183}
+  debugConsoleLog: 0
+  areaManager: {fileID: 0}
+  enemies: []
 --- !u!1001 &527471776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1775,7 +1775,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3e31a18c9cde74ab5da0e35a563fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugConsoleLog: 0
+  thisCamera: {fileID: 0}
   cameraSpeed: 1
+  camRecenter: 0
+  sectionManager: {fileID: 0}
+  diagonalArea: 0
+  offSwitchX: 0
+  offSwitchY: 0
+  beginRecentering: 0
+  player: {fileID: 0}
 --- !u!20 &646393195
 Camera:
   m_ObjectHideFlags: 0
@@ -3490,7 +3499,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sectionManager: {fileID: 104233183}
+  debugConsoleLog: 0
+  areaManager: {fileID: 0}
+  enemies: []
 --- !u!4 &1482632283
 Transform:
   m_ObjectHideFlags: 0
@@ -3843,7 +3854,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sectionManager: {fileID: 104233183}
+  debugConsoleLog: 0
+  areaManager: {fileID: 0}
+  enemies: []
 --- !u!4 &1633801547
 Transform:
   m_ObjectHideFlags: 0
@@ -4883,7 +4896,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3553173c14a9b4f4f84cef725e5472b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sectionManager: {fileID: 104233183}
+  debugConsoleLog: 0
+  areaManager: {fileID: 0}
+  enemies: []
 --- !u!4 &2065322880
 Transform:
   m_ObjectHideFlags: 0

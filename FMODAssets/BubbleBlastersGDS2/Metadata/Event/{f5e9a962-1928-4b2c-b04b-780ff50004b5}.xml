@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{f5e9a962-1928-4b2c-b04b-780ff50004b5}">
 		<property name="name">
-			<value>BabylonLevelBossFight</value>
+			<value>Babylon Level - BossFight</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -70,10 +70,13 @@
 		<relationship name="modules">
 			<destination>{04291f7d-3da1-473b-b7b7-aa5165033fe8}</destination>
 		</relationship>
+		<relationship name="markers">
+			<destination>{899e7323-148d-4610-bac5-cb65052bf3c5}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{565e2ba5-0940-41cf-9a23-38a0b322e0c1}">
 		<property name="volume">
-			<value>-7</value>
+			<value>-10</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{b20ac5a0-accc-452f-9339-b4e5e92b116b}</destination>
@@ -100,6 +103,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{601a32b2-00d3-44f3-bc07-128e4879a28f}">
+		<property name="volume">
+			<value>-6.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -111,6 +117,20 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{565e2ba5-0940-41cf-9a23-38a0b322e0c1}</destination>
+		</relationship>
+	</object>
+	<object class="LoopRegion" id="{899e7323-148d-4610-bac5-cb65052bf3c5}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="length">
+			<value>32</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{4943232f-77d2-4072-98ae-72e7c10a5789}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{d2d06e0d-85b6-4643-8f15-606b61efda6b}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{b20ac5a0-accc-452f-9339-b4e5e92b116b}">

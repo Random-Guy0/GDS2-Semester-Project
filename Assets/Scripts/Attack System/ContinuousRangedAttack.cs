@@ -31,7 +31,7 @@ public class ContinuousRangedAttack : RangedAttack
             if (projectileTimer >= ProjectileTimer)
             {
                 projectileTimer = 0f;
-
+                
                 AttackProjectile newProjectile = Instantiate(Projectile, Vector3.zero, Quaternion.identity);
 
                 direction = attacker.GetDirection();

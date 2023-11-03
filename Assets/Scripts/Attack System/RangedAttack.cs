@@ -13,6 +13,11 @@ public class RangedAttack : Attack
     public override IEnumerator DoAttack(Vector2 direction, Vector2 attackerSize,
         Vector2 attackerPosition, AttackHandler attacker = null)
     {
+        if (AttackStartDelay > 0f)
+        {
+            yield return WaitToAttack();
+        }
+
         float currentTime = 0f;
         while (currentTime < Duration)
         {

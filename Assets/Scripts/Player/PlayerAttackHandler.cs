@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerAttackHandler : AttackHandler
 { 
@@ -24,6 +25,7 @@ public class PlayerAttackHandler : AttackHandler
     }
     
     [SerializeField] private Animator animator;
+    private bool doSecondAttack = false;
     private PlayerMovement playerMovement;
     private AmmoController ammoController;
 
@@ -42,6 +44,9 @@ public class PlayerAttackHandler : AttackHandler
 
     // Weapon UI animator
     [SerializeField] private Animator weaponsUIanimator;
+    [SerializeField] private float weaponSwitchDelay = 0.1f;
+
+    [SerializeField] private Slider bathBombSlider;
 
     private void Start()
     {
@@ -54,15 +59,41 @@ public class PlayerAttackHandler : AttackHandler
         animator.SetFloat("MeleeAttack2Speed", meleeAttack2Speed);
 
         SelectedWeapon = Weapons[0];
+
+        bathBombSlider.maxValue = Weapons[2].Attack.Duration;
+
+        foreach (PlayerWeapon weapon in Weapons)
+        {
+            weapon.weaponAttackSound.EventReference = weapon.Attack.AttackSound;
+        }
+    }
+
+    private void Update()
+    {
+        if (SelectedWeapon.Attack is ContinuousRangedAttack attack)
+        {
+            if (AttackButtonDown && ammoController.CanUseAmmo(attack.AmmoCost))
+            {
+                if (!SelectedWeapon.weaponAttackSound.IsPlaying())
+                {
+                    SelectedWeapon.weaponAttackSound.Play();
+                }
+            }
+            else
+            {
+                SelectedWeapon.weaponAttackSound.Stop();
+            }
+        }
     }
 
     public void DoAttack(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !GameManager.Instance.Paused)
         {
             if (!AttackButtonDown)
             {
                 AttackButtonDown = true;
+                animator.ResetTrigger("InterruptAttack");
                 
                 if (SelectedWeapon.Attack is MeleeAttack meleeAttack)
                 {
@@ -85,16 +116,38 @@ public class PlayerAttackHandler : AttackHandler
     public override void DoMeleeAttack(int index = 0)
     {
         bufferAttack = CurrentlyAttacking;
-        animator.SetTrigger("DoMeleeAttack");
-        base.DoMeleeAttack(index);
+        
+        if (!bufferAttack)
+        {
+            if (!doSecondAttack)
+            {
+                animator.SetTrigger("DoMeleeAttack");
+            }
+            else
+            {
+                animator.SetTrigger("DoSecondMeleeAttack");
+            }
+
+            animator.SetBool("Attacking", true);
+
+            base.DoMeleeAttack(index);
+        }
     }
 
     public override void DoRangedAttack(int index = 0)
     {
         if (ammoController.CanUseAmmo(RangedAttacks[index].AmmoCost))
         {
+            if (RangedAttacks[index] is ChargedRangedAttack)
+            {
+                StartCoroutine(BathBombCharge());
+            }
+            else if (RangedAttacks[index] is not ContinuousRangedAttack)
+            {
+                SelectedWeapon.weaponAttackSound.Play();
+            }
+            
             ammoController.UseAmmo(RangedAttacks[index].AmmoCost);
-            SelectedWeapon.weaponAttackSound.Play();
             base.DoRangedAttack(index);
         }
     }
@@ -111,6 +164,7 @@ public class PlayerAttackHandler : AttackHandler
         playerMovement.CanMove = true;
         if (bufferAttack)
         {
+            doSecondAttack = bufferAttack && !doSecondAttack;
             bufferAttack = false;
             DoMeleeAttack();
         }
@@ -122,15 +176,23 @@ public class PlayerAttackHandler : AttackHandler
             }
             InterruptAttack();
         }
-        
+
+        if (!doSecondAttack)
+        {
+            animator.ResetTrigger("DoMeleeAttack");
+        }
+        else if(!bufferAttack)
+        {
+            animator.ResetTrigger("DoSecondMeleeAttack");
+        }
     }
 
     public override Vector2 GetDirection()
     {
         Vector2 direction = playerMovement.Direction;
-        if (direction == Vector2.zero)
+        if (direction.x == 0f)
         {
-            direction = Vector2.right;
+            direction.x = 1f;
         }
         return direction;
     }
@@ -141,6 +203,7 @@ public class PlayerAttackHandler : AttackHandler
         if (SelectedWeapon.Attack is MeleeAttack)
         {
             animator.SetTrigger("InterruptAttack");
+            animator.SetBool("Attacking", false);
         }
     }
 
@@ -187,17 +250,19 @@ public class PlayerAttackHandler : AttackHandler
         return false;
     }
 
-    private void SelectWeapon(int index)
+    private IEnumerator SelectWeapon(int index)
     {
-        if ((AttackButtonDown && SelectedWeapon.Attack is ContinuousRangedAttack) || SelectedWeapon == Weapons[index])
+        if ((AttackButtonDown && SelectedWeapon.Attack is ContinuousRangedAttack) || SelectedWeapon == Weapons[index] || CurrentlyAttacking)
         {
-            return;
+            yield break;
         }
 
         if (CarryingBubble)
         {
             ReleaseBubble();
         }
+
+        yield return new WaitForSeconds(weaponSwitchDelay);
         
         SelectedWeapon = Weapons[index];
         weaponsUIanimator.SetTrigger("Weapon" + index);
@@ -205,39 +270,39 @@ public class PlayerAttackHandler : AttackHandler
 
     public void SelectWeapon1(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !GameManager.Instance.Paused)
         {
-            SelectWeapon(0);
+            StartCoroutine(SelectWeapon(0));
         }
     }
     
     public void SelectWeapon2(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !GameManager.Instance.Paused)
         {
-            SelectWeapon(1);
+            StartCoroutine(SelectWeapon(1));
         }
     }
     
     public void SelectWeapon3(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !GameManager.Instance.Paused)
         {
-            SelectWeapon(2);
+            StartCoroutine(SelectWeapon(2));
         }
     }
     
     public void SelectWeapon4(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !GameManager.Instance.Paused)
         {
-            SelectWeapon(3);
+            StartCoroutine(SelectWeapon(3));
         }
     }
 
     public void CycleWeapon(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !GameManager.Instance.Paused)
         {
             float direction = context.ReadValue<float>();
             int currentWeaponIndex = Weapons.IndexOf(SelectedWeapon);
@@ -246,25 +311,41 @@ public class PlayerAttackHandler : AttackHandler
             {
                 if (currentWeaponIndex == Weapons.Count - 1)
                 {
-                    SelectWeapon(0);
+                    StartCoroutine(SelectWeapon(0));
                 }
                 else
                 {
-                    SelectWeapon(currentWeaponIndex + 1);
+                    StartCoroutine(SelectWeapon(currentWeaponIndex + 1));
                 }
             }
             else if (direction < 0f)
             {
                 if (currentWeaponIndex == 0)
                 {
-                    SelectWeapon(Weapons.Count - 1);
+                    StartCoroutine(SelectWeapon(Weapons.Count - 1));
                 }
                 else
                 {
-                    SelectWeapon(currentWeaponIndex - 1);
+                    StartCoroutine(SelectWeapon(currentWeaponIndex - 1));
                 }
             }
         }
+    }
+
+    private IEnumerator BathBombCharge()
+    {
+        float chargeTime = 0f;
+        bathBombSlider.gameObject.SetActive(true);
+        
+        while (AttackButtonDown && chargeTime <= SelectedWeapon.Attack.Duration)
+        {
+            chargeTime += Time.deltaTime;
+            bathBombSlider.value = chargeTime;
+            yield return null;
+        }
+        
+        SelectedWeapon.weaponAttackSound.Play();
+        bathBombSlider.gameObject.SetActive(false);
     }
 }
 

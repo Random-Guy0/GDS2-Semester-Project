@@ -14,9 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 2
   <Target>k__BackingField: 1
-  <AttackStartDelay>k__BackingField: 1
-  <Duration>k__BackingField: 1.5
+  <AttackStartDelay>k__BackingField: 2.25
+  <Duration>k__BackingField: 3
   <DamageTypes>k__BackingField: 
   <DamageTypeAttackMultiplier>k__BackingField: 2
   <CanMoveVertically>k__BackingField: 0
-  <HitSize>k__BackingField: {x: 1, y: 2}
+  <AttackSound>k__BackingField:
+    Guid:
+      Data1: 2101126352
+      Data2: 1289253048
+      Data3: -672569456
+      Data4: 1402185339
+    Path: event:/Behemoth - Jump Attack
+  <AttackSoundDelay>k__BackingField: 0
+  <HitSize>k__BackingField: {x: 1.5, y: 2}

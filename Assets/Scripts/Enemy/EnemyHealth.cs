@@ -10,6 +10,7 @@ public class EnemyHealth : Health
     [SerializeField] private EnemyAttackHandler enemyAttackHandler;
     [SerializeField] private Rigidbody2D enemyRigidbody;
     [SerializeField] private Collider2D enemyCollider;
+    [SerializeField] private Collider2D secondCollider;
     [SerializeField] private BubbledEnemy bubblePrefab;
     [SerializeField] private float bubbleScale = 1f;
     [SerializeField] private float deathScale = 1f;
@@ -28,7 +29,7 @@ public class EnemyHealth : Health
         OnTakeDamage += TakeDamage;
     }
 
-    public override void TakeDamage(int amount, Attack attack)
+    public override bool TakeDamage(int amount, Attack attack)
     {
         IEnemyMovement enemyMovement = (IEnemyMovement)detectPlayerComponent;
         enemyMovement.Stun();
@@ -38,12 +39,11 @@ public class EnemyHealth : Health
             newPickup.AmmoAmount = ammoDropAmount;
         }
         
-        base.TakeDamage(amount, attack);
+        return base.TakeDamage(amount, attack);
     }
 
     //bubble function
     protected override void Die(){
-        enemySectionManager.EnemyKilled();
         enemyAttackHandler.InterruptAttack();
         StopAllCoroutines();
         _spriteRenderer.color = Color.white;
@@ -56,8 +56,12 @@ public class EnemyHealth : Health
         {
             raptorDetectPlayer.StopMoving();
         }
-        
-        CreateBubble();
+
+        if (!transform.parent.TryGetComponent<BubbledEnemy>(out BubbledEnemy bubbledEnemy))
+        {
+            CreateBubble();
+            enemySectionManager.EnemyKilled(gameObject);
+        }
 
         if (animator != null)
         {
@@ -65,6 +69,12 @@ public class EnemyHealth : Health
         }
 
         Destroy(enemyCollider);
+        
+        if (secondCollider != null)
+        {
+            Destroy(secondCollider);
+        }
+
         Destroy(enemyRigidbody);
         Destroy(enemyAttackHandler);
         Destroy(detectPlayerComponent);

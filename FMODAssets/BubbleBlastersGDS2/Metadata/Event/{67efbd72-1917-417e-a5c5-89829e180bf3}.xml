@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{67efbd72-1917-417e-a5c5-89829e180bf3}">
 		<property name="name">
-			<value>Portal Open (One Shot)</value>
+			<value>UI - Portal Open</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -95,15 +95,24 @@
 	<object class="MixerBusPanner" id="{2fcb4772-3140-4f1e-8c9e-e2cdb1c2c1d3}" />
 	<object class="MixerBusEffectChain" id="{a7df4e23-6692-4d25-aab6-cbaff6f8cd95}">
 		<relationship name="effects">
+			<destination>{de542557-cd7a-4e84-93f3-ada00d4f17b9}</destination>
 			<destination>{bd66188f-6b40-4e2a-845f-71be5c6d6620}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{fbbf396d-aaa1-4378-90cf-135b2bd0abe8}" />
 	<object class="SingleSound" id="{62454f02-27d2-48d7-8a96-13b640ff6c34}">
+		<property name="volume">
+			<value>-13</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{2e88c8d7-e9fd-4388-902a-3e9131b4ddbe}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{9d1b0143-d421-49ab-aae0-39cd7e961b38}" />
+	<object class="LoudnessMeter" id="{de542557-cd7a-4e84-93f3-ada00d4f17b9}">
+		<property name="loudnessTarget">
+			<value>-24</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{bd66188f-6b40-4e2a-845f-71be5c6d6620}" />
 </objects>
