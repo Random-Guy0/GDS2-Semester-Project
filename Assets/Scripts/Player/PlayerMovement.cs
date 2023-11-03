@@ -51,11 +51,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (moveInput != Vector2.zero && !walkSand.IsPlaying())
+        if (rb.velocity != Vector2.zero && !walkSand.IsPlaying())
         {
             walkSand.Play();
         }
-        else if (moveInput == Vector2.zero)
+        else if (rb.velocity == Vector2.zero)
         {
             walkSand.Stop();
         }

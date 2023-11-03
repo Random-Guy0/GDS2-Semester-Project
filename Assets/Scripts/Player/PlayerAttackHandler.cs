@@ -72,7 +72,6 @@ public class PlayerAttackHandler : AttackHandler
     {
         if (SelectedWeapon.Attack is ContinuousRangedAttack attack)
         {
-            Debug.Log(SelectedWeapon.weaponAttackSound.IsPlaying());
             if (AttackButtonDown && ammoController.CanUseAmmo(attack.AmmoCost))
             {
                 if (!SelectedWeapon.weaponAttackSound.IsPlaying())
@@ -82,7 +81,6 @@ public class PlayerAttackHandler : AttackHandler
             }
             else
             {
-                Debug.Log("STOP");
                 SelectedWeapon.weaponAttackSound.Stop();
             }
         }
