@@ -252,7 +252,7 @@ public class PlayerAttackHandler : AttackHandler
 
     private IEnumerator SelectWeapon(int index)
     {
-        if ((AttackButtonDown && SelectedWeapon.Attack is ContinuousRangedAttack) || SelectedWeapon == Weapons[index])
+        if ((AttackButtonDown && SelectedWeapon.Attack is ContinuousRangedAttack) || SelectedWeapon == Weapons[index] || CurrentlyAttacking)
         {
             yield break;
         }
