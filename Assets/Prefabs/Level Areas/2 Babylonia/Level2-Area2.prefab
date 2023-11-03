@@ -769,8 +769,6 @@ GameObject:
   - component: {fileID: 3411691507921371296}
   - component: {fileID: 796780028127275120}
   - component: {fileID: 216556196550767145}
-  - component: {fileID: 3667001739451958075}
-  - component: {fileID: 834954355921836429}
   - component: {fileID: 5823473219625283655}
   m_Layer: 9
   m_Name: Level2-Area1-2-Foreground
@@ -949,34 +947,6 @@ MonoBehaviour:
   foreground: {fileID: 3411691507921371296}
   foregroundOpacity: 0.2
   fadeDuration: 0.3
---- !u!114 &3667001739451958075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120566998900799769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e32c75ec950c9b4e98c892de4c06f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  parallaxEffect: 0.7
---- !u!114 &834954355921836429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120566998900799769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e32c75ec950c9b4e98c892de4c06f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  parallaxEffect: 0.7
 --- !u!114 &5823473219625283655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,8 +1590,6 @@ GameObject:
   - component: {fileID: 1295455271722096329}
   - component: {fileID: 4796997649396912458}
   - component: {fileID: 1338282010563207938}
-  - component: {fileID: 6507370377778881760}
-  - component: {fileID: 4045560602697444237}
   - component: {fileID: 2470894395243693202}
   m_Layer: 0
   m_Name: Level2-Area2-LevelPlanBase-2-Walk
@@ -1786,34 +1754,6 @@ MonoBehaviour:
   foreground: {fileID: 1295455271722096329}
   foregroundOpacity: 0.2
   fadeDuration: 0.3
---- !u!114 &6507370377778881760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3938681975611942038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e32c75ec950c9b4e98c892de4c06f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  parallaxEffect: 0.7
---- !u!114 &4045560602697444237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3938681975611942038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e32c75ec950c9b4e98c892de4c06f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  parallaxEffect: 0.7
 --- !u!114 &2470894395243693202
 MonoBehaviour:
   m_ObjectHideFlags: 0
