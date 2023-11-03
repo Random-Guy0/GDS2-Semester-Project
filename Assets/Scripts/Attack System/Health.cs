@@ -19,9 +19,10 @@ public abstract class Health : MonoBehaviour
         CurrentHealth = maxHealth;
     }
 
-    public virtual void TakeDamage(int amount, Attack attack)
+    public virtual bool TakeDamage(int amount, Attack attack)
     {
         TakeDamage(amount);
+        return true;
     }
 
     public void TakeDamage(int amount)

@@ -38,8 +38,10 @@ public class PlayerHealth : Health
 
     protected override void Die()
     {
-        //change this to death screen when implemented
-        GetComponent<PlayerMovement>().enabled = false;
+        PlayerMovement playerMovement = GetComponent<PlayerMovement>();
+        playerMovement.CanMove = false;
+        playerMovement.StopMoving();
+        playerMovement.enabled = false;
         SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer sprite in sprites)
         {
@@ -48,6 +50,9 @@ public class PlayerHealth : Health
 
         GetComponent<PlayerAttackHandler>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
+        
+        GameManager.Instance.GameOverUI.gameObject.SetActive(true);
+        
         this.enabled = false;
     }
 

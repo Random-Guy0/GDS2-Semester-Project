@@ -26,24 +26,27 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>();
-
-        Vector2 newDirection = Direction;
-
-        if (moveInput.x != 0f)
+        if (!GameManager.Instance.Paused)
         {
-            newDirection = Vector2.right * Mathf.Round(moveInput.x);
-            Vector3 scale = transform.localScale;
-            scale.x = newDirection.x;
-            transform.localScale = scale;
-        }
+            moveInput = context.ReadValue<Vector2>();
 
-        if (moveInput.y != 0f)
-        {
-            newDirection.y = Mathf.Round(moveInput.y);
-        }
+            Vector2 newDirection = Direction;
 
-        Direction = newDirection;
+            if (moveInput.x != 0f)
+            {
+                newDirection = Vector2.right * Mathf.Round(moveInput.x);
+                Vector3 scale = transform.localScale;
+                scale.x = newDirection.x;
+                transform.localScale = scale;
+            }
+
+            if (moveInput.y != 0f)
+            {
+                newDirection.y = Mathf.Round(moveInput.y);
+            }
+
+            Direction = newDirection;
+        }
     }
 
     private void Update()
@@ -69,6 +72,11 @@ public class PlayerMovement : MonoBehaviour
         
         rb.velocity = velocity;
         animator.SetFloat("MoveSpeed", velocity.magnitude);
+    }
+
+    public void StopMoving()
+    {
+        rb.velocity = Vector2.zero;
     }
 
     public void ResetGame(InputAction.CallbackContext context)

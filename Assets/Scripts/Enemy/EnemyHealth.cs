@@ -10,8 +10,10 @@ public class EnemyHealth : Health
     [SerializeField] private EnemyAttackHandler enemyAttackHandler;
     [SerializeField] private Rigidbody2D enemyRigidbody;
     [SerializeField] private Collider2D enemyCollider;
+    [SerializeField] private Collider2D secondCollider;
     [SerializeField] private BubbledEnemy bubblePrefab;
     [SerializeField] private float bubbleScale = 1f;
+    [SerializeField] private float deathScale = 1f;
 
     [SerializeField] private AmmoPickup pickup;
     [SerializeReference] private int ammoDropAmount = 1;
@@ -22,26 +24,26 @@ public class EnemyHealth : Health
         base.Start();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         enemySectionManager = GetComponentInParent<SectionEnemyManager>();
-        enemySectionManager.SetNewEnemy();
         animator = GetComponent<Animator>();
         OnTakeDamage += enemyAttackHandler.InterruptAttack;
         OnTakeDamage += TakeDamage;
     }
 
-    public override void TakeDamage(int amount, Attack attack)
+    public override bool TakeDamage(int amount, Attack attack)
     {
+        IEnemyMovement enemyMovement = (IEnemyMovement)detectPlayerComponent;
+        enemyMovement.Stun();
         if (attack is MeleeAttack && CurrentHealth - amount <= 0 && ammoDropAmount > 0)
         {
             AmmoPickup newPickup = Instantiate(pickup, transform.position, Quaternion.identity);
             newPickup.AmmoAmount = ammoDropAmount;
         }
         
-        base.TakeDamage(amount, attack);
+        return base.TakeDamage(amount, attack);
     }
 
     //bubble function
     protected override void Die(){
-        enemySectionManager.EnemyKilled();
         enemyAttackHandler.InterruptAttack();
         StopAllCoroutines();
         _spriteRenderer.color = Color.white;
@@ -54,8 +56,12 @@ public class EnemyHealth : Health
         {
             raptorDetectPlayer.StopMoving();
         }
-        
-        CreateBubble();
+
+        if (!transform.parent.TryGetComponent<BubbledEnemy>(out BubbledEnemy bubbledEnemy))
+        {
+            CreateBubble();
+            enemySectionManager.EnemyKilled(gameObject);
+        }
 
         if (animator != null)
         {
@@ -63,6 +69,12 @@ public class EnemyHealth : Health
         }
 
         Destroy(enemyCollider);
+        
+        if (secondCollider != null)
+        {
+            Destroy(secondCollider);
+        }
+
         Destroy(enemyRigidbody);
         Destroy(enemyAttackHandler);
         Destroy(detectPlayerComponent);
@@ -74,7 +86,7 @@ public class EnemyHealth : Health
     {
         BubbledEnemy bubble = Instantiate(bubblePrefab, transform.position, Quaternion.identity);
         transform.parent = bubble.transform;
-        bubble.transform.localScale = (Vector3)(Mathf.Max(transform.localScale.x, transform.localScale.y) * bubbleScale * Vector2.one) + Vector3.forward;
+        bubble.transform.localScale = (Vector3)(Mathf.Max(transform.localScale.x, transform.localScale.y) * bubbleScale * Vector2.one) * deathScale + Vector3.forward;
         transform.localScale = (Vector3)(Vector2.one / bubbleScale) + Vector3.forward;
         bubble.PopDamage = Mathf.CeilToInt(maxHealth * 0.25f);
         bubble.enemySprite = _spriteRenderer;

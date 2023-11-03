@@ -40,9 +40,8 @@ public class AttackProjectile : MonoBehaviour
 
     protected virtual void DoAttack(Health otherHealth)
     {
-        if (attackStats.CanAttack(otherHealth, attacker))
+        if (attackStats.DoDamage(otherHealth, attacker))
         {
-            attackStats.DoDamage(otherHealth, attacker);
             Destroy(gameObject);
         }
     }

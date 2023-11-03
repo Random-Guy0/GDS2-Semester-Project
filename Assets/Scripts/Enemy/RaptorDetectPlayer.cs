@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RaptorDetectPlayer : MonoBehaviour
+public class RaptorDetectPlayer : MonoBehaviour, IEnemyMovement
 {
     Rigidbody2D rb;
     float patrolDistance = 7.0f;
@@ -17,6 +17,8 @@ public class RaptorDetectPlayer : MonoBehaviour
     float swoopDelay = 4.0f; // Adjust this value as needed
     float swoopTimer = 0.0f;
 
+    private Vector2 playerLastPosition;
+
     void Start()
     {
         initialY = this.transform.position.y;
@@ -24,12 +26,8 @@ public class RaptorDetectPlayer : MonoBehaviour
         player = GameManager.Instance.Player.transform;
         enabled = false;
         initialPosition = transform.position;
+        playerLastPosition = player.position;
 
-    }
-
-    void OnBecameInvisible(){
-        enabled = false;
-        rb.velocity = new Vector2(0, 0);
     }
 
     void OnBecameVisible(){
@@ -39,7 +37,7 @@ public class RaptorDetectPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        LookAtTarget();
         if (!isSwooping)
         {
             if (Left)
@@ -69,6 +67,10 @@ public class RaptorDetectPlayer : MonoBehaviour
             {
                 Dive();
             }
+            else
+            {
+                playerLastPosition = player.position;
+            }
 
         }
         else
@@ -90,7 +92,9 @@ public class RaptorDetectPlayer : MonoBehaviour
         if (swoopTimer >= swoopDelay)
         {
             // Calculate the dive destination and perform the swoop
-            Vector2 diveDestination = new Vector2(player.position.x + 4.0f, player.position.y);
+            
+            Vector2 diveDestination = new Vector2(playerLastPosition.x + 4.0f, playerLastPosition.y);
+
             Vector2 moveDirection = (diveDestination - (Vector2)transform.position).normalized;
             rb.velocity = new Vector2(rb.velocity.x, moveDirection.y * movementSpeed);
 
@@ -105,6 +109,7 @@ public class RaptorDetectPlayer : MonoBehaviour
             if (swoopTimer >= swoopDelay * 2) // Adjust this value as needed
             {
                 isSwooping = false;
+                diveDestination = Vector2.zero;
             }
         }
     }
@@ -113,9 +118,10 @@ public class RaptorDetectPlayer : MonoBehaviour
     void Dive()
     {
        // Calculate the dive destination
-        Vector2 diveDestination = new Vector2(player.position.x + 4.0f, player.position.y);
-        
-        // Move down to the dive destination Y
+       
+        Vector2 diveDestination = new Vector2(playerLastPosition.x + 4.0f, playerLastPosition.y);
+
+       // Move down to the dive destination Y
         Vector2 moveDirection = (diveDestination - (Vector2)transform.position).normalized;
         rb.velocity = new Vector2(rb.velocity.x, moveDirection.y * movementSpeed);
 
@@ -127,6 +133,38 @@ public class RaptorDetectPlayer : MonoBehaviour
     public void StopMoving()
     {
         rb.velocity = Vector2.zero;
+    }
+
+    private void LookAtTarget()
+    {
+        if (transform.position.x < player.transform.position.x)
+        {
+            Flip(true);
+        }
+        else
+        {
+            Flip(false);
+        }
+    }
+
+    public void Stun()
+    {
+        
+    }
+    
+    private void Flip(bool flipped)
+    {
+        Vector3 scale = transform.localScale;
+        if (flipped)
+        {
+            scale.x = Mathf.Abs(scale.x) * -1f;
+        }
+        else
+        {
+            scale.x = Mathf.Abs(scale.x);
+        }
+
+        transform.localScale = scale;
     }
 }
 
