@@ -192,9 +192,9 @@ public class PlayerAttackHandler : AttackHandler
     public override Vector2 GetDirection()
     {
         Vector2 direction = playerMovement.Direction;
-        if (direction == Vector2.zero)
+        if (direction.x == 0f)
         {
-            direction = Vector2.right;
+            direction.x = 1f;
         }
         return direction;
     }
