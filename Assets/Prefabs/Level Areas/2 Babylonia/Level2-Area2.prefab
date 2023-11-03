@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2466476987725766079}
-  - component: {fileID: 8645719587805529609}
   - component: {fileID: 1007366227402963482}
   - component: {fileID: 3956244408213231311}
   - component: {fileID: 6781619973202055772}
@@ -36,20 +35,6 @@ Transform:
   m_Father: {fileID: 7718234596117381872}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &8645719587805529609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 26313093950901181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e32c75ec950c9b4e98c892de4c06f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  parallaxEffect: 0.7
 --- !u!212 &1007366227402963482
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -765,7 +750,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1220084002062328991}
-  - component: {fileID: 1265940717180324938}
   - component: {fileID: 3411691507921371296}
   - component: {fileID: 796780028127275120}
   - component: {fileID: 216556196550767145}
@@ -792,20 +776,6 @@ Transform:
   m_Father: {fileID: 7718234596117381872}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1265940717180324938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120566998900799769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e32c75ec950c9b4e98c892de4c06f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  parallaxEffect: 0.7
 --- !u!212 &3411691507921371296
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1082,7 +1052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxScale: 0.7
-  parallaxEffect: {fileID: 1265940717180324938}
+  parallaxEffect: {fileID: 5823473219625283655}
 --- !u!1 &1489835504688907772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,7 +1965,7 @@ Transform:
   - {fileID: 5934279351731190848}
   - {fileID: 9051455859740558887}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4755916612599545497
 GameObject:
@@ -2050,7 +2020,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5113047020846862619}
-  - component: {fileID: 7380671482231223367}
   - component: {fileID: 2426385756061775706}
   - component: {fileID: 6561091222610737118}
   - component: {fileID: 3264398755763912779}
@@ -2077,20 +2046,6 @@ Transform:
   m_Father: {fileID: 7718234596117381872}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &7380671482231223367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4888666838015491066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e32c75ec950c9b4e98c892de4c06f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  parallaxEffect: 0.7
 --- !u!212 &2426385756061775706
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2632,7 +2587,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 917931447980741832}
-  - component: {fileID: 4194985561815463004}
   - component: {fileID: 2058643951019977098}
   - component: {fileID: 3284610027814437712}
   - component: {fileID: 9168630392666481559}
@@ -2659,20 +2613,6 @@ Transform:
   m_Father: {fileID: 7718234596117381872}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &4194985561815463004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6730444146034306315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e32c75ec950c9b4e98c892de4c06f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  parallaxEffect: 0.7
 --- !u!212 &2058643951019977098
 SpriteRenderer:
   m_ObjectHideFlags: 0
