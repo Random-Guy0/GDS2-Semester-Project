@@ -70,9 +70,9 @@ public class PlayerAttackHandler : AttackHandler
 
     private void Update()
     {
-        //print(animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
         if (SelectedWeapon.Attack is ContinuousRangedAttack attack)
         {
+            Debug.Log(SelectedWeapon.weaponAttackSound.IsPlaying());
             if (AttackButtonDown && ammoController.CanUseAmmo(attack.AmmoCost))
             {
                 if (!SelectedWeapon.weaponAttackSound.IsPlaying())
@@ -82,6 +82,7 @@ public class PlayerAttackHandler : AttackHandler
             }
             else
             {
+                Debug.Log("STOP");
                 SelectedWeapon.weaponAttackSound.Stop();
             }
         }
@@ -117,8 +118,7 @@ public class PlayerAttackHandler : AttackHandler
     public override void DoMeleeAttack(int index = 0)
     {
         bufferAttack = CurrentlyAttacking;
-
-        //print(doSecondAttack);
+        
         if (!bufferAttack)
         {
             if (!doSecondAttack)
