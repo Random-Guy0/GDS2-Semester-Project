@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31495d9d4835e8f4baffe9e1c1599629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutsceneEndTime: 34.5
+  cutsceneEndTime: 38
 --- !u!1 &1103818315
 GameObject:
   m_ObjectHideFlags: 0
