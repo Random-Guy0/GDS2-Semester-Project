@@ -1544,7 +1544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5782404449363472846, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
       propertyPath: startingAmmo
-      value: 20
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6182496898987152024, guid: 3c26edb1fcd82dc4eae0b97793368d09, type: 3}
       propertyPath: m_Enabled
