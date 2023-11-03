@@ -1683,11 +1683,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1743764850
-      Data2: 1098782999
-      Data3: -2104900187
-      Data4: -217376610
-    Path: event:/UI - Portal Open
+      Data1: 336718509
+      Data2: 1119931671
+      Data3: 1647447170
+      Data4: 1367197100
+    Path: event:/Player - Ray Gun
   Event: 
   PlayEvent: 0
   StopEvent: 0

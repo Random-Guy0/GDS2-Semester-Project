@@ -20,22 +20,28 @@ public class AreaPortal : Portal
     {
         if (ableToEnter == true)
         {
+            //End Portal In Tutorial
             if (SceneManager.GetActiveScene().name == "Tutorial New")
             {
+                //Which scene to load once entered portal
                 SceneManager.LoadScene("Egyptian Level");
             }
+            //End Portal In Egyptian Level
             if (SceneManager.GetActiveScene().name == "Egyptian Level" && secManager.currentArea == 3)
             {
                 if (secManager.areas[secManager.currentArea].areaSectionDisabled)
                 {
+                    //Which scene to load once entered portal
                     SceneManager.LoadScene("Babylon Level");
                 }
 
             }
+            //End Portal In Babylon Level
             else if (SceneManager.GetActiveScene().name == "Babylon Level" && secManager.currentArea == 3)
             {
                 if (secManager.areas[secManager.currentArea].areaSectionDisabled)
                 {
+                    //Which scene to load once entered portal
                     SceneManager.LoadScene("MainMenuStart");
                 }
 
