@@ -20,5 +20,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Charles - Levels/Babylon/Babylon Level.unity
     guid: 032e7a324309540429dc5c5efe2dbe84
+  - enabled: 1
+    path: Assets/Scenes/LevelTransitions/1-Tutorial-to-Egypt.unity
+    guid: b7feefe47b91489488a423444b05b1b2
+  - enabled: 1
+    path: Assets/Scenes/LevelTransitions/2-Egypt-to-Babylon.unity
+    guid: 217cb232ea08a414cb26e3ca0f39c55b
+  - enabled: 1
+    path: Assets/Scenes/LevelTransitions/Victory Scene.unity
+    guid: b836659e796bd154481aa539a02bbd04
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 24ed174a356dc0a4897cca30e427653c, type: 2}
