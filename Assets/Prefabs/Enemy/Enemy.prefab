@@ -263,7 +263,7 @@ MonoBehaviour:
   bubbleScale: 1.2
   deathScale: 1
   pickup: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
-  ammoDropAmount: 1
+  ammoDropAmount: 3
 --- !u!114 &7903826979980892148
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,9 +29,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 98326b200cd9f9b4aa09be6e098896d9, type: 2}
     - target: {fileID: 5715400789707310663, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: pickup
+      value: 
+      objectReference: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
+    - target: {fileID: 5715400789707310663, guid: eb529524626737743802f9fcbf8985c2, type: 3}
       propertyPath: impactSound
       value: 
       objectReference: {fileID: 6270670746694000962}
+    - target: {fileID: 5715400789707310663, guid: eb529524626737743802f9fcbf8985c2, type: 3}
+      propertyPath: ammoDropAmount
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7416225508900568699, guid: eb529524626737743802f9fcbf8985c2, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.132

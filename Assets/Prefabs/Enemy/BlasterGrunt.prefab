@@ -281,7 +281,7 @@ MonoBehaviour:
   bubbleScale: 1.2
   deathScale: 1
   pickup: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
-  ammoDropAmount: 1
+  ammoDropAmount: 3
   shieldAnimator: {fileID: 2929088305776467606}
   shieldBreakAnimation: {fileID: 7400000, guid: fdf34b8b61f946e468a68ff8dc9d5700, type: 2}
   shieldCollider: {fileID: 7828139176342503298}

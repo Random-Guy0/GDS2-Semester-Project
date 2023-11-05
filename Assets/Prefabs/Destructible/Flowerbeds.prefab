@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90851d3fb2f660a4ca8b8cb7bfc5ab60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 5
   <Weaknesses>k__BackingField: 
   hurtSound: {fileID: 0}
   deathSound: {fileID: 0}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c05d0896df4b0f4495e5fb2e15e9766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 5
   <Weaknesses>k__BackingField: 
   hurtSound: {fileID: 0}
   deathSound: {fileID: -69541043717759003}

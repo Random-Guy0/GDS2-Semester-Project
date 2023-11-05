@@ -306,8 +306,8 @@ MonoBehaviour:
   hurtSound: {fileID: 0}
   deathSound: {fileID: 2121886616282326072}
   impactSound: {fileID: -2475522604884864513}
-  dropRatePercentage: 25
-  drop: {fileID: 3309580124271863527, guid: 0560138227fb97541a48f92f3ecb3f84, type: 3}
+  dropRatePercentage: 65
+  drop: {fileID: 4435436358541203277, guid: db1e53f0c949dd44d85e6bcc21546a2c, type: 3}
   ammoAmount: 1
 --- !u!114 &-2475522604884864513
 MonoBehaviour:
