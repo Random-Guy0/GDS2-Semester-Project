@@ -24,7 +24,7 @@ public class AreaPortal : Portal
             if (SceneManager.GetActiveScene().name == "Tutorial New")
             {
                 //Which scene to load once entered portal
-                SceneManager.LoadScene("Egyptian Level");
+                SceneManager.LoadScene("1-Tutorial-to-Egypt");
             }
             //End Portal In Egyptian Level
             if (SceneManager.GetActiveScene().name == "Egyptian Level" && secManager.currentArea == 3)
@@ -32,7 +32,7 @@ public class AreaPortal : Portal
                 if (secManager.areas[secManager.currentArea].areaSectionDisabled)
                 {
                     //Which scene to load once entered portal
-                    SceneManager.LoadScene("Babylon Level");
+                    SceneManager.LoadScene("2-Egypt-to-Babylon");
                 }
 
             }
@@ -42,7 +42,7 @@ public class AreaPortal : Portal
                 if (secManager.areas[secManager.currentArea].areaSectionDisabled)
                 {
                     //Which scene to load once entered portal
-                    SceneManager.LoadScene("MainMenuStart");
+                    SceneManager.LoadScene("Victory Scene");
                 }
 
             }
